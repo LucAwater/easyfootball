@@ -10,7 +10,7 @@
 <!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-  <title>YOUR SITE</title>
+  <title>Easy Football & Events</title>
 
   <link rel="canonical" href="<?php echo home_url(); ?>">
 
@@ -40,18 +40,6 @@
     <a class="link-logo" href="<?php echo home_url(); ?>">
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
-
-    <nav>
-      <?php
-      $nav = array(
-        'theme_location'  => 'menu_primary',
-        'container'       => '',
-        'items_wrap'      => '<ul>%3$s</ul>'
-      );
-
-      wp_nav_menu( $nav );
-      ?>
-    </nav>
   </header>
 
   <!-- Main content -->

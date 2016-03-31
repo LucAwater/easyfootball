@@ -6,9 +6,6 @@
 // Includes
 require_once('includes/scripts.php');
 
-// Includes: admin
-require_once('includes/admin/acf-page.php');
-
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
 require_once('includes/functions-template/section.php');
