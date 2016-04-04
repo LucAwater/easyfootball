@@ -973,6 +973,17 @@ nav ul li.current {
     z-index: 1100;
     margin: auto; }
 
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse; }
+  table thead th {
+    padding: 15px;
+    border: thin solid #e0e0e0; }
+  table tbody td {
+    padding: 15px;
+    border: thin solid #e0e0e0; }
+
 .slider {
   position: relative; }
 
