@@ -1583,3 +1583,18 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 500px) {
   .is-fullwidth {
     margin-left: -3.75rem; } }
+body.single-product .variations li:first-child,
+body.single-product .variations li form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  border: thin solid #e0e0e0; }

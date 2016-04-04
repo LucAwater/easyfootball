@@ -1,0 +1,12 @@
+body.single-product .variations{
+  li:first-child,
+  li form{
+    @include flexbox;
+    @include justify-content( space-between );
+
+    width: 100%;
+    padding: 30px;
+
+    border: thin solid $grey;
+  }
+}

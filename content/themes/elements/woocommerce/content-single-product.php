@@ -71,27 +71,18 @@ global $product;
      * Each variation has its own form
      */
     ?>
-    <table class="table-variations">
-      <colgroup>
-        <col class="attributes">
-        <col class="price">
-        <col class="quantity">
-        <col class="add-to-cart">
-      </colgroup>
+    <div class="variations">
+      <ul>
+        <li>
+          <p>Seating</p>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Buy</p>
+        </li>
 
-      <thead>
-        <tr>
-          <th>Seating</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Buy</th>
-        </tr>
-      </thead>
-
-      <tbody>
         <?php list_variations(); ?>
-      </tbody>
-    </table>
+      </ul>
+    </div>
 
 	</div><!-- .summary -->
 
