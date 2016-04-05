@@ -14,7 +14,9 @@ function list_variations() {
         <p class="attributes"><?php echo $name; ?></p>
         <p class="price"><?php echo $price; ?></p>
 
-        <input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text quantity" size="4">
+        <div class="quantity">
+          <input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+        </div>
 
         <div class="add-to-cart">
           <select hidden name="attribute_pa_seating" data-attribute_name="attribute_pa_seating">

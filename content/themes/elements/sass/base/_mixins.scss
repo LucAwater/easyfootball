@@ -35,3 +35,10 @@
   opacity: 1;
   visibility: visible;
 }
+
+// Appearance
+@mixin appearance($appearance) {
+  -moz-appearance: $appearance;
+  -webkit-appearance: $appearance;
+  appearance: $appearance;
+}

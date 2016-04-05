@@ -74,10 +74,10 @@ global $product;
     <div class="variations">
       <ul>
         <li>
-          <p>Seating</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Buy</p>
+          <p class="attributes">Seating</p>
+          <p class="price">Price</p>
+          <p class="quantity">Quantity</p>
+          <p class="add-to-cart"></p>
         </li>
 
         <?php list_variations(); ?>

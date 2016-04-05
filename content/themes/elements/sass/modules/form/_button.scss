@@ -1,0 +1,35 @@
+button{
+  @extend a;
+  @include appearance( none );
+
+  border: none;
+}
+
+button,
+.button{
+  @include transition( .2s );
+
+  overflow: hidden;
+
+  height: 40px;
+  padding: 0 30px;
+  display: inline-block;
+
+  color: $white;
+  text-align: center;
+  border-radius: 3px;
+  background-color: $green;
+  line-height: 40px;
+  cursor: pointer;
+  outline: 0;
+
+  &:hover,
+  &:focus{
+    color: $white;
+    background-color: $green-dark;
+  }
+}
+
+button[disabled="disabled"]{
+  opacity: .2;
+}
