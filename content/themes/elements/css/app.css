@@ -1619,6 +1619,7 @@ body.is-mobile.is-loading > * {
   .is-fullwidth {
     margin-left: -3.75rem; } }
 body.single-product .variations li:first-child,
+body.single-product .variations li.no-tickets,
 body.single-product .variations li form {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1638,15 +1639,19 @@ body.single-product .variations li form {
   padding: 0 30px;
   border: thin solid #e0e0e0; }
   body.single-product .variations li:first-child .attributes,
+  body.single-product .variations li.no-tickets .attributes,
   body.single-product .variations li form .attributes {
     width: 50%; }
   body.single-product .variations li:first-child .price,
+  body.single-product .variations li.no-tickets .price,
   body.single-product .variations li form .price {
     width: 15%; }
   body.single-product .variations li:first-child .quantity,
+  body.single-product .variations li.no-tickets .quantity,
   body.single-product .variations li form .quantity {
     width: 15%; }
   body.single-product .variations li:first-child .add-to-cart,
+  body.single-product .variations li.no-tickets .add-to-cart,
   body.single-product .variations li form .add-to-cart {
     width: 20%;
     text-align: right; }

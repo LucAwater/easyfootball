@@ -66,7 +66,7 @@ global $product;
 
     <?php
     /*
-     * List all variations in table
+     * Put all variations in list
      *
      * Each variation has its own form
      */

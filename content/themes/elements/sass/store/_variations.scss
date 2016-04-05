@@ -1,5 +1,6 @@
 body.single-product .variations{
   li:first-child,
+  li.no-tickets,
   li form{
     @include flexbox;
     @include align-items( center );
@@ -25,7 +26,7 @@ body.single-product .variations{
 
     .add-to-cart{
       width: 20%;
-      
+
       text-align: right;
     }
   }
