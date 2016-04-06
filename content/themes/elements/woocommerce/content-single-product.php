@@ -66,6 +66,26 @@ global $product;
 
     <?php
     /*
+     * Retrieving seating map from category through ACF relationship field
+     *
+     * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
+     */
+    $location = get_field('match_location');
+    $category = get_category($location->term_id);
+
+    $category_tax = $category->taxonomy;
+    $category_id = $category->term_id;
+    $category_term = $category_tax . '_' . $category_id;
+    $map = get_field('seating_map', $category_term);
+
+    echo
+    '<figure>
+      <img src="' . $map['sizes']['medium'] . '" width="' . $map['sizes']['medium-width'] . '" height="' . $map['sizes']['medium-height'] . '">
+    </figure>';
+    ?>
+
+    <?php
+    /*
      * Put all variations in list
      *
      * Each variation has its own form
