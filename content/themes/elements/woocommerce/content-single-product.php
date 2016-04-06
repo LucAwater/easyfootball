@@ -49,20 +49,39 @@ global $product;
 
 	<div class="summary entry-summary">
 
-		<?php
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-		?>
+    <div class="product-info">
+  		<?php
+  			/**
+  			 * woocommerce_single_product_summary hook.
+  			 *
+  			 * @hooked woocommerce_template_single_title - 5
+  			 * @hooked woocommerce_template_single_rating - 10
+  			 * @hooked woocommerce_template_single_price - 10
+  			 * @hooked woocommerce_template_single_excerpt - 20
+  			 * @hooked woocommerce_template_single_add_to_cart - 30
+  			 * @hooked woocommerce_template_single_meta - 40
+  			 * @hooked woocommerce_template_single_sharing - 50
+  			 */
+  			do_action( 'woocommerce_single_product_summary' );
+
+        $match_date = get_field('match_date', false, false);
+        $match_date = new DateTime($match_date);
+
+        $match_time = get_field('match_time');
+
+        $match_location = get_field('match_location');
+        $category = get_category($match_location->term_id);
+        $category_tax = $category->taxonomy;
+        $category_id = $category->term_id;
+        $category_term = $category_tax . '_' . $category_id;
+        $match_location_name = get_field('location_name', $category_term);
+  		?>
+      <ul>
+        <li><p><span>Date: </span><?php echo $match_date->format('l, j F Y'); ?></p></li>
+        <li><p><span>Time: </span>kl <?php echo $match_time; ?></p></li>
+        <li><p><span>Location: </span><?php echo $match_location_name; ?></p></li>
+      </ul>
+    </div>
 
     <?php
     /*
@@ -70,9 +89,8 @@ global $product;
      *
      * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
-    $location = get_field('match_location');
-    $category = get_category($location->term_id);
-
+    $match_location = get_field('match_location');
+    $category = get_category($match_location->term_id);
     $category_tax = $category->taxonomy;
     $category_id = $category->term_id;
     $category_term = $category_tax . '_' . $category_id;
