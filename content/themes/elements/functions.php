@@ -24,6 +24,9 @@ function woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
 
+// Remove WooCommerce page titles
+add_filter( 'woocommerce_show_page_title', function() { return false; } );
+
 // Function to check if is any type of woocommerce page
 function is_really_woocommerce_page () {
   if(  function_exists ( "is_woocommerce" ) && is_woocommerce()){
