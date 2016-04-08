@@ -66,28 +66,42 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-	/**
-	 * woocommerce_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+  // Match title
+  echo '<div class="list-item-40">';
+  	/**
+  	 * woocommerce_shop_loop_item_title hook.
+  	 *
+  	 * @hooked woocommerce_template_loop_product_title - 10
+  	 */
+  	do_action( 'woocommerce_shop_loop_item_title' );
+  echo '</div>';
 
-	/**
-	 * woocommerce_after_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
+  // Match date
+  echo '<div class="list-item-20">';
+    echo '<p>21 July 2016</p>';
+  echo '</div>';
 
-	/**
-	 * woocommerce_after_shop_loop_item hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
+  // Match price range
+  echo '<div class="list-item-20">';
+  	/**
+  	 * woocommerce_after_shop_loop_item_title hook.
+  	 *
+  	 * @hooked woocommerce_template_loop_rating - 5
+  	 * @hooked woocommerce_template_loop_price - 10
+  	 */
+  	do_action( 'woocommerce_after_shop_loop_item_title' );
+  echo '</div>';
+
+  // 'View tickets' button
+  echo '<div class="list-item-20">';
+  	/**
+  	 * woocommerce_after_shop_loop_item hook.
+  	 *
+  	 * @hooked woocommerce_template_loop_product_link_close - 5
+  	 * @hooked woocommerce_template_loop_add_to_cart - 10
+  	 */
+  	do_action( 'woocommerce_after_shop_loop_item' );
+  echo '</div>';
 	?>
 
 </li>

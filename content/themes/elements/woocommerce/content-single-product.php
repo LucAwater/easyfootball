@@ -105,10 +105,14 @@ global $product;
      * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
     $match_location = get_field('match_location');
+
+    // Get category term to retrieve custom fields of (sub)category
     $category = get_category($match_location->term_id);
     $category_tax = $category->taxonomy;
     $category_id = $category->term_id;
     $category_term = $category_tax . '_' . $category_id;
+
+    // Get custom field for arena seating map
     $map = get_field('seating_map', $category_term);
 
     echo
@@ -125,12 +129,12 @@ global $product;
      */
     ?>
     <div class="variations">
-      <ul>
-        <li>
-          <p class="attributes">Seating</p>
-          <p class="price">Price</p>
-          <p class="quantity">Quantity</p>
-          <p class="add-to-cart"></p>
+      <ul class="list-col">
+        <li class="list-col-head">
+          <p class="list-item-50 attributes">Seating</p>
+          <p class="list-item-10 price">Price</p>
+          <p class="list-item-20 quantity">Quantity</p>
+          <p class="list-item-20 add-to-cart"></p>
         </li>
 
         <?php list_variations(); ?>

@@ -14,14 +14,14 @@ function list_variations() {
       ?>
       <li>
         <form method="post" data-product_id="<?php echo $varId; ?>">
-          <p class="attributes"><?php echo $name; ?></p>
-          <p class="price"><?php echo $price; ?></p>
+          <p class="list-item-50 attributes"><?php echo $name; ?></p>
+          <p class="list-item-10 price"><?php echo $price; ?></p>
 
-          <div class="quantity">
+          <div class="list-item-20 quantity">
             <input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
           </div>
 
-          <div class="add-to-cart">
+          <div class="list-item-20 add-to-cart">
             <select hidden name="attribute_pa_seating" data-attribute_name="attribute_pa_seating">
               <option value="<?php echo $name; ?>" selected="selected"></option>
             </select>

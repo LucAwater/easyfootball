@@ -36,43 +36,38 @@ $woocommerce_loop['loop']++;
 ?>
 <li <?php wc_product_cat_class( '', $category ); ?>>
 	<?php
-	/**
-	 * woocommerce_before_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_open - 10
-	 */
-	do_action( 'woocommerce_before_subcategory', $category );
+  // Category title
+  echo '<div class="list-item-40">';
+  	/**
+  	 * woocommerce_shop_loop_subcategory_title hook.
+  	 *
+  	 * @hooked woocommerce_template_loop_category_title - 10
+  	 */
+  	do_action( 'woocommerce_shop_loop_subcategory_title', $category );
 
-	/**
-	 * woocommerce_before_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_subcategory_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_subcategory_title', $category );
+  	/**
+  	 * woocommerce_after_subcategory_title hook.
+  	 */
+  	do_action( 'woocommerce_after_subcategory_title', $category );
+  echo '</div>';
 
-	/**
-	 * woocommerce_shop_loop_subcategory_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_subcategory_title', $category );
+  // Category arena
+  $arena_name = get_field('arena_name', $category);
+  $arena_location_city = get_field('arena_location_city', $category);
+  $arena_location_country = get_field('arena_location_country', $category);
 
-	/**
-	 * woocommerce_after_subcategory_title hook.
-	 */
-	do_action( 'woocommerce_after_subcategory_title', $category );
+  echo '<div class="list-item-20">';
+    echo '<p>' . $arena_name . '</p>';
+  echo '</div>';
 
-	/**
-	 * woocommerce_after_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_close - 10
-	 */
-	do_action( 'woocommerce_after_subcategory', $category );
+  echo '<div class="list-item-20">';
+    echo '<p>' . $arena_location_city . '</p>';
+  echo '</div>';
 
-  /*
-   * Custom location field
-   */
-  $location = get_field('location_name', $category);
-  echo '<p>' . $location . '</p>';
+  // Category button
+  echo '<div class="list-item-20">';
+    $category_link = get_category_link($category->term_id);
+    echo '<a class="button" href="' . $category_link . '">view details</a>';
+  echo '</div>';
   ?>
 </li>

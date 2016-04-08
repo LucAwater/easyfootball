@@ -971,6 +971,54 @@ nav ul li.current {
     z-index: 1100;
     margin: auto; }
 
+.list-col li.list-col-head {
+  height: 40px; }
+.list-col li {
+  width: 100%;
+  height: 80px;
+  padding: 0 30px;
+  display: table;
+  border: thin solid #e0e0e0; }
+  .list-col li form {
+    width: 100%;
+    height: 80px;
+    display: table; }
+  .list-col li [class^="list-item-"] {
+    display: table-cell;
+    vertical-align: middle; }
+    .list-col li [class^="list-item-"]:last-child {
+      text-align: right; }
+
+.list-item-10 {
+  width: 10%; }
+
+.list-item-20 {
+  width: 20%; }
+
+.list-item-30 {
+  width: 30%; }
+
+.list-item-40 {
+  width: 40%; }
+
+.list-item-50 {
+  width: 50%; }
+
+.list-item-60 {
+  width: 60%; }
+
+.list-item-70 {
+  width: 70%; }
+
+.list-item-80 {
+  width: 80%; }
+
+.list-item-90 {
+  width: 90%; }
+
+.list-item-100 {
+  width: 100%; }
+
 table {
   width: 100%;
   text-align: left;
@@ -1615,40 +1663,3 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 500px) {
   .is-fullwidth {
     margin-left: -3.75rem; } }
-body.single-product .variations li:first-child,
-body.single-product .variations li.no-tickets,
-body.single-product .variations li form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  justify-content: space-between;
-  width: 100%;
-  height: 80px;
-  padding: 0 30px;
-  border: thin solid #e0e0e0; }
-  body.single-product .variations li:first-child .attributes,
-  body.single-product .variations li.no-tickets .attributes,
-  body.single-product .variations li form .attributes {
-    width: 50%; }
-  body.single-product .variations li:first-child .price,
-  body.single-product .variations li.no-tickets .price,
-  body.single-product .variations li form .price {
-    width: 15%; }
-  body.single-product .variations li:first-child .quantity,
-  body.single-product .variations li.no-tickets .quantity,
-  body.single-product .variations li form .quantity {
-    width: 15%; }
-  body.single-product .variations li:first-child .add-to-cart,
-  body.single-product .variations li.no-tickets .add-to-cart,
-  body.single-product .variations li form .add-to-cart {
-    width: 20%;
-    text-align: right; }
