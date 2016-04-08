@@ -64,23 +64,38 @@ global $product;
   			 */
   			do_action( 'woocommerce_single_product_summary' );
 
+        // Get match data from custom fields of product
         $match_date = get_field('match_date', false, false);
         $match_date = new DateTime($match_date);
-
         $match_time = get_field('match_time');
-
         $match_location = get_field('match_location');
+
+        // Get category term to retrieve custom fields of (sub)category
         $category = get_category($match_location->term_id);
         $category_tax = $category->taxonomy;
         $category_id = $category->term_id;
         $category_term = $category_tax . '_' . $category_id;
-        $match_location_name = get_field('location_name', $category_term);
-  		?>
-      <ul>
-        <li><p><span>Date: </span><?php echo $match_date->format('l, j F Y'); ?></p></li>
-        <li><p><span>Time: </span>kl <?php echo $match_time; ?></p></li>
-        <li><p><span>Location: </span><?php echo $match_location_name; ?></p></li>
-      </ul>
+
+        // Get custom fields for arena name and location of (sub)category
+        $arena_name = get_field('arena_name', $category_term);
+        $arena_location_city = get_field('arena_location_city', $category_term);
+        $arena_location_country = get_field('arena_location_country', $category_term);
+        $arena_location = $arena_name . ', ' . $arena_location_city . ', ' . $arena_location_country;
+
+        // Build match data list
+        if( $match_date || $match_time || $match_location ):
+          echo '<ul>';
+            if( $match_date )
+              echo '<li><p><span>Date: </span>' . $match_date->format('l, j F Y') . '</p></li>';
+
+            if( $match_time )
+              echo '<li><p><span>Date: </span>' . $match_time . '</p></li>';
+
+            if( $arena_name && $arena_location_city && $arena_location_country )
+              echo '<li><p><span>Location: </span>' . $arena_location . '</p></li>';
+          echo '</ul>';
+        endif;
+        ?>
     </div>
 
     <?php
