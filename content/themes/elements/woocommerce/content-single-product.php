@@ -71,16 +71,22 @@ global $product;
         $match_location = get_field('match_location');
 
         // Get category term to retrieve custom fields of (sub)category
-        $category = get_category($match_location->term_id);
-        $category_tax = $category->taxonomy;
-        $category_id = $category->term_id;
-        $category_term = $category_tax . '_' . $category_id;
+        if( $match_location ){
+          $category = get_category($match_location->term_id);
+          $category_tax = $category->taxonomy;
+          $category_id = $category->term_id;
+          $category_term = $category_tax . '_' . $category_id;
 
-        // Get custom fields for arena name and location of (sub)category
-        $arena_name = get_field('arena_name', $category_term);
-        $arena_location_city = get_field('arena_location_city', $category_term);
-        $arena_location_country = get_field('arena_location_country', $category_term);
-        $arena_location = $arena_name . ', ' . $arena_location_city . ', ' . $arena_location_country;
+          // Get custom fields for arena name and location of (sub)category
+          $arena_name = get_field('arena_name', $category_term);
+          $arena_location_city = get_field('arena_location_city', $category_term);
+          $arena_location_country = get_field('arena_location_country', $category_term);
+          $arena_location = $arena_name . ', ' . $arena_location_city . ', ' . $arena_location_country;
+        } else {
+          $arena_name = '';
+          $arena_location_city = '';
+          $arena_location_country = '';
+        }
 
         // Build match data list
         if( $match_date || $match_time || $match_location ):
@@ -106,19 +112,21 @@ global $product;
      */
     $match_location = get_field('match_location');
 
-    // Get category term to retrieve custom fields of (sub)category
-    $category = get_category($match_location->term_id);
-    $category_tax = $category->taxonomy;
-    $category_id = $category->term_id;
-    $category_term = $category_tax . '_' . $category_id;
+    if( $match_location ){
+      // Get category term to retrieve custom fields of (sub)category
+      $category = get_category($match_location->term_id);
+      $category_tax = $category->taxonomy;
+      $category_id = $category->term_id;
+      $category_term = $category_tax . '_' . $category_id;
 
-    // Get custom field for arena seating map
-    $map = get_field('seating_map', $category_term);
+      // Get custom field for arena seating map
+      $map = get_field('seating_map', $category_term);
 
-    echo
-    '<figure>
-      <img src="' . $map['sizes']['medium'] . '" width="' . $map['sizes']['medium-width'] . '" height="' . $map['sizes']['medium-height'] . '">
-    </figure>';
+      echo
+      '<figure>
+        <img src="' . $map['sizes']['medium'] . '" width="' . $map['sizes']['medium-width'] . '" height="' . $map['sizes']['medium-height'] . '">
+      </figure>';
+    }
     ?>
 
     <?php

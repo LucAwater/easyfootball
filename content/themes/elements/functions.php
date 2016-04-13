@@ -15,9 +15,9 @@ require_once('includes/functions-template/section-slider.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
-require_once('includes/woocommerce/data-countries.php');
-require_once('includes/woocommerce/data-leagues.php');
-require_once('includes/woocommerce/import-taxonomies.php');
+require_once('includes/functions-woocommerce/data-countries.php');
+require_once('includes/functions-woocommerce/data-leagues.php');
+require_once('includes/functions-woocommerce/import-taxonomies.php');
 require_once('includes/functions-woocommerce/cart-update.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 
@@ -29,6 +29,14 @@ function woocommerce_support() {
 
 // Remove WooCommerce page titles
 add_filter( 'woocommerce_show_page_title', function() { return false; } );
+
+// Show empty product categories
+add_filter( 'woocommerce_product_subcategories_hide_empty', 'show_empty_categories', 10, 1 );
+function show_empty_categories ( $show_empty ) {
+  $show_empty  =  true;
+
+  return $show_empty;
+}
 
 // Function to check if is any type of woocommerce page
 function is_really_woocommerce_page () {
