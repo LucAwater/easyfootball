@@ -18,30 +18,23 @@
 ?>
 
 <?php
-$cat = get_query_var( 'product_cat' );
-$cat = get_term_by( 'slug', $cat, 'product_cat');
-$parents = get_category_parents($cat);
-if( is_product_category() ){
-  $parents = explode("/", $parents);
-  $parents_count = count($parents) - 1;
-} else {
-  $parents_count = 0;
-}
+global $wp_query;
+$term =	$wp_query->queried_object;
 ?>
 
-<?php if( $parents_count == 0 ): ?>
+<?php if( is_page('regions') ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">Country</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $parents_count == 1 ): ?>
+<?php elseif( $term->taxonomy == 'region' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">League</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $parents_count == 2 ): ?>
+<?php elseif( $term->taxonomy == 'league' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">Team</p>
@@ -49,7 +42,7 @@ if( is_product_category() ){
       <p class="list-item-20">City</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $parents_count == 3 ): ?>
+<?php elseif( $term->taxonomy == 'team' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">Match</p>

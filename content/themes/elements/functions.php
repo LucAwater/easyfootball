@@ -5,6 +5,9 @@
 
 // Includes
 require_once('includes/scripts.php');
+require_once('includes/tax-region.php');
+require_once('includes/tax-league.php');
+require_once('includes/tax-team.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
