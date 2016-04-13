@@ -15,7 +15,7 @@ require_once('includes/functions-template/section-slider.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
-require_once('includes/functions-woocommerce/data-countries.php');
+require_once('includes/functions-woocommerce/data-regions.php');
 require_once('includes/functions-woocommerce/data-leagues.php');
 require_once('includes/functions-woocommerce/import-taxonomies.php');
 require_once('includes/functions-woocommerce/cart-update.php');

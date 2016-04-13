@@ -1,10 +1,10 @@
 <?php
 function import_taxonomies() {
   // Insert countries as parent categories
-  $countries = data_get_countries();
+  $regions = data_get_regions();
 
-  foreach($countries as $country){
-    wp_insert_term($country, 'product_cat');
+  foreach($regions as $region){
+    wp_insert_term($region, 'product_cat');
   }
 
   // Get parent categories as objects

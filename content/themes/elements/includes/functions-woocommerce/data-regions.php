@@ -1,6 +1,6 @@
 <?php
-function data_get_countries(){
-  $countries = array(
+function data_get_regions(){
+  $regions = array(
     'Sverige',
     'Tyskland',
     'Europa',
@@ -12,6 +12,6 @@ function data_get_countries(){
     'Värld'
   );
 
-  return $countries;
+  return $regions;
 }
 ?>
