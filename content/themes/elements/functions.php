@@ -5,9 +5,6 @@
 
 // Includes
 require_once('includes/scripts.php');
-require_once('includes/data-countries.php');
-require_once('includes/data-leagues.php');
-require_once('includes/import-taxonomies.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
@@ -18,6 +15,9 @@ require_once('includes/functions-template/section-slider.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
+require_once('includes/woocommerce/data-countries.php');
+require_once('includes/woocommerce/data-leagues.php');
+require_once('includes/woocommerce/import-taxonomies.php');
 require_once('includes/functions-woocommerce/cart-update.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 
