@@ -18,11 +18,18 @@ require_once('includes/functions-template/section-slider.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
-require_once('includes/functions-woocommerce/data-regions.php');
-require_once('includes/functions-woocommerce/data-leagues.php');
-require_once('includes/functions-woocommerce/import-taxonomies.php');
 require_once('includes/functions-woocommerce/cart-update.php');
 require_once('includes/functions-woocommerce/list-variations.php');
+
+/*
+ * Import data for regions, leagues and teams
+ *
+ * Keep commented out until used for bulk changes in terms
+ */
+// require_once('includes/functions-woocommerce/data-regions.php');
+// require_once('includes/functions-woocommerce/data-teams.php');
+// require_once('includes/functions-woocommerce/data-leagues.php');
+// require_once('includes/functions-woocommerce/import-taxonomies.php');
 
 // Add support for WooCommerce
 add_action( 'after_setup_theme', 'woocommerce_support' );

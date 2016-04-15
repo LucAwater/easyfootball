@@ -1,10 +1,10 @@
 <?php
-function data_get_leagues(){
+function data_get_teams(){
   ini_set('auto_detect_line_endings', true);
 
   $row = 0;
-  $leagues = array();
-  $handle = fopen(get_template_directory() . "/data/easyfootball-leagues.csv", "r");
+  $teams = array();
+  $handle = fopen(get_template_directory() . "/data/easyfootball-teams.csv", "r");
 
   // Loop through rows of csv file
   while (($data = fgetcsv($handle, ";")) !== FALSE) {
@@ -29,13 +29,13 @@ function data_get_leagues(){
       }
 
       // Push data to content array
-      array_push($leagues, $content_data);
+      array_push($teams, $content_data);
     }
 
     $row++;
   }
   fclose($handle);
 
-  return $leagues;
+  return $teams;
 }
 ?>

@@ -1,41 +1,82 @@
 <?php
 function import_taxonomies() {
-  // Insert countries as parent categories
+  /*
+   * Insert regions
+   */
   $regions = data_get_regions();
 
   foreach($regions as $region){
-    wp_insert_term($region, 'product_cat');
+    wp_insert_term($region, 'region');
   }
 
-  // Get parent categories as objects
-  $parents = get_terms('product_cat', array('hide_empty' => false));
+  /*
+   * Insert teams
+   */
+  $teams = data_get_teams();
 
-  foreach($parents as $parent){
-    // Check if not a subcategory
-    if( $parent->parent == 0){
-      // Get parent id
-      $parent_ID = $parent->term_id;
-      $parent_name = $parent->name;
+  foreach($teams as $team){
+    $team_name = $team['team'];
 
-      // Get list children(leagues)
-      $children = data_get_leagues();
+    // Check if term already exists
+    if(! term_exists($team_name, 'team') ){
+      // If not, insert term
+      wp_insert_term($team_name, 'team');
+    } else {
+      $term = get_term_by('name', $team_name, 'team');
+      $post_id = 'team_' . $term->term_id;
 
-      // Loop over children
-      foreach( $children as $child ){
-        // Detect direct children
-        if( $child['country'] == $parent_name ){
-          // Insert children into DB
-          wp_insert_term(
-            $child['name'],
-            'product_cat',
-            array(
-              'parent' => $parent_ID
-            )
-          );
-        }
-      }
+      // Arena name
+      $field_key = 'field_570772517fb69';
+      $value = $team['arena_name'];
+      update_field( $field_key, $value, $post_id );
+
+      // Arena city
+      $field_key = 'field_570772597fb6a';
+      $value = $team['arena_city'];
+      update_field( $field_key, $value, $post_id );
+
+      // Arena country
+      $field_key = 'field_570772657fb6b';
+      $value = $team['arena_country'];
+      update_field( $field_key, $value, $post_id );
     }
+
   }
+
+  /*
+   * Insert leagues
+   */
+  $leagues = data_get_leagues();
+
+  foreach($leagues as $league){
+    // Get league's name
+    $league_name = $league['league'];
+
+    // Check if term already exists
+    if(! term_exists($league_name, 'league') ){
+      // If not, insert term
+      wp_insert_term($league_name, 'league');
+
+      // After insert, check again
+      if( term_exists($league_name, 'league') ){
+
+      }
+    } else {
+      $term = get_term_by('name', $league_name, 'league');
+
+      /*
+       * Update ACF field
+       *
+       * Reference: https://www.advancedcustomfields.com/resources/update_field/
+       */
+      $field_key = 'field_570e17a5ea6c6';
+      $post_id = 'league_' . $term->term_id;
+      $value = 'test';
+      update_field( $field_key, $value, $post_id );
+    }
+
+  }
+
 }
-add_action('admin_init', 'import_taxonomies');
+add_action('init','import_taxonomies');
 ?>
