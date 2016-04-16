@@ -1,1 +1,190 @@
-team;league;arena_name;arena_city;arena_countryAston Villa;Premier League;Villa Park;Birmingham;Storbritannien
+team;league;country;arena_name;arena_city;arena_country
+AIK;Allsvenskan;Sverige;;;Sverige
+Djurgårdens IF;Allsvenskan;Sverige;;;Sverige
+IF Elfsborg;Allsvenskan;Sverige;;;Sverige
+Falkenbergs FF;Allsvenskan;Sverige;;;Sverige
+Gefle IF;Allsvenskan;Sverige;;;Sverige
+IFK Göteborg;Allsvenskan;Sverige;;;Sverige
+BK Häcken;Allsvenskan;Sverige;;;Sverige
+Hammerby IF;Allsvenskan;Sverige;;;Sverige
+Helsingborgs IF;Allsvenskan;Sverige;;;Sverige
+Jönköpings Södra IF;Allsvenskan;Sverige;;;Sverige
+Kalmar FF;Allsvenskan;Sverige;;;Sverige
+Malmö FF;Allsvenskan;Sverige;;;Sverige
+IFK Norrköping;Allsvenskan;Sverige;;;Sverige
+Örebro SK;Allsvenskan;Sverige;;;Sverige
+Östersunds FK;Allsvenskan;Sverige;;;Sverige
+GIF Sundsvall;Allsvenskan;Sverige;;;Sverige
+Augsburg;Bundesliga;Tyskland;;;Tyskland
+Bayer Leverkussen;Bundesliga;Tyskland;;;Tyskland
+Bayern Munich;Bundesliga;Tyskland;;;Tyskland
+Borussia Dortmund;Bundesliga;Tyskland;;;Tyskland
+Borussia Mönchengladbach;Bundesliga;Tyskland;;;Tyskland
+SV Darmstadt 98;Bundesliga;Tyskland;;;Tyskland
+Eintracht Frankfurt;Bundesliga;Tyskland;;;Tyskland
+Hamburger SV;Bundesliga;Tyskland;;;Tyskland
+Hannover 96;Bundesliga;Tyskland;;;Tyskland
+Hertha Berlin;Bundesliga;Tyskland;;;Tyskland
+1899 Hoffenheim;Bundesliga;Tyskland;;;Tyskland
+Ingolstadt 04;Bundesliga;Tyskland;;;Tyskland
+FC Köln;Bundesliga;Tyskland;;;Tyskland
+FSV Mainz 05;Bundesliga;Tyskland;;;Tyskland
+Schalke 04;Bundesliga;Tyskland;;;Tyskland
+VfB Stuttgart;Bundesliga;Tyskland;;;Tyskland
+Werder Bremen;Bundesliga;Tyskland;;;Tyskland
+VfL Wolfsburg;Bundesliga;Tyskland;;;Tyskland
+;Champions League;Europa;;;Europa
+Birmingham City;Championship;England;;;England
+Blackburn Rovers;Championship;England;;;England
+Bolton Wanderers;Championship;England;;;England
+Brentford;Championship;England;;;England
+Brighton & Hove Albion;Championship;England;;;England
+Bristol City;Championship;England;;;England
+Burnley;Championship;England;;;England
+Cardiff City;Championship;England;;;England
+Charlton Athletic;Championship;England;;;England
+Derby County;Championship;England;;;England
+Fulham;Championship;England;;;England
+Huddersfield Town;Championship;England;;;England
+Hull city;Championship;England;;;England
+Ipswich Town;Championship;England;;;England
+Leeds United;Championship;England;;;England
+Middlesbrough;Championship;England;;;England
+Milton Keynes Dons;Championship;England;;;England
+Nottingham Forest;Championship;England;;;England
+Preston North End;Championship;England;;;England
+Queens Park Rangers;Championship;England;;;England
+Reading;Championship;England;;;England
+Rotherham United;Championship;England;;;England
+Sheffield Wednesday;Championship;England;;;England
+Wolverhampton Wanderers;Championship;England;;;England
+;Copa Del Rey;Spanien;;;Spanien
+;Coppa Italia;Italien;;;Italien
+;DFB Pokal;Tyskland;;;Tyskland
+;Emirates Cup;England;;;England
+ADO Den Haag;Eredivisie;Nederländerna;;;Nederländerna
+Ajax;Eredivisie;Nederländerna;;;Nederländerna
+AZ Alkmaar;Eredivisie;Nederländerna;;;Nederländerna
+SC Cambuur;Eredivisie;Nederländerna;;;Nederländerna
+De Graafschap;Eredivisie;Nederländerna;;;Nederländerna
+Excelsior;Eredivisie;Nederländerna;;;Nederländerna
+Feyenoord;Eredivisie;Nederländerna;;;Nederländerna
+FC Groningen;Eredivisie;Nederländerna;;;Nederländerna
+SC Heerenveen;Eredivisie;Nederländerna;;;Nederländerna
+Heracles Almelo;Eredivisie;Nederländerna;;;Nederländerna
+NEC Nijmegen;Eredivisie;Nederländerna;;;Nederländerna
+PEC Zwolle;Eredivisie;Nederländerna;;;Nederländerna
+PSV Eindhoven;Eredivisie;Nederländerna;;;Nederländerna
+Roda JC Kerkrade;Eredivisie;Nederländerna;;;Nederländerna
+FC Twente;Eredivisie;Nederländerna;;;Nederländerna
+FC Utrecht;Eredivisie;Nederländerna;;;Nederländerna
+Vitesse;Eredivisie;Nederländerna;;;Nederländerna
+Willem ll;Eredivisie;Nederländerna;;;Nederländerna
+;Europa League;Europa;;;Europa
+;Fa-Cup;England;;;England
+;Fotbolls EM;Europa;;;Europa
+;Fotbolls Vm;Värld;;;Värld
+Athletic Bilbao;La Liga;Spanien;;;Spanien
+Atlético Madrid;La Liga;Spanien;;;Spanien
+Barcelona;La Liga;Spanien;;;Spanien
+Betis;La Liga;Spanien;;;Spanien
+Celta Vigo;La Liga;Spanien;;;Spanien
+Deportivo La Coruña;La Liga;Spanien;;;Spanien
+Eibar;La Liga;Spanien;;;Spanien
+Espanyol;La Liga;Spanien;;;Spanien
+Getafe;La Liga;Spanien;;;Spanien
+Granada;La Liga;Spanien;;;Spanien
+Las Palmas;La Liga;Spanien;;;Spanien
+Levante;La Liga;Spanien;;;Spanien
+Málaga;La Liga;Spanien;;;Spanien
+Rayo Vallecano;La Liga;Spanien;;;Spanien
+Real Madrid;La Liga;Spanien;;;Spanien
+Real Sociedad;La Liga;Spanien;;;Spanien
+Sevilla;La Liga;Spanien;;;Spanien
+Sporting Gijón;La Liga;Spanien;;;Spanien
+Valencia;La Liga;Spanien;;;Spanien
+Villareal;La Liga;Spanien;;;Spanien
+Barnsley;League One;England;;;England
+Blackpool;League One;England;;;England
+Bradford City;League One;England;;;England
+Burton Albion;League One;England;;;England
+Bury;League One;England;;;England
+Chesterfield;League One;England;;;England
+Colchester United;League One;England;;;England
+Coventry City;League One;England;;;England
+Crewe Alexandra;League One;England;;;England
+Doncaster Rovers;League One;England;;;England
+Fleetwood Town;League One;England;;;England
+Gillingham;League One;England;;;England
+Millwall;League One;England;;;England
+Oldham Athletic;League One;England;;;England
+Peterborough United;League One;England;;;England
+Port Vale;League One;England;;;England
+Rochdale;League One;England;;;England
+Scunthorpe United;League One;England;;;England
+Sheffield United;League One;England;;;England
+Shrewsbury Town;League One;England;;;England
+Southend United;League One;England;;;England
+Swindon Town;League One;England;;;England
+Walsall;League One;England;;;England
+Wigan Athletic;League One;England;;;England
+Angers;Ligue 1;Frankrike;;;Frankrike
+Bastia;Ligue 1;Frankrike;;;Frankrike
+Bordeaux;Ligue 1;Frankrike;;;Frankrike
+Caen;Ligue 1;Frankrike;;;Frankrike
+Gazélec Ajaccio;Ligue 1;Frankrike;;;Frankrike
+Guingamp;Ligue 1;Frankrike;;;Frankrike
+Lille;Ligue 1;Frankrike;;;Frankrike
+Lorient;Ligue 1;Frankrike;;;Frankrike
+Lyon;Ligue 1;Frankrike;;;Frankrike
+Marseille;Ligue 1;Frankrike;;;Frankrike
+Monaco;Ligue 1;Frankrike;;;Frankrike
+Montpellier;Ligue 1;Frankrike;;;Frankrike
+Nantes;Ligue 1;Frankrike;;;Frankrike
+Nice;Ligue 1;Frankrike;;;Frankrike
+Paris Saint-Germain;Ligue 1;Frankrike;;;Frankrike
+Reims;Ligue 1;Frankrike;;;Frankrike
+Rennes;Ligue 1;Frankrike;;;Frankrike
+Saint-Etienne;Ligue 1;Frankrike;;;Frankrike
+Toulouse;Ligue 1;Frankrike;;;Frankrike
+Troyes;Ligue 1;Frankrike;;;Frankrike
+Arsenal;Premier League;England;;;England
+Aston Villa;Premier League;England;;;England
+Bournemouth;Premier League;England;;;England
+Chelsea;Premier League;England;;;England
+Crystal Palace;Premier League;England;;;England
+Everton;Premier League;England;;;England
+Leicester City;Premier League;England;;;England
+Liverpool;Premier League;England;;;England
+Manchester City;Premier League;England;;;England
+Manchester United;Premier League;England;;;England
+Norwich City;Premier League;England;;;England
+Southampton;Premier League;England;;;England
+Stoke City;Premier League;England;;;England
+Sunderland;Premier League;England;;;England
+Swansea City;Premier League;England;;;England
+Tottenham Hotspur;Premier League;England;;;England
+Watford;Premier League;England;;;England
+West Bromwich Albion;Premier League;England;;;England
+West Ham United;Premier League;England;;;England
+Atalanta;Serie A;Italien;;;Italien
+Bologna;Serie A;Italien;;;Italien
+Carpi;Serie A;Italien;;;Italien
+Chievo Verona;Serie A;Italien;;;Italien
+Empoli;Serie A;Italien;;;Italien
+Fiorentina;Serie A;Italien;;;Italien
+Frosinone;Serie A;Italien;;;Italien
+Genoa;Serie A;Italien;;;Italien
+Internazionale;Serie A;Italien;;;Italien
+Juventus;Serie A;Italien;;;Italien
+Lazio;Serie A;Italien;;;Italien
+Milan;Serie A;Italien;;;Italien
+Napoli;Serie A;Italien;;;Italien
+Palermo;Serie A;Italien;;;Italien
+Roma;Serie A;Italien;;;Italien
+Sampdoria;Serie A;Italien;;;Italien
+Sassuolo;Serie A;Italien;;;Italien
+Torino;Serie A;Italien;;;Italien
+Udinese;Serie A;Italien;;;Italien
+Verona;Serie A;Italien;;;Italien
+;Tim Cup;Italien;;;Italien

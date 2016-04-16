@@ -9,6 +9,8 @@ function data_get_leagues(){
   // Loop through rows of csv file
   while (($data = fgetcsv($handle, ";")) !== FALSE) {
 
+    $data = array_map("utf8_encode", $data);
+
     // Get column headers
     if( $row == 0 ){
       $headers = explode(";", $data[0]);
