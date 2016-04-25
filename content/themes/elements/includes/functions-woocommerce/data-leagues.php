@@ -1,43 +1,40 @@
 <?php
 function data_get_leagues(){
-  ini_set('auto_detect_line_endings', true);
+  $data = data_get_teams();
+  $leagues_data = $data[1];
+  $teams = $data[2];
 
-  $row = 0;
+  // Make 'leagues' array multidimensional
   $leagues = array();
-  $handle = fopen(get_template_directory() . "/data/easyfootball-leagues.csv", "r");
 
-  // Loop through rows of csv file
-  while (($data = fgetcsv($handle, ";")) !== FALSE) {
+  foreach($leagues_data as $league){
+    array_push($leagues, array('league' => $league));
+  }
 
-    $data = array_map("utf8_encode", $data);
+  // Add teams to corresponding leagues
+  $a = 0;
+  foreach($leagues as $league){
+    $league_name = $league['league'];
+    $league_teams = array();
 
-    // Get column headers
-    if( $row == 0 ){
-      $headers = explode(";", $data[0]);
-    } else {
-      // Get data in one array
-      $content_data = explode(";", $data[0]);
-
-      for($a = 0; $a < count($content_data); $a++){
-
-        // Remove empty cells
-        if( empty($content_data[$a]) ){
-          unset($content_data[$a]);
-        }
-
-        // Pair data with column headers
-        $content_data = array_combine($headers, $content_data);
-
+    foreach($teams as $team){
+      // If league name matches, push team to 'leagues' array
+      if($team['league'] == $league_name){
+        array_push($league_teams, $team['team']);
       }
 
-      // Push data to content array
-      array_push($leagues, $content_data);
+      // Add country to league array
+      if(! isset($leagues[$a]['country']) ){
+        $leagues[$a]['country'] = $team['country'];
+      }
     }
+    $leagues[$a]['teams'] = $league_teams;
 
-    $row++;
+    $a++;
   }
-  fclose($handle);
 
   return $leagues;
 }
+
+data_get_leagues();
 ?>
