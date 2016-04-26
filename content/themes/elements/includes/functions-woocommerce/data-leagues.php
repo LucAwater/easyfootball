@@ -21,11 +21,11 @@ function data_get_leagues(){
       // If league name matches, push team to 'leagues' array
       if($team['league'] == $league_name){
         array_push($league_teams, $team['team']);
-      }
 
-      // Add country to league array
-      if(! isset($leagues[$a]['country']) ){
-        $leagues[$a]['country'] = $team['country'];
+        // Add country to league array
+        if(! isset($leagues[$a]['country']) ){
+          $leagues[$a]['country'] = $team['country'];
+        }
       }
     }
     $leagues[$a]['teams'] = $league_teams;
