@@ -19,6 +19,7 @@ require_once('includes/functions-template/section-slider.php');
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
 require_once('includes/functions-woocommerce/cart-update.php');
+require_once('includes/functions-woocommerce/breadcrumb.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 
 /*

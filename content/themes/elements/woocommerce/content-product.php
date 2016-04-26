@@ -78,7 +78,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
   // Match date
   echo '<div class="list-item-20">';
-    echo '<p>21 July 2016</p>';
+    echo '<p></p>';
   echo '</div>';
 
   // Match price range

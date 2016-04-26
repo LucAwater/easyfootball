@@ -47,6 +47,8 @@ global $product;
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
+  <?php get_breadcrumb(); ?>
+
 	<div class="summary entry-summary">
 
     <div class="product-info">
