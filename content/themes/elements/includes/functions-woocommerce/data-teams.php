@@ -11,14 +11,16 @@ function data_get_teams(){
   // Loop through rows of csv file
   while (($data = fgetcsv($handle, ";")) !== FALSE) {
 
-    $data = array_map("utf8_encode", $data);
+    // $data = array_map("utf8_encode", $data);
 
     // Get column headers
     if( $row == 0 ){
-      $headers = explode(";", $data[0]);
+      // $headers = explode(";", $data[0]);
+      $headers = $data;
     } else {
       // Get data in one array
-      $content_data = explode(";", $data[0]);
+      // $content_data = explode(";", $data[0]);
+      $content_data = $data;
 
       for($a = 0; $a < count($content_data); $a++){
         // Pair data with column headers

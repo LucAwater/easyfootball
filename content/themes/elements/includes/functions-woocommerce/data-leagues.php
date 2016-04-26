@@ -35,6 +35,4 @@ function data_get_leagues(){
 
   return $leagues;
 }
-
-data_get_leagues();
 ?>

@@ -128,6 +128,11 @@ function import_leagues(){
           }
         }
 
+        $field_key_region = 'field_571f3697e9e1d';
+        $value_region = get_term_by('name', $league['country'], 'region');
+        $value_region = $value_region->term_id;
+        update_field( $field_key_region, $value_region, $post_id );
+
         $field_key_teams = 'field_570e11fbc977c';
         $value_teams = $league_teams;
         update_field( $field_key_teams, $value_teams, $post_id );
