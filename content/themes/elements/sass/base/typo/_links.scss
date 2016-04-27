@@ -31,16 +31,12 @@ article a{
 
 // Navigation in header
 nav a{
-  padding-bottom: 0;
-
   color: $black;
   text-decoration: none;
   border-bottom: thin solid transparent;
 
   &:hover,
   &:focus{
-    padding-bottom: 5px;
-
     border-bottom: thin solid $black;
   }
 }
@@ -48,8 +44,6 @@ nav a{
 nav .current_page_parent,
 nav .current-menu-item{
   a{
-    padding-bottom: 5px;
-
     border-bottom: thin solid $black;
   }
 }

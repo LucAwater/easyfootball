@@ -7,7 +7,7 @@ function get_breadcrumb(){
     $region = $term->name;
     ?>
 
-    <nav itemscope itemtype="http://schema.org/BreadcrumbList">
+    <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <p itemprop="item"><span itemprop="name"><?php echo $region; ?></span></p>
         <meta itemprop="position" content="1" />
@@ -20,9 +20,9 @@ function get_breadcrumb(){
     $region = $region->name;
     $league = $term->name;
     ?>
-    <nav itemscope itemtype="http://schema.org/BreadcrumbList">
+    <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a>
+        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a> / 
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -38,13 +38,13 @@ function get_breadcrumb(){
     $league = $league->name;
     $team = $term->name;
     ?>
-    <nav itemscope itemtype="http://schema.org/BreadcrumbList">
+    <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a>
+        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a> / 
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league"><span itemprop="name"><?php echo $league; ?></span></a>
+        <a itemprop="item" href="/region/league"><span itemprop="name"><?php echo $league; ?></span></a> / 
         <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -55,18 +55,21 @@ function get_breadcrumb(){
 
   <?php } elseif( is_product() ){
     $match = get_the_title();
+    $regions = get_the_terms( get_the_ID(), 'region' );
+    $leagues = get_the_terms( get_the_ID(), 'league' );
+    $teams = get_the_terms( get_the_ID(), 'team' );
     ?>
-    <nav itemscope itemtype="http://schema.org/BreadcrumbList">
+    <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name">region</span></a>
+        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $regions[0]->name; ?></span></a> / 
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league"><span itemprop="name">league</span></a>
+        <a itemprop="item" href="/region/league"><span itemprop="name"><?php echo $leagues[0]->name; ?></span></a> / 
         <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league/team"><span itemprop="name">team</span></a>
+        <a itemprop="item" href="/region/league/team"><span itemprop="name"><?php echo $teams[0]->name; ?></span></a> / 
         <meta itemprop="position" content="3" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">

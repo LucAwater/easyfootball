@@ -790,18 +790,15 @@ article a, article button {
     border-color: black; }
 
 nav a, nav button {
-  padding-bottom: 0;
   color: black;
   text-decoration: none;
   border-bottom: thin solid transparent; }
   nav a:hover, nav button:hover, nav a:focus, nav button:focus {
-    padding-bottom: 5px;
     border-bottom: thin solid black; }
 
 nav .current_page_parent a, nav .current_page_parent button,
 nav .current-menu-item a,
 nav .current-menu-item button {
-  padding-bottom: 5px;
   border-bottom: thin solid black; }
 
 html,
@@ -933,6 +930,9 @@ nav ul {
 
 nav ul li.current {
   text-decoration: underline; }
+
+#breadcrumb li {
+  display: inline-block; }
 
 .arrow {
   -moz-transform: rotate(45deg);

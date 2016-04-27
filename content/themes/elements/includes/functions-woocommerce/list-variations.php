@@ -10,6 +10,7 @@ function list_variations() {
     foreach($variations as $var){
       $varId = $var['variation_id'];
       $name = $var['attributes']['attribute_pa_seating'];
+      $name = preg_replace('/-/', ' ', $name);
       $price = $var['display_regular_price'];
       ?>
       <li>
