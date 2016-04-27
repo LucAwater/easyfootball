@@ -5,9 +5,10 @@
 
 // Includes
 require_once('includes/scripts.php');
-require_once('includes/tax-region.php');
-require_once('includes/tax-league.php');
-require_once('includes/tax-team.php');
+require_once('includes/admin/importer.php');
+require_once('includes/admin/tax-region.php');
+require_once('includes/admin/tax-league.php');
+require_once('includes/admin/tax-team.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
@@ -23,14 +24,19 @@ require_once('includes/functions-woocommerce/breadcrumb.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 
 /*
- * Import data for regions, leagues and teams
+ * Import data for regions, leagues and teams.
  *
- * Keep commented out until used for bulk changes in terms
+ * update_field() makes sure that the scripts only run once, as it's processing heavy.
  */
-// require_once('includes/functions-woocommerce/data-regions.php');
-// require_once('includes/functions-woocommerce/data-teams.php');
-// require_once('includes/functions-woocommerce/data-leagues.php');
-// require_once('includes/functions-woocommerce/import-taxonomies.php');
+$import_init = get_field('importer_init', 'option');
+update_field('field_5720b5880d265', 0, 'option');
+
+if( $import_init ){
+  require_once('includes/functions-woocommerce/data-regions.php');
+  require_once('includes/functions-woocommerce/data-teams.php');
+  require_once('includes/functions-woocommerce/data-leagues.php');
+  require_once('includes/functions-woocommerce/import-taxonomies.php');
+}
 
 // Add support for WooCommerce
 add_action( 'after_setup_theme', 'woocommerce_support' );
