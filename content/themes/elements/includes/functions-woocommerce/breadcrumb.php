@@ -40,9 +40,9 @@ function get_breadcrumb(){
     $region_name = get_field('arena_location_country', $post_id);
     $region_slug = preg_replace('/\s+/', '-', $region_name);
 
-    $league = get_field('league', $post_id);
-    $league_name = $league->name;
-    $league_slug = $league->slug;
+    $leagues = get_field('team_parentLeagues', $post_id);
+    $league_name = $leagues[0]->name;
+    $league_slug = $leagues[0]->slug;
 
     $team_name = $term->name;
     ?>
