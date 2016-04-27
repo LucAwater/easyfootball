@@ -16,64 +16,81 @@ function get_breadcrumb(){
 
   <?php } elseif( $term->taxonomy == 'league' ){
     $post_id = $term->taxonomy . '_' . $term->term_id;
+
     $region = get_field('league_region', $post_id);
-    $region = $region->name;
-    $league = $term->name;
+    $region_name = $region->name;
+    $region_slug = $region->slug;
+
+    $league_name = $term->name;
     ?>
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><span itemprop="name"><?php echo $region_name; ?></span></a> /
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <p itemprop="item"><span itemprop="name"><?php echo $league; ?></span></p>
+        <p itemprop="item"><span itemprop="name"><?php echo $league_name; ?></span></p>
         <meta itemprop="position" content="2" />
       </li>
     </nav>
 
   <?php } elseif( $term->taxonomy == 'team' ){
     $post_id = $term->taxonomy . '_' . $term->term_id;
-    $region = get_field('arena_location_country', $post_id);
+
+    $region_name = get_field('arena_location_country', $post_id);
+    $region_slug = preg_replace('/\s+/', '-', $region_name);
+
     $league = get_field('league', $post_id);
-    $league = $league->name;
-    $team = $term->name;
+    $league_name = $league->name;
+    $league_slug = $league->slug;
+
+    $team_name = $term->name;
     ?>
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $region; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><span itemprop="name"><?php echo $region_name; ?></span></a> /
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league"><span itemprop="name"><?php echo $league; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><span itemprop="name"><?php echo $league_name; ?></span></a> /
         <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <p itemprop="item"><span itemprop="name"><?php echo $team; ?></span></p>
+        <p itemprop="item"><span itemprop="name"><?php echo $team_name; ?></span></p>
         <meta itemprop="position" content="3" />
       </li>
     </nav>
 
   <?php } elseif( is_product() ){
-    $match = get_the_title();
+    $match_name = get_the_title();
+
     $regions = get_the_terms( get_the_ID(), 'region' );
+    $region_name = $regions[0]->name;
+    $region_slug = $regions[0]->slug;
+
     $leagues = get_the_terms( get_the_ID(), 'league' );
+    $league_name = $leagues[0]->name;
+    $league_slug = $leagues[0]->slug;
+
     $teams = get_the_terms( get_the_ID(), 'team' );
+    $team_name = $teams[0]->name;
+    $team_slug = $teams[0]->slug;
     ?>
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region"><span itemprop="name"><?php echo $regions[0]->name; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><span itemprop="name"><?php echo $region_name; ?></span></a> /
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league"><span itemprop="name"><?php echo $leagues[0]->name; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><span itemprop="name"><?php echo $league_name; ?></span></a> /
         <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="/region/league/team"><span itemprop="name"><?php echo $teams[0]->name; ?></span></a> / 
+        <a itemprop="item" href="<?php echo home_url() . '/team/' . $team_slug; ?>"><span itemprop="name"><?php echo $team_name; ?></span></a> /
         <meta itemprop="position" content="3" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <p itemprop="item"><span itemprop="name"><?php echo $match; ?></span></p>
+        <p itemprop="item"><span itemprop="name"><?php echo $match_name; ?></span></p>
         <meta itemprop="position" content="4" />
       </li>
     </nav>
