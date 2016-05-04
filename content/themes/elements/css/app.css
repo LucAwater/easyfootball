@@ -15,7 +15,6 @@
 /*
  * 3. Media queries
  */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
 [class*="grid-"] {
   display: block;
   *zoom: 1; }
@@ -743,24 +742,26 @@ ul {
   width: calc( 100% + 1.875rem );
   margin-left: -0.9375rem; }
 
-h1, h2, p, span,
+h1, h2, h3, p, span,
 time, a, button, body > header form[role="search"] input[type="search"] {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Gotham A", "Gotham B";
   font-style: normal;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
   font-weight: normal; }
-  h1.is_bold, h2.is_bold, p.is_bold, span.is_bold,
-  time.is_bold, a.is_bold, button.is_bold, body > header form[role="search"] input.is_bold[type="search"] {
-    font-weight: 600; }
 
 h1 {
-  font-size: 4.5em; }
+  font-size: 40px;
+  font-weight: 700; }
 
 article h1 {
   font-size: 2.5em; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 30px; }
+
+h3 {
+  font-size: 25px; }
 
 article p {
   margin-bottom: 1em;
@@ -773,7 +774,6 @@ a, button {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  font-size: 1em;
   color: #888888;
   text-decoration: none;
   cursor: pointer; }
@@ -1586,37 +1586,37 @@ section.image .section-body.is-pos-center {
 section.image .section-body.is-pos-right {
   text-align: right; }
 
-h1.is-italic, h2.is-italic, p.is-italic, span.is-italic,
+h1.is-italic, h2.is-italic, h3.is-italic, p.is-italic, span.is-italic,
 time.is-italic, a.is-italic, button.is-italic, body > header form[role="search"] input.is-italic[type="search"] {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, p.is-underlined, span.is-underlined,
+h1.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, span.is-underlined,
 time.is-underlined, a.is-underlined, button.is-underlined, body > header form[role="search"] input.is-underlined[type="search"] {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, p.is-capitalized, span.is-capitalized,
+h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, span.is-capitalized,
 time.is-capitalized, a.is-capitalized, button.is-capitalized, body > header form[role="search"] input.is-capitalized[type="search"] {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, p.is-uppercase, span.is-uppercase,
+h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, span.is-uppercase,
 time.is-uppercase, a.is-uppercase, button.is-uppercase, body > header form[role="search"] input.is-uppercase[type="search"] {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, p.is-lowercase, span.is-lowercase,
+h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, span.is-lowercase,
 time.is-lowercase, a.is-lowercase, button.is-lowercase, body > header form[role="search"] input.is-lowercase[type="search"] {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, p.is-bold, span.is-bold,
+h1.is-bold, h2.is-bold, h3.is-bold, p.is-bold, span.is-bold,
 time.is-bold, a.is-bold, button.is-bold, body > header form[role="search"] input.is-bold[type="search"] {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, span.is-aligned-center,
+h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, span.is-aligned-center,
 time.is-aligned-center, a.is-aligned-center, button.is-aligned-center, body > header form[role="search"] input.is-aligned-center[type="search"] {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, span.is-aligned-left,
+h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, span.is-aligned-left,
 time.is-aligned-left, a.is-aligned-left, button.is-aligned-left, body > header form[role="search"] input.is-aligned-left[type="search"] {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, span.is-aligned-right,
+h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, span.is-aligned-right,
 time.is-aligned-right, a.is-aligned-right, button.is-aligned-right, body > header form[role="search"] input.is-aligned-right[type="search"] {
   text-align: right; }
-h1.is-black, h2.is-black, p.is-black, span.is-black,
+h1.is-black, h2.is-black, h3.is-black, p.is-black, span.is-black,
 time.is-black, a.is-black, button.is-black, body > header form[role="search"] input.is-black[type="search"] {
   color: black; }
-h1.is-white, h2.is-white, p.is-white, span.is-white,
+h1.is-white, h2.is-white, h3.is-white, p.is-white, span.is-white,
 time.is-white, a.is-white, button.is-white, body > header form[role="search"] input.is-white[type="search"] {
   color: white; }
 

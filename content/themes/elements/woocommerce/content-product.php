@@ -68,12 +68,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
   // Match title
   echo '<div class="list-item-40">';
-  	/**
-  	 * woocommerce_shop_loop_item_title hook.
-  	 *
-  	 * @hooked woocommerce_template_loop_product_title - 10
-  	 */
-  	do_action( 'woocommerce_shop_loop_item_title' );
+  	echo '<p>' . get_the_title() . '</p>';
   echo '</div>';
 
   // Match date
