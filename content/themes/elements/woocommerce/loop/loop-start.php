@@ -22,8 +22,6 @@ global $wp_query;
 $term =	$wp_query->queried_object;
 ?>
 
-<?php get_breadcrumb(); ?>
-
 <?php if( is_page('regions') ): ?>
   <ul class="products list-col">
     <li class="list-col-head">

@@ -6,7 +6,9 @@ function data_get_teams(){
   $regions = array();
   $leagues = array();
   $teams = array();
-  $handle = fopen(get_template_directory() . "/data/easyfootball-teams.csv", "r");
+  $data_file = get_field('importer_file', 'option');
+  $data_file_link = $data_file['url'];
+  $handle = fopen($data_file_link, "r");
 
   // Loop through rows of csv file
   while (($data = fgetcsv($handle, ";")) !== FALSE) {

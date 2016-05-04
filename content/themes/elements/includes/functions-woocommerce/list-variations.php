@@ -9,7 +9,7 @@ function list_variations() {
   } else {
     foreach($variations as $var){
       $varId = $var['variation_id'];
-      $name = $var['attributes']['attribute_pa_seating'];
+      $name = $var['attributes']['attribute_seating'];
       $name = preg_replace('/-/', ' ', $name);
       $price = $var['display_regular_price'];
       ?>
@@ -23,7 +23,7 @@ function list_variations() {
           </div>
 
           <div class="list-item-20 add-to-cart">
-            <select hidden name="attribute_pa_seating" data-attribute_name="attribute_pa_seating">
+            <select hidden name="attribute_seating" data-attribute_name="attribute_seating">
               <option value="<?php echo $name; ?>" selected="selected"></option>
             </select>
 

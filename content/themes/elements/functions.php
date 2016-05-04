@@ -28,6 +28,7 @@ require_once('includes/functions-woocommerce/list-variations.php');
  *
  * update_field() makes sure that the scripts only run once, as it's processing heavy.
  */
+
 $import_init = get_field('importer_init', 'option');
 update_field('field_5720b5880d265', 0, 'option');
 
