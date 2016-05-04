@@ -811,9 +811,6 @@ body > header,
 body > footer {
   padding: 0 6.25rem; }
 
-main {
-  padding-top: 100px; }
-
 main > * {
   padding: 3.125rem 6.25rem; }
   main > *:first-child {
@@ -834,10 +831,12 @@ main > * {
       padding-bottom: 3.75rem; } }
 main {
   z-index: 900;
+  max-width: 1200px;
   height: auto !important;
   height: 100%;
   min-height: 100%;
   overflow: hidden;
+  margin: auto;
   background-color: white; }
 
 body > header {

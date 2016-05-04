@@ -41,9 +41,6 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.png">
     </a>
 
-    <!-- <input type="search" name="search" placeholder="Search league, team, competition...">
-    <button type="submit" ></button> -->
-
     <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
       <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 

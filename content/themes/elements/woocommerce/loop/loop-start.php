@@ -28,13 +28,13 @@ $term =	$wp_query->queried_object;
       <p class="list-item-40">Country</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $term->taxonomy == 'region' ): ?>
+<?php elseif( $term && $term->taxonomy == 'region' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">League</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $term->taxonomy == 'league' ): ?>
+<?php elseif( $term && $term->taxonomy == 'league' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">Team</p>
@@ -42,7 +42,7 @@ $term =	$wp_query->queried_object;
       <p class="list-item-20">City</p>
       <p class="list-item-20"></p>
     </li>
-<?php elseif( $term->taxonomy == 'team' ): ?>
+<?php elseif( $term && $term->taxonomy == 'team' ): ?>
   <ul class="products list-col">
     <li class="list-col-head">
       <p class="list-item-40">Match</p>
@@ -51,5 +51,5 @@ $term =	$wp_query->queried_object;
       <p class="list-item-20"></p>
     </li>
 <?php else: ?>
-  <ul class="products">
+  <ul class="products list-col">
 <?php endif; ?>

@@ -1,6 +1,8 @@
 <?php
 get_header();
 
+$term =	$wp_query->queried_object;
+
 /**
  * woocommerce_before_main_content hook.
  *
@@ -9,12 +11,16 @@ get_header();
  */
 do_action( 'woocommerce_before_main_content' );
 
+/**
+ * League intro
+ */
+echo '<h2>' . $term->name . '</h2>';
+
 /*
  * Get children by custom field
  *
  * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
  */
-$term =	$wp_query->queried_object;
 
 $children = get_field('league_children', $term);
 
