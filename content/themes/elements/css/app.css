@@ -747,7 +747,7 @@ ul {
   width: calc( 100% + 1.875rem );
   margin-left: -0.9375rem; }
 
-h1, h2, h3, p, span,
+h1, h2, h3, p, p .read-more, span,
 time, a, button, body > header form[role="search"] input[type="search"] {
   font-family: "Gotham A", "Gotham B";
   font-style: normal;
@@ -768,10 +768,14 @@ h2 {
 h3 {
   font-size: 25px; }
 
-p {
+p, p .read-more {
   line-height: 1.6; }
 
-article p {
+p .read-more {
+  color: black;
+  text-decoration: underline; }
+
+article p, article p .read-more, p article .read-more {
   margin-bottom: 1em;
   font-size: 18px;
   line-height: 1.6; }
@@ -898,7 +902,7 @@ body > footer {
   padding-top: 20px;
   padding-bottom: 20px;
   background: black; }
-  body > footer p, body > footer a, body > footer button {
+  body > footer p, body > footer p .read-more, p body > footer .read-more, body > footer a, body > footer button {
     color: white; }
 
 body.error404 #error404-content {
@@ -906,7 +910,7 @@ body.error404 #error404-content {
   margin: 100px auto;
   display: block !important;
   background-color: transparent; }
-  body.error404 #error404-content h2, body.error404 #error404-content p {
+  body.error404 #error404-content h2, body.error404 #error404-content p, body.error404 #error404-content p .read-more, p body.error404 #error404-content .read-more {
     margin-bottom: 1em; }
 
 a.trigger-menu, button.trigger-menu {
@@ -962,8 +966,11 @@ nav ul {
 nav ul li.current {
   text-decoration: underline; }
 
-#breadcrumb li {
-  display: inline-block; }
+#breadcrumb {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  #breadcrumb li {
+    display: inline-block; }
 
 .arrow {
   -moz-transform: rotate(45deg);
@@ -1234,6 +1241,8 @@ section.text .section-body {
   margin: auto; }
   section.text .section-body h2,
   section.text .section-body p,
+  section.text .section-body p .read-more,
+  p section.text .section-body .read-more,
   section.text .section-body a,
   section.text .section-body button {
     margin-bottom: 1em; }
@@ -1594,41 +1603,41 @@ section.image .section-body.is-pos-center {
 section.image .section-body.is-pos-right {
   text-align: right; }
 
-h1.is-italic, h2.is-italic, h3.is-italic, p.is-italic, span.is-italic,
+h1.is-italic, h2.is-italic, h3.is-italic, p.is-italic, p .is-italic.read-more, span.is-italic,
 time.is-italic, a.is-italic, button.is-italic, body > header form[role="search"] input.is-italic[type="search"] {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, span.is-underlined,
+h1.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, p .is-underlined.read-more, span.is-underlined,
 time.is-underlined, a.is-underlined, button.is-underlined, body > header form[role="search"] input.is-underlined[type="search"] {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, span.is-capitalized,
+h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, span.is-capitalized,
 time.is-capitalized, a.is-capitalized, button.is-capitalized, body > header form[role="search"] input.is-capitalized[type="search"] {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, span.is-uppercase,
+h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, span.is-uppercase,
 time.is-uppercase, a.is-uppercase, button.is-uppercase, body > header form[role="search"] input.is-uppercase[type="search"] {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, span.is-lowercase,
+h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, span.is-lowercase,
 time.is-lowercase, a.is-lowercase, button.is-lowercase, body > header form[role="search"] input.is-lowercase[type="search"] {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, h3.is-bold, p.is-bold, span.is-bold,
+h1.is-bold, h2.is-bold, h3.is-bold, p.is-bold, p .is-bold.read-more, span.is-bold,
 time.is-bold, a.is-bold, button.is-bold, body > header form[role="search"] input.is-bold[type="search"] {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, span.is-aligned-center,
+h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, span.is-aligned-center,
 time.is-aligned-center, a.is-aligned-center, button.is-aligned-center, body > header form[role="search"] input.is-aligned-center[type="search"] {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, span.is-aligned-left,
+h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, span.is-aligned-left,
 time.is-aligned-left, a.is-aligned-left, button.is-aligned-left, body > header form[role="search"] input.is-aligned-left[type="search"] {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, span.is-aligned-right,
+h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, span.is-aligned-right,
 time.is-aligned-right, a.is-aligned-right, button.is-aligned-right, body > header form[role="search"] input.is-aligned-right[type="search"] {
   text-align: right; }
-h1.is-black, h2.is-black, h3.is-black, p.is-black, span.is-black,
+h1.is-black, h2.is-black, h3.is-black, p.is-black, p .is-black.read-more, span.is-black,
 time.is-black, a.is-black, button.is-black, body > header form[role="search"] input.is-black[type="search"] {
   color: black; }
-h1.is-white, h2.is-white, h3.is-white, p.is-white, span.is-white,
+h1.is-white, h2.is-white, h3.is-white, p.is-white, p .is-white.read-more, span.is-white,
 time.is-white, a.is-white, button.is-white, body > header form[role="search"] input.is-white[type="search"] {
   color: white; }
 
-p.is-small {
+p.is-small, p .is-small.read-more {
   font-size: 15px; }
 
 .is-stretched-wrapper {
@@ -1712,3 +1721,20 @@ body.is-mobile.is-loading > * {
   width: calc(100% - 250px);
   padding-left: 40px;
   margin-bottom: 40px; }
+
+body.single-product .summary h1 {
+  margin-bottom: 40px; }
+body.single-product .summary .product-info {
+  width: 100%;
+  margin-bottom: 40px;
+  display: inline-block; }
+  body.single-product .summary .product-info > div {
+    float: left;
+    width: calc(100% - 350px);
+    padding-right: 40px; }
+    body.single-product .summary .product-info > div .product-description {
+      margin-bottom: 1em; }
+  body.single-product .summary .product-info figure {
+    float: left;
+    width: 350px;
+    height: 250px; }

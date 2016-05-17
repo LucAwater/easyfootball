@@ -45,6 +45,12 @@ function woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
 
+// Customize excerpt
+function wpdocs_excerpt_more( $more ) {
+  return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 // Remove WooCommerce page titles
 add_filter( 'woocommerce_show_page_title', function() { return false; } );
 

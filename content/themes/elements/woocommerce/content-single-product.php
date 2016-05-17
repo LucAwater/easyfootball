@@ -47,25 +47,15 @@ global $product;
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-  <?php get_breadcrumb(); ?>
-
 	<div class="summary entry-summary">
 
     <div class="product-info">
-  		<?php
-  			/**
-  			 * woocommerce_single_product_summary hook.
-  			 *
-  			 * @hooked woocommerce_template_single_title - 5
-  			 * @hooked woocommerce_template_single_rating - 10
-  			 * @hooked woocommerce_template_single_price - 10
-  			 * @hooked woocommerce_template_single_excerpt - 20
-  			 * @hooked woocommerce_template_single_add_to_cart - 30
-  			 * @hooked woocommerce_template_single_meta - 40
-  			 * @hooked woocommerce_template_single_sharing - 50
-  			 */
-  			do_action( 'woocommerce_single_product_summary' );
+      <h1 itemprop="name"><?php the_title(); ?></h1>
 
+      <div>
+        <div class="product-description excerpt"><?php echo wpautop( get_the_excerpt() ); ?></div>
+
+        <?php
         // Get match data from custom fields of product
         $match_date = get_field('match_date', false, false);
         $match_date = new DateTime($match_date);
@@ -94,16 +84,21 @@ global $product;
         if( $match_date || $match_time || $match_location ):
           echo '<ul>';
             if( $match_date )
-              echo '<li><p><span>Date: </span>' . $match_date->format('l, j F Y') . '</p></li>';
+              echo '<li><p><strong>Date: </strong>' . $match_date->format('l, j F Y') . '</p></li>';
 
             if( $match_time )
-              echo '<li><p><span>Date: </span>' . $match_time . '</p></li>';
+              echo '<li><p><strong>Time: </strong>' . $match_time . '</p></li>';
 
             if( $arena_name && $arena_location_city && $arena_location_country )
-              echo '<li><p><span>Location: </span>' . $arena_location . '</p></li>';
+              echo '<li><p><strong>Location: </strong>' . $arena_location . '</p></li>';
           echo '</ul>';
         endif;
         ?>
+      </div>
+
+      <figure class="product-seating">
+        <!-- Seating map of stadium -->
+      </figure>
     </div>
 
     <?php

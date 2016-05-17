@@ -29,7 +29,7 @@
 
   <!-- Fonts from Typography.com -->
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6711094/6333752/css/fonts.css" />
-  
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
@@ -53,3 +53,4 @@
 
   <!-- Main content -->
   <main role="main">
+    <?php get_breadcrumb(); ?>

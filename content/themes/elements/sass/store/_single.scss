@@ -1,0 +1,31 @@
+body.single-product{
+  .summary{
+    h1{
+      margin-bottom: 40px;
+    }
+
+    .product-info{
+      width: 100%;
+      margin-bottom: 40px;
+      display: inline-block;
+
+      > div{
+        float: left;
+
+        width: calc(100% - 350px);
+        padding-right: 40px;
+
+        .product-description{
+          margin-bottom: 1em;
+        }
+      }
+
+      figure{
+        float: left;
+
+        width: 350px;
+        height: 250px;
+      }
+    }
+  }
+}
