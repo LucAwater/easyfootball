@@ -2,7 +2,11 @@
 get_header();
 
 if( have_posts() ):
-  get_template_part( 'archive' );
+  if( is_front_page() ):
+
+  else:
+    get_template_part( 'archive' );
+  endif;
 endif;
 
 get_footer();

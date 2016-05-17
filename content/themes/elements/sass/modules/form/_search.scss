@@ -4,16 +4,20 @@ form[role="search"]{
   height: 40px;
 
   ::-webkit-input-placeholder{
-    color: darken($green-dark, 20%);
+    @include font-smoothing(antialiased);
+    color: $white;
   }
   :-moz-placeholder{
-    color: darken($green-dark, 20%);
+    @include font-smoothing(antialiased);
+    color: $white;
   }
   ::-moz-placeholder{
-    color: darken($green-dark, 20%);
+    @include font-smoothing(antialiased);
+    color: $white;
   }
   :-ms-input-placeholder {
-    color: darken($green-dark, 20%);
+    @include font-smoothing(antialiased);
+    color: $white;
   }
 
   input[type="search"]{
