@@ -35,6 +35,7 @@
 
   "modules/form/_table",
   "modules/form/_button",
+  "modules/form/_search",
 
   "modules/slider/_slider",
   "modules/slider/_slider-bullets",
@@ -62,6 +63,7 @@
 
 // STORE
 @import
+  "store/_homepage",
   "store/_variations",
   "store/_taxonomy",
   "store/_single";

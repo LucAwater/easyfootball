@@ -40,27 +40,44 @@
 <body <?php body_class(); ?>>
   <!-- Header -->
   <header>
-    <a class="link-logo" href="<?php echo home_url(); ?>">
-      <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-blackwhite.png">
-    </a>
+    <div class="header-content">
+      <a class="link-logo" href="<?php echo home_url(); ?>">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-blackwhite.png">
+      </a>
 
-    <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-      <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
+      <?php if(! is_front_page() ): ?>
+        <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+          <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-      <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" /></button>
-    </form>
+          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" /></button>
+        </form>
+      <?php endif; ?>
 
-    <nav>
-      <ul>
-        <li><p>Lag</p></li>
-        <li><p>Ligor</p></li>
-        <li><p>Land</p></li>
-        <li><p>Turneringar</p></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><p>Lag</p></li>
+          <li><p>Ligor</p></li>
+          <li><p>Land</p></li>
+          <li><p>Turneringar</p></li>
+        </ul>
+      </nav>
 
-    <a class="button button-sec" href="">Help</a>
+      <a class="button button-sec" href="">Help</a>
+    </div>
   </header>
+
+  <?php if( is_front_page() ): ?>
+    <!-- Intro section for homepage w/ search form -->
+    <section id="intro-home">
+      <h1>Find your football match:</h1>
+
+      <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+        <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
+
+        <button type="submit">search</button>
+      </form>
+    </section>
+  <?php endif; ?>
 
   <!-- Main content -->
   <main role="main">
