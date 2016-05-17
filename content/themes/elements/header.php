@@ -41,16 +41,27 @@
   <!-- Header -->
   <header>
     <a class="link-logo" href="<?php echo home_url(); ?>">
-      <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.png">
+      <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-blackwhite.png">
     </a>
 
     <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
       <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-      <button type="submit"></button>
+      <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" /></button>
     </form>
+
+    <nav>
+      <ul>
+        <li><p>Lag</p></li>
+        <li><p>Ligor</p></li>
+        <li><p>Land</p></li>
+        <li><p>Turneringar</p></li>
+      </ul>
+    </nav>
+
+    <a class="button button-sec" href="">Help</a>
   </header>
 
   <!-- Main content -->
   <main role="main">
-    <?php get_breadcrumb(); ?>
+    <?php if( is_product() ){ get_breadcrumb(); } ?>

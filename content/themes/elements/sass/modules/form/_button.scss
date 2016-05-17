@@ -8,6 +8,7 @@ button{
 button,
 .button{
   @include transition( .2s );
+  @include font-smoothing( antialiased );
 
   overflow: hidden;
 
@@ -27,6 +28,15 @@ button,
   &:focus{
     color: $white;
     background-color: $green-dark;
+  }
+
+  &.button-sec{
+    background-color: $green-dark;
+
+    &:hover,
+    &:focus{
+      background-color: darken($green-dark, 10%);
+    }
   }
 }
 
