@@ -726,6 +726,11 @@ html {
 *:after {
   box-sizing: inherit; }
 
+figure {
+  background-color: #f4f4f4; }
+  figure img {
+    display: block; }
+
 img {
   max-width: 100%;
   height: auto; }
@@ -762,6 +767,9 @@ h2 {
 
 h3 {
   font-size: 25px; }
+
+p {
+  line-height: 1.6; }
 
 article p {
   margin-bottom: 1em;
@@ -1686,3 +1694,21 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 500px) {
   .is-fullwidth {
     margin-left: -3.75rem; } }
+.tax-region section.taxonomy-header h2,
+.tax-league section.taxonomy-header h2,
+.tax-team section.taxonomy-header h2 {
+  margin-bottom: 40px; }
+.tax-region section.taxonomy-header figure,
+.tax-league section.taxonomy-header figure,
+.tax-team section.taxonomy-header figure {
+  float: left;
+  width: 250px;
+  height: 150px;
+  margin-bottom: 40px; }
+.tax-region section.taxonomy-header div,
+.tax-league section.taxonomy-header div,
+.tax-team section.taxonomy-header div {
+  float: left;
+  width: calc(100% - 250px);
+  padding-left: 40px;
+  margin-bottom: 40px; }

@@ -14,8 +14,10 @@ do_action( 'woocommerce_before_main_content' );
 /**
  * Team intro
  */
-echo '<h2>' . $term->name . '</h2>';
+get_template_part( 'taxonomy', 'header' );
+?>
 
+<?php
 if ( have_posts() ) :
   woocommerce_product_loop_start();
     woocommerce_product_subcategories();

@@ -2,7 +2,6 @@
 get_header();
 
 $term =	$wp_query->queried_object;
-
 /**
  * woocommerce_before_main_content hook.
  *
@@ -14,8 +13,10 @@ do_action( 'woocommerce_before_main_content' );
 /**
  * League intro
  */
-echo '<h2>' . $term->name . '</h2>';
+get_template_part( 'taxonomy', 'header' );
+?>
 
+<?php
 /*
  * Get children by custom field
  *

@@ -14,8 +14,10 @@ do_action( 'woocommerce_before_main_content' );
 /**
  * Region intro
  */
-echo '<h2>' . $term->name . '</h2>';
+get_template_part( 'taxonomy', 'header' );
+?>
 
+<?php
 /*
  * Get children by custom field
  *

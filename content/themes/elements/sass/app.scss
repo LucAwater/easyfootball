@@ -5,10 +5,10 @@
 
 // BASE
 @import
+  "base/_colors",
   "base/_reset",
   "base/_mixins",
   "base/_flexbox",
-  "base/_colors",
 
   "base/typo/_fonts",
   "base/typo/_typography",
@@ -62,4 +62,5 @@
 
 // STORE
 @import
-  "store/_variations";
+  "store/_variations",
+  "store/_taxonomy";
