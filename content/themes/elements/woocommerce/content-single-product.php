@@ -97,7 +97,9 @@ global $product;
       </div>
 
       <figure class="product-seating">
-        <!-- Seating map of stadium -->
+        <?php $map = get_field('seating_map', $category_term); ?>
+
+        <img src="<?php echo $map['sizes']['medium']; ?>" width="<?php echo $map['sizes']['medium-width']; ?>" height="<?php echo $map['sizes']['medium-height']; ?>" />
       </figure>
     </div>
 
@@ -115,14 +117,6 @@ global $product;
       $category_tax = $category->taxonomy;
       $category_id = $category->term_id;
       $category_term = $category_tax . '_' . $category_id;
-
-      // Get custom field for arena seating map
-      $map = get_field('seating_map', $category_term);
-
-      echo
-      '<figure>
-        <img src="' . $map['sizes']['medium'] . '" width="' . $map['sizes']['medium-width'] . '" height="' . $map['sizes']['medium-height'] . '">
-      </figure>';
     }
     ?>
 

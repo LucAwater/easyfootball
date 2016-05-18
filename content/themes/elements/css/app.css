@@ -1801,7 +1801,6 @@ body.home section#intro-home {
 .tax-team section.taxonomy-header figure {
   float: left;
   width: 250px;
-  height: 150px;
   margin-bottom: 40px; }
 .tax-region section.taxonomy-header div,
 .tax-league section.taxonomy-header div,
@@ -1825,5 +1824,4 @@ body.single-product .summary .product-info {
       margin-bottom: 1em; }
   body.single-product .summary .product-info figure {
     float: left;
-    width: 350px;
-    height: 250px; }
+    width: 350px; }
