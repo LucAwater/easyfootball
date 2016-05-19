@@ -16,6 +16,7 @@ require_once('includes/functions-template/section.php');
 require_once('includes/functions-template/section-header.php');
 require_once('includes/functions-template/section-grid.php');
 require_once('includes/functions-template/section-slider.php');
+require_once('includes/functions-template/page-header.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
