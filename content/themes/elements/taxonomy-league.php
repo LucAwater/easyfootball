@@ -43,7 +43,7 @@ $region_leagues = get_field( 'region_leagues', $region_id );
       </ul>
     </div>
 
-    <div>
+    <!-- <div>
       <h4 class="aside-subheader">Top Games</h4>
 
       <ul>
@@ -62,7 +62,7 @@ $region_leagues = get_field( 'region_leagues', $region_id );
           <small>21 July 2016 at 16:00</small>
         </li>
       </ul>
-    </div>
+    </div> -->
   </aside>
 <?php endif; ?>
 

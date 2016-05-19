@@ -53,14 +53,7 @@
         </form>
       <?php endif; ?>
 
-      <nav>
-        <ul>
-          <li><p>Lag</p></li>
-          <li><p>Ligor</p></li>
-          <li><p>Land</p></li>
-          <li><p>Turneringar</p></li>
-        </ul>
-      </nav>
+      <?php include_once( 'includes/nav.php' ); ?>
 
       <a class="button button-sec" href="">Help</a>
     </div>

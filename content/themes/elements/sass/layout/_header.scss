@@ -45,13 +45,12 @@ body > header{
 
     // Nav
     nav{
-      ul{
+      > ul{
         > li{
-          p{
+          > p{
             color: $white;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            cursor: pointer;
           }
         }
       }
