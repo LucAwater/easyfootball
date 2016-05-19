@@ -10,8 +10,8 @@ aside{
 
     .aside-subheader{
       height: 40px;
-      margin-left: -20px;
-      padding-left: 20px;
+      // margin-left: -20px;
+      // padding-left: 20px;
 
       line-height: 40px;
       border-bottom: thin solid $grey;
@@ -21,7 +21,7 @@ aside{
       padding: 10px 0;
 
       li{
-        padding: 10px 0;
+        padding: 5px 0;
 
         small{
           display: block;

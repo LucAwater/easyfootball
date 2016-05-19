@@ -6,17 +6,32 @@ body > footer{
 main{
   max-width: 1100px;
   margin: auto;
+
+  .content-container{
+    float: left;
+
+    width: 100%;
+    max-width: 800px;
+    padding-right: 40px;
+
+    border-right: thin solid $grey;
+  }
+
+  aside{
+    padding-top: $space-section;
+    padding-left: 40px;
+  }
 }
 
 main > *{
-  margin: ($space-section / 2) 0;
+  padding: ($space-section / 2) 0;
 
   &:first-child{
-    margin-top: $space-section;
+    padding-top: $space-section;
   }
 
   &:last-child{
-    margin-bottom: $space-section;
+    padding-bottom: $space-section;
   }
 }
 
@@ -27,14 +42,14 @@ main > *{
   }
 
   main > *{
-    margin: $space-section-small 0;
+    padding: $space-section-small 0;
 
     &:first-child{
-      margin-top: $space-section-small;
+      padding-top: $space-section-small;
     }
 
     &:last-child{
-      margin-bottom: $space-section-small;
+      padding-bottom: $space-section-small;
     }
   }
 }

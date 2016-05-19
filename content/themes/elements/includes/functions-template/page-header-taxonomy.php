@@ -4,7 +4,7 @@
  *
  * Called in taxonomy templates for regions, leagues and teams
  */
-
+global $wp_query;
 $term =	$wp_query->queried_object;
 
 $term_acf = $term->taxonomy . '_' . $term->term_id;

@@ -3,5 +3,9 @@ function page_header() {
   if( is_front_page() ):
     include_once('page-header-home.php');
   endif;
+
+  if( is_tax() ):
+    include('page-header-taxonomy.php');
+  endif;
 }
 ?>

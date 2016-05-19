@@ -2,6 +2,10 @@
   float: left;
 
   max-width: 800px;
+
+  h2, h3, h4{
+    margin-bottom: 15px;
+  }
 }
 
 @for $i from 1 through 10{
