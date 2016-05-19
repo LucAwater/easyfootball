@@ -1,5 +1,5 @@
 <!-- Intro section for homepage w/ search form -->
-<section class="page-header" id="intro-home">
+<section class="page-header page-header-home" id="intro-home">
   <h1>Find your football match</h1>
 
   <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">

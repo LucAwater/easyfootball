@@ -23,33 +23,41 @@ $term =	$wp_query->queried_object;
 ?>
 
 <?php if( is_page('regions') ): ?>
-  <ul class="products list list-col">
-    <li class="list-col-head">
-      <p class="list-item-40">Country</p>
-      <p class="list-item-20"></p>
-    </li>
+  <section class="regions">
+    <ul class="list list-col">
+      <li class="list-col-head">
+        <p class="list-item-40">Country</p>
+        <p class="list-item-20"></p>
+      </li>
 <?php elseif( $term && $term->taxonomy == 'region' ): ?>
-  <ul class="products list list-col">
-    <li class="list-col-head">
-      <p class="list-item-40">League</p>
-      <p class="list-item-20"></p>
-    </li>
+  <section class="leagues">
+    <h3>All leagues in <?php echo $term->name; ?></h3>
+    <ul class="list list-col">
+      <li class="list-col-head">
+        <p class="list-item-40">League</p>
+        <p class="list-item-20"></p>
+      </li>
 <?php elseif( $term && $term->taxonomy == 'league' ): ?>
-  <ul class="products list list-col">
-    <li class="list-col-head">
-      <p class="list-item-40">Team</p>
-      <p class="list-item-20">Arena</p>
-      <p class="list-item-20">City</p>
-      <p class="list-item-20"></p>
-    </li>
+  <section class="teams">
+    <h3>All teams in <?php echo $term->name; ?></h3>
+    <ul class="list list-col">
+      <li class="list-col-head">
+        <p class="list-item-40">Team</p>
+        <p class="list-item-20">Arena</p>
+        <p class="list-item-20">City</p>
+        <p class="list-item-20"></p>
+      </li>
 <?php elseif( $term && $term->taxonomy == 'team' ): ?>
-  <ul class="products list list-col">
-    <li class="list-col-head">
-      <p class="list-item-40">Match</p>
-      <p class="list-item-20">Date</p>
-      <p class="list-item-20">Prices</p>
-      <p class="list-item-20"></p>
-    </li>
+  <section class="matches">
+    <h3>All matches for <?php echo $term->name; ?></h3>
+    <ul class="list list-col">
+      <li class="list-col-head">
+        <p class="list-item-40">Match</p>
+        <p class="list-item-20">Date</p>
+        <p class="list-item-20">Prices</p>
+        <p class="list-item-20"></p>
+      </li>
 <?php else: ?>
-  <ul class="products list list-col">
+  <section>
+    <ul class="list list-col">
 <?php endif; ?>

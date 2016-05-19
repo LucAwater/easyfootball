@@ -837,17 +837,18 @@ main {
     width: 100%;
     max-width: 800px;
     padding-right: 40px;
+    padding-bottom: 2.5rem;
     border-right: thin solid #e0e0e0; }
   main aside {
-    padding-top: 5rem;
+    padding-top: 2.5rem;
     padding-left: 40px; }
 
 main > * {
-  padding: 2.5rem 0; }
+  padding: 1.25rem 0; }
   main > *:first-child {
-    padding-top: 5rem; }
+    padding-top: 2.5rem; }
   main > *:last-child {
-    padding-bottom: 5rem; }
+    padding-bottom: 2.5rem; }
 
 @media only screen and (max-width: 500px) {
   body > header,
@@ -1027,6 +1028,15 @@ nav ul li.current {
   #breadcrumb li {
     display: inline-block; }
 
+section.page-header {
+  padding: 80px 0;
+  border-bottom: thin solid #e0e0e0; }
+  section.page-header .section-body {
+    height: auto;
+    overflow: hidden; }
+    section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
+      margin-bottom: 15px; }
+
 .arrow {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -1159,10 +1169,6 @@ aside {
   padding: 0 20px; }
   aside > div {
     margin-bottom: 40px; }
-    aside > div .aside-subheader {
-      height: 40px;
-      line-height: 40px;
-      border-bottom: thin solid #e0e0e0; }
     aside > div ul {
       padding: 10px 0; }
       aside > div ul li {
@@ -1377,14 +1383,13 @@ section {
   section .section-header,
   section .section-body {
     clear: both; }
-  section .section-header {
-    max-width: 700px;
-    margin-bottom: 2.5rem; }
+  section h2, section h3, section h4 {
+    margin-bottom: 1em; }
 
 section.hero {
   height: calc(100vh - 80px);
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   padding: 0;
   overflow: hidden; }
   section.hero .hero-banner {
@@ -1757,12 +1762,12 @@ section.has-extra-pad-top,
 .section-header.has-extra-pad-top,
 .section-body.has-extra-pad-top,
 .section-footer.has-extra-pad-top {
-  padding-top: 10rem; }
+  padding-top: 5rem; }
 section.has-extra-pad-bottom,
 .section-header.has-extra-pad-bottom,
 .section-body.has-extra-pad-bottom,
 .section-footer.has-extra-pad-bottom {
-  padding-bottom: 10rem; }
+  padding-bottom: 5rem; }
 
 section.image .section-body.is-pos-left {
   text-align: left; }
@@ -1909,27 +1914,16 @@ body.home section#intro-home {
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
         background-color: #27ae60; }
 
-.tax-region section.taxonomy-header h2,
-.tax-league section.taxonomy-header h2,
-.tax-team section.taxonomy-header h2 {
-  margin-bottom: 40px; }
-.tax-region section.taxonomy-header figure,
-.tax-league section.taxonomy-header figure,
-.tax-team section.taxonomy-header figure {
-  float: left;
-  width: 250px;
-  margin-bottom: 40px; }
-.tax-region section.taxonomy-header div,
-.tax-league section.taxonomy-header div,
-.tax-team section.taxonomy-header div {
-  float: left;
-  width: calc(100% - 250px);
-  padding-left: 40px;
-  margin-bottom: 40px; }
-.tax-region .list-col,
-.tax-league .list-col,
-.tax-team .list-col {
-  border-right: thin solid #e0e0e0; }
+section.page-header-taxonomy .section-body {
+  max-width: 1100px;
+  margin: auto; }
+  section.page-header-taxonomy .section-body figure {
+    float: left;
+    width: 250px; }
+  section.page-header-taxonomy .section-body div {
+    float: left;
+    width: calc(100% - 250px);
+    padding-left: 40px; }
 
 body.single-product .summary h1 {
   margin-bottom: 40px; }

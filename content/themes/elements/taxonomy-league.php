@@ -23,8 +23,6 @@ echo '<section class="content-container">';
 
   if( $children ):
 
-    echo '<h3>All teams in ' . $term->name . '</h3>';
-
     woocommerce_product_loop_start();
 
       foreach($children as $child){
