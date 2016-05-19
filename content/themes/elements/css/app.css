@@ -1032,7 +1032,9 @@ section.page-header {
   padding: 80px 0;
   border-bottom: thin solid #e0e0e0; }
   section.page-header .section-body {
+    max-width: 1100px;
     height: auto;
+    margin: auto;
     overflow: hidden; }
     section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
       margin-bottom: 15px; }
@@ -1914,16 +1916,13 @@ body.home section#intro-home {
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
         background-color: #27ae60; }
 
-section.page-header-taxonomy .section-body {
-  max-width: 1100px;
-  margin: auto; }
-  section.page-header-taxonomy .section-body figure {
-    float: left;
-    width: 250px; }
-  section.page-header-taxonomy .section-body div {
-    float: left;
-    width: calc(100% - 250px);
-    padding-left: 40px; }
+section.page-header-taxonomy .section-body figure {
+  float: left;
+  width: 250px; }
+section.page-header-taxonomy .section-body div {
+  float: left;
+  width: calc(100% - 250px);
+  padding-left: 40px; }
 
 body.single-product .summary h1 {
   margin-bottom: 40px; }

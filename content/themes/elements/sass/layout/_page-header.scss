@@ -4,7 +4,9 @@ section.page-header{
   border-bottom: thin solid $grey;
 
   .section-body{
+    max-width: 1100px;
     height: auto;
+    margin: auto;
     overflow: hidden;
 
     h2, h3, h4{
