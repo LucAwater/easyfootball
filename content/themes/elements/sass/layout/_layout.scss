@@ -3,15 +3,20 @@ body > footer{
   padding: 0 $space-sides;
 }
 
+main{
+  max-width: 1100px;
+  margin: auto;
+}
+
 main > *{
-  padding: ($space-section / 2) $space-sides;
+  margin: ($space-section / 2) 0;
 
   &:first-child{
-    padding-top: $space-section;
+    margin-top: $space-section;
   }
 
   &:last-child{
-    padding-bottom: $space-section;
+    margin-bottom: $space-section;
   }
 }
 
@@ -22,14 +27,14 @@ main > *{
   }
 
   main > *{
-    padding: $space-section-small $space-sides-small;
+    margin: $space-section-small 0;
 
     &:first-child{
-      padding-top: $space-section-small;
+      margin-top: $space-section-small;
     }
 
     &:last-child{
-      padding-bottom: $space-section-small;
+      margin-bottom: $space-section-small;
     }
   }
 }
