@@ -1030,6 +1030,7 @@ nav ul li.current {
 
 section.page-header {
   padding: 80px 0;
+  background-color: #f4f4f4;
   border-bottom: thin solid #e0e0e0; }
   section.page-header .section-body {
     max-width: 1100px;
@@ -1914,13 +1915,19 @@ body.home section#intro-home {
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
         background-color: #27ae60; }
 
-section.page-header-taxonomy .section-body figure {
-  float: left;
-  width: 250px; }
-section.page-header-taxonomy .section-body div {
-  float: left;
-  width: calc(100% - 250px);
-  padding-left: 40px; }
+section.page-header-taxonomy .section-body {
+  overflow: visible; }
+  section.page-header-taxonomy .section-body figure {
+    -webkit-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    display: inline-block; }
+  section.page-header-taxonomy .section-body div {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-top: 10px; }
 
 body.single-product .summary h1 {
   margin-bottom: 40px; }

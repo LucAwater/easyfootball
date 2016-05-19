@@ -1,16 +1,20 @@
 section.page-header-taxonomy{
   .section-body{
-    figure{
-      float: left;
+    overflow: visible;
 
-      width: 250px;
+    figure{
+      @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
+
+      width: 50%;
+      display: inline-block;
     }
 
     div{
-      float: left;
+      float: right;
 
-      width: calc(100% - 250px);
+      width: 50%;
       padding-left: 40px;
+      padding-top: 10px;
     }
   }
 }
