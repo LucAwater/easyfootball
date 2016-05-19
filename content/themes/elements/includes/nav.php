@@ -12,6 +12,6 @@
       </ul>
     </li>
     <li><a href="<?php echo home_url() . '/leagues'; ?>">Ligor</a></li>
-    <li><a href="<?php echo home_url() . '/regions'; ?>">Land</a></li>
+    <li><p>Land</p></li>
   </ul>
 </nav>

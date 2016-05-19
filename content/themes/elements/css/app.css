@@ -1140,29 +1140,27 @@ section.page-header {
       .list-col li [class^="list-item-"]:last-child {
         text-align: right; }
 
-.list-cloud {
-  border-right: thin solid #e0e0e0; }
-  .list-cloud div {
-    margin-bottom: 40px; }
-    .list-cloud div h2 {
-      margin-bottom: 15px; }
-    .list-cloud div li {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px; }
-      .list-cloud div li a, .list-cloud div li button {
-        -webkit-transition: 0.2s;
-        -moz-transition: 0.2s;
-        -ms-transition: 0.2s;
-        -o-transition: 0.2s;
-        transition: 0.2s;
-        display: block;
-        padding: 6px 12px;
-        color: black;
-        border-radius: 3px;
-        border: thin solid #e0e0e0; }
-        .list-cloud div li a:hover, .list-cloud div li button:hover, .list-cloud div li a:focus, .list-cloud div li button:focus {
-          background-color: #e0e0e0; }
+.list-cloud div {
+  margin-bottom: 20px; }
+  .list-cloud div h2 {
+    margin-bottom: 15px; }
+  .list-cloud div li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+    .list-cloud div li a, .list-cloud div li button {
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+      -ms-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s;
+      display: block;
+      padding: 6px 12px;
+      color: black;
+      border-radius: 3px;
+      border: thin solid #e0e0e0; }
+      .list-cloud div li a:hover, .list-cloud div li button:hover, .list-cloud div li a:focus, .list-cloud div li button:focus {
+        background-color: #e0e0e0; }
 
 aside {
   float: right;

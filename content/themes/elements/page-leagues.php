@@ -17,31 +17,63 @@ if( have_posts() ):
      *
      * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
-    $regions = get_terms('league', array('hide_empty' => false));
+    $regions = get_terms('region', array('hide_empty' => false));
 
     if( $regions ):
 
-      woocommerce_product_loop_start();
+      echo '<section class="content-container">';
+        echo '<h3>All leagues</h3>';
 
-        foreach($regions as $region){
-          ?>
-          <li>
-            <div class="list-item-80">
-              <p><?php echo $region->name; ?></p>
-            </div>
+        echo '<ul class="list list-cloud">';
 
-            <div class="list-item-20">
-              <a class="button" href="<?php echo get_term_link($region); ?>">view leagues</a>
-            </div>
-          </li>
+          foreach($regions as $region):
+            $children = get_field('region_childLeagues', $region);
 
-          <?php
-        }
+            if( $children ):
+              echo '<div>';
+                echo '<h4>' . $region->name . '</h4>';
 
-      woocommerce_product_loop_end();
+                foreach($children as $child):
+                  $term = get_term_by('id', $child, 'league');
 
+                  echo '<li><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></li>';
+                endforeach;
+              echo '</div>';
+            endif;
+          endforeach;
+
+        echo '</ul>';
+      echo '</section>';
     endif;
 
+    /**
+     * Sidebar
+     */
+    ?>
+    <aside>
+      <div>
+        <h4 class="aside-subheader">Top Games</h4>
+
+        <ul>
+          <li>
+            <a>Aston Villa - Chelsea</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+
+          <li>
+            <a>Manchester United - Barcelona</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+
+          <li>
+            <a>Ajax - Real Madrid</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <?php
   endwhile;
 endif;
 

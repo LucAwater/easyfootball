@@ -12,10 +12,37 @@ if( have_posts() ):
      */
     do_action( 'woocommerce_before_main_content' );
 
-    /**
-     * Page Title
+    /*
+     * List all teams by first character
+     *
+     * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
-    echo '<h1>All teams</h1>';
+    $terms = get_terms('team', array('hide_empty' => false));
+
+    if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+      $term_list = [];
+      foreach ( $terms as $term ){
+        $first_letter = strtoupper($term->name[0]);
+        $term_list[$first_letter][] = $term;
+      }
+      unset($term);
+
+      echo '<section class="content-container">';
+        echo '<h3>All teams</h3>';
+
+        echo '<ul class="list list-cloud">';
+          foreach ( $term_list as $key=>$value ) {
+            echo '<div>';
+              echo '<h4>' . $key . '</h4>';
+
+              foreach ( $value as $term ) {
+                echo '<li><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></li>';
+              }
+            echo '</div>';
+          }
+        echo '</ul>';
+      echo '</section>';
+    }
 
     /**
      * Sidebar
@@ -45,34 +72,6 @@ if( have_posts() ):
     </aside>
 
     <?php
-    /*
-     * List all teams by first character
-     *
-     * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
-     */
-    $terms = get_terms('team', array('hide_empty' => false));
-
-    if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-      $term_list = [];
-      foreach ( $terms as $term ){
-        $first_letter = strtoupper($term->name[0]);
-        $term_list[$first_letter][] = $term;
-      }
-      unset($term);
-
-      echo '<ul class="list list-cloud">';
-        foreach ( $term_list as $key=>$value ) {
-          echo '<div>';
-            echo '<h2>' . $key . '</h2>';
-
-            foreach ( $value as $term ) {
-              echo '<li><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></li>';
-            }
-          echo '</div>';
-        }
-      echo '</ul>';
-    }
-
   endwhile;
 endif;
 

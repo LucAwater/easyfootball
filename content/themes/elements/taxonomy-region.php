@@ -24,7 +24,7 @@ get_template_part( 'taxonomy', 'header' );
  * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
  */
 
-$children = get_field('region_children', $term);
+$children = get_field('region_childLeagues', $term);
 
 if( $children ):
 
