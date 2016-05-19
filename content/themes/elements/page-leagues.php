@@ -17,7 +17,7 @@ if( have_posts() ):
      *
      * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
-    $regions = get_terms('region', array('hide_empty' => false));
+    $regions = get_terms('league', array('hide_empty' => false));
 
     if( $regions ):
 

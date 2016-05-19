@@ -1055,34 +1055,9 @@ nav ul li.current {
     z-index: 1100;
     margin: auto; }
 
-.list-col {
+.list {
   float: left;
   max-width: 800px; }
-  .list-col li.list-col-head {
-    height: 40px;
-    background-color: white; }
-    .list-col li.list-col-head p, .list-col li.list-col-head p .read-more, p .list-col li.list-col-head .read-more {
-      color: black;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase; }
-  .list-col li {
-    width: 100%;
-    height: 80px;
-    padding: 0 20px;
-    display: table;
-    background-color: #f4f4f4;
-    border-bottom: thin solid #e0e0e0; }
-    .list-col li form {
-      width: 100%;
-      height: 80px;
-      display: table; }
-    .list-col li [class^="list-item-"] {
-      display: table-cell;
-      vertical-align: middle; }
-      .list-col li [class^="list-item-"]:last-child {
-        text-align: right; }
 
 .list-item-10 {
   width: 10%; }
@@ -1113,6 +1088,56 @@ nav ul li.current {
 
 .list-item-100 {
   width: 100%; }
+
+.list-col li.list-col-head {
+  height: 40px;
+  background-color: white; }
+  .list-col li.list-col-head p, .list-col li.list-col-head p .read-more, p .list-col li.list-col-head .read-more {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase; }
+.list-col li {
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  display: table;
+  background-color: #f4f4f4;
+  border-bottom: thin solid #e0e0e0; }
+  .list-col li form {
+    width: 100%;
+    height: 80px;
+    display: table; }
+  .list-col li [class^="list-item-"] {
+    display: table-cell;
+    vertical-align: middle; }
+    .list-col li [class^="list-item-"]:last-child {
+      text-align: right; }
+
+.list-cloud {
+  border-right: thin solid #e0e0e0; }
+  .list-cloud div {
+    margin-bottom: 40px; }
+    .list-cloud div h2 {
+      margin-bottom: 15px; }
+    .list-cloud div li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+      .list-cloud div li a, .list-cloud div li button {
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        display: block;
+        padding: 6px 12px;
+        color: black;
+        border-radius: 3px;
+        border: thin solid #e0e0e0; }
+        .list-cloud div li a:hover, .list-cloud div li button:hover, .list-cloud div li a:focus, .list-cloud div li button:focus {
+          background-color: #e0e0e0; }
 
 aside {
   float: right;

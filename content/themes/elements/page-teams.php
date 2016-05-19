@@ -12,35 +12,66 @@ if( have_posts() ):
      */
     do_action( 'woocommerce_before_main_content' );
 
+    /**
+     * Page Title
+     */
+    echo '<h1>All teams</h1>';
+
+    /**
+     * Sidebar
+     */
+    ?>
+    <aside>
+      <div>
+        <h4 class="aside-subheader">Top Games</h4>
+
+        <ul>
+          <li>
+            <a>Aston Villa - Chelsea</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+
+          <li>
+            <a>Manchester United - Barcelona</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+
+          <li>
+            <a>Ajax - Real Madrid</a>
+            <small>21 July 2016 at 16:00</small>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <?php
     /*
-     * Get children by custom field
+     * List all teams by first character
      *
      * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
      */
-    $regions = get_terms('region', array('hide_empty' => false));
+    $terms = get_terms('team', array('hide_empty' => false));
 
-    if( $regions ):
+    if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+      $term_list = [];
+      foreach ( $terms as $term ){
+        $first_letter = strtoupper($term->name[0]);
+        $term_list[$first_letter][] = $term;
+      }
+      unset($term);
 
-      woocommerce_product_loop_start();
+      echo '<ul class="list list-cloud">';
+        foreach ( $term_list as $key=>$value ) {
+          echo '<div>';
+            echo '<h2>' . $key . '</h2>';
 
-        foreach($regions as $region){
-          ?>
-          <li>
-            <div class="list-item-80">
-              <p><?php echo $region->name; ?></p>
-            </div>
-
-            <div class="list-item-20">
-              <a class="button" href="<?php echo get_term_link($region); ?>">view leagues</a>
-            </div>
-          </li>
-
-          <?php
+            foreach ( $value as $term ) {
+              echo '<li><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></li>';
+            }
+          echo '</div>';
         }
-
-      woocommerce_product_loop_end();
-
-    endif;
+      echo '</ul>';
+    }
 
   endwhile;
 endif;

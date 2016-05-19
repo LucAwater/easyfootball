@@ -1,0 +1,33 @@
+.list-cloud{
+  border-right: thin solid $grey;
+  
+  div{
+    margin-bottom: 40px;
+
+    h2{
+      margin-bottom: 15px;
+    }
+
+    li{
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      a{
+        @include transition( .2s );
+
+        display: block;
+        padding: 6px 12px;
+
+        color: $black;
+        border-radius: 3px;
+        border: thin solid $grey;
+
+        &:hover,
+        &:focus{
+          background-color: $grey;
+        }
+      }
+    }
+  }
+}

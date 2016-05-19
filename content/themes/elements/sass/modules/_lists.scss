@@ -1,46 +1,7 @@
-.list-col{
+.list{
   float: left;
 
   max-width: 800px;
-
-  li.list-col-head{
-    height: 40px;
-
-    background-color: $white;
-
-    p{
-      color: $black;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-  }
-
-  li{
-    width: 100%;
-    height: 80px;
-    padding: 0 20px;
-    display: table;
-
-    background-color: $grey-light;
-    border-bottom: thin solid $grey;
-
-    form{
-      width: 100%;
-      height: 80px;
-      display: table;
-    }
-
-    [class^="list-item-"]{
-      display: table-cell;
-      vertical-align: middle;
-
-      &:last-child{
-        text-align: right;
-      }
-    }
-  }
 }
 
 @for $i from 1 through 10{
