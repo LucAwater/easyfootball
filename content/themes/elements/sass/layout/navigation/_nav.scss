@@ -8,6 +8,11 @@ nav{
       display: inline-block;
       padding: 29px 15px; // 28 = header-height - p line-height
 
+      p,
+      a{
+        line-height: 22px;
+      }
+
       &:hover,
       &:focus{
         background-color: $green-dark;
@@ -34,7 +39,20 @@ nav > ul > li ul{
   background-color: $white;
 
   li{
-    padding: 10px 15px;
+    &.view-more{
+      border-top: thin solid $grey;
+
+      a{
+        color: $green;
+      }
+    }
+
+    p, a{
+      display: block;
+      padding: 10px 15px;
+
+      color: $black;
+    }
 
     &:hover,
     &:focus{
@@ -44,14 +62,6 @@ nav > ul > li ul{
       a{
         color: $black;
       }
-    }
-
-    &.view-more{
-      border-top: thin solid $grey;
-    }
-
-    p{
-      color: $black;
     }
   }
 }

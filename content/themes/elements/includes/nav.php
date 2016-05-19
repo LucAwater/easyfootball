@@ -1,18 +1,17 @@
 <nav>
   <ul>
     <li>
-      <p>Lag</p>
+      <a href="<?php echo home_url() . '/teams'; ?>">Lag</a>
       <ul>
         <li><p>Arsenal</p></li>
         <li><p>Aston Villa</p></li>
         <li><p>Birmingham</p></li>
         <li><p>Bournemouth</p></li>
         <li><p>Chelsea</p></li>
-        <li class="view-more"><a>view more teams</a></li>
+        <li class="view-more"><a href="<?php echo home_url() . '/teams'; ?>">view more teams</a></li>
       </ul>
     </li>
-    <li><p>Ligor</p></li>
-    <li><p>Land</p></li>
-    <li><p>Turneringar</p></li>
+    <li><a href="<?php echo home_url() . '/leagues'; ?>">Ligor</a></li>
+    <li><a href="<?php echo home_url() . '/regions'; ?>">Land</a></li>
   </ul>
 </nav>

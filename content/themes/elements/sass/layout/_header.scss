@@ -47,7 +47,8 @@ body > header{
     nav{
       > ul{
         > li{
-          > p{
+          > p,
+          > a{
             color: $white;
             text-transform: uppercase;
             letter-spacing: 1.2px;

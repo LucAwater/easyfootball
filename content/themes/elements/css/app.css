@@ -889,7 +889,9 @@ body > header {
     body > header .header-content form[role="search"] input[type="search"] {
       border: none;
       background-color: #27ae60; }
-    body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more {
+    body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more,
+    body > header .header-content nav > ul > li > a,
+    body > header .header-content nav > ul > li > button {
       color: white;
       text-transform: uppercase;
       letter-spacing: 1.2px; }
@@ -961,6 +963,10 @@ nav {
     nav > ul > li {
       display: inline-block;
       padding: 29px 15px; }
+      nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more,
+      nav > ul > li a,
+      nav > ul > li button {
+        line-height: 22px; }
       nav > ul > li:hover, nav > ul > li:focus {
         background-color: #27ae60; }
         nav > ul > li:hover ul, nav > ul > li:focus ul {
@@ -989,16 +995,18 @@ nav > ul > li ul {
   white-space: nowrap;
   border: thin solid #e0e0e0;
   background-color: white; }
-  nav > ul > li ul li {
-    padding: 10px 15px; }
-    nav > ul > li ul li:hover, nav > ul > li ul li:focus {
-      cursor: pointer;
-      background-color: #e0e0e0; }
-      nav > ul > li ul li:hover a, nav > ul > li ul li:hover button, nav > ul > li ul li:focus a, nav > ul > li ul li:focus button {
-        color: black; }
-    nav > ul > li ul li.view-more {
-      border-top: thin solid #e0e0e0; }
-    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more {
+  nav > ul > li ul li.view-more {
+    border-top: thin solid #e0e0e0; }
+    nav > ul > li ul li.view-more a, nav > ul > li ul li.view-more button {
+      color: #2ecc71; }
+  nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button {
+    display: block;
+    padding: 10px 15px;
+    color: black; }
+  nav > ul > li ul li:hover, nav > ul > li ul li:focus {
+    cursor: pointer;
+    background-color: #e0e0e0; }
+    nav > ul > li ul li:hover a, nav > ul > li ul li:hover button, nav > ul > li ul li:focus a, nav > ul > li ul li:focus button {
       color: black; }
 
 nav ul li.current {
