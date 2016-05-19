@@ -62,9 +62,9 @@ echo '</section>';
 /**
  * Sidebar
  */
-$region = get_field( 'league_region', $term_acf );
+$region = get_field( 'league_parentRegion', $term_acf );
 $region_id = $region->taxonomy . '_' . $region->term_id;
-$region_leagues = get_field( 'region_leagues', $region_id );
+$region_leagues = get_field( 'region_childLeagues', $region_id );
 ?>
 
 <?php if( $region_leagues ): ?>

@@ -50,12 +50,12 @@ global $product;
 	<div class="summary entry-summary">
 
     <div class="product-info">
-      <h1 itemprop="name"><?php the_title(); ?></h1>
+      <!-- <h1 itemprop="name"><?php the_title(); ?></h1> -->
 
       <div>
-        <div class="product-description excerpt"><?php echo wpautop( get_the_excerpt() ); ?></div>
+        <!-- <div class="product-description excerpt"><?php echo wpautop( get_the_excerpt() ); ?></div> -->
 
-        <?php
+        <!-- <?php
         // Get match data from custom fields of product
         $match_date = get_field('match_date', false, false);
         $match_date = new DateTime($match_date);
@@ -93,7 +93,7 @@ global $product;
               echo '<li><p><strong>Location: </strong>' . $arena_location . '</p></li>';
           echo '</ul>';
         endif;
-        ?>
+        ?> -->
       </div>
 
       <figure class="product-seating">

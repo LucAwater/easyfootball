@@ -34,7 +34,16 @@ function import_regions(){
 
       if( $term ){
         $post_id = 'region_' . $term->term_id;
+        $term_acf = $term->taxonomy . '_' . $term->term_id;
 
+        // Leagues field
+        // Get previous data
+        $leagues_prev = get_field('region_childLeagues', $term_acf);
+        foreach($leagues_prev as $league_prev){
+          array_push($region_leagues, $league_prev);
+        }
+
+        // Update leagues field
         $field_key_leagues = 'field_570e1122dd70e';
         $value_leagues = $region_leagues;
         update_field( $field_key_leagues, $value_leagues, $post_id );
@@ -81,7 +90,7 @@ function import_teams(){
         update_field( $field_key_city, $value_city, $post_id );
 
         // Arena country
-        $field_key_country = 'field_570772657fb6b';
+        $field_key_country = 'field_5720b15823420';
         $value_country = $team['arena_country'];
         update_field( $field_key_country, $value_country, $post_id );
       }
