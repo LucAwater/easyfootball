@@ -839,6 +839,10 @@ main {
     padding-right: 40px;
     padding-bottom: 2.5rem;
     border-right: thin solid #e0e0e0; }
+    main .content-container > * {
+      margin-bottom: 20px; }
+      main .content-container > *:last-child {
+        margin-bottom: 0; }
   main aside {
     padding-top: 2.5rem;
     padding-left: 40px; }
@@ -1203,6 +1207,35 @@ aside {
         aside > div ul li small {
           display: block;
           padding: 5px 0; }
+
+.alert {
+  width: 100%;
+  padding: 15px;
+  vertical-align: middle;
+  border: thin solid #e0e0e0; }
+  .alert > * {
+    display: inline-block; }
+  .alert .alert-icon {
+    float: right;
+    width: 20px;
+    height: 20px;
+    opacity: .6; }
+
+.alert-succes {
+  border-color: #30cc2e;
+  background-color: rgba(48, 204, 46, 0.2); }
+
+.alert-info {
+  border-color: #2e7ccc;
+  background-color: rgba(46, 124, 204, 0.1); }
+
+.alert-warning {
+  border-color: #cacc2e;
+  background-color: rgba(202, 204, 46, 0.1); }
+
+.alert-danger {
+  border-color: #cc2e2e;
+  background-color: rgba(204, 46, 46, 0.2); }
 
 table {
   width: 100%;

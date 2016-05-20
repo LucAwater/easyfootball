@@ -1,0 +1,40 @@
+.alert{
+  width: 100%;
+  padding: 15px;
+
+  vertical-align: middle;
+  border: thin solid $grey;
+
+  > *{
+    display: inline-block;
+  }
+
+  .alert-icon{
+    float: right;
+
+    width: 20px;
+    height: 20px;
+
+    opacity: .6;
+  }
+}
+
+.alert-succes{
+  border-color: rgba(48, 204, 46, 1);
+  background-color: rgba(48, 204, 46, 0.2);
+}
+
+.alert-info{
+  border-color: rgba(46, 124, 204, 1);
+  background-color: rgba(46, 124, 204, 0.1);
+}
+
+.alert-warning{
+  border-color: rgba(202, 204, 46, 1);
+  background-color: rgba(202, 204, 46, 0.1);
+}
+
+.alert-danger{
+  border-color: rgba(204, 46, 46, 1);
+  background-color: rgba(204, 46, 46, 0.2);
+}

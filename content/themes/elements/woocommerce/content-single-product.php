@@ -52,6 +52,27 @@ global $product;
     <?php page_sidebar(); ?>
 
     <?php page_content_start(); ?>
+
+      <div class="alert alert-succes">
+        <p>We guarantee you'll be seated together for seated sections</p>
+        <img class="alert-icon" src="<?php echo get_template_directory_uri(); ?>/img/icon-succes.svg" />
+      </div>
+
+      <div class="alert alert-info">
+        <p>We guarantee you'll be seated together for seated sections</p>
+        <img class="alert-icon" src="<?php echo get_template_directory_uri(); ?>/img/icon-info.svg" />
+      </div>
+
+      <div class="alert alert-warning">
+        <p>We guarantee you'll be seated together for seated sections</p>
+        <img class="alert-icon" src="<?php echo get_template_directory_uri(); ?>/img/icon-warning.svg" />
+      </div>
+
+      <div class="alert alert-danger">
+        <p>We guarantee you'll be seated together for seated sections</p>
+        <img class="alert-icon" src="<?php echo get_template_directory_uri(); ?>/img/icon-danger.svg" />
+      </div>
+
       <?php
       /*
        * Put all variations in list
