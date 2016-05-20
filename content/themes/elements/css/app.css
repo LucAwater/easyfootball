@@ -1302,6 +1302,13 @@ form[role="search"] {
       left: 1px;
       width: 20px; }
 
+input[type="number"] {
+  max-width: 80px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  border: thin solid #888888; }
+
 .slider {
   position: relative; }
 

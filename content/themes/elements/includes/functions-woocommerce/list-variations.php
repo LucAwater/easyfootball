@@ -15,8 +15,8 @@ function list_variations() {
       ?>
       <li>
         <form method="post" data-product_id="<?php echo $varId; ?>">
-          <p class="list-item-50 attributes"><?php echo $name; ?></p>
-          <p class="list-item-10 price"><?php echo $price; ?></p>
+          <p class="list-item-40 attributes"><?php echo $name; ?></p>
+          <p class="list-item-20 price"><?php echo $price; ?></p>
 
           <div class="list-item-20 quantity">
             <input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">

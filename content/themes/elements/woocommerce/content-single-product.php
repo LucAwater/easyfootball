@@ -62,8 +62,8 @@ global $product;
       <div class="variations">
         <ul class="list-col">
           <li class="list-col-head">
-            <p class="list-item-50 attributes">Seating</p>
-            <p class="list-item-10 price">Price</p>
+            <p class="list-item-40 attributes">Seating</p>
+            <p class="list-item-20 price">Price</p>
             <p class="list-item-20 quantity">Quantity</p>
             <p class="list-item-20 add-to-cart"></p>
           </li>
