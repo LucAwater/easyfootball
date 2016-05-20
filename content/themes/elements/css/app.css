@@ -1037,7 +1037,7 @@ section.page-header {
     height: auto;
     margin: auto;
     overflow: hidden; }
-    section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
+    section.page-header .section-body h1, section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
       margin-bottom: 15px; }
 
 .arrow {

@@ -27,7 +27,7 @@ function list_variations() {
               <option value="<?php echo $name; ?>" selected="selected"></option>
             </select>
 
-            <button type="submit" class="single_add_to_cart_button button alt">Buy now</button>
+            <button type="submit" class="single_add_to_cart_button button alt">Buy</button>
             <input type="hidden" name="add-to-cart" value="<?php echo $parentId; ?>">
             <input type="hidden" name="product_id" value="<?php echo $parentId; ?>">
             <input type="hidden" name="variation_id" value="<?php echo $varId; ?>">
