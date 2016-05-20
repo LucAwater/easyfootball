@@ -17,38 +17,42 @@ do_action( 'woocommerce_before_main_content' );
 get_template_part( 'taxonomy', 'header' );
 ?>
 
-<?php
-/*
- * Get children by custom field
- *
- * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
- */
+<?php page_content_start(); ?>
+  <?php
+  /*
+   * Get children by custom field
+   *
+   * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
+   */
 
-$children = get_field('region_childLeagues', $term);
+  $children = get_field('region_childLeagues', $term);
 
-if( $children ):
+  if( $children ):
 
-  woocommerce_product_loop_start();
+    woocommerce_product_loop_start();
 
-    foreach($children as $child){
-      $child = get_term($child);
-      ?>
+      foreach($children as $child){
+        $child = get_term($child);
+        ?>
 
-      <li>
-        <div class="list-item-80">
-          <p><?php echo $child->name; ?></p>
-        </div>
+        <li>
+          <div class="list-item-80">
+            <p><?php echo $child->name; ?></p>
+          </div>
 
-        <div class="list-item-20">
-          <a class="button" href="<?php echo get_term_link($child); ?>">view teams</a>
-        </div>
-      </li>
+          <div class="list-item-20">
+            <a class="button" href="<?php echo get_term_link($child); ?>">view teams</a>
+          </div>
+        </li>
 
-      <?php
-    }
+        <?php
+      }
 
-  woocommerce_product_loop_end();
-endif;
+    woocommerce_product_loop_end();
+  endif;
+  ?>
+<?php page_content_end(); ?>
 
-get_footer();
-?>
+<?php page_sidebar(); ?>
+
+<?php get_footer(); ?>

@@ -1,3 +1,4 @@
+    <?php page_sidebar(); ?>
   </main>
 
   <!-- Footer -->

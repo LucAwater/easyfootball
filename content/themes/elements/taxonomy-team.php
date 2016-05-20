@@ -17,16 +17,20 @@ do_action( 'woocommerce_before_main_content' );
 get_template_part( 'taxonomy', 'header' );
 ?>
 
-<?php
-if ( have_posts() ) :
-  woocommerce_product_loop_start();
-    woocommerce_product_subcategories();
+<?php page_content_start(); ?>
+  <?php
+  if ( have_posts() ) :
+    woocommerce_product_loop_start();
+      woocommerce_product_subcategories();
 
-    while ( have_posts() ) : the_post();
-      wc_get_template_part( 'content', 'product' );
-    endwhile;
-  woocommerce_product_loop_end();
-endif;
+      while ( have_posts() ) : the_post();
+        wc_get_template_part( 'content', 'product' );
+      endwhile;
+    woocommerce_product_loop_end();
+  endif;
+  ?>
+<?php page_content_end(); ?>
 
-get_footer();
-?>
+<?php page_sidebar(); ?>
+
+<?php get_footer(); ?>
