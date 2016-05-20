@@ -21,74 +21,79 @@ if( $leagues ):
   endforeach;
 endif;
 
-// List results
-if( $results_leagues ):
+page_content_start();
 
-  echo '<div class="results results-leagues">';
-    echo '<h2>Leagues</h2>';
-    echo '<ul>';
+  // List results
+  if( $results_leagues ):
 
-      foreach( $results_leagues as $result ):
-        // Check if search query against team slug
-        $name = $result->name;
-        // $name = preg_replace("/\p{L}*?".preg_quote($searchQuery)."\p{L}*/ui", "<b>$0</b>", $name);
-        $url = get_category_link( $result->term_id );
+    echo '<div class="results results-leagues">';
+      echo '<h2>Leagues</h2>';
+      echo '<ul>';
 
-        echo '<li><a href="' . $url . '">' . $name . '</a></li>';
-      endforeach;
+        foreach( $results_leagues as $result ):
+          // Check if search query against team slug
+          $name = $result->name;
+          // $name = preg_replace("/\p{L}*?".preg_quote($searchQuery)."\p{L}*/ui", "<b>$0</b>", $name);
+          $url = get_category_link( $result->term_id );
 
-    echo '</ul>';
-  echo '</div>';
+          echo '<li><a href="' . $url . '">' . $name . '</a></li>';
+        endforeach;
 
-endif;
+      echo '</ul>';
+    echo '</div>';
 
-/*
- * Get TEAMS that match search criteria
- */
-$teams = get_terms('team', array('hide_empty' => false));
-$results_teams = array();
+  endif;
 
-// Check if searchQuery matches (piece of) team slug and push to results array
-if( $teams ):
-  foreach( $teams as $team ):
-    if (strpos($team->slug, $searchQuery) !== false) {
-      array_push($results_teams, $team);
-    }
-  endforeach;
-endif;
+  /*
+   * Get TEAMS that match search criteria
+   */
+  $teams = get_terms('team', array('hide_empty' => false));
+  $results_teams = array();
 
-// List results
-if( $results_teams ):
+  // Check if searchQuery matches (piece of) team slug and push to results array
+  if( $teams ):
+    foreach( $teams as $team ):
+      if (strpos($team->slug, $searchQuery) !== false) {
+        array_push($results_teams, $team);
+      }
+    endforeach;
+  endif;
 
-  echo '<div class="results results-teams">';
-    echo '<h2>Teams</h2>';
-    echo '<ul>';
+  // List results
+  if( $results_teams ):
 
-      foreach( $results_teams as $result ):
-        // Check if search query against team slug
-        $name = $result->name;
-        // $name = preg_replace("/\p{L}*?".preg_quote($searchQuery)."\p{L}*/ui", "<b>$0</b>", $name);
-        $url = get_category_link( $result->term_id );
+    echo '<div class="results results-teams">';
+      echo '<h2>Teams</h2>';
+      echo '<ul>';
 
-        echo '<li><a href="' . $url . '">' . $name . '</a></li>';
-      endforeach;
+        foreach( $results_teams as $result ):
+          // Check if search query against team slug
+          $name = $result->name;
+          // $name = preg_replace("/\p{L}*?".preg_quote($searchQuery)."\p{L}*/ui", "<b>$0</b>", $name);
+          $url = get_category_link( $result->term_id );
 
-    echo '</ul>';
-  echo '</div>';
+          echo '<li><a href="' . $url . '">' . $name . '</a></li>';
+        endforeach;
 
-endif;
+      echo '</ul>';
+    echo '</div>';
+
+  endif;
 
 
 
-if( !$results_leagues && !$results_teams ):
+  if( !$results_leagues && !$results_teams ):
 
-  echo
-  '<div class="no-results">
-    <p>Sorry, no matches found for <strong>' . $searchQuery . '</strong></p>
-    <p>Check the spelling or try different/fewer keywords and try again</p>
-  </div>';
+    echo
+    '<div class="no-results">
+      <p>Sorry, no matches found for <strong>' . $searchQuery . '</strong></p>
+      <p>Check the spelling or try different/fewer keywords and try again</p>
+    </div>';
 
-endif;
+  endif;
+page_content_end();
+
+page_sidebar();
 
 get_footer();
 ?>

@@ -837,7 +837,7 @@ main {
     width: 100%;
     max-width: 800px;
     padding-right: 40px;
-    padding-bottom: 2.5rem;
+    padding-bottom: 100px;
     border-right: thin solid #e0e0e0; }
     main .content-container > * {
       margin-bottom: 20px; }
@@ -1209,16 +1209,26 @@ aside {
           padding: 5px 0; }
 
 .alert {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
   padding: 15px;
-  vertical-align: middle;
   border: thin solid #e0e0e0; }
-  .alert > * {
-    display: inline-block; }
   .alert .alert-icon {
-    float: right;
     width: 20px;
     height: 20px;
+    margin-left: 20px;
     opacity: .6; }
 
 .alert-succes {
