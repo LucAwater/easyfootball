@@ -1,4 +1,27 @@
 body.single-product{
+  .page-header{
+    @include font-smoothing( antialiased );
+
+    text-align: center;
+    color: $white;
+    background: $grey-dark;
+
+    p{
+      font-size: 18px;
+    }
+
+    ul{
+      li{
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      li:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+
   main > .product{
     height: auto;
     overflow: hidden;
@@ -10,10 +33,12 @@ body.single-product{
       aside{
         float: left;
 
+        max-width: 400px;
         padding: 0;
       }
 
       .content-container{
+        max-width: 700px;
         padding-left: 20px;
         padding-right: 0;
 

@@ -1964,6 +1964,19 @@ section.page-header-taxonomy .section-body {
     width: 50%;
     padding-top: 10px; }
 
+body.single-product .page-header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  text-align: center;
+  color: white;
+  background: #333333; }
+  body.single-product .page-header p, body.single-product .page-header p .read-more, p body.single-product .page-header .read-more {
+    font-size: 18px; }
+  body.single-product .page-header ul li {
+    display: inline-block;
+    margin-right: 15px; }
+  body.single-product .page-header ul li:last-child {
+    margin-right: 0; }
 body.single-product main > .product {
   height: auto;
   overflow: hidden; }
@@ -1972,8 +1985,10 @@ body.single-product main > .product {
     overflow: hidden; }
     body.single-product main > .product .summary aside {
       float: left;
+      max-width: 400px;
       padding: 0; }
     body.single-product main > .product .summary .content-container {
+      max-width: 700px;
       padding-left: 20px;
       padding-right: 0;
       border: none; }
