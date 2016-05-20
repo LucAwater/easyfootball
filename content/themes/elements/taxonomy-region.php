@@ -33,15 +33,21 @@ get_template_part( 'taxonomy', 'header' );
 
       foreach($children as $child){
         $child = get_term($child);
+        $image = get_field('league_imageFeatured', $child);
         ?>
 
         <li>
-          <div class="list-item-80">
-            <p><?php echo $child->name; ?></p>
-          </div>
+          <figure>
+            <?php if( $image ): ?>
+              <img src="<?php echo $image['sizes']['medium_large']; ?>" width="<?php echo $images['sizes']['image-width']; ?>" height="<?php echo $image['sizes']['image-height']; ?>" />
+            <?php else: ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-league.png" />
+            <?php endif; ?>
+          </figure>
 
-          <div class="list-item-20">
-            <a class="button" href="<?php echo get_term_link($child); ?>">view teams</a>
+          <div>
+            <h4><?php echo $child->name; ?></h4>
+            <a href="<?php echo get_term_link($child); ?>">view league</a>
           </div>
         </li>
 

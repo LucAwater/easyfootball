@@ -32,11 +32,7 @@ $term =	$wp_query->queried_object;
 <?php elseif( $term && $term->taxonomy == 'region' ): ?>
   <section class="leagues">
     <h3>All leagues in <?php echo $term->name; ?></h3>
-    <ul class="list list-col">
-      <li class="list-col-head">
-        <p class="list-item-40">League</p>
-        <p class="list-item-20"></p>
-      </li>
+    <ul class="list list-card">
 <?php elseif( $term && $term->taxonomy == 'league' ): ?>
   <section class="teams">
     <h3>All teams in <?php echo $term->name; ?></h3>

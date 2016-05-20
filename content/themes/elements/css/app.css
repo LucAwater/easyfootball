@@ -1163,6 +1163,32 @@ section.page-header {
       .list-cloud div li a:hover, .list-cloud div li button:hover, .list-cloud div li a:focus, .list-cloud div li button:focus {
         background-color: #e0e0e0; }
 
+.list-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between; }
+  .list-card li {
+    width: 30%;
+    margin-bottom: 40px;
+    border: thin solid #e0e0e0; }
+    .list-card li div {
+      padding: 15px 0;
+      text-align: center; }
+
 aside {
   float: right;
   width: 100%;
