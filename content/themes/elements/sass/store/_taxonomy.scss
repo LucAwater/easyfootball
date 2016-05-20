@@ -3,17 +3,21 @@ section.page-header-taxonomy{
     overflow: visible;
 
     figure{
-      @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
+      float: left;
 
       width: 50%;
+      padding-right: 40px;
       display: inline-block;
+
+      img{
+        @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
+      }
     }
 
     div{
-      float: right;
+      float: left;
 
       width: 50%;
-      padding-left: 40px;
       padding-top: 10px;
     }
   }

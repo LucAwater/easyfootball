@@ -13,13 +13,16 @@ if( $match_location ){
   $category_id = $category->term_id;
   $category_term = $category_tax . '_' . $category_id;
 }
+
+$map = get_field('seating_map', $category_term);
+$map_url = $map['sizes']['medium'];
+$map_width = $map['sizes']['medium-width'];
+$map_height = $map['sizes']['medium-height'];
 ?>
 <aside>
   <div>
     <figure class="product-seating">
-      <?php $map = get_field('seating_map', $category_term); ?>
-
-      <img src="<?php echo $map['sizes']['medium']; ?>" width="<?php echo $map['sizes']['medium-width']; ?>" height="<?php echo $map['sizes']['medium-height']; ?>" />
+      <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
     </figure>
   </div>
 </aside>

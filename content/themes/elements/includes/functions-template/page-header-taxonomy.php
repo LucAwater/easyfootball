@@ -10,13 +10,18 @@ $term =	$wp_query->queried_object;
 $term_acf = $term->taxonomy . '_' . $term->term_id;
 $term_taxonomy = $term->taxonomy;
 $image = get_field( $term_taxonomy . '_imageFeatured', $term_acf );
+$image_url = $image['sizes']['medium'];
+$image_width = $image['sizes']['medium-width'];
+$image_height = $image['sizes']['medium-height'];
 ?>
 
 <section class="page-header page-header-taxonomy">
   <div class="section-body">
-    <figure>
-      <img src="<?php echo $image['sizes']['medium_large']; ?>" width="<?php echo $images['sizes']['image-width']; ?>" height="<?php echo $image['sizes']['image-height']; ?>" />
-    </figure>
+    <?php if( $image ): ?>
+      <figure>
+        <img src="<?php echo $image_url; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" />
+      </figure>
+    <?php endif; ?>
 
     <div>
       <h2><?php echo $term->name; ?></h2>
