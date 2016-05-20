@@ -49,109 +49,30 @@ global $product;
 
 	<div class="summary entry-summary">
 
-    <div class="product-info">
-      <!-- <h1 itemprop="name"><?php the_title(); ?></h1> -->
+    <?php page_sidebar(); ?>
 
-      <div>
-        <!-- <div class="product-description excerpt"><?php echo wpautop( get_the_excerpt() ); ?></div> -->
+    <?php page_content_start(); ?>
+      <?php
+      /*
+       * Put all variations in list
+       *
+       * Each variation has its own form
+       */
+      ?>
+      <div class="variations">
+        <ul class="list-col">
+          <li class="list-col-head">
+            <p class="list-item-50 attributes">Seating</p>
+            <p class="list-item-10 price">Price</p>
+            <p class="list-item-20 quantity">Quantity</p>
+            <p class="list-item-20 add-to-cart"></p>
+          </li>
 
-        <!-- <?php
-        // Get match data from custom fields of product
-        $match_date = get_field('match_date', false, false);
-        $match_date = new DateTime($match_date);
-        $match_time = get_field('match_time');
-        $match_location = get_field('match_location');
-
-        // Get category term to retrieve custom fields of (sub)category
-        if( $match_location ){
-          $category = get_category($match_location->term_id);
-          $category_tax = $category->taxonomy;
-          $category_id = $category->term_id;
-          $category_term = $category_tax . '_' . $category_id;
-
-          // Get custom fields for arena name and location of (sub)category
-          $arena_name = get_field('arena_name', $category_term);
-          $arena_location_city = get_field('arena_location_city', $category_term);
-          $arena_location_country = get_field('arena_location_country', $category_term);
-          $arena_location = $arena_name . ', ' . $arena_location_city . ', ' . $arena_location_country;
-        } else {
-          $arena_name = '';
-          $arena_location_city = '';
-          $arena_location_country = '';
-        }
-
-        // Build match data list
-        if( $match_date || $match_time || $match_location ):
-          echo '<ul>';
-            if( $match_date )
-              echo '<li><p><strong>Date: </strong>' . $match_date->format('l, j F Y') . '</p></li>';
-
-            if( $match_time )
-              echo '<li><p><strong>Time: </strong>' . $match_time . '</p></li>';
-
-            if( $arena_name && $arena_location_city && $arena_location_country )
-              echo '<li><p><strong>Location: </strong>' . $arena_location . '</p></li>';
-          echo '</ul>';
-        endif;
-        ?> -->
+          <?php list_variations(); ?>
+        </ul>
       </div>
-
-      <figure class="product-seating">
-        <?php $map = get_field('seating_map', $category_term); ?>
-
-        <img src="<?php echo $map['sizes']['medium']; ?>" width="<?php echo $map['sizes']['medium-width']; ?>" height="<?php echo $map['sizes']['medium-height']; ?>" />
-      </figure>
-    </div>
-
-    <?php
-    /*
-     * Retrieving seating map from category through ACF relationship field
-     *
-     * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
-     */
-    $match_location = get_field('match_location');
-
-    if( $match_location ){
-      // Get category term to retrieve custom fields of (sub)category
-      $category = get_category($match_location->term_id);
-      $category_tax = $category->taxonomy;
-      $category_id = $category->term_id;
-      $category_term = $category_tax . '_' . $category_id;
-    }
-    ?>
-
-    <?php
-    /*
-     * Put all variations in list
-     *
-     * Each variation has its own form
-     */
-    ?>
-    <div class="variations">
-      <ul class="list-col">
-        <li class="list-col-head">
-          <p class="list-item-50 attributes">Seating</p>
-          <p class="list-item-10 price">Price</p>
-          <p class="list-item-20 quantity">Quantity</p>
-          <p class="list-item-20 add-to-cart"></p>
-        </li>
-
-        <?php list_variations(); ?>
-      </ul>
-    </div>
-
+    <?php page_content_end(); ?>
 	</div><!-- .summary -->
-
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		do_action( 'woocommerce_after_single_product_summary' );
-	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
