@@ -2,7 +2,7 @@ a{
   @extend %base;
   @include transition( .2s );
 
-  color: $green;
+  color: $color-accent;
   text-decoration: none;
   cursor: pointer;
 

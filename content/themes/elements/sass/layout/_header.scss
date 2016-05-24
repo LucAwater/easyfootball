@@ -4,7 +4,7 @@ body > header{
   width: 100%;
   height: $header-height;
 
-  background-color: $green;
+  background-color: $color-primary;
 
   .header-content{
     @include flexbox;
@@ -39,7 +39,7 @@ body > header{
     form[role="search"]{
       input[type="search"]{
         border: none;
-        background-color: $green-dark;
+        background-color: $color-primary-dark;
       }
     }
 

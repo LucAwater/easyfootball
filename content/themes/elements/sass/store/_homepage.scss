@@ -4,7 +4,7 @@ body.home{
     padding: 100px;
 
     color: white;
-    background: #333;
+    background: $grey-dark;
     text-align: center;
 
     /* REPLACE LATER W/ DYNAMIC CONTENT */
@@ -48,11 +48,11 @@ body.home{
         height: 40px;
         padding: 0 30px;
 
-        background-color: $green;
+        background-color: $color-accent;
 
         &:hover,
         &:focus{
-          background-color: $green-dark;
+          background-color: $color-accent-dark;
         }
       }
     }
