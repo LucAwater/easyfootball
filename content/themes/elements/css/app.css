@@ -1356,6 +1356,21 @@ input[type="number"] {
   border-radius: 5px;
   border: thin solid #727272; }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  border: thin solid #727272;
+  padding-right: 30px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-image: url("../img/arrow-dropdown.svg"); }
+
 .slider {
   position: relative; }
 
