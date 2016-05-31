@@ -19,7 +19,13 @@ function list_variations() {
           <p class="list-item-20 price"><?php echo $price; ?></p>
 
           <div class="list-item-20 quantity">
-            <input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+            <select name="quantity" class="input-text qty text">
+              <?php
+              for($i = 1; $i <= 10; $i++){
+                echo '<option value="' . $i . '">' . $i . '</option>';
+              }
+              ?>
+            </select>
           </div>
 
           <div class="list-item-20 add-to-cart">
