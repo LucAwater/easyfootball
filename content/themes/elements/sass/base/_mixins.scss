@@ -53,3 +53,11 @@
   -moz-box-shadow: $box-shadow;
   box-shadow: $box-shadow;
 }
+
+@mixin filter( $filter ) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}

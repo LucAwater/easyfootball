@@ -1043,6 +1043,29 @@ section.page-header {
     overflow: hidden; }
     section.page-header .section-body h1, section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
       margin-bottom: 15px; }
+  section.page-header .page-header-background {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+    section.page-header .page-header-background img {
+      -webkit-filter: grayscale(1);
+      -moz-filter: grayscale(1);
+      -ms-filter: grayscale(1);
+      -o-filter: grayscale(1);
+      filter: grayscale(1);
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: auto;
+      height: 70%;
+      margin: auto;
+      opacity: 0.2; }
+      section.page-header .page-header-background img:first-child {
+        left: 60px; }
+      section.page-header .page-header-background img:last-child {
+        right: 60px; }
 
 .arrow {
   -moz-transform: rotate(45deg);
