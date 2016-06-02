@@ -799,7 +799,7 @@ a, button {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  color: #FF5722;
+  color: #FF5252;
   text-decoration: none;
   cursor: pointer; }
   a:hover, button:hover, a:focus, button:focus {
@@ -877,7 +877,7 @@ body > header {
   z-index: 1100;
   width: 100%;
   height: 80px;
-  background-color: #009688; }
+  background-color: #546E7A; }
   body > header .header-content {
     display: -webkit-box;
     display: -webkit-flex;
@@ -902,7 +902,7 @@ body > header {
         width: 100%; }
     body > header .header-content form[role="search"] input[type="search"] {
       border: none;
-      background-color: #00796B; }
+      background-color: #37474F; }
     body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more,
     body > header .header-content nav > ul > li > a,
     body > header .header-content nav > ul > li > button {
@@ -982,7 +982,7 @@ nav {
       nav > ul > li button {
         line-height: 22px; }
       nav > ul > li:hover, nav > ul > li:focus {
-        background-color: #00796B; }
+        background-color: #37474F; }
         nav > ul > li:hover ul, nav > ul > li:focus ul {
           -webkit-transition: 0.2s;
           -moz-transition: 0.2s;
@@ -1012,7 +1012,7 @@ nav > ul > li ul {
   nav > ul > li ul li.view-more {
     border-top: thin solid #e0e0e0; }
     nav > ul > li ul li.view-more a, nav > ul > li ul li.view-more button {
-      color: #009688; }
+      color: #546E7A; }
   nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button {
     display: block;
     padding: 10px 15px;
@@ -1307,7 +1307,7 @@ button,
   color: white;
   text-align: center;
   border-radius: 3px;
-  background-color: #FF5722;
+  background-color: #FF5252;
   line-height: 40px;
   cursor: pointer;
   outline: 0; }
@@ -1315,14 +1315,14 @@ button,
   .button:hover,
   .button:focus {
     color: white;
-    background-color: #d53300; }
+    background-color: #D32F2F; }
   button.button-sec,
   .button.button-sec {
-    background-color: #00796B; }
+    background-color: #37474F; }
     button.button-sec:hover, button.button-sec:focus,
     .button.button-sec:hover,
     .button.button-sec:focus {
-      background-color: #00463e; }
+      background-color: #222c31; }
 
 button[disabled="disabled"] {
   opacity: .2; }
@@ -2029,9 +2029,9 @@ body.home section#intro-home {
       width: auto;
       height: 40px;
       padding: 0 30px;
-      background-color: #FF5722; }
+      background-color: #FF5252; }
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
-        background-color: #d53300; }
+        background-color: #D32F2F; }
 
 section.page-header-taxonomy .section-body {
   overflow: visible; }
