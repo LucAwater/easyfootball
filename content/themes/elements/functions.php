@@ -9,6 +9,7 @@ require_once('includes/admin/importer.php');
 require_once('includes/admin/tax-region.php');
 require_once('includes/admin/tax-league.php');
 require_once('includes/admin/tax-team.php');
+require_once('includes/admin/acf-page.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
@@ -26,6 +27,7 @@ require_once('woocommerce/woo-functions.php');
 require_once('includes/functions-woocommerce/cart-update.php');
 require_once('includes/functions-woocommerce/breadcrumb.php');
 require_once('includes/functions-woocommerce/list-variations.php');
+require_once('includes/functions-woocommerce/featured-lists.php');
 
 /*
  * Import data for regions, leagues and teams.

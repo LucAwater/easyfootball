@@ -49,7 +49,7 @@
         <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
           <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" /></button>
+          <!-- <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" /></button> -->
         </form>
       <?php endif; ?>
 

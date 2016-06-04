@@ -54,6 +54,12 @@
   box-shadow: $box-shadow;
 }
 
+@mixin border-radius( $border-radius ){
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+
 @mixin filter( $filter ) {
   -webkit-filter: $filter;
   -moz-filter: $filter;
