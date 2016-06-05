@@ -77,8 +77,13 @@ if( have_posts() ):
             $team_acf = $team->taxonomy . '_' . $team->term_id;
             $team_name = $team->name;
             $team_link = get_term_link($team->term_id);
+
             $team_logo = get_field('team_logo', $team_acf);
-            $team_logo_url = $team_logo['sizes']['medium'];
+            if(! $team_logo ){
+              $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
+            } else {
+              $team_logo_url = $team_logo['sizes']['medium'];
+            }
 
             $team_matches = get_posts(array(
               'post_type' => 'product',

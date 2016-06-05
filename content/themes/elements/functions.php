@@ -2,19 +2,7 @@
 /**
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
- add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
 
- function custom_variation_price( $price, $product ) {
-
- 	$price = '';
-
- 	if ( !$product->min_variation_price || $product->min_variation_price !== $product->max_variation_price ) {
- 		$price .= '<span>' . _x('From', 'min_price', 'woocommerce') . ' </span>';
- 		$price .= woocommerce_price($product->get_price());
- 	}
-
- 	return $price;
- }
 // Includes
 require_once('includes/scripts.php');
 require_once('includes/admin/importer.php');
