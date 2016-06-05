@@ -46,6 +46,7 @@
 @mixin font-smoothing( $font-smoothing ){
   -webkit-font-smoothing: $font-smoothing;
   -moz-osx-font-smoothing: $font-smoothing;
+  font-weight: 500;
 }
 
 @mixin box-shadow( $box-shadow ){

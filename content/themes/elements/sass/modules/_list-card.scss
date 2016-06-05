@@ -4,7 +4,7 @@
   @include align-items( flex-start );
 
   max-width: none;
-  padding: 0 10px;
+  // padding: 0 10px;
 
   > li{
     width: 33.33333%;
@@ -36,6 +36,10 @@
       .card-info{
         padding: 20px;
 
+        *{
+          display: block;
+        }
+
         h3{
           margin-bottom: 20px;
         }
@@ -50,10 +54,6 @@
         ul{
           li{
             margin-bottom: 10px;
-
-            > *{
-              display: block;
-            }
           }
         }
       }

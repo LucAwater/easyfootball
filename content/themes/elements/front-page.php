@@ -4,6 +4,8 @@ get_header();
 if( have_posts() ):
   while( have_posts() ): the_post();
 
+    global $product, $woocommerce_loop;
+
     // Featured events
     featured_lists_events();
     $events = featured_lists_events();
@@ -12,17 +14,46 @@ if( have_posts() ):
       ?>
 
       <section class="featured featured-events">
-        <ul class="list list-card">
+        <h2>Top Matches</h2>
 
+        <ul class="list list-card">
           <?php
           foreach( $events as $event ){
             $event_name = $event->post_title;
             $event_link = get_permalink($event->ID);
 
-            echo '<li><a href="' . $event_link . '">' . $event_name . '</a></li>';
+            $event_date = get_field('match_date', false, false);
+            $event_date = new DateTime($event_date);
+            $event_date = $event_date->format('j F Y');
+            $event_time = get_field('match_time');
+
+            $_event = wc_get_product( $event->ID );
+            $event_price = $_event->get_price();
+            ?>
+
+            <li>
+              <div class="card-container">
+                <figure class="card-image">
+                  <img src="" />
+                  <img src="" />
+                  <span>VS</span>
+                </figure>
+
+                <div class="card-info">
+                  <a href="<?php echo $event_link; ?>"><?php echo $event_name; ?></a>
+                  <small><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
+                </div>
+
+                <div class="card-actions">
+                  <p><?php echo ($event_price) ? _e('Från ') . $event_price : ''; ?></p>
+                  <a href="<?php echo $event_link; ?>" class="button"><?php _e('Köpa biljetter'); ?></a>
+                </div>
+              </div>
+            </li>
+
+            <?php
           }
           ?>
-
         </ul>
       </section>
 
@@ -37,7 +68,7 @@ if( have_posts() ):
       ?>
 
       <section class="featured featured-teams">
-        <h2 class="is-aligned-center">Top Teams</h2>
+        <h2>Top Teams</h2>
 
         <ul class="list list-card">
           <?php
@@ -110,7 +141,6 @@ if( have_posts() ):
             <?php
           }
           ?>
-
         </ul>
       </section>
 
