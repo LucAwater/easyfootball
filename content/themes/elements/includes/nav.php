@@ -16,10 +16,12 @@
     <!-- Leagues -->
     <li><a href="<?php echo home_url() . '/leagues'; ?>">Ligor</a></li>
 
+
+
     <!-- Regions -->
     <li>
       <a href="<?php echo home_url() . '/regions'; ?>">Land</a>
-      
+
       <?php
       $regions = get_terms( 'region', array('hide_empty' => false,) );
 
@@ -33,6 +35,7 @@
             echo '<li><a href="' . $region_link . '">' . $region_name . '</a>';
           }
 
+          echo '<li class="view-more"><a href="' . home_url() . '/regions">View all regions</a>';
         echo '</ul>';
       endif;
       ?>

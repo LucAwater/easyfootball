@@ -1208,7 +1208,8 @@ section.page-header {
   -webkit-align-items: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  max-width: none; }
+  max-width: none;
+  padding: 0 10px; }
   .list-card > li {
     width: 33.33333%;
     padding: 0 10px;

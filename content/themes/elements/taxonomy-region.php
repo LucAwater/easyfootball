@@ -43,12 +43,8 @@ get_template_part( 'taxonomy', 'header' );
             <?php else: ?>
               <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-league.png" />
             <?php endif; ?>
-          </figure>
-
-          <div>
             <h4><?php echo $child->name; ?></h4>
-            <a href="<?php echo get_term_link($child); ?>">view league</a>
-          </div>
+          </figure>
         </li>
 
         <?php
