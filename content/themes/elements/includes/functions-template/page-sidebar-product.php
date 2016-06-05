@@ -29,7 +29,7 @@ if( $match_location ):
   <aside>
     <div>
       <figure class="product-seating">
-        <p>no product seating map available</p>
+        <p><?php _e('No seating map available'); ?></p>
       </figure>
     </div>
   </aside>
