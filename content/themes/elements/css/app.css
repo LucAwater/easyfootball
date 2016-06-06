@@ -1014,19 +1014,29 @@ nav > ul > li ul {
   white-space: nowrap;
   border: thin solid #e0e0e0;
   background-color: white; }
-  nav > ul > li ul li.view-more {
-    border-top: thin solid #e0e0e0; }
+  nav > ul > li ul div {
+    display: inline-block;
+    border-right: thin solid #e0e0e0; }
+    nav > ul > li ul div:last-child {
+      border-right: none; }
+  nav > ul > li ul li {
+    padding: 5px; }
     nav > ul > li ul li.view-more a, nav > ul > li ul li.view-more button {
-      color: #FF5252; }
-  nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button {
-    display: block;
-    padding: 10px 15px;
-    color: black; }
-  nav > ul > li ul li:hover, nav > ul > li ul li:focus {
-    cursor: pointer;
-    background-color: #e0e0e0; }
-    nav > ul > li ul li:hover a, nav > ul > li ul li:hover button, nav > ul > li ul li:focus a, nav > ul > li ul li:focus button {
+      width: 100%;
+      overflow: visible; }
+    nav > ul > li ul li.view-more:hover, nav > ul > li ul li.view-more:focus {
+      background-color: transparent; }
+      nav > ul > li ul li.view-more:hover a, nav > ul > li ul li.view-more:hover button, nav > ul > li ul li.view-more:focus a, nav > ul > li ul li.view-more:focus button {
+        color: white; }
+    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button {
+      display: block;
+      padding: 5px 10px;
       color: black; }
+    nav > ul > li ul li:hover, nav > ul > li ul li:focus {
+      cursor: pointer;
+      background-color: #e0e0e0; }
+      nav > ul > li ul li:hover a, nav > ul > li ul li:hover button, nav > ul > li ul li:focus a, nav > ul > li ul li:focus button {
+        color: black; }
 
 nav ul li.current {
   text-decoration: underline; }
@@ -1373,6 +1383,11 @@ button,
     .button.button-sec:hover,
     .button.button-sec:focus {
       background-color: #222c31; }
+  button.button-small,
+  .button.button-small {
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px; }
 
 button[disabled="disabled"] {
   opacity: .2; }

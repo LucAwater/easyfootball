@@ -38,6 +38,12 @@ button,
       background-color: darken($color-primary-dark, 10%);
     }
   }
+
+  &.button-small{
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px;
+  }
 }
 
 button[disabled="disabled"]{

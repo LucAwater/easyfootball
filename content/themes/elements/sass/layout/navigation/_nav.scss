@@ -38,18 +38,38 @@ nav > ul > li ul{
   border: thin solid $grey;
   background-color: $white;
 
-  li{
-    &.view-more{
-      border-top: thin solid $grey;
+  div{
+    display: inline-block;
 
+    border-right: thin solid $grey;
+
+    &:last-child{
+      border-right: none;
+    }
+  }
+
+  li{
+    padding: 5px;
+
+    &.view-more{
       a{
-        color: $color-accent;
+        width: 100%;
+        overflow: visible;
+      }
+
+      &:hover,
+      &:focus{
+        background-color: transparent;
+
+        a{
+          color: $white;
+        }
       }
     }
 
     p, a{
       display: block;
-      padding: 10px 15px;
+      padding: 5px 10px;
 
       color: $black;
     }

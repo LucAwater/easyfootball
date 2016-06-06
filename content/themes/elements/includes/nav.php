@@ -3,14 +3,38 @@
     <!-- Teams -->
     <li>
       <a href="<?php echo home_url() . '/teams'; ?>">Lag</a>
-      <ul>
-        <li><p>Arsenal</p></li>
-        <li><p>Aston Villa</p></li>
-        <li><p>Birmingham</p></li>
-        <li><p>Bournemouth</p></li>
-        <li><p>Chelsea</p></li>
-        <li class="view-more"><a href="<?php echo home_url() . '/teams'; ?>">view more teams</a></li>
-      </ul>
+
+      <?php
+      featured_lists_teams();
+      $teams = featured_lists_teams();
+
+      if( $teams ):
+        echo '<ul>';
+          echo '<div>';
+
+          // Loop over teams
+          for( $x = 0; $x < 14; $x++ ){
+            $team = get_term_by('id', $teams[$x], 'team');
+            $team_acf = $team->taxonomy . '_' . $team->term_id;
+            $team_name = $team->name;
+            $team_link = get_term_link($team->term_id);
+
+            // Wrap an extra container around every 5 list items
+            if( $x > 0 && $x %5 == 0 ){
+              echo '</div><div>';
+            }
+
+            // Create list item
+            echo '<li><a href="' . $team_link . '">' . $team_name . '</a></li>';
+          }
+
+          // View all link
+          if( count($teams) >= 15 ){
+            echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/teams">view more teams</a></li>';
+          }
+
+        echo '</ul>';
+      endif; ?>
     </li>
 
     <!-- Leagues -->
