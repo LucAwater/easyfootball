@@ -72,8 +72,8 @@ if( have_posts() ):
 
         <ul class="list list-card">
           <?php
-          foreach( $teams as $team ){
-            $team = get_term_by('id', $team, 'team');
+          for( $x = 0; $x < 6; $x++ ){
+            $team = get_term_by('id', $teams[$x], 'team');
             $team_acf = $team->taxonomy . '_' . $team->term_id;
             $team_name = $team->name;
             $team_link = get_term_link($team->term_id);
