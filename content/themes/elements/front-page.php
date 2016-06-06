@@ -71,7 +71,7 @@ if( have_posts() ):
       <section class="featured featured-teams">
         <h2>Top Teams</h2>
 
-        <ul class="list list-card">
+        <ul class="list list-card list-card-shields">
           <?php
           for( $x = 0; $x < 6; $x++ ){
             $team = get_term_by('id', $teams[$x], 'team');

@@ -1231,15 +1231,22 @@ section.page-header {
       overflow: hidden;
       border: thin solid #e0e0e0;
       background-color: white; }
-      .list-card > li .card-container .card-image {
+      .list-card > li .card-container figure {
         width: 100%;
         height: 200px;
-        padding: 20px;
         background-color: #78909C; }
-        .list-card > li .card-container .card-image img {
+        .list-card > li .card-container figure img {
           max-height: 100%;
+          max-width: none;
           width: auto;
           margin: auto; }
+        .list-card > li .card-container figure h2, .list-card > li .card-container figure h3, .list-card > li .card-container figure h4 {
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          padding: 10px 20px;
+          margin-bottom: 0;
+          color: white; }
       .list-card > li .card-container .card-info {
         padding: 20px; }
         .list-card > li .card-container .card-info * {
@@ -1268,6 +1275,18 @@ section.page-header {
         justify-content: space-between;
         padding: 10px 20px;
         border-top: thin solid #e0e0e0; }
+
+.list-card:not(.list-card-shields) > li .card-container figure img {
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute; }
+
+.list-card.list-card-shields > li .card-container figure {
+  padding: 20px; }
 
 @media screen and (max-width: 960px) {
   .list-card > li {
@@ -1388,6 +1407,9 @@ button,
     height: 35px;
     padding: 0 10px;
     line-height: 35px; }
+  button.button-fullwidth,
+  .button.button-fullwidth {
+    width: 100%; }
 
 button[disabled="disabled"] {
   opacity: .2; }
