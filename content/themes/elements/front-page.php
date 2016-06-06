@@ -18,7 +18,8 @@ if( have_posts() ):
 
         <ul class="list list-card">
           <?php
-          foreach( $events as $event ){
+          for( $x = 0; $x < 6; $x++ ){
+            $event = $events[$x];
             $event_name = $event->post_title;
             $event_link = get_permalink($event->ID);
 
