@@ -1,0 +1,30 @@
+.tooltip{
+  img{
+    width: 20px;
+  }
+
+  &:after{
+    @extend p;
+    @include hide( .2s );
+    @include transform( translate(-50%, -100%) );
+
+    content: attr(data-tooltip);
+
+    top: -10px;
+    left: 50%;
+    position: absolute;
+
+    padding: 10px;
+    display: inline-table;
+
+    color: $white;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 3px;
+    background-color: $black;
+  }
+
+  &:hover:after{
+    @include show( .2s );
+  }
+}

@@ -30,6 +30,10 @@
       display: table;
     }
 
+    img{
+      vertical-align: middle;
+    }
+
     [class^="list-item-"]{
       display: table-cell;
       vertical-align: middle;

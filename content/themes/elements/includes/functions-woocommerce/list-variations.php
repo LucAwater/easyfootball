@@ -18,7 +18,7 @@ function list_variations() {
           <p class="list-item-40 attributes"><?php echo $name; ?></p>
           <p class="list-item-20 price"><?php echo $price; ?></p>
 
-          <div class="list-item-20 quantity">
+          <div class="list-item-10 quantity">
             <select name="quantity" class="input-text qty text">
               <?php
               for($i = 1; $i <= 10; $i++){
@@ -26,6 +26,21 @@ function list_variations() {
               }
               ?>
             </select>
+          </div>
+
+          <div class="list-item-10 sellingPattern">
+            <?php
+            $sellingPattern = get_post_meta( $varId, '_selling_pattern', true );
+
+            if( $sellingPattern == 1 ){
+              $tooltip_type = "warning";
+              $tooltip_message = "Only sold in singles";
+            }
+
+            if( isset($tooltip_type) && isset($tooltip_message) ){
+              echo '<span class="tooltip" data-tooltip="' . $tooltip_message . '"><img src="' . get_template_directory_uri() . '/img/icon-' . $tooltip_type .'-black.svg" /></span>';
+            }
+            ?>
           </div>
 
           <div class="list-item-20 add-to-cart">

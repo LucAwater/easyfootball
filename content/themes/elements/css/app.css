@@ -747,7 +747,7 @@ ul {
   width: calc( 100% + 1.875rem );
   margin-left: -0.9375rem; }
 
-h1, h2, h3, h4, p, p .read-more, span,
+h1, h2, h3, h4, p, p .read-more, .tooltip:after, span,
 time, small, a, button,
 input[type="submit"], .alert, form[role="search"] input[type="search"] {
   font-family: "Gotham A", "Gotham B";
@@ -776,14 +776,14 @@ h4 {
   font-size: 18px;
   color: #727272; }
 
-p, p .read-more {
+p, p .read-more, .tooltip:after {
   line-height: 1.6; }
 
-p .read-more {
+p .read-more, .tooltip:after .read-more {
   color: black;
   text-decoration: underline; }
 
-article p, article p .read-more, p article .read-more {
+article p, article p .read-more, p article .read-more, article .tooltip:after {
   margin-bottom: 1em;
   font-size: 18px;
   line-height: 1.6; }
@@ -918,7 +918,7 @@ body > header {
     body > header .header-content form[role="search"] input[type="search"] {
       border: none;
       background-color: #37474F; }
-    body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more,
+    body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more, body > header .header-content nav > ul > li > .tooltip:after,
     body > header .header-content nav > ul > li > a,
     body > header .header-content nav > ul > li > button,
     body > header .header-content nav > ul > li > input[type="submit"] {
@@ -934,7 +934,7 @@ body > footer {
   padding-top: 20px;
   padding-bottom: 20px;
   background: black; }
-  body > footer p, body > footer p .read-more, p body > footer .read-more, body > footer a, body > footer button,
+  body > footer p, body > footer p .read-more, p body > footer .read-more, body > footer .tooltip:after, body > footer a, body > footer button,
   body > footer input[type="submit"] {
     color: white; }
 
@@ -943,7 +943,7 @@ body.error404 #error404-content {
   margin: 100px auto;
   display: block !important;
   background-color: transparent; }
-  body.error404 #error404-content h2, body.error404 #error404-content p, body.error404 #error404-content p .read-more, p body.error404 #error404-content .read-more {
+  body.error404 #error404-content h2, body.error404 #error404-content p, body.error404 #error404-content p .read-more, p body.error404 #error404-content .read-more, body.error404 #error404-content .tooltip:after {
     margin-bottom: 1em; }
 
 a.trigger-menu, button.trigger-menu,
@@ -1006,7 +1006,7 @@ nav {
     nav > ul > li {
       display: inline-block;
       padding: 29px 15px; }
-      nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more,
+      nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more, nav > ul > li .tooltip:after,
       nav > ul > li a,
       nav > ul > li button,
       nav > ul > li input[type="submit"] {
@@ -1056,7 +1056,7 @@ nav > ul > li ul {
       nav > ul > li ul li.view-more:hover input[type="submit"], nav > ul > li ul li.view-more:focus a, nav > ul > li ul li.view-more:focus button,
       nav > ul > li ul li.view-more:focus input[type="submit"] {
         color: white; }
-    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button,
+    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li .tooltip:after, nav > ul > li ul li a, nav > ul > li ul li button,
     nav > ul > li ul li input[type="submit"] {
       display: block;
       padding: 5px 10px;
@@ -1191,7 +1191,7 @@ section.page-header {
   .list-col li.list-col-head {
     height: 40px;
     background-color: white; }
-    .list-col li.list-col-head p, .list-col li.list-col-head p .read-more, p .list-col li.list-col-head .read-more {
+    .list-col li.list-col-head p, .list-col li.list-col-head p .read-more, p .list-col li.list-col-head .read-more, .list-col li.list-col-head .tooltip:after {
       color: black;
       font-size: 12px;
       font-weight: 500;
@@ -1208,6 +1208,8 @@ section.page-header {
       width: 100%;
       height: 80px;
       display: table; }
+    .list-col li img {
+      vertical-align: middle; }
     .list-col li [class^="list-item-"] {
       display: table-cell;
       vertical-align: middle; }
@@ -1390,6 +1392,41 @@ aside {
 .alert-danger {
   border-color: #cc2e2e;
   background-color: rgba(204, 46, 46, 0.2); }
+
+.tooltip img {
+  width: 20px; }
+.tooltip:after {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  -moz-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  content: attr(data-tooltip);
+  top: -10px;
+  left: 50%;
+  position: absolute;
+  padding: 10px;
+  display: inline-table;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background-color: black; }
+.tooltip:hover:after {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 1;
+  visibility: visible; }
 
 table {
   width: 100%;
@@ -1674,6 +1711,7 @@ section.text .section-body {
   section.text .section-body p,
   section.text .section-body p .read-more,
   p section.text .section-body .read-more,
+  section.text .section-body .tooltip:after,
   section.text .section-body a,
   section.text .section-body button,
   section.text .section-body input[type="submit"] {
@@ -2036,52 +2074,52 @@ section.image .section-body.is-pos-center {
 section.image .section-body.is-pos-right {
   text-align: right; }
 
-h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, span.is-italic,
+h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, .is-italic.tooltip:after, span.is-italic,
 time.is-italic, small.is-italic, a.is-italic, button.is-italic,
 input.is-italic[type="submit"], .is-italic.alert, form[role="search"] input.is-italic[type="search"] {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, h3.is-underlined, h4.is-underlined, p.is-underlined, p .is-underlined.read-more, span.is-underlined,
+h1.is-underlined, h2.is-underlined, h3.is-underlined, h4.is-underlined, p.is-underlined, p .is-underlined.read-more, .is-underlined.tooltip:after, span.is-underlined,
 time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined,
 input.is-underlined[type="submit"], .is-underlined.alert, form[role="search"] input.is-underlined[type="search"] {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, h4.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, span.is-capitalized,
+h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, h4.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, .is-capitalized.tooltip:after, span.is-capitalized,
 time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized,
 input.is-capitalized[type="submit"], .is-capitalized.alert, form[role="search"] input.is-capitalized[type="search"] {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, h4.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, span.is-uppercase,
+h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, h4.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, .is-uppercase.tooltip:after, span.is-uppercase,
 time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase,
 input.is-uppercase[type="submit"], .is-uppercase.alert, form[role="search"] input.is-uppercase[type="search"] {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, h4.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, span.is-lowercase,
+h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, h4.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, .is-lowercase.tooltip:after, span.is-lowercase,
 time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase,
 input.is-lowercase[type="submit"], .is-lowercase.alert, form[role="search"] input.is-lowercase[type="search"] {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, p.is-bold, p .is-bold.read-more, span.is-bold,
+h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, p.is-bold, p .is-bold.read-more, .is-bold.tooltip:after, span.is-bold,
 time.is-bold, small.is-bold, a.is-bold, button.is-bold,
 input.is-bold[type="submit"], .is-bold.alert, form[role="search"] input.is-bold[type="search"] {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, h4.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, span.is-aligned-center,
+h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, h4.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, .is-aligned-center.tooltip:after, span.is-aligned-center,
 time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center,
 input.is-aligned-center[type="submit"], .is-aligned-center.alert, form[role="search"] input.is-aligned-center[type="search"] {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, h4.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, span.is-aligned-left,
+h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, h4.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, .is-aligned-left.tooltip:after, span.is-aligned-left,
 time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left,
 input.is-aligned-left[type="submit"], .is-aligned-left.alert, form[role="search"] input.is-aligned-left[type="search"] {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, h4.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, span.is-aligned-right,
+h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, h4.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, .is-aligned-right.tooltip:after, span.is-aligned-right,
 time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right,
 input.is-aligned-right[type="submit"], .is-aligned-right.alert, form[role="search"] input.is-aligned-right[type="search"] {
   text-align: right; }
-h1.is-black, h2.is-black, h3.is-black, h4.is-black, p.is-black, p .is-black.read-more, span.is-black,
+h1.is-black, h2.is-black, h3.is-black, h4.is-black, p.is-black, p .is-black.read-more, .is-black.tooltip:after, span.is-black,
 time.is-black, small.is-black, a.is-black, button.is-black,
 input.is-black[type="submit"], .is-black.alert, form[role="search"] input.is-black[type="search"] {
   color: black; }
-h1.is-white, h2.is-white, h3.is-white, h4.is-white, p.is-white, p .is-white.read-more, span.is-white,
+h1.is-white, h2.is-white, h3.is-white, h4.is-white, p.is-white, p .is-white.read-more, .is-white.tooltip:after, span.is-white,
 time.is-white, small.is-white, a.is-white, button.is-white,
 input.is-white[type="submit"], .is-white.alert, form[role="search"] input.is-white[type="search"] {
   color: white; }
 
-p.is-small, p .is-small.read-more {
+p.is-small, p .is-small.read-more, .is-small.tooltip:after {
   font-size: 15px; }
 
 .is-stretched-wrapper {
@@ -2208,7 +2246,7 @@ body.single-product .page-header {
   text-align: center;
   color: white;
   background: #333333; }
-  body.single-product .page-header p, body.single-product .page-header p .read-more, p body.single-product .page-header .read-more {
+  body.single-product .page-header p, body.single-product .page-header p .read-more, p body.single-product .page-header .read-more, body.single-product .page-header .tooltip:after {
     font-size: 18px; }
   body.single-product .page-header ul li {
     display: inline-block;
