@@ -748,7 +748,8 @@ ul {
   margin-left: -0.9375rem; }
 
 h1, h2, h3, h4, p, p .read-more, span,
-time, small, a, button, .alert, form[role="search"] input[type="search"] {
+time, small, a, button,
+input[type="submit"], .alert, form[role="search"] input[type="search"] {
   font-family: "Gotham A", "Gotham B";
   font-style: normal;
   font-weight: 400;
@@ -797,7 +798,8 @@ small {
   letter-spacing: 0.6px;
   text-transform: uppercase; }
 
-a, button {
+a, button,
+input[type="submit"] {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
@@ -807,21 +809,29 @@ a, button {
   text-decoration: none;
   cursor: pointer;
   line-height: 1.6; }
-  a:hover, button:hover, a:focus, button:focus {
+  a:hover, button:hover,
+  input[type="submit"]:hover, a:focus, button:focus,
+  input[type="submit"]:focus {
     color: black; }
 
-a.has-content, button.has-content {
+a.has-content, button.has-content,
+input.has-content[type="submit"] {
   color: black;
   text-decoration: none; }
 
-article a, article button {
+article a, article button,
+article input[type="submit"] {
   border-bottom: thin solid #727272; }
-  article a:hover, article button:hover, article a:focus, article button:focus {
+  article a:hover, article button:hover,
+  article input[type="submit"]:hover, article a:focus, article button:focus,
+  article input[type="submit"]:focus {
     border-color: black; }
 
 nav .current_page_parent a, nav .current_page_parent button,
+nav .current_page_parent input[type="submit"],
 nav .current-menu-item a,
-nav .current-menu-item button {
+nav .current-menu-item button,
+nav .current-menu-item input[type="submit"] {
   border-bottom: thin solid black; }
 
 html,
@@ -910,11 +920,13 @@ body > header {
       background-color: #37474F; }
     body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more,
     body > header .header-content nav > ul > li > a,
-    body > header .header-content nav > ul > li > button {
+    body > header .header-content nav > ul > li > button,
+    body > header .header-content nav > ul > li > input[type="submit"] {
       color: white;
       text-transform: uppercase;
       letter-spacing: 1.2px; }
-    body > header .header-content > a, body > header .header-content > button {
+    body > header .header-content > a, body > header .header-content > button,
+    body > header .header-content > input[type="submit"] {
       margin-left: auto; }
 
 body > footer {
@@ -922,7 +934,8 @@ body > footer {
   padding-top: 20px;
   padding-bottom: 20px;
   background: black; }
-  body > footer p, body > footer p .read-more, p body > footer .read-more, body > footer a, body > footer button {
+  body > footer p, body > footer p .read-more, p body > footer .read-more, body > footer a, body > footer button,
+  body > footer input[type="submit"] {
     color: white; }
 
 body.error404 #error404-content {
@@ -933,34 +946,44 @@ body.error404 #error404-content {
   body.error404 #error404-content h2, body.error404 #error404-content p, body.error404 #error404-content p .read-more, p body.error404 #error404-content .read-more {
     margin-bottom: 1em; }
 
-a.trigger-menu, button.trigger-menu {
+a.trigger-menu, button.trigger-menu,
+input.trigger-menu[type="submit"] {
   width: 35px;
   height: 35px;
   display: block;
   position: relative; }
-  a.trigger-menu i, button.trigger-menu i {
+  a.trigger-menu i, button.trigger-menu i,
+  input.trigger-menu[type="submit"] i {
     width: 100%;
     height: 3px;
     display: block;
     top: calc(50% - 1.5px);
     background: black; }
-    a.trigger-menu i:before, button.trigger-menu i:before, a.trigger-menu i:after, button.trigger-menu i:after {
+    a.trigger-menu i:before, button.trigger-menu i:before,
+    input.trigger-menu[type="submit"] i:before, a.trigger-menu i:after, button.trigger-menu i:after,
+    input.trigger-menu[type="submit"] i:after {
       content: " ";
       position: absolute;
       width: 100%;
       height: 100%;
       background: black;
       transition: .2s; }
-    a.trigger-menu i:before, button.trigger-menu i:before {
+    a.trigger-menu i:before, button.trigger-menu i:before,
+    input.trigger-menu[type="submit"] i:before {
       margin-top: -8px; }
-    a.trigger-menu i:after, button.trigger-menu i:after {
+    a.trigger-menu i:after, button.trigger-menu i:after,
+    input.trigger-menu[type="submit"] i:after {
       margin-top: 8px; }
 
-a.trigger-menu:hover i:before, button.trigger-menu:hover i:before, a.trigger-menu:hover i:after, button.trigger-menu:hover i:after {
+a.trigger-menu:hover i:before, button.trigger-menu:hover i:before,
+input.trigger-menu[type="submit"]:hover i:before, a.trigger-menu:hover i:after, button.trigger-menu:hover i:after,
+input.trigger-menu[type="submit"]:hover i:after {
   transition: .2s; }
-a.trigger-menu:hover i:before, button.trigger-menu:hover i:before {
+a.trigger-menu:hover i:before, button.trigger-menu:hover i:before,
+input.trigger-menu[type="submit"]:hover i:before {
   margin-top: -11px; }
-a.trigger-menu:hover i:after, button.trigger-menu:hover i:after {
+a.trigger-menu:hover i:after, button.trigger-menu:hover i:after,
+input.trigger-menu[type="submit"]:hover i:after {
   margin-top: 11px; }
 
 @keyframes activebefore {
@@ -972,7 +995,8 @@ a.trigger-menu:hover i:after, button.trigger-menu:hover i:after {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); } }
-a.trigger-menu:focus i:before, button.trigger-menu:focus i:before {
+a.trigger-menu:focus i:before, button.trigger-menu:focus i:before,
+input.trigger-menu[type="submit"]:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
 nav {
@@ -984,7 +1008,8 @@ nav {
       padding: 29px 15px; }
       nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more,
       nav > ul > li a,
-      nav > ul > li button {
+      nav > ul > li button,
+      nav > ul > li input[type="submit"] {
         line-height: 22px; }
       nav > ul > li:hover, nav > ul > li:focus {
         background-color: #37474F; }
@@ -1021,21 +1046,27 @@ nav > ul > li ul {
       border-right: none; }
   nav > ul > li ul li {
     padding: 5px; }
-    nav > ul > li ul li.view-more a, nav > ul > li ul li.view-more button {
+    nav > ul > li ul li.view-more a, nav > ul > li ul li.view-more button,
+    nav > ul > li ul li.view-more input[type="submit"] {
       width: 100%;
       overflow: visible; }
     nav > ul > li ul li.view-more:hover, nav > ul > li ul li.view-more:focus {
       background-color: transparent; }
-      nav > ul > li ul li.view-more:hover a, nav > ul > li ul li.view-more:hover button, nav > ul > li ul li.view-more:focus a, nav > ul > li ul li.view-more:focus button {
+      nav > ul > li ul li.view-more:hover a, nav > ul > li ul li.view-more:hover button,
+      nav > ul > li ul li.view-more:hover input[type="submit"], nav > ul > li ul li.view-more:focus a, nav > ul > li ul li.view-more:focus button,
+      nav > ul > li ul li.view-more:focus input[type="submit"] {
         color: white; }
-    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button {
+    nav > ul > li ul li p, nav > ul > li ul li p .read-more, p nav > ul > li ul li .read-more, nav > ul > li ul li a, nav > ul > li ul li button,
+    nav > ul > li ul li input[type="submit"] {
       display: block;
       padding: 5px 10px;
       color: black; }
     nav > ul > li ul li:hover, nav > ul > li ul li:focus {
       cursor: pointer;
       background-color: #e0e0e0; }
-      nav > ul > li ul li:hover a, nav > ul > li ul li:hover button, nav > ul > li ul li:focus a, nav > ul > li ul li:focus button {
+      nav > ul > li ul li:hover a, nav > ul > li ul li:hover button,
+      nav > ul > li ul li:hover input[type="submit"], nav > ul > li ul li:focus a, nav > ul > li ul li:focus button,
+      nav > ul > li ul li:focus input[type="submit"] {
         color: black; }
 
 nav ul li.current {
@@ -1191,7 +1222,8 @@ section.page-header {
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 10px; }
-    .list-cloud div li a, .list-cloud div li button {
+    .list-cloud div li a, .list-cloud div li button,
+    .list-cloud div li input[type="submit"] {
       -webkit-transition: 0.2s;
       -moz-transition: 0.2s;
       -ms-transition: 0.2s;
@@ -1202,7 +1234,9 @@ section.page-header {
       color: black;
       border-radius: 3px;
       border: thin solid #e0e0e0; }
-      .list-cloud div li a:hover, .list-cloud div li button:hover, .list-cloud div li a:focus, .list-cloud div li button:focus {
+      .list-cloud div li a:hover, .list-cloud div li button:hover,
+      .list-cloud div li input[type="submit"]:hover, .list-cloud div li a:focus, .list-cloud div li button:focus,
+      .list-cloud div li input[type="submit"]:focus {
         background-color: #e0e0e0; }
 
 .list-card {
@@ -1368,14 +1402,16 @@ table {
     padding: 15px;
     border: thin solid #e0e0e0; }
 
-button {
+button,
+input[type="submit"] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   border: none; }
 
 button,
-.button {
+.button,
+input[type="submit"] {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
@@ -1397,23 +1433,30 @@ button,
   outline: 0; }
   button:hover, button:focus,
   .button:hover,
-  .button:focus {
+  .button:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
     color: white;
     background-color: #D32F2F; }
   button.button-sec,
-  .button.button-sec {
+  .button.button-sec,
+  input[type="submit"].button-sec {
     background-color: #37474F; }
     button.button-sec:hover, button.button-sec:focus,
     .button.button-sec:hover,
-    .button.button-sec:focus {
+    .button.button-sec:focus,
+    input[type="submit"].button-sec:hover,
+    input[type="submit"].button-sec:focus {
       background-color: #222c31; }
   button.button-small,
-  .button.button-small {
+  .button.button-small,
+  input[type="submit"].button-small {
     height: 35px;
     padding: 0 10px;
     line-height: 35px; }
   button.button-fullwidth,
-  .button.button-fullwidth {
+  .button.button-fullwidth,
+  input[type="submit"].button-fullwidth {
     width: 100%; }
 
 button[disabled="disabled"] {
@@ -1632,7 +1675,8 @@ section.text .section-body {
   section.text .section-body p .read-more,
   p section.text .section-body .read-more,
   section.text .section-body a,
-  section.text .section-body button {
+  section.text .section-body button,
+  section.text .section-body input[type="submit"] {
     margin-bottom: 1em; }
 
 section.image .section-body figure {
@@ -1732,7 +1776,8 @@ body.single-post article {
 
 body.single-post article header .post-categories {
   float: left; }
-  body.single-post article header .post-categories a, body.single-post article header .post-categories button {
+  body.single-post article header .post-categories a, body.single-post article header .post-categories button,
+  body.single-post article header .post-categories input[type="submit"] {
     border: none; }
   body.single-post article header .post-categories span {
     color: #727272; }
@@ -1992,37 +2037,48 @@ section.image .section-body.is-pos-right {
   text-align: right; }
 
 h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, span.is-italic,
-time.is-italic, small.is-italic, a.is-italic, button.is-italic, .is-italic.alert, form[role="search"] input.is-italic[type="search"] {
+time.is-italic, small.is-italic, a.is-italic, button.is-italic,
+input.is-italic[type="submit"], .is-italic.alert, form[role="search"] input.is-italic[type="search"] {
   font-style: italic; }
 h1.is-underlined, h2.is-underlined, h3.is-underlined, h4.is-underlined, p.is-underlined, p .is-underlined.read-more, span.is-underlined,
-time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined, .is-underlined.alert, form[role="search"] input.is-underlined[type="search"] {
+time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined,
+input.is-underlined[type="submit"], .is-underlined.alert, form[role="search"] input.is-underlined[type="search"] {
   text-decoration: underline; }
 h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, h4.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, span.is-capitalized,
-time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized, .is-capitalized.alert, form[role="search"] input.is-capitalized[type="search"] {
+time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized,
+input.is-capitalized[type="submit"], .is-capitalized.alert, form[role="search"] input.is-capitalized[type="search"] {
   text-transform: capitalize; }
 h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, h4.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, span.is-uppercase,
-time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase, .is-uppercase.alert, form[role="search"] input.is-uppercase[type="search"] {
+time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase,
+input.is-uppercase[type="submit"], .is-uppercase.alert, form[role="search"] input.is-uppercase[type="search"] {
   text-transform: uppercase; }
 h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, h4.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, span.is-lowercase,
-time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase, .is-lowercase.alert, form[role="search"] input.is-lowercase[type="search"] {
+time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase,
+input.is-lowercase[type="submit"], .is-lowercase.alert, form[role="search"] input.is-lowercase[type="search"] {
   text-transform: lowercase; }
 h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, p.is-bold, p .is-bold.read-more, span.is-bold,
-time.is-bold, small.is-bold, a.is-bold, button.is-bold, .is-bold.alert, form[role="search"] input.is-bold[type="search"] {
+time.is-bold, small.is-bold, a.is-bold, button.is-bold,
+input.is-bold[type="submit"], .is-bold.alert, form[role="search"] input.is-bold[type="search"] {
   font-weight: 700; }
 h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, h4.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, span.is-aligned-center,
-time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center, .is-aligned-center.alert, form[role="search"] input.is-aligned-center[type="search"] {
+time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center,
+input.is-aligned-center[type="submit"], .is-aligned-center.alert, form[role="search"] input.is-aligned-center[type="search"] {
   text-align: center; }
 h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, h4.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, span.is-aligned-left,
-time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left, .is-aligned-left.alert, form[role="search"] input.is-aligned-left[type="search"] {
+time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left,
+input.is-aligned-left[type="submit"], .is-aligned-left.alert, form[role="search"] input.is-aligned-left[type="search"] {
   text-align: left; }
 h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, h4.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, span.is-aligned-right,
-time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right, .is-aligned-right.alert, form[role="search"] input.is-aligned-right[type="search"] {
+time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right,
+input.is-aligned-right[type="submit"], .is-aligned-right.alert, form[role="search"] input.is-aligned-right[type="search"] {
   text-align: right; }
 h1.is-black, h2.is-black, h3.is-black, h4.is-black, p.is-black, p .is-black.read-more, span.is-black,
-time.is-black, small.is-black, a.is-black, button.is-black, .is-black.alert, form[role="search"] input.is-black[type="search"] {
+time.is-black, small.is-black, a.is-black, button.is-black,
+input.is-black[type="submit"], .is-black.alert, form[role="search"] input.is-black[type="search"] {
   color: black; }
 h1.is-white, h2.is-white, h3.is-white, h4.is-white, p.is-white, p .is-white.read-more, span.is-white,
-time.is-white, small.is-white, a.is-white, button.is-white, .is-white.alert, form[role="search"] input.is-white[type="search"] {
+time.is-white, small.is-white, a.is-white, button.is-white,
+input.is-white[type="submit"], .is-white.alert, form[role="search"] input.is-white[type="search"] {
   color: white; }
 
 p.is-small, p .is-small.read-more {
