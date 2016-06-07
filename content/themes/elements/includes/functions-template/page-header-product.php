@@ -13,10 +13,11 @@ global $product, $post;
     $match_date = new DateTime($match_date);
     $match_time = get_field('match_time');
     $match_location = get_field('match_location');
+    $match_location = get_term_by('name', $match_location, 'team');
 
     // Get category term to retrieve custom fields of (sub)category
     if( $match_location ){
-      $category = get_category($match_location->term_id);
+      $category = $match_location;
       $category_tax = $category->taxonomy;
       $category_id = $category->term_id;
       $category_term = $category_tax . '_' . $category_id;

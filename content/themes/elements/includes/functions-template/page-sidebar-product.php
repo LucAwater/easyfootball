@@ -5,6 +5,7 @@
  * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
  */
 $match_location = get_field('match_location');
+$match_location = get_term_by('name', $match_location, 'team');
 
 if( $match_location ):
   // Get category term to retrieve custom fields of (sub)category
@@ -17,20 +18,23 @@ if( $match_location ):
   $map_url = $map['sizes']['medium'];
   $map_width = $map['sizes']['medium-width'];
   $map_height = $map['sizes']['medium-height'];
+
+  if( $map ):
   ?>
-  <aside>
-    <div>
-      <figure class="product-seating">
-        <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
-      </figure>
-    </div>
-  </aside>
-<?php else: ?>
-  <aside>
-    <div>
-      <figure class="product-seating">
-        <p><?php _e('No seating map available'); ?></p>
-      </figure>
-    </div>
-  </aside>
+    <aside>
+      <div>
+        <figure class="product-seating">
+          <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
+        </figure>
+      </div>
+    </aside>
+  <?php else: ?>
+    <aside>
+      <div>
+        <figure class="product-seating">
+          <p><?php _e('No seating map available'); ?></p>
+        </figure>
+      </div>
+    </aside>
+  <?php endif; ?>
 <?php endif; ?>
