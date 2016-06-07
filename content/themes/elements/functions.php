@@ -10,6 +10,7 @@ require_once('includes/admin/tax-region.php');
 require_once('includes/admin/tax-league.php');
 require_once('includes/admin/tax-team.php');
 require_once('includes/admin/acf-page.php');
+require_once('includes/admin/product-variable-fields.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
