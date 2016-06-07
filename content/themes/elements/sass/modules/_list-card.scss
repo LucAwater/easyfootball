@@ -18,69 +18,78 @@
 
       border: thin solid $grey;
       background-color: $white;
-
-      figure{
-        width: 100%;
-        height: 200px;
-
-        background-color: $color-primary-light;
-
-        img{
-          max-height: 100%;
-          max-width: none;
-          width: auto;
-          margin: auto;
-        }
-
-        h2, h3, h4{
-          bottom: 0;
-          left: 0;
-          position: absolute;
-
-          padding: 10px 20px;
-          margin-bottom: 0;
-
-          color: $white;
-        }
-      }
-
-      .card-info{
-        padding: 20px;
-
-        *{
-          display: block;
-        }
-
-        h3{
-          margin-bottom: 20px;
-        }
-
-        h3 + p{
-          margin-top: -20px;
-          margin-bottom: 20px;
-
-          color: $grey-text;
-        }
-
-        ul{
-          li{
-            margin-bottom: 10px;
-          }
-        }
-      }
-
-      .card-actions{
-        @include flexbox;
-        @include align-items( center );
-        @include justify-content( space-between );
-
-        padding: 10px 20px;
-
-        border-top: thin solid $grey;
-      }
     }
   }
 }
+
+// Card figure
+.list-card > li .card-container figure{
+  width: 100%;
+  height: 200px;
+
+  background-color: $grey-light;
+
+  img{
+    max-height: 100%;
+    max-width: none;
+    width: auto;
+    margin: auto;
+  }
+
+  h2, h3, h4{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    padding: 10px 20px;
+    margin-bottom: 0;
+
+    color: $white;
+  }
+}
+
+// Card info
+.list-card > li .card-container .card-info{
+  padding: 20px 20px 25px;
+
+  *{
+    display: block;
+  }
+
+  // Card info title
+  h2, h3, h4{
+    margin-bottom: 20px;
+  }
+
+  // Card info subtitle
+  .card-subtitle{
+    margin-top: -20px;
+
+    color: $grey-text;
+
+    + *{
+      margin-top: 20px;
+    }
+  }
+
+  // Card info content
+  > *,
+  ul li{
+    margin-top: 10px;
+  }
+}
+
+// Card actions
+.list-card > li .card-container .card-actions{
+  @include flexbox;
+  @include align-items( center );
+  @include justify-content( space-between );
+
+  padding: 10px 20px;
+
+  border-top: thin solid $grey;
+}
+
 
 .list-card:not(.list-card-shields){
   > li .card-container figure{
@@ -93,12 +102,14 @@
   }
 }
 
+// Cards with shield images
 .list-card.list-card-shields{
   > li .card-container figure{
     padding: 20px;
   }
 }
 
+// Media queries
 @media screen and (max-width: 960px){
   .list-card > li{
     width: 50%;
