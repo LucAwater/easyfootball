@@ -18,23 +18,24 @@ if( $match_location ):
   $map_url = $map['sizes']['medium'];
   $map_width = $map['sizes']['medium-width'];
   $map_height = $map['sizes']['medium-height'];
-
-  if( $map ):
   ?>
-    <aside>
-      <div>
-        <figure class="product-seating">
+  <aside>
+    <div>
+      <figure class="product-seating">
+        <?php if($map): ?>
           <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
-        </figure>
-      </div>
-    </aside>
-  <?php else: ?>
-    <aside>
-      <div>
-        <figure class="product-seating">
+        <?php else:  ?>
           <p><?php _e('No seating map available'); ?></p>
-        </figure>
-      </div>
-    </aside>
-  <?php endif; ?>
+        <?php endif; ?>
+      </figure>
+    </div>
+  </aside>
+<?php else: ?>
+  <aside>
+    <div>
+      <figure class="product-seating">
+        <p><?php _e('No seating map available'); ?></p>
+      </figure>
+    </div>
+  </aside>
 <?php endif; ?>
