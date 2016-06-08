@@ -1041,6 +1041,7 @@ nav > ul > li ul {
   background-color: white; }
   nav > ul > li ul div {
     display: inline-block;
+    vertical-align: top;
     border-right: thin solid #e0e0e0; }
     nav > ul > li ul div:last-child {
       border-right: none; }

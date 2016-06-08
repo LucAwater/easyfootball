@@ -15,7 +15,7 @@ if( have_posts() ):
 
       <section class="featured featured-events">
         <div class="section-header">
-          <h2>Top Matches</h2>
+          <h2><?php _e('Top Matches'); ?></h2>
         </div>
 
         <div class="section-body">
@@ -74,7 +74,7 @@ if( have_posts() ):
 
       <section class="featured featured-teams">
         <section class="section-header">
-          <h2>Top Teams</h2>
+          <h2><?php _e('Top Teams'); ?></h2>
         </section>
 
         <div class="section-body">
@@ -116,7 +116,7 @@ if( have_posts() ):
 
                   <div class="card-info">
                     <h3><?php echo $team_name; ?></h3>
-                    <p>Top matches</p>
+                    <p><?php _e('Top matches'); ?></p>
 
                     <?php if( $team_matches): ?>
                       <ul>
@@ -145,8 +145,8 @@ if( have_posts() ):
                   </div>
 
                   <div class="card-actions">
-                    <p><?php echo $team->count; ?> in total</p>
-                    <a class="button" href="<?php echo $team_link; ?>">view all matches</a>
+                    <p><?php echo $team->count . __(' in total'); ?></p>
+                    <a class="button" href="<?php echo $team_link; ?>"><?php _e('view all matches'); ?></a>
                   </div>
                 </div>
               </li>
