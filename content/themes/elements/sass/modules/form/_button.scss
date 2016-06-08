@@ -1,0 +1,57 @@
+button,
+input[type="submit"]{
+  @extend a;
+  @include appearance( none );
+
+  border: none;
+}
+
+button,
+.button,
+input[type="submit"]{
+  @include transition( .2s );
+  @include font-smoothing( antialiased );
+
+  overflow: hidden;
+
+  height: 40px;
+  padding: 0 30px;
+  display: inline-block;
+
+  color: $white;
+  text-align: center;
+  border-radius: 3px;
+  background-color: $color-accent;
+  line-height: 40px;
+  cursor: pointer;
+  outline: 0;
+
+  &:hover,
+  &:focus{
+    color: $white;
+    background-color: $color-accent-dark;
+  }
+
+  &.button-sec{
+    background-color: $color-primary-dark;
+
+    &:hover,
+    &:focus{
+      background-color: darken($color-primary-dark, 10%);
+    }
+  }
+
+  &.button-small{
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px;
+  }
+
+  &.button-fullwidth{
+    width: 100%;
+  }
+}
+
+button[disabled="disabled"]{
+  opacity: .2;
+}

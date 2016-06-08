@@ -1,0 +1,16 @@
+select{
+  @include appearance( none );
+
+  padding: 10px;
+
+  cursor: pointer;
+  background-color: $grey;
+  border-radius: 5px;
+  border: thin solid $grey-text;
+
+  padding-right: 30px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-image: url('../img/arrow-dropdown.svg');
+}

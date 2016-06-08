@@ -1,17 +1,65 @@
 body > header{
-  @include flexbox;
-  @include align-items( center );
-  @include justify-content( space-between );
-
-  position: fixed;
   z-index: $zIndex-header;
 
   width: 100%;
   height: $header-height;
 
-  background-color: $grey-light;
+  background-color: $color-primary;
 
-  .link-logo{
-    width: 50px;
+  .header-content{
+    @include flexbox;
+    @include align-items( center );
+
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+
+    > *{
+      margin: 0 20px;
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+    // Logo
+    .link-logo{
+      width: 120px;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    // Search form
+    form[role="search"]{
+      input[type="search"]{
+        border: none;
+        background-color: $color-primary-dark;
+      }
+    }
+
+    // Nav
+    nav{
+      > ul{
+        > li{
+          > p,
+          > a{
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+          }
+        }
+      }
+    }
+
+    // Help
+    > a{
+      margin-left: auto;
+    }
   }
 }

@@ -5,9 +5,15 @@ get_header();
  * Check if we are on a WooCommerce page
  * If so, echo content to enable the shortcode
  */
-if( is_woocommerce() ){
-  the_content();
-}
+ if( have_posts() ):
+   while( have_posts() ): the_post();
+
+     if( is_really_woocommerce_page() ){
+       the_content();
+     }
+
+   endwhile;
+ endif;
 
 /*
  * Start the ACF page elements loop

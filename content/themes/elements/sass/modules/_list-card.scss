@@ -1,0 +1,123 @@
+.list-card{
+  @include flexbox;
+  @include flex-wrap( wrap );
+  @include align-items( flex-start );
+
+  max-width: none;
+  padding: 0 10px;
+
+  > li{
+    width: 33.33333%;
+    padding: 0 10px;
+    margin-bottom: 40px;
+
+    .card-container{
+      @include border-radius( 3px );
+
+      overflow: hidden;
+
+      border: thin solid $grey;
+      background-color: $white;
+    }
+  }
+}
+
+// Card figure
+.list-card > li .card-container figure{
+  width: 100%;
+  height: 200px;
+
+  background-color: $grey-light;
+
+  img{
+    max-height: 100%;
+    max-width: none;
+    width: auto;
+    margin: auto;
+  }
+
+  h2, h3, h4{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    padding: 10px 20px;
+    margin-bottom: 0;
+
+    color: $white;
+  }
+}
+
+// Card info
+.list-card > li .card-container .card-info{
+  padding: 20px 20px 25px;
+
+  *{
+    display: block;
+  }
+
+  // Card info title
+  h2, h3, h4{
+    margin-bottom: 20px;
+  }
+
+  // Card info subtitle
+  .card-subtitle{
+    margin-top: -20px;
+
+    color: $grey-text;
+
+    + *{
+      margin-top: 20px;
+    }
+  }
+
+  // Card info content
+  > *,
+  ul li{
+    margin-top: 10px;
+  }
+}
+
+// Card actions
+.list-card > li .card-container .card-actions{
+  @include flexbox;
+  @include align-items( center );
+  @include justify-content( space-between );
+
+  padding: 10px 20px;
+
+  border-top: thin solid $grey;
+}
+
+
+.list-card:not(.list-card-shields){
+  > li .card-container figure{
+    img{
+      @include transform( translateX(-50%));
+
+      left: 50%;
+      position: absolute;
+    }
+  }
+}
+
+// Cards with shield images
+.list-card.list-card-shields{
+  > li .card-container figure{
+    padding: 20px;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 960px){
+  .list-card > li{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .list-card > li{
+    width: 100%;
+  }
+}

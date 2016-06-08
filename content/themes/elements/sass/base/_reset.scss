@@ -14,6 +14,14 @@ html{
   box-sizing: inherit;
 }
 
+figure{
+  background-color: $grey-light;
+
+  img{
+    display: block;
+  }
+}
+
 img{
   max-width: 100%;
   height: auto;

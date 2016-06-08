@@ -18,7 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+global $product;
 ?>
 
 <?php
@@ -49,33 +49,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="summary entry-summary">
 
-		<?php
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-		?>
+    <?php page_sidebar(); ?>
 
+    <?php page_content_start(); ?>
+
+      <?php
+      $type = "info";
+      $message = "This can be some kind of info message about the tickets";
+      alert($type, $message);
+      ?>
+
+      <?php
+      /*
+       * Put all variations in list
+       *
+       * Each variation has its own form
+       */
+      ?>
+      <div class="variations">
+        <ul class="list-col">
+          <li class="list-col-head">
+            <p class="list-item-40 attributes">Seating</p>
+            <p class="list-item-20 price">Price</p>
+            <p class="list-item-20 quantity">Quantity</p>
+            <p class="list-item-20 add-to-cart"></p>
+          </li>
+
+          <?php list_variations(); ?>
+        </ul>
+      </div>
+    <?php page_content_end(); ?>
 	</div><!-- .summary -->
-
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		do_action( 'woocommerce_after_single_product_summary' );
-	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 

@@ -35,3 +35,36 @@
   opacity: 1;
   visibility: visible;
 }
+
+// Appearance
+@mixin appearance($appearance) {
+  -moz-appearance: $appearance;
+  -webkit-appearance: $appearance;
+  appearance: $appearance;
+}
+
+@mixin font-smoothing( $font-smoothing ){
+  -webkit-font-smoothing: $font-smoothing;
+  -moz-osx-font-smoothing: $font-smoothing;
+  font-weight: 500;
+}
+
+@mixin box-shadow( $box-shadow ){
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+@mixin border-radius( $border-radius ){
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+
+@mixin filter( $filter ) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}

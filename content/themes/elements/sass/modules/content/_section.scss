@@ -8,10 +8,12 @@ section{
   .section-header,
   .section-body{
     clear: both;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
-  .section-header{
-    max-width: 700px;
-    margin-bottom: $space-section / 2;
+  h2, h3, h4{
+    margin-bottom: 40px;
   }
 }

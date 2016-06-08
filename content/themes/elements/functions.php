@@ -5,9 +5,12 @@
 
 // Includes
 require_once('includes/scripts.php');
-
-// Includes: admin
+require_once('includes/admin/importer.php');
+require_once('includes/admin/tax-region.php');
+require_once('includes/admin/tax-league.php');
+require_once('includes/admin/tax-team.php');
 require_once('includes/admin/acf-page.php');
+require_once('includes/admin/product-variable-fields.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
@@ -15,15 +18,72 @@ require_once('includes/functions-template/section.php');
 require_once('includes/functions-template/section-header.php');
 require_once('includes/functions-template/section-grid.php');
 require_once('includes/functions-template/section-slider.php');
+require_once('includes/functions-template/page-header.php');
+require_once('includes/functions-template/page-content.php');
+require_once('includes/functions-template/page-sidebar.php');
+require_once('includes/functions-template/alert.php');
 
 // Includes: WooCommerce
 require_once('woocommerce/woo-functions.php');
 require_once('includes/functions-woocommerce/cart-update.php');
+require_once('includes/functions-woocommerce/breadcrumb.php');
+require_once('includes/functions-woocommerce/list-variations.php');
+require_once('includes/functions-woocommerce/featured-lists.php');
+
+/*
+ * Import data for regions, leagues and teams.
+ *
+ * update_field() makes sure that the scripts only run once, as it's processing heavy.
+ */
+
+$import_init = get_field('importer_init', 'option');
+update_field('field_5720b5880d265', 0, 'option');
+
+if( $import_init ){
+  require_once('includes/functions-woocommerce/data-regions.php');
+  require_once('includes/functions-woocommerce/data-teams.php');
+  require_once('includes/functions-woocommerce/data-leagues.php');
+  require_once('includes/functions-woocommerce/import-taxonomies.php');
+}
 
 // Add support for WooCommerce
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
   add_theme_support( 'woocommerce' );
+}
+
+// Customize excerpt
+function wpdocs_excerpt_more( $more ) {
+  return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+// Remove WooCommerce page titles
+add_filter( 'woocommerce_show_page_title', function() { return false; } );
+
+// Show empty product categories
+add_filter( 'woocommerce_product_subcategories_hide_empty', 'show_empty_categories', 10, 1 );
+function show_empty_categories ( $show_empty ) {
+  $show_empty  =  true;
+
+  return $show_empty;
+}
+
+// Function to check if is any type of woocommerce page
+function is_really_woocommerce_page () {
+  if(  function_exists ( "is_woocommerce" ) && is_woocommerce()){
+    return true;
+  }
+
+  $woocommerce_keys = array("woocommerce_shop_page_id","woocommerce_terms_page_id","woocommerce_cart_page_id","woocommerce_checkout_page_id","woocommerce_pay_page_id","woocommerce_thanks_page_id","woocommerce_myaccount_page_id","woocommerce_edit_address_page_id","woocommerce_view_order_page_id","woocommerce_change_password_page_id","woocommerce_logout_page_id","woocommerce_lost_password_page_id" );
+
+  foreach ( $woocommerce_keys as $wc_page_id ) {
+    if ( get_the_ID () == get_option ( $wc_page_id , 0 ) ) {
+      return true ;
+    }
+  }
+
+  return false;
 }
 
 // Change the WooCommerce paypal icon

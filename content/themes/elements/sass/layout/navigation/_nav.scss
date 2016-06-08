@@ -1,12 +1,88 @@
-nav ul{
-  display: inline;
+nav{
+  height: 100%;
 
-  li{
+  > ul{
+    display: inline;
+
+    > li{
+      display: inline-block;
+      padding: 29px 15px; // 28 = header-height - p line-height
+
+      p,
+      a{
+        line-height: 22px;
+      }
+
+      &:hover,
+      &:focus{
+        background-color: $color-primary-dark;
+
+        ul{
+          @include show( .2s );
+        }
+      }
+    }
+  }
+}
+
+// Subnav
+nav > ul > li ul{
+  @include hide( .2s );
+  @include box-shadow( 0 3px 5px rgba(0,0,0,.2) );
+
+  left: 0;
+  top: 100%;
+  position: absolute;
+
+  white-space: nowrap;
+  border: thin solid $grey;
+  background-color: $white;
+
+  div{
     display: inline-block;
-    padding-right: 30px;
+    vertical-align: top;
+
+    border-right: thin solid $grey;
 
     &:last-child{
-      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  li{
+    padding: 5px;
+
+    &.view-more{
+      a{
+        width: 100%;
+        overflow: visible;
+      }
+
+      &:hover,
+      &:focus{
+        background-color: transparent;
+
+        a{
+          color: $white;
+        }
+      }
+    }
+
+    p, a{
+      display: block;
+      padding: 5px 10px;
+
+      color: $black;
+    }
+
+    &:hover,
+    &:focus{
+      cursor: pointer;
+      background-color: $grey;
+
+      a{
+        color: $black;
+      }
     }
   }
 }

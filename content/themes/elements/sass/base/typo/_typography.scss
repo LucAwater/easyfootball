@@ -1,14 +1,15 @@
 %base{
-  @include source;
+  @include gotham;
 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
 }
 
 h1{
   @extend %base;
 
-  font-size: 4.5em;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 article h1{
@@ -18,13 +19,34 @@ article h1{
 h2{
   @extend %base;
 
-  font-size: 2em;
+  font-size: 30px;
+}
+
+h3{
+  @extend %base;
+
+  font-size: 25px;
+}
+
+h4{
+  @extend %base;
+  @include font-smoothing( antialiased );
+
+  font-size: 18px;
+  color: $grey-text;
 }
 
 p{
   @extend %base;
 
-  font-size: .9em;
+  line-height: 1.6;
+}
+
+p .read-more{
+  @extend p;
+
+  color: $black;
+  text-decoration: underline;
 }
 
 article p{
@@ -37,4 +59,13 @@ article p{
 span,
 time{
   @extend %base;
+}
+
+small{
+  @extend %base;
+
+  font-size: 12px;
+  color: $grey-text;
+  letter-spacing: 0.2px;
+
 }

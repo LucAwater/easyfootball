@@ -1,0 +1,22 @@
+table{
+  width: 100%;
+
+  text-align: left;
+  border-collapse: collapse;
+
+  thead{
+    th{
+      padding: 15px;
+
+      border: thin solid $grey;
+    }
+  }
+
+  tbody{
+    td{
+      padding: 15px;
+
+      border: thin solid $grey;
+    }
+  }
+}

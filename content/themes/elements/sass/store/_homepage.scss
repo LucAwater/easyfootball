@@ -1,0 +1,60 @@
+body.home{
+  section#intro-home{
+    width: 100%;
+    padding: 100px;
+
+    color: white;
+    background: $grey-dark;
+    text-align: center;
+
+    /* REPLACE LATER W/ DYNAMIC CONTENT */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-image: url('/easyfootball/content/themes/elements/img/bg.jpg');
+
+    h1{
+      margin-bottom: 20px;
+    }
+
+    form[role="search"]{
+      width: 800px;
+      max-width: none;
+      height: 60px;
+      margin: auto;
+
+      ::-webkit-input-placeholder{
+        color: $grey-text;
+      }
+      :-moz-placeholder{
+        color: $grey-text;
+      }
+      ::-moz-placeholder{
+        color: $grey-text;
+      }
+      :-ms-input-placeholder {
+        color: $grey-text;
+      }
+
+      input[type="search"]{
+        color: $black;
+      }
+
+      button[type="submit"]{
+        top: 10px;
+        right: 10px;
+
+        width: auto;
+        height: 40px;
+        padding: 0 30px;
+
+        background-color: $color-accent;
+
+        &:hover,
+        &:focus{
+          background-color: $color-accent-dark;
+        }
+      }
+    }
+  }
+}
