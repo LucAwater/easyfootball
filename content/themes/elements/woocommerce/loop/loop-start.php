@@ -48,8 +48,8 @@ $term =	$wp_query->queried_object;
     <h3>All matches for <?php echo $term->name; ?></h3>
     <ul class="list list-col">
       <li class="list-col-head">
-        <p class="list-item-40">Match</p>
         <p class="list-item-20">Date</p>
+        <p class="list-item-40">Match</p>
         <p class="list-item-20">Prices</p>
         <p class="list-item-20"></p>
       </li>
