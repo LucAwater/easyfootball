@@ -28,16 +28,19 @@ function list_variations() {
             </select>
           </div>
 
-          <div class="list-item-10 sellingPattern">
+          <div class="list-item-10 sellingPattern is-aligned-center">
             <?php
             $sellingPattern = get_post_meta( $varId, '_selling_pattern', true );
 
             if( $sellingPattern == 1 ){
               $tooltip_type = "warning";
-              $tooltip_message = "Only sold in singles";
+              $tooltip_message = __("Only sold per single ticket");
+            } elseif( $sellingPattern == 2){
+              $tooltip_type = "warning";
+              $tooltip_message = __("Only sold in pairs");
             }
 
-            if( isset($tooltip_type) && isset($tooltip_message) ){
+            if( isset($tooltip_type) && isset($tooltip_message) && $sellingPattern != 3 ){
               echo '<span class="tooltip" data-tooltip="' . $tooltip_message . '"><img src="' . get_template_directory_uri() . '/img/icon-' . $tooltip_type .'-black.svg" /></span>';
             }
             ?>
@@ -48,7 +51,7 @@ function list_variations() {
               <option value="<?php echo $name; ?>" selected="selected"></option>
             </select>
 
-            <button type="submit" class="single_add_to_cart_button button alt">Buy</button>
+            <button type="submit" class="single_add_to_cart_button button alt"><?php _e("Köp"); ?></button>
             <input type="hidden" name="add-to-cart" value="<?php echo $parentId; ?>">
             <input type="hidden" name="product_id" value="<?php echo $parentId; ?>">
             <input type="hidden" name="variation_id" value="<?php echo $varId; ?>">
