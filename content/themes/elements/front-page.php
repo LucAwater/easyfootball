@@ -145,7 +145,7 @@ if( have_posts() ):
                   </div>
 
                   <div class="card-actions">
-                    <p><?php echo count($team_matches); ?> in total</p>
+                    <p><?php echo $team->count; ?> in total</p>
                     <a class="button" href="<?php echo $team_link; ?>">view all matches</a>
                   </div>
                 </div>
