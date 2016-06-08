@@ -8,9 +8,12 @@ section{
   .section-header,
   .section-body{
     clear: both;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
   h2, h3, h4{
-    margin-bottom: 1em;
+    margin-bottom: 40px;
   }
 }

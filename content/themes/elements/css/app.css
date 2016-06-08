@@ -1677,9 +1677,12 @@ section {
   background: white; }
   section .section-header,
   section .section-body {
-    clear: both; }
+    clear: both;
+    width: 100%;
+    height: auto;
+    overflow: hidden; }
   section h2, section h3, section h4 {
-    margin-bottom: 1em; }
+    margin-bottom: 40px; }
 
 section.hero {
   height: calc(100vh - 80px);
@@ -1790,6 +1793,10 @@ section.parallax .section-body,
   background-attachment: fixed;
   background-size: cover;
   width: 100%; }
+
+section.featured .section-header,
+section.featured > h2, section.featured > h3, section.featured > h4 {
+  text-align: center; }
 
 ul.posts li div {
   padding: 15px 30px;
