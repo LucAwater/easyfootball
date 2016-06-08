@@ -9,9 +9,10 @@ function list_variations() {
   } else {
     foreach($variations as $var){
       $varId = $var['variation_id'];
+      $var_product = new WC_Product_Variation( $varId );
       $name = $var['attributes']['attribute_seating'];
       $name = preg_replace('/-/', ' ', $name);
-      $price = $var['display_regular_price'];
+      $price = $var_product->regular_price;
       ?>
       <li>
         <form method="post" data-product_id="<?php echo $varId; ?>">
