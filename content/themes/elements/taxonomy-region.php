@@ -2,7 +2,7 @@
 get_header();
 
 $term =	$wp_query->queried_object;
-
+$term_acf = $term->taxonomy . '_' . $term->term_id;
 /**
  * woocommerce_before_main_content hook.
  *
@@ -25,20 +25,19 @@ get_template_part( 'taxonomy', 'header' );
    * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
    */
 
-  $leagues = get_field('region_childLeagues', $term);
+  $leagues = get_field('region_childLeagues', $term_acf);
 
   if( $leagues ):
 
     woocommerce_product_loop_start();
 
       foreach($leagues as $league){
-        $league = get_term_by('id', $league->term_id, 'league');
         $league_region = get_field('league_parentRegion', $league);
         $image = get_field('league_imageFeatured', $league);
         $image_url = $image['sizes']['medium'];
         $image_width = $image['sizes']['medium-width'];
         $image_height = $image['sizes']['medium-height'];
-        $league_link = get_term_link($league);
+        $league_link = get_term_link($league, 'league');
         ?>
 
         <li>

@@ -29,7 +29,7 @@ page_content_start();
         $team = get_term_by('id', $team->term_id, 'team');
         $team_acf = $team->taxonomy . '_' . $team->term_id;
         $team_name = $team->name;
-        $team_link = get_term_link($team);
+        $team_link = get_term_link($team, 'team');
 
         $arena_name = get_field('arena_name', $team);
         $arena_location_city = get_field('arena_location_city', $team);
