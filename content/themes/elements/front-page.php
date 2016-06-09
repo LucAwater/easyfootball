@@ -84,7 +84,7 @@ if( have_posts() ):
               $team = get_term_by('id', $teams[$x], 'team');
               $team_acf = $team->taxonomy . '_' . $team->term_id;
               $team_name = $team->name;
-              $team_link = get_term_link($team->term_id);
+              $team_link = get_term_link($team, 'team');
 
               $team_logo = get_field('team_logo', $team_acf);
               if(! $team_logo ){
@@ -116,7 +116,7 @@ if( have_posts() ):
 
                   <div class="card-info">
                     <h3><?php echo $team_name; ?></h3>
-                    <p><?php _e('Top matches'); ?></p>
+                    <p class="card-subtitle"><?php _e('Top matches'); ?></p>
 
                     <?php if( $team_matches): ?>
                       <ul>

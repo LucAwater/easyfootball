@@ -1317,6 +1317,14 @@ section.page-header {
     color: #727272; }
     .list-card > li .card-container .card-info .card-subtitle + * {
       margin-top: 20px; }
+  .list-card > li .card-container .card-info > a, .list-card > li .card-container .card-info > button,
+  .list-card > li .card-container .card-info > input[type="submit"],
+  .list-card > li .card-container .card-info p:not(.card-subtitle),
+  .list-card > li .card-container .card-info p .read-more:not(.card-subtitle),
+  p .list-card > li .card-container .card-info .read-more:not(.card-subtitle),
+  .list-card > li .card-container .card-info .tooltip:not(.card-subtitle):after,
+  .list-card > li .card-container .card-info ul li {
+    margin-bottom: 10px; }
 
 .list-card > li .card-container .card-actions {
   display: -webkit-box;

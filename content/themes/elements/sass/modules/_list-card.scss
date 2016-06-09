@@ -90,6 +90,12 @@
       margin-top: 20px;
     }
   }
+
+  > a,
+  p:not(.card-subtitle),
+  ul li{
+    margin-bottom: 10px;
+  }
 }
 
 // Card actions
