@@ -920,8 +920,7 @@ body > header {
       body > header .header-content .link-logo img {
         width: 100%; }
     body > header .header-content form[role="search"] input[type="search"] {
-      border: none;
-      background-color: #37474F; }
+      border: none; }
     body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more, body > header .header-content nav > ul > li > .tooltip:after,
     body > header .header-content nav > ul > li > a,
     body > header .header-content nav > ul > li > button,
@@ -1540,25 +1539,13 @@ form[role="search"] {
   max-width: 600px;
   height: 40px; }
   form[role="search"] ::-webkit-input-placeholder {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    font-weight: 500;
-    color: white; }
+    color: #78909C; }
   form[role="search"] :-moz-placeholder {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    font-weight: 500;
-    color: white; }
+    color: #78909C; }
   form[role="search"] ::-moz-placeholder {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    font-weight: 500;
-    color: white; }
+    color: #78909C; }
   form[role="search"] :-ms-input-placeholder {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    font-weight: 500;
-    color: white; }
+    color: #78909C; }
   form[role="search"] input[type="search"] {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -1567,7 +1554,7 @@ form[role="search"] {
     height: 100%;
     padding-left: 10px;
     padding-right: 40px;
-    color: white;
+    color: black;
     border: thin solid #e0e0e0;
     border-radius: 3px;
     background-color: white; }
