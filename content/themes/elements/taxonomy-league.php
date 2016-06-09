@@ -26,20 +26,19 @@ page_content_start();
     woocommerce_product_loop_start();
 
       foreach($teams as $team){
-        $team = get_term_by('id', $team, 'team');
         $team_acf = $team->taxonomy . '_' . $team->term_id;
         $team_name = $team->name;
         $team_link = get_term_link($team, 'team');
 
-        $arena_name = get_field('arena_name', $team);
-        $arena_location_city = get_field('arena_location_city', $team);
-        $arena_location_country = get_field('arena_location_country', $team);
+        $arena_name = get_field('arena_name', $team_acf);
+        $arena_location_city = get_field('arena_location_city', $team_acf);
+        $arena_location_country = get_field('arena_location_country', $team_acf);
 
         $team_logo = get_field('team_logo', $team_acf);
-        if(! $team_logo ){
-          $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
-        } else {
+        if( $team_logo ){
           $team_logo_url = $team_logo['sizes']['medium'];
+        } else {
+          $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
         }
         ?>
 
