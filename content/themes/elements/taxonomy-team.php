@@ -18,17 +18,38 @@ get_template_part( 'taxonomy', 'header' );
 ?>
 
 <?php page_content_start(); ?>
+
   <?php
-  if ( have_posts() ) :
+  $matches = get_posts(array(
+    'post_type'   => 'product',
+    'numberposts' => -1,
+    'meta_key'    => 'match_date',
+    'orderby'     => 'meta_value',
+    'order'       => 'asc',
+    'tax_query'   => array(
+      array(
+        'taxonomy'          => 'team',
+        'field'             => 'id',
+        'terms'             => $term->term_id,
+        'include_children'  => false
+      )
+    )
+  ));
+
+  if( $matches ):
     woocommerce_product_loop_start();
       woocommerce_product_subcategories();
 
-      while ( have_posts() ) : the_post();
+      foreach( $matches as $post ):
+        setup_postdata( $post );
+
         wc_get_template_part( 'content', 'product' );
-      endwhile;
+      endforeach;
+
     woocommerce_product_loop_end();
   endif;
   ?>
+
 <?php page_content_end(); ?>
 
 <?php page_sidebar(); ?>
