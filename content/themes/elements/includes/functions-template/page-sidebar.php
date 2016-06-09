@@ -7,7 +7,7 @@ function page_sidebar() {
   elseif( is_product() ):
     include_once('page-sidebar-product.php');
   else:
-    // include_once('page-sidebar-default.php');
+    include_once('page-sidebar-default.php');
   endif;
 }
 ?>

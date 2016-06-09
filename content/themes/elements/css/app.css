@@ -774,6 +774,7 @@ h4 {
   -moz-osx-font-smoothing: antialiased;
   font-weight: 500;
   font-size: 18px;
+  font-weight: 400;
   color: #727272; }
 
 p, p .read-more, .tooltip:after {
@@ -1384,6 +1385,17 @@ aside {
         aside > div ul li small {
           display: block;
           padding: 5px 0; }
+    aside > div.aside-teams li {
+      padding: 10px 0; }
+      aside > div.aside-teams li img,
+      aside > div.aside-teams li a,
+      aside > div.aside-teams li button,
+      aside > div.aside-teams li input[type="submit"] {
+        display: inline-block; }
+      aside > div.aside-teams li img {
+        width: 50px;
+        margin-right: 15px;
+        vertical-align: middle; }
 
 .alert {
   display: -webkit-box;
