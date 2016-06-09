@@ -32,7 +32,7 @@ get_template_part( 'taxonomy', 'header' );
     woocommerce_product_loop_start();
 
       foreach($leagues as $league){
-        $league = get_term($league);
+        $league = get_term_by('id', $league->term_id, 'league');
         $league_region = get_field('league_parentRegion', $league);
         $image = get_field('league_imageFeatured', $league);
         $image_url = $image['sizes']['medium'];
