@@ -23,7 +23,7 @@
             $team = get_term_by('id', $teams[$x], 'team');
             $team_acf = $team->taxonomy . '_' . $team->term_id;
             $team_name = $team->name;
-            $team_link = get_term_link($team->term_id);
+            $team_link = get_term_link($team, 'team');
 
             // Wrap an extra container around every 5 list items
             if( $x > 0 && $x %5 == 0 ){
@@ -64,7 +64,7 @@
             $league = get_term_by('id', $leagues[$x], 'league');
             $league_acf = $league->taxonomy . '_' . $league->term_id;
             $league_name = $league->name;
-            $league_link = get_term_link($league->term_id);
+            $league_link = get_term_link($league, 'league');
 
             // Wrap an extra container around every 5 list items
             if( $x > 0 && $x %5 == 0 ){
@@ -96,7 +96,7 @@
 
           foreach( $regions as $region ){
             $region_name = $region->name;
-            $region_link = get_term_link($region->term_id, 'region');
+            $region_link = get_term_link($region, 'region');
 
             echo '<li><a href="' . $region_link . '">' . $region_name . '</a>';
           }
