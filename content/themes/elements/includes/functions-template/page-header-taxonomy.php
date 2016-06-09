@@ -24,7 +24,7 @@ $image_height = $image['sizes']['medium-height'];
     <?php endif; ?>
 
     <div>
-      <h2><?php echo $term->name; ?></h2>
+      <h1><?php echo $term->name; ?></h1>
       <?php echo wpautop($term->description); ?>
     </div>
   </div>

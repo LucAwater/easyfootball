@@ -1,5 +1,5 @@
 <section class="page-header page-header-default">
   <div class="section-body">
-    <h2>Page header</h2>
+    <h1>Page header</h1>
   </div>
 </section>

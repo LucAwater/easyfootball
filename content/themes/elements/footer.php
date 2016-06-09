@@ -3,7 +3,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>Created by <a href="http://lucawater.nl" target="_blank" rel="Link to creator's portfolio">Luc Awater</a></p>
+    <p>&copy; 2016 Corella Tickets AB. All rights reserved. <a href="http://lucawater.nl" target="_blank">Made by Luc Awater</a></p>
   </footer>
 
   <!-- Scripts -->

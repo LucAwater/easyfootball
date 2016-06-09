@@ -68,3 +68,10 @@
   -o-filter: $filter;
   filter: $filter;
 }
+
+@mixin linear-gradient($direction, $color1, $color2) {
+  background-image: -o-linear-gradient($direction, $color1, $color2);
+  background-image: -moz-linear-gradient($direction, $color1, $color2);
+  background-image: -webkit-linear-gradient($direction, $color1, $color2);
+  background-image: linear-gradient($direction, $color1, $color2);
+}
