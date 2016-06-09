@@ -1,12 +1,10 @@
 body.single-product{
   .page-header{
-    @include font-smoothing( antialiased );
-
     text-align: center;
-    color: $white;
-    background: $grey-dark;
 
     p{
+      @include font-smoothing( antialiased );
+      
       font-size: 18px;
     }
 
@@ -51,7 +49,7 @@ body.single-product{
 body.single-product aside{
   figure{
     padding: 20px;
-    
+
     background-color: transparent;
     border: thin solid $grey;
 

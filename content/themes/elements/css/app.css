@@ -2286,13 +2286,11 @@ section.page-header-taxonomy .section-body {
     padding-top: 10px; }
 
 body.single-product .page-header {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
-  font-weight: 500;
-  text-align: center;
-  color: white;
-  background: #333333; }
+  text-align: center; }
   body.single-product .page-header p, body.single-product .page-header p .read-more, p body.single-product .page-header .read-more, body.single-product .page-header .tooltip:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-weight: 500;
     font-size: 18px; }
   body.single-product .page-header ul li {
     display: inline-block;
