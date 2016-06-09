@@ -1,5 +1,5 @@
 section.page-header{
-  @include linear-gradient( 40deg, darken($color-primary-dark, 20%) 20%, darken($color-primary, 20%) 90% );
+  @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
 
   padding: 80px 0;
 
