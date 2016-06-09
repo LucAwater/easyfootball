@@ -4,6 +4,7 @@ get_header();
 page_content_start();
 
   $term =	$wp_query->queried_object;
+  $term_acf = $term->taxonomy . '_' . $term->term_id;
   /**
    * woocommerce_before_main_content hook.
    *
@@ -18,7 +19,7 @@ page_content_start();
    * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
    */
 
-  $teams = get_field('league_childTeams', $term);
+  $teams = get_field('league_childTeams', $term_acf);
 
   if( $teams ):
 

@@ -38,7 +38,7 @@ get_template_part( 'taxonomy', 'header' );
         $image_url = $image['sizes']['medium'];
         $image_width = $image['sizes']['medium-width'];
         $image_height = $image['sizes']['medium-height'];
-        $league_link = get_term_link($league->term_id);
+        $league_link = get_term_link($league);
         ?>
 
         <li>
