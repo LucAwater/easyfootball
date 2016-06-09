@@ -32,6 +32,7 @@ get_template_part( 'taxonomy', 'header' );
     woocommerce_product_loop_start();
 
       foreach($leagues as $league){
+        $league = get_term_by('id', $league, 'league');
         $league_region = get_field('league_parentRegion', $league);
         $image = get_field('league_imageFeatured', $league);
         $image_url = $image['sizes']['medium'];
@@ -53,7 +54,7 @@ get_template_part( 'taxonomy', 'header' );
             </figure>
 
             <div class="card-actions">
-              <a class="button button-small button-fullwidth" href="<?php echo $league_link; ?>">view matches</a>
+              <a class="button button-small button-fullwidth" href="<?php echo $league_link; ?>">view teams</a>
             </div>
           </div>
         </li>

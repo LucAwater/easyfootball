@@ -26,7 +26,7 @@ page_content_start();
     woocommerce_product_loop_start();
 
       foreach($teams as $team){
-        $team = get_term_by('id', $team->term_id, 'team');
+        $team = get_term_by('id', $team, 'team');
         $team_acf = $team->taxonomy . '_' . $team->term_id;
         $team_name = $team->name;
         $team_link = get_term_link($team, 'team');
