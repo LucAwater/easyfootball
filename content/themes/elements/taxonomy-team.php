@@ -20,6 +20,7 @@ get_template_part( 'taxonomy', 'header' );
 <?php page_content_start(); ?>
 
   <?php
+  // Get posts and order by custom field 'match_date'
   $matches = get_posts(array(
     'post_type'   => 'product',
     'numberposts' => -1,
@@ -44,6 +45,8 @@ get_template_part( 'taxonomy', 'header' );
         setup_postdata( $post );
 
         wc_get_template_part( 'content', 'product' );
+
+        wp_reset_postdata();
       endforeach;
 
     woocommerce_product_loop_end();

@@ -3,6 +3,8 @@
   @include flex-wrap( wrap );
   @include align-items( flex-start );
 
+  width: calc(100% + 40px);
+  margin-left: -20px;
   max-width: none;
   padding: 0 10px;
 
@@ -29,6 +31,19 @@
 
   background-color: $grey-light;
 
+  &.has-title:after{
+    content: "";
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.65);
+  }
+
   img{
     max-height: 100%;
     max-width: none;
@@ -37,6 +52,10 @@
   }
 
   h2, h3, h4{
+    @include font-smoothing( antialiased );
+
+    z-index: 1;
+
     bottom: 0;
     left: 0;
     position: absolute;
@@ -71,12 +90,6 @@
       margin-top: 20px;
     }
   }
-
-  // Card info content
-  > *,
-  ul li{
-    margin-top: 10px;
-  }
 }
 
 // Card actions
@@ -106,6 +119,26 @@
 .list-card.list-card-shields{
   > li .card-container figure{
     padding: 20px;
+  }
+}
+
+// Team list with shields
+.list-card.list-card-teams{
+  > li{
+    .card-container{
+      border: none;
+      text-align: center;
+
+      figure{
+        margin-bottom: 20px;
+
+        background-color: $white;
+      }
+
+      .button{
+        margin: auto;
+      }
+    }
   }
 }
 

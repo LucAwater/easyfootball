@@ -4,7 +4,6 @@ get_header();
 page_content_start();
 
   $term =	$wp_query->queried_object;
-  $term_acf = $term->taxonomy . '_' . $term->term_id;
   /**
    * woocommerce_before_main_content hook.
    *
@@ -19,35 +18,38 @@ page_content_start();
    * Reference: https://www.advancedcustomfields.com/resources/get-values-from-a-taxonomy-term/
    */
 
-  $children = get_field('league_children', $term);
+  $teams = get_field('league_childTeams', $term);
 
-  if( $children ):
+  if( $teams ):
 
     woocommerce_product_loop_start();
 
-      foreach($children as $child){
-        $child = get_term($child);
+      foreach($teams as $team){
+        $team = get_term($team);
+        $team_acf = $team->taxonomy . '_' . $team->term_id;
+        $team_name = $team->name;
+        $team_link = get_term_link($team);
 
-        $arena_name = get_field('arena_name', $child);
-        $arena_location_city = get_field('arena_location_city', $child);
-        $arena_location_country = get_field('arena_location_country', $child);
+        $arena_name = get_field('arena_name', $team);
+        $arena_location_city = get_field('arena_location_city', $team);
+        $arena_location_country = get_field('arena_location_country', $team);
+
+        $team_logo = get_field('team_logo', $team_acf);
+        if(! $team_logo ){
+          $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
+        } else {
+          $team_logo_url = $team_logo['sizes']['medium'];
+        }
         ?>
 
         <li>
-          <div class="list-item-40">
-            <p><?php echo $child->name; ?></p>
-          </div>
+          <div class="card-container">
+            <figure>
+              <img src="<?php echo $team_logo_url; ?>" />
+            </figure>
 
-          <div class="list-item-20">
-            <p><?php echo $arena_name; ?></p>
-          </div>
-
-          <div class="list-item-20">
-            <p><?php echo $arena_location_city; ?></p>
-          </div>
-
-          <div class="list-item-20">
-            <a class="button" href="<?php echo get_term_link($child); ?>">view matches</a>
+            <h4><?php echo $team_name; ?></h4>
+            <a href="<?php echo $team_link; ?>" class="button button-small">View matches</a>
           </div>
         </li>
 

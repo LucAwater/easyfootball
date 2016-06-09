@@ -811,8 +811,17 @@ input[type="submit"] {
 
 a.has-content, button.has-content,
 input.has-content[type="submit"] {
+  display: block;
   color: black;
   text-decoration: none; }
+
+h1 a, h1 button,
+h1 input[type="submit"], h2 a, h2 button,
+h2 input[type="submit"], h3 a, h3 button,
+h3 input[type="submit"], h4 a, h4 button,
+h4 input[type="submit"] {
+  font-size: 1em;
+  color: black; }
 
 article a, article button,
 article input[type="submit"] {
@@ -1252,6 +1261,8 @@ section.page-header {
   -webkit-align-items: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  width: calc(100% + 40px);
+  margin-left: -20px;
   max-width: none;
   padding: 0 10px; }
   .list-card > li {
@@ -1270,12 +1281,24 @@ section.page-header {
   width: 100%;
   height: 200px;
   background-color: #f4f4f4; }
+  .list-card > li .card-container figure.has-title:after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); }
   .list-card > li .card-container figure img {
     max-height: 100%;
     max-width: none;
     width: auto;
     margin: auto; }
   .list-card > li .card-container figure h2, .list-card > li .card-container figure h3, .list-card > li .card-container figure h4 {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-weight: 500;
+    z-index: 1;
     bottom: 0;
     left: 0;
     position: absolute;
@@ -1294,9 +1317,6 @@ section.page-header {
     color: #727272; }
     .list-card > li .card-container .card-info .card-subtitle + * {
       margin-top: 20px; }
-  .list-card > li .card-container .card-info > *,
-  .list-card > li .card-container .card-info ul li {
-    margin-top: 10px; }
 
 .list-card > li .card-container .card-actions {
   display: -webkit-box;
@@ -1326,6 +1346,15 @@ section.page-header {
 
 .list-card.list-card-shields > li .card-container figure {
   padding: 20px; }
+
+.list-card.list-card-teams > li .card-container {
+  border: none;
+  text-align: center; }
+  .list-card.list-card-teams > li .card-container figure {
+    margin-bottom: 20px;
+    background-color: white; }
+  .list-card.list-card-teams > li .card-container .button {
+    margin: auto; }
 
 @media screen and (max-width: 960px) {
   .list-card > li {
