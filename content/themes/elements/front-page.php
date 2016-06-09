@@ -22,14 +22,22 @@ if( have_posts() ):
           <ul class="list list-card">
             <?php
             for( $x = 0; $x < 6; $x++ ){
-              $event = $events[$x];
+              $event = get_post($events[$x]);
               $event_name = $event->post_title;
               $event_link = get_permalink($event->ID);
 
-              $event_date = get_field('match_date', false, false);
+              $event_date = get_post_meta($event->ID, 'match_date', true);
               $event_date = new DateTime($event_date);
               $event_date = $event_date->format('j F Y');
-              $event_time = get_field('match_time');
+              $event_time = get_post_meta($event->ID, 'match_time', true);
+
+              $event_location = get_post_meta($event->ID, 'match_location', true);
+              $event_location = get_term_by('name', $event_location, 'team');
+
+              $event_location_acf = $event_location->taxonomy . '_' . $event_location->term_id;
+              $arena_location_city = get_field('arena_location_city', $event_location_acf);
+              $arena_location_country = get_field('arena_location_country', $event_location_acf);
+              $arena_location = $arena_location_city . ', ' . $arena_location_country;
 
               $_event = wc_get_product( $event->ID );
               $event_price = $_event->get_price();
@@ -44,8 +52,8 @@ if( have_posts() ):
                   </figure>
 
                   <div class="card-info">
-                    <a href="<?php echo $event_link; ?>"><?php echo $event_name; ?></a>
-                    <small><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
+                    <p class="card-title"><?php echo $event_name; ?></p>
+                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
                   </div>
 
                   <div class="card-actions">

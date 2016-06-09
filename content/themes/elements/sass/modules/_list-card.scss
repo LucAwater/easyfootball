@@ -76,8 +76,9 @@
   }
 
   // Card info title
-  h2, h3, h4{
-    margin-bottom: 20px;
+  h2, h3, h4,
+  .card-title{
+    margin-bottom: 20px !important;
   }
 
   // Card info subtitle

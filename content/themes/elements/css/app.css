@@ -1310,8 +1310,9 @@ section.page-header {
   padding: 20px 20px 25px; }
   .list-card > li .card-container .card-info * {
     display: block; }
-  .list-card > li .card-container .card-info h2, .list-card > li .card-container .card-info h3, .list-card > li .card-container .card-info h4 {
-    margin-bottom: 20px; }
+  .list-card > li .card-container .card-info h2, .list-card > li .card-container .card-info h3, .list-card > li .card-container .card-info h4,
+  .list-card > li .card-container .card-info .card-title {
+    margin-bottom: 20px !important; }
   .list-card > li .card-container .card-info .card-subtitle {
     margin-top: -20px;
     color: #727272; }
