@@ -30,6 +30,7 @@ require_once('includes/functions-woocommerce/breadcrumb.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 require_once('includes/functions-woocommerce/featured-lists.php');
 require_once('includes/functions-woocommerce/team-logos.php');
+require_once('includes/functions-woocommerce/checkout.php');
 
 /*
  * Import data for regions, leagues and teams.
