@@ -1117,6 +1117,9 @@ nav ul li.current {
     display: inline-block; }
 
 section.page-header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-weight: 500;
   background-image: -o-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
   background-image: -moz-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
   background-image: -webkit-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
@@ -1130,6 +1133,8 @@ section.page-header {
     height: auto;
     margin: auto;
     overflow: hidden; }
+    section.page-header .section-body figure {
+      background-color: transparent; }
     section.page-header .section-body h1, section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
       margin-bottom: 15px; }
   section.page-header .page-header-background {

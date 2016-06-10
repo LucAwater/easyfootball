@@ -45,7 +45,7 @@ get_template_part( 'taxonomy', 'header' );
 
         <li>
           <div class="card-container">
-            <figure>
+            <figure class="has-title">
               <?php if( $image ): ?>
                 <img src="<?php echo $image_url; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" />
               <?php else: ?>
