@@ -53,6 +53,16 @@ function woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
 
+// Skip cart and go right to checkout
+add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+
+function redirect_to_checkout() {
+  global $woocommerce;
+  $checkout_url = $woocommerce->cart->get_checkout_url();
+
+  return $checkout_url;
+}
+
 // Customize excerpt
 function wpdocs_excerpt_more( $more ) {
   return '...';
