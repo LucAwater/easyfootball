@@ -749,7 +749,8 @@ ul {
 
 h1, h2, h3, h4, p, p .read-more, .tooltip:after, span,
 time, small, a, button,
-input[type="submit"], .alert, form[role="search"] input[type="search"] {
+input[type="submit"], .alert, form[role="search"] input[type="search"], input,
+textarea {
   font-family: "Gotham A", "Gotham B";
   font-style: normal;
   font-weight: 400;
@@ -1563,6 +1564,32 @@ aside {
   opacity: 1;
   visibility: visible; }
 
+form .form-row {
+  width: 100%;
+  margin-bottom: 20px; }
+  form .form-row label {
+    display: block; }
+  form .form-row input {
+    width: 100%; }
+form .clear {
+  z-index: -1; }
+  form .clear:before, form .clear:after {
+    content: "";
+    display: table;
+    clear: both; }
+form .col1-set h3,
+form .col2-set h3 {
+  margin-bottom: 20px; }
+form .col2-set .form-row {
+  width: 50%;
+  float: left; }
+  form .col2-set .form-row.form-row-first {
+    padding-right: 5px; }
+  form .col2-set .form-row.form-row-last {
+    padding-left: 5px; }
+form .col2-set .form-row-wide {
+  width: 100%; }
+
 table {
   width: 100%;
   text-align: left;
@@ -1671,12 +1698,16 @@ form[role="search"] {
       left: 1px;
       width: 20px; }
 
+input,
+textarea {
+  padding: 10px;
+  border-radius: 3px;
+  border: thin solid #e0e0e0; }
+
 input[type="number"] {
   max-width: 80px;
-  padding: 10px;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  border: thin solid #727272; }
+  border-color: #727272;
+  background-color: #e0e0e0; }
 
 select {
   -moz-appearance: none;
@@ -2205,48 +2236,48 @@ section.image .section-body.is-pos-right {
   text-align: right; }
 
 h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, .is-italic.tooltip:after, span.is-italic,
-time.is-italic, small.is-italic, a.is-italic, button.is-italic,
-input.is-italic[type="submit"], .is-italic.alert, form[role="search"] input.is-italic[type="search"] {
+time.is-italic, small.is-italic, a.is-italic, button.is-italic, .is-italic.alert, form[role="search"] input.is-italic[type="search"], input.is-italic,
+textarea.is-italic {
   font-style: italic; }
 h1.is-underlined, h2.is-underlined, h3.is-underlined, h4.is-underlined, p.is-underlined, p .is-underlined.read-more, .is-underlined.tooltip:after, span.is-underlined,
-time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined,
-input.is-underlined[type="submit"], .is-underlined.alert, form[role="search"] input.is-underlined[type="search"] {
+time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined, .is-underlined.alert, form[role="search"] input.is-underlined[type="search"], input.is-underlined,
+textarea.is-underlined {
   text-decoration: underline; }
 h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, h4.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, .is-capitalized.tooltip:after, span.is-capitalized,
-time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized,
-input.is-capitalized[type="submit"], .is-capitalized.alert, form[role="search"] input.is-capitalized[type="search"] {
+time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized, .is-capitalized.alert, form[role="search"] input.is-capitalized[type="search"], input.is-capitalized,
+textarea.is-capitalized {
   text-transform: capitalize; }
 h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, h4.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, .is-uppercase.tooltip:after, span.is-uppercase,
-time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase,
-input.is-uppercase[type="submit"], .is-uppercase.alert, form[role="search"] input.is-uppercase[type="search"] {
+time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase, .is-uppercase.alert, form[role="search"] input.is-uppercase[type="search"], input.is-uppercase,
+textarea.is-uppercase {
   text-transform: uppercase; }
 h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, h4.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, .is-lowercase.tooltip:after, span.is-lowercase,
-time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase,
-input.is-lowercase[type="submit"], .is-lowercase.alert, form[role="search"] input.is-lowercase[type="search"] {
+time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase, .is-lowercase.alert, form[role="search"] input.is-lowercase[type="search"], input.is-lowercase,
+textarea.is-lowercase {
   text-transform: lowercase; }
 h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, p.is-bold, p .is-bold.read-more, .is-bold.tooltip:after, span.is-bold,
-time.is-bold, small.is-bold, a.is-bold, button.is-bold,
-input.is-bold[type="submit"], .is-bold.alert, form[role="search"] input.is-bold[type="search"] {
+time.is-bold, small.is-bold, a.is-bold, button.is-bold, .is-bold.alert, form[role="search"] input.is-bold[type="search"], input.is-bold,
+textarea.is-bold {
   font-weight: 700; }
 h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, h4.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, .is-aligned-center.tooltip:after, span.is-aligned-center,
-time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center,
-input.is-aligned-center[type="submit"], .is-aligned-center.alert, form[role="search"] input.is-aligned-center[type="search"] {
+time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center, .is-aligned-center.alert, form[role="search"] input.is-aligned-center[type="search"], input.is-aligned-center,
+textarea.is-aligned-center {
   text-align: center; }
 h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, h4.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, .is-aligned-left.tooltip:after, span.is-aligned-left,
-time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left,
-input.is-aligned-left[type="submit"], .is-aligned-left.alert, form[role="search"] input.is-aligned-left[type="search"] {
+time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left, .is-aligned-left.alert, form[role="search"] input.is-aligned-left[type="search"], input.is-aligned-left,
+textarea.is-aligned-left {
   text-align: left; }
 h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, h4.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, .is-aligned-right.tooltip:after, span.is-aligned-right,
-time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right,
-input.is-aligned-right[type="submit"], .is-aligned-right.alert, form[role="search"] input.is-aligned-right[type="search"] {
+time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right, .is-aligned-right.alert, form[role="search"] input.is-aligned-right[type="search"], input.is-aligned-right,
+textarea.is-aligned-right {
   text-align: right; }
 h1.is-black, h2.is-black, h3.is-black, h4.is-black, p.is-black, p .is-black.read-more, .is-black.tooltip:after, span.is-black,
-time.is-black, small.is-black, a.is-black, button.is-black,
-input.is-black[type="submit"], .is-black.alert, form[role="search"] input.is-black[type="search"] {
+time.is-black, small.is-black, a.is-black, button.is-black, .is-black.alert, form[role="search"] input.is-black[type="search"], input.is-black,
+textarea.is-black {
   color: black; }
 h1.is-white, h2.is-white, h3.is-white, h4.is-white, p.is-white, p .is-white.read-more, .is-white.tooltip:after, span.is-white,
-time.is-white, small.is-white, a.is-white, button.is-white,
-input.is-white[type="submit"], .is-white.alert, form[role="search"] input.is-white[type="search"] {
+time.is-white, small.is-white, a.is-white, button.is-white, .is-white.alert, form[role="search"] input.is-white[type="search"], input.is-white,
+textarea.is-white {
   color: white; }
 
 p.is-small, p .is-small.read-more, .is-small.tooltip:after {
@@ -2402,4 +2433,18 @@ body.single-product aside figure {
   background-color: transparent;
   border: thin solid #e0e0e0; }
   body.single-product aside figure img {
+    padding: 20px; }
+
+body.woocommerce-checkout form.woocommerce-checkout {
+  height: auto;
+  overflow: hidden; }
+  body.woocommerce-checkout form.woocommerce-checkout #order_review {
+    border-radius: 3px;
+    border: thin solid #e0e0e0;
+    background-color: #f4f4f4; }
+  body.woocommerce-checkout form.woocommerce-checkout #customer_details,
+  body.woocommerce-checkout form.woocommerce-checkout #order_review,
+  body.woocommerce-checkout form.woocommerce-checkout #order_review_heading {
+    float: left;
+    width: 50%;
     padding: 20px; }

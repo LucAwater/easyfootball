@@ -1,8 +1,16 @@
-input[type="number"]{
-  max-width: 80px;
+input,
+textarea{
+  @extend %base;
+
   padding: 10px;
 
+  border-radius: 3px;
+  border: thin solid $grey;
+}
+
+input[type="number"]{
+  max-width: 80px;
+
+  border-color: $grey-text;
   background-color: $grey;
-  border-radius: 5px;
-  border: thin solid $grey-text;
 }

@@ -1,0 +1,21 @@
+body.woocommerce-checkout{
+  form.woocommerce-checkout{
+    height: auto;
+    overflow: hidden;
+
+    #order_review{
+      border-radius: 3px;
+      border: thin solid $grey;
+      background-color: $grey-light;
+    }
+
+    #customer_details,
+    #order_review,
+    #order_review_heading{
+      float: left;
+
+      width: 50%;
+      padding: 20px;
+    }
+  }
+}
