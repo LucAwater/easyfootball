@@ -19,7 +19,7 @@ if( have_posts() ):
         </div>
 
         <div class="section-body">
-          <ul class="list list-card">
+          <ul class="list list-card list-card-matches">
             <?php
             for( $x = 0; $x < 6; $x++ ){
               $event = get_post($events[$x]);
@@ -41,18 +41,19 @@ if( have_posts() ):
 
               $_event = wc_get_product( $event->ID );
               $event_price = $_event->get_price();
+
+              $event_teams = wp_get_post_terms($event->ID, 'team');
               ?>
 
               <li>
                 <div class="card-container">
                   <figure class="card-image">
-                    <img src="" />
-                    <img src="" />
+                    <?php team_logos($event_location, $event_teams); ?>
                     <span>VS</span>
                   </figure>
 
                   <div class="card-info">
-                    <p class="card-title"><?php echo $event_name; ?></p>
+                    <h4 class="card-title"><?php echo $event_name; ?></h4>
                     <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
                   </div>
 

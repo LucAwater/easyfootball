@@ -1350,18 +1350,16 @@ section.page-header {
     display: block; }
   .list-card > li .card-container .card-info h2, .list-card > li .card-container .card-info h3, .list-card > li .card-container .card-info h4,
   .list-card > li .card-container .card-info .card-title {
-    margin-bottom: 20px !important; }
+    margin-bottom: 20px; }
   .list-card > li .card-container .card-info .card-subtitle {
     margin-top: -20px;
     color: #727272; }
     .list-card > li .card-container .card-info .card-subtitle + * {
       margin-top: 20px; }
+  .list-card > li .card-container .card-info p:not(.card-subtitle, .card-title), .list-card > li .card-container .card-info p .read-more:not(.card-subtitle, .card-title), p .list-card > li .card-container .card-info .read-more:not(.card-subtitle, .card-title), .list-card > li .card-container .card-info .tooltip:not(.card-subtitle, .card-title):after {
+    margin-bottom: 10px; }
   .list-card > li .card-container .card-info > a, .list-card > li .card-container .card-info > button,
   .list-card > li .card-container .card-info > input[type="submit"],
-  .list-card > li .card-container .card-info p:not(.card-subtitle),
-  .list-card > li .card-container .card-info p .read-more:not(.card-subtitle),
-  p .list-card > li .card-container .card-info .read-more:not(.card-subtitle),
-  .list-card > li .card-container .card-info .tooltip:not(.card-subtitle):after,
   .list-card > li .card-container .card-info ul li {
     margin-bottom: 10px; }
 
@@ -1382,7 +1380,7 @@ section.page-header {
   padding: 10px 20px;
   border-top: thin solid #e0e0e0; }
 
-.list-card:not(.list-card-shields) > li .card-container figure img {
+.list-card:not(.list-card-shields, .list-card-matches) > li .card-container figure img {
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1402,6 +1400,55 @@ section.page-header {
     background-color: white; }
   .list-card.list-card-teams > li .card-container .button {
     margin: auto; }
+
+.list-card.list-card-matches > li .card-container figure {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to left, #e0e0e0 50%, #f4f4f4 50%); }
+  .list-card.list-card-matches > li .card-container figure:after {
+    transform: translateX(-50%);
+    content: "";
+    top: 0;
+    left: 50%;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background-image: linear-gradient(to top left, #e0e0e0 50%, #f4f4f4 50%); }
+  .list-card.list-card-matches > li .card-container figure img {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 25%;
+    height: auto;
+    margin: auto; }
+    .list-card.list-card-matches > li .card-container figure img:first-child {
+      left: 10%; }
+    .list-card.list-card-matches > li .card-container figure img:nth-child(2) {
+      right: 10%; }
+  .list-card.list-card-matches > li .card-container figure span {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    color: #e0e0e0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 53px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background: #f4f4f4;
+    border: 5px solid #e0e0e0; }
+.list-card.list-card-matches > li .card-container .card-info .card-title {
+  margin-bottom: 30px;
+  color: black; }
 
 @media screen and (max-width: 960px) {
   .list-card > li {
