@@ -4,6 +4,23 @@ table{
   text-align: left;
   border-collapse: collapse;
 
+  th,
+  td{
+    @extend %base;
+  }
+
+  dt{
+    display: inline-block;
+  }
+
+  dd{
+    display: inline-block;
+
+    > *{
+      font-weight: 500;
+    }
+  }
+
   thead{
     th{
       padding: 15px;

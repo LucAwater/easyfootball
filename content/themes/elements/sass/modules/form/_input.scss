@@ -1,3 +1,7 @@
+label{
+  @extend %base;
+}
+
 input,
 textarea{
   @extend %base;
