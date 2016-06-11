@@ -59,6 +59,7 @@
     </div>
   </header>
 
+  <?php get_breadcrumb(); ?>
   <?php page_header(); ?>
 
   <!-- Main content -->

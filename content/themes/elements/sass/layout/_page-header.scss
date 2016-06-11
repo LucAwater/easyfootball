@@ -2,8 +2,6 @@ section.page-header{
   @include font-smoothing( antialiased );
   @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
 
-  padding: 80px 0;
-
   color: $white;
   background-color: $grey-light;
   border-bottom: thin solid $grey;
@@ -13,6 +11,7 @@ section.page-header{
     height: auto;
     margin: auto;
     overflow: hidden;
+    padding: 80px 0;
 
     figure{
       background-color: transparent;
