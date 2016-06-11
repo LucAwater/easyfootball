@@ -2,7 +2,7 @@
   height: auto;
   padding: 10px 0;
 
-  color: $grey-text;
+  color: $black;
   background-color: $white;
 
   div{
@@ -13,6 +13,25 @@
 
     li{
       display: inline-block;
+
+      small{
+        color: $black;
+      }
+
+      &:after{
+        content: "\203A";
+        padding: 0 5px;
+      }
+
+      &:last-child{
+        small{
+          color: $grey-text;
+        }
+        
+        &:after{
+          display: none;
+        }
+      }
     }
   }
 }

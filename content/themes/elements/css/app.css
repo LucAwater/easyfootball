@@ -1115,7 +1115,7 @@ nav ul li.current {
 #breadcrumb {
   height: auto;
   padding: 10px 0;
-  color: #727272;
+  color: black;
   background-color: white; }
   #breadcrumb div {
     max-width: 1100px;
@@ -1124,6 +1124,15 @@ nav ul li.current {
     overflow: hidden; }
     #breadcrumb div li {
       display: inline-block; }
+      #breadcrumb div li small {
+        color: black; }
+      #breadcrumb div li:after {
+        content: "\203A";
+        padding: 0 5px; }
+      #breadcrumb div li:last-child small {
+        color: #727272; }
+      #breadcrumb div li:last-child:after {
+        display: none; }
 
 section.page-header {
   -webkit-font-smoothing: antialiased;

@@ -11,7 +11,7 @@ function get_breadcrumb(){
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <div>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> /
+          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a>
           <meta itemprop="position" content="1" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -35,11 +35,11 @@ function get_breadcrumb(){
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <div>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> /
+          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a>
           <meta itemprop="position" content="1" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a>
           <meta itemprop="position" content="2" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -66,15 +66,15 @@ function get_breadcrumb(){
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <div>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> /
+          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a>
           <meta itemprop="position" content="1" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a>
           <meta itemprop="position" content="2" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><small itemprop="name"><?php echo $league_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><small itemprop="name"><?php echo $league_name; ?></small></a>
           <meta itemprop="position" content="3" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -104,19 +104,19 @@ function get_breadcrumb(){
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <div>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> /
+          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> 
           <meta itemprop="position" content="1" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/region/' . $region_slug; ?>"><small itemprop="name"><?php echo $region_name; ?></small></a>
           <meta itemprop="position" content="2" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><small itemprop="name"><?php echo $league_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/league/' . $league_slug; ?>"><small itemprop="name"><?php echo $league_name; ?></small></a>
           <meta itemprop="position" content="3" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url() . '/team/' . $team_slug; ?>"><small itemprop="name"><?php echo $team_name; ?></small></a> /
+          <a itemprop="item" href="<?php echo home_url() . '/team/' . $team_slug; ?>"><small itemprop="name"><?php echo $team_name; ?></small></a>
           <meta itemprop="position" content="4" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
