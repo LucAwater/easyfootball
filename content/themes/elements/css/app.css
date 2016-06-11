@@ -902,7 +902,7 @@ body > header {
   z-index: 1100;
   width: 100%;
   height: 80px;
-  background-color: #546E7A; }
+  background-color: #607D8B; }
   body > header .header-content {
     display: -webkit-box;
     display: -webkit-flex;
@@ -963,13 +963,13 @@ body > footer {
       body > footer .footer-content > ul > li img {
         width: 80px; }
   body > footer .footer-bottom {
-    background-image: -o-linear-gradient(40deg, #222c31 30%, #2a383e 70%);
-    background-image: -moz-linear-gradient(40deg, #222c31 30%, #2a383e 70%);
-    background-image: -webkit-linear-gradient(40deg, #222c31 30%, #2a383e 70%);
-    background-image: linear-gradient(40deg, #222c31 30%, #2a383e 70%);
+    background-image: -o-linear-gradient(40deg, #303f46 30%, #36474f 70%);
+    background-image: -moz-linear-gradient(40deg, #303f46 30%, #36474f 70%);
+    background-image: -webkit-linear-gradient(40deg, #303f46 30%, #36474f 70%);
+    background-image: linear-gradient(40deg, #303f46 30%, #36474f 70%);
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #37474F; }
+    background-color: #455A64; }
     body > footer .footer-bottom * {
       color: white;
       font-size: 12px; }
@@ -1051,7 +1051,7 @@ nav {
       nav > ul > li input[type="submit"] {
         line-height: 22px; }
       nav > ul > li:hover, nav > ul > li:focus {
-        background-color: #37474F; }
+        background-color: #455A64; }
         nav > ul > li:hover ul, nav > ul > li:focus ul {
           -webkit-transition: 0.2s;
           -moz-transition: 0.2s;
@@ -1122,10 +1122,10 @@ section.page-header {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-weight: 500;
-  background-image: -o-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
-  background-image: -moz-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
-  background-image: -webkit-linear-gradient(40deg, #181e22 30%, #2a383e 70%);
-  background-image: linear-gradient(40deg, #181e22 30%, #2a383e 70%);
+  background-image: -o-linear-gradient(40deg, #263137 30%, #36474f 70%);
+  background-image: -moz-linear-gradient(40deg, #263137 30%, #36474f 70%);
+  background-image: -webkit-linear-gradient(40deg, #263137 30%, #36474f 70%);
+  background-image: linear-gradient(40deg, #263137 30%, #36474f 70%);
   padding: 80px 0;
   color: white;
   background-color: #f4f4f4;
@@ -1526,7 +1526,7 @@ aside {
   border-color: #cacc2e;
   background-color: rgba(202, 204, 46, 0.1); }
 
-.alert-danger {
+.alert-danger, form .form-row.woocommerce-invalid input {
   border-color: #cc2e2e;
   background-color: rgba(204, 46, 46, 0.2); }
 
@@ -1572,12 +1572,6 @@ form .form-row {
     display: block; }
   form .form-row input {
     width: 100%; }
-form .clear {
-  z-index: -1; }
-  form .clear:before, form .clear:after {
-    content: "";
-    display: table;
-    clear: both; }
 form .col1-set h3,
 form .col2-set h3 {
   margin-bottom: 20px; }
@@ -1590,6 +1584,12 @@ form .col2-set .form-row {
     padding-left: 5px; }
 form .col2-set .form-row-wide {
   width: 100%; }
+form .clear {
+  z-index: -1; }
+  form .clear:before, form .clear:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 table {
   width: 100%;
@@ -1647,13 +1647,13 @@ input[type="submit"] {
   button.button-sec,
   .button.button-sec,
   input[type="submit"].button-sec {
-    background-color: #37474F; }
+    background-color: #455A64; }
     button.button-sec:hover, button.button-sec:focus,
     .button.button-sec:hover,
     .button.button-sec:focus,
     input[type="submit"].button-sec:hover,
     input[type="submit"].button-sec:focus {
-      background-color: #222c31; }
+      background-color: #303f46; }
   button.button-small,
   .button.button-small,
   input[type="submit"].button-small {
@@ -2466,3 +2466,5 @@ body.woocommerce-checkout form.woocommerce-checkout {
     float: left;
     width: 50%;
     padding: 20px; }
+  body.woocommerce-checkout form.woocommerce-checkout #customer_details {
+    padding: 20px 40px 20px 0; }
