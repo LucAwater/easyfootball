@@ -7,14 +7,22 @@ body > footer{
   background: $grey-light;
 
   > *{
-    padding: 40px $space-sides;
+    padding: 40px 0;
+  }
+
+  .footer-content,
+  .footer-bottom > *{
+    max-width: 1100px;
+    margin: auto;
+    display: block;
   }
 
   .footer-content{
     > ul{
       @include flexbox;
 
-      width: 100%;
+      width: calc(100% + 40px);
+      margin-left: -20px;
 
       > li{
         width: 25%;

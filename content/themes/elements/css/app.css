@@ -950,14 +950,20 @@ body > footer {
   border-top: thin solid #e0e0e0;
   background: #f4f4f4; }
   body > footer > * {
-    padding: 40px 6.25rem; }
+    padding: 40px 0; }
+  body > footer .footer-content,
+  body > footer .footer-bottom > * {
+    max-width: 1100px;
+    margin: auto;
+    display: block; }
   body > footer .footer-content > ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 100%; }
+    width: calc(100% + 40px);
+    margin-left: -20px; }
     body > footer .footer-content > ul > li {
       width: 25%;
       padding: 0 20px;
