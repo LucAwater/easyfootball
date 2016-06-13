@@ -901,7 +901,7 @@ main {
 body > header {
   z-index: 1100;
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: #607D8B; }
   body > header .header-content {
     display: -webkit-box;
@@ -1044,7 +1044,7 @@ nav {
     display: inline; }
     nav > ul > li {
       display: inline-block;
-      padding: 29px 15px; }
+      padding: 21px 15px; }
       nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more, nav > ul > li .tooltip:after,
       nav > ul > li a,
       nav > ul > li button,
@@ -1862,7 +1862,7 @@ section {
     margin-bottom: 40px; }
 
 section.hero {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 65px);
   margin-top: 0;
   margin-bottom: 1.25rem;
   padding: 0;
