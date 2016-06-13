@@ -1050,7 +1050,7 @@ nav {
     display: inline; }
     nav > ul > li {
       display: inline-block;
-      padding: 24px 15px; }
+      padding: 24px 20px; }
       nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more, nav > ul > li .tooltip:after,
       nav > ul > li a,
       nav > ul > li button,
