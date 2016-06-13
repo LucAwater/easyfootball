@@ -1,0 +1,34 @@
+*** PayEx Changelog ***
+
+2015.02.25 	- version 1.2.1
+ * Enhancement  - Adds auhorization / sale option for PayEx invoice.
+
+2015.01.12 	- version 1.2
+ * Fix			- Label in PayEx Invoice settings page changed to "PayEx Invoice".
+ * Enhancement  - Switched PayEx to use initialize8 method.
+ * Fix          - Selected payment method sent to PayEx payment window.
+ * Feature      - Added option to send order items to PayEx payment window.
+ * Feature      - Added support for multiple currencies.
+ * Enhancement  - Updated plugin header information.
+
+2014.03.25 	- version 1.1.5
+ * Fix			- Typo in update_failing_payment_method() caused the payex_agreement_ref not to be transfered to the renewal order.
+ 
+2014.02.24 	- version 1.1.4
+ * Fix			- Subscription payment failures did not trigger the WC Subscription function process_subscription_payment_failure_on_order() the right way.
+ 
+2014.02.06 	- version 1.1.3
+ * Fix			- Shipping total backward compatibility (2.0.x)
+ 
+2014.01.31 	- version 1.1.2
+ * Fix			- WooCommerce 2.1 compatibility
+ * Feature		- Added support for Subscription suspension, reactivation (and payment gateway changes)?
+ * Fix			- Bugfix number_format in max maxAmount/createagreement
+ 
+2013.11.15 - version 1.1
+ * Feature		- Support for subscription payments
+ * Feature		- Support for invoice payments
+ * Fix			- Removed currency check in is_available
+ 
+2013.05.01 - version 1.0
+ * First Release
