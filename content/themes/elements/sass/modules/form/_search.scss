@@ -4,16 +4,24 @@ form[role="search"]{
   height: 40px;
 
   ::-webkit-input-placeholder{
-    color: $color-primary-light;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   :-moz-placeholder{
-    color: $color-primary-light;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   ::-moz-placeholder{
-    color: $color-primary-light;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   :-ms-input-placeholder {
-    color: $color-primary-light;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
 
   input[type="search"]{

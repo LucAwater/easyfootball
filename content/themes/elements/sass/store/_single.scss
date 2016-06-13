@@ -1,10 +1,15 @@
 body.single-product{
   .page-header{
+    @include font-smoothing( antialiased );
+    @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
+
+    color: $white;
     text-align: center;
+    background-color: $grey-dark;
 
     p{
       @include font-smoothing( antialiased );
-      
+
       font-size: 18px;
     }
 

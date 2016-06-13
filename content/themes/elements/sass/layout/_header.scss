@@ -28,10 +28,15 @@ body > header{
 
     // Logo
     .link-logo{
-      width: 120px;
+      width: 130px;
 
       img{
+        top: 0;
+        bottom: 0;
+        position: absolute;
+
         width: 100%;
+        margin: auto;
       }
     }
 
@@ -48,9 +53,12 @@ body > header{
         > li{
           > p,
           > a{
+            @include font-smoothing( antialiased );
+            
             color: $white;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
+            font-size: 16px;
+            // text-transform: uppercase;
+            // letter-spacing: 1.2px;
           }
         }
       }

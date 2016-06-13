@@ -42,7 +42,7 @@
   <header>
     <div class="header-content">
       <a class="link-logo" href="<?php echo home_url(); ?>">
-        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-blackwhite.png">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-bluegrey.svg">
       </a>
 
       <?php if(! is_front_page() ): ?>
