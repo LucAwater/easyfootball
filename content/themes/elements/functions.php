@@ -111,11 +111,11 @@ function is_really_woocommerce_page () {
   return false;
 }
 
-// Change the WooCommerce paypal icon
-add_filter('woocommerce_paypal_icon', 'custom_woocommerce_paypal_icon');
+// Change the WooCommerce Payex icon
+add_filter('woocommerce_payex_icon', 'custom_woocommerce_payex_icon');
 
-function custom_woocommerce_paypal_icon( $url ) {
-  $url = get_bloginfo('template_url')."/img/pay-paypal.svg";
+function custom_woocommerce_payex_icon( $url ) {
+  $url = get_bloginfo('template_url')."/img/logo-payex-creditcards.png";
   return $url;
 }
 

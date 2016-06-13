@@ -2512,3 +2512,22 @@ body.woocommerce-checkout form.woocommerce-checkout {
     padding: 20px; }
   body.woocommerce-checkout form.woocommerce-checkout #customer_details {
     padding: 20px 40px 20px 0; }
+
+body.woocommerce-checkout #order_review #payment li {
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-radius: 3px;
+  border: thin solid #e0e0e0; }
+  body.woocommerce-checkout #order_review #payment li input[type="radio"] {
+    display: inline-block !important;
+    margin-right: 10px; }
+  body.woocommerce-checkout #order_review #payment li label {
+    vertical-align: middle;
+    line-height: 40px; }
+    body.woocommerce-checkout #order_review #payment li label img {
+      width: auto;
+      height: 100%;
+      float: right; }
