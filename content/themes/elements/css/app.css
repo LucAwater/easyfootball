@@ -1610,6 +1610,7 @@ form .clear {
 table {
   width: 100%;
   text-align: left;
+  border: none;
   border-collapse: collapse; }
   table dt {
     display: inline-block; }
@@ -1618,11 +1619,19 @@ table {
     table dd > * {
       font-weight: 500; }
   table thead th {
-    padding: 15px;
-    border: thin solid #e0e0e0; }
+    padding: 20px;
+    border: thin solid #e0e0e0;
+    background-color: white; }
   table tbody td {
-    padding: 15px;
-    border: thin solid #e0e0e0; }
+    padding: 20px;
+    border: thin solid #e0e0e0;
+    background-color: #f4f4f4; }
+  table tfoot th, table tfoot td {
+    padding: 5px 20px; }
+  table tfoot tr:first-child th, table tfoot tr:first-child td {
+    padding-top: 20px; }
+  table tfoot tr:last-child th, table tfoot tr:last-child td {
+    padding-bottom: 20px; }
 
 button,
 input[type="submit"] {
