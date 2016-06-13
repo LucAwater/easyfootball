@@ -1,22 +1,22 @@
 section.page-header-taxonomy{
   .section-body{
-    figure{
+    div{
       float: left;
 
-      width: 50%;
+      width: 60%;
+      padding-top: 10px;
       padding-right: 40px;
+    }
+
+    figure{
+      float: right;
+
+      width: 40%;
       display: inline-block;
 
       img{
         @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
       }
-    }
-
-    div{
-      float: left;
-
-      width: 50%;
-      padding-top: 10px;
     }
   }
 }

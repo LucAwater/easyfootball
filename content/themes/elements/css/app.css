@@ -2430,19 +2430,19 @@ body.home section#intro-home {
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
         background-color: #D32F2F; }
 
-section.page-header-taxonomy .section-body figure {
+section.page-header-taxonomy .section-body div {
   float: left;
-  width: 50%;
-  padding-right: 40px;
+  width: 60%;
+  padding-top: 10px;
+  padding-right: 40px; }
+section.page-header-taxonomy .section-body figure {
+  float: right;
+  width: 40%;
   display: inline-block; }
   section.page-header-taxonomy .section-body figure img {
     -webkit-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3); }
-section.page-header-taxonomy .section-body div {
-  float: left;
-  width: 50%;
-  padding-top: 10px; }
 
 body.single-product .page-header {
   -webkit-font-smoothing: antialiased;

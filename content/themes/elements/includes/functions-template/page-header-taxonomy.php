@@ -17,15 +17,15 @@ $image_height = $image['sizes']['medium-height'];
 
 <section class="page-header page-header-taxonomy">
   <div class="section-body">
+    <div>
+      <h1><?php echo $term->name; ?></h1>
+      <?php echo wpautop($term->description); ?>
+    </div>
+
     <?php if( $image ): ?>
       <figure>
         <img src="<?php echo $image_url; ?>" width="<?php echo $image_width; ?>" height="<?php echo $image_height; ?>" />
       </figure>
     <?php endif; ?>
-
-    <div>
-      <h1><?php echo $term->name; ?></h1>
-      <?php echo wpautop($term->description); ?>
-    </div>
   </div>
 </section>
