@@ -35,7 +35,7 @@
           }
 
           // View all link
-          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/teams">view more teams</a></li>';
+          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/teams">se fler lag</a></li>';
 
         echo '</ul>';
       endif; ?>
@@ -76,7 +76,7 @@
           }
 
           // View all link
-          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/leagues">view more leagues</a></li>';
+          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/leagues">se fler ligor</a></li>';
 
         echo '</ul>';
       endif; ?>
