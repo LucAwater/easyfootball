@@ -31,7 +31,7 @@ function breadcrumb(){
   } elseif( $term->taxonomy == 'league' ){
     $post_id = $term->taxonomy . '_' . $term->term_id;
 
-    $region = get_field('league_region', $post_id);
+    $region = get_field('league_parentRegion', $post_id);
     $region_name = $region->name;
     $region_slug = $region->slug;
 
