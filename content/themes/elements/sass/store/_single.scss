@@ -52,6 +52,11 @@ body.single-product{
 }
 
 body.single-product aside{
+  // "No seating available"
+  p{
+    padding: 20px;
+  }
+
   figure{
     border: thin solid $grey;
 

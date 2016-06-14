@@ -2535,6 +2535,8 @@ body.single-product main > .product {
       padding-right: 0;
       border: none; }
 
+body.single-product aside p, body.single-product aside p .read-more, p body.single-product aside .read-more, body.single-product aside .tooltip:after {
+  padding: 20px; }
 body.single-product aside figure {
   border: thin solid #e0e0e0; }
   body.single-product aside figure .zoom {
