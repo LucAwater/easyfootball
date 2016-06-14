@@ -101,7 +101,7 @@ class WC_CSV_Parser {
 	 */
 	public function parse_data( $file, $delimiter, $mapping, $start_pos = 0, $end_pos = null ) {
 		// Set locale
-		$enc = mb_detect_encoding( $file, 'UTF-8, ISO-8859-1', true );
+		$enc = wc_pcsvis_is_first_row_encoded_in( $file, 'UTF-8, ISO-8859-1' );
 		if ( $enc )
 			setlocale( LC_ALL, 'en_US.' . $enc );
 		@ini_set( 'auto_detect_line_endings', true );
@@ -184,6 +184,12 @@ class WC_CSV_Parser {
 		// Merging
 		$merging = ( ! empty( $_GET['merge'] ) && $_GET['merge'] ) ? true : false;
 
+		// Is variation
+		$is_variation = false;
+		if ( isset( $_GET['import_page'] ) && 'woocommerce_variation_csv' === $_GET['import_page'] ) {
+			$is_variation = true;
+		}
+
 		// Post ID field mapping
 		$post_id = ( ! empty( $item['id'] ) ) ? $item['id'] : 0;
 		$post_id = ( ! empty( $item['post_id'] ) ) ? $item['post_id'] : $post_id;
@@ -210,7 +216,9 @@ class WC_CSV_Parser {
 					    AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = '%s'
 					 ", $item['sku'] ) );
 
-					if ( ! $found_product_id && empty( $item['post_title'] ) ) {
+					if (  $is_variation && ! $found_product_id && empty( $item[ 'post_title' ] ) ) {
+						$merging = false;
+					} else if ( ! $found_product_id && empty( $item['post_title'] ) ) {
 						WC_Product_CSV_Import_Suite::log( sprintf(__( '> > Skipped. Cannot find product with sku %s.', 'woocommerce-product-csv-import-suite'), $item['sku']) );
 						return new WP_Error( 'parse-error', __( 'Skipped. Cannot find product with sku.', 'woocommerce-product-csv-import-suite' ) );
 					} elseif ( ! $found_product_id ) {
@@ -317,6 +325,11 @@ class WC_CSV_Parser {
 		if ( isset( $postmeta['crosssell_ids'] ) && ! is_array( $postmeta['crosssell_ids'] ) ) {
 			$ids = array_filter( array_map( 'trim', explode( '|', $postmeta['crosssell_ids'] ) ) );
 			$postmeta['crosssell_ids'] = $ids;
+		}
+
+		// variation description
+		if ( isset( $postmeta['variation_description'] ) ) {
+			$postmeta['variation_description'] = esc_textarea( $postmeta['variation_description'] );
 		}
 
 		// Relative stock updates
@@ -821,7 +834,14 @@ class WC_CSV_Parser {
 						'gender'                  => '',
 						'age_group'               => '',
 						'color'                   => '',
-						'size'                    => ''
+						'size'                    => '',
+						'delivery_label'          => '',
+						'size'                    => '',
+						'custom_label_0'          => '',
+						'custom_label_1'          => '',
+						'custom_label_2'          => '',
+						'custom_label_3'          => '',
+						'custom_label_4'          => '',
 					);
 				}
 

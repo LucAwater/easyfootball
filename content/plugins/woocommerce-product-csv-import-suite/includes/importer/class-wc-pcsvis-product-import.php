@@ -211,7 +211,7 @@ class WC_PCSVIS_Product_Import extends WP_Importer {
 
 							<?php
 							$limit = apply_filters( 'woocommerce_csv_import_limit_per_request', 20 );
-							$enc   = mb_detect_encoding( $file, 'UTF-8, ISO-8859-1', true );
+							$enc   = wc_pcsvis_is_first_row_encoded_in( $file, 'UTF-8, ISO-8859-1' );
 							if ( $enc ) {
 								setlocale( LC_ALL, 'en_US.' . $enc );
 							}
@@ -491,8 +491,10 @@ class WC_PCSVIS_Product_Import extends WP_Importer {
 			return;
 
 		// Set locale
-		$enc = mb_detect_encoding( $file, 'UTF-8, ISO-8859-1', true );
-		if ( $enc ) setlocale( LC_ALL, 'en_US.' . $enc );
+		$enc = wc_pcsvis_is_first_row_encoded_in( $file, 'UTF-8, ISO-8859-1' );
+		if ( $enc ) {
+			setlocale( LC_ALL, 'en_US.' . $enc );
+		}
 		@ini_set( 'auto_detect_line_endings', true );
 
 		// Get headers

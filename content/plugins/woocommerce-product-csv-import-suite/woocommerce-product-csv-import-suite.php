@@ -5,7 +5,9 @@ Plugin URI: http://www.woothemes.com/products/product-csv-import-suite/
 Description: Import and export products and variations straight from WordPress admin. Go to WooCommerce > CSV Import Suite to get started. Supports post fields, product data, custom post types, taxonomies, and images.
 Author: WooThemes
 Author URI: http://www.woothemes.com
-Version: 1.10.5
+Version: 1.10.10
+Text Domain: woocommerce-product-csv-import-suite
+Domain Path: /languages
 
 	Copyright: © 2009-2015 WooThemes.
 	License: GNU General Public License v3.0
@@ -59,6 +61,7 @@ class WC_Product_CSV_Import_Suite {
 		add_action( 'init', array( $this, 'catch_export_request' ), 20 );
 		add_action( 'admin_init', array( $this, 'register_importers' ) );
 
+		include_once( 'includes/wc-pcsvis-functions.php' );
 		include_once( 'includes/class-wc-pcsvis-system-status-tools.php' );
 		include_once( 'includes/class-wc-pcsvis-admin-screen.php' );
 		include_once( 'includes/importer/class-wc-pcsvis-importer.php' );

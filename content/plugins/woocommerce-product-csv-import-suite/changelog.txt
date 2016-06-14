@@ -1,5 +1,23 @@
 *** Product CSV Import Suite Changelog ***
 
+2016.03.29 - version 1.10.10
+* Tweak - Added support for custom labels with Google Product Feed
+* Tweak - Added more info to exported CSV filenames, e.g. product-export-yyyy_mm_dd_hh_mm_ss.csv and product-variations-export-yyyy_mm_dd_hh_mm_ss.csv for product variations
+
+2016.03.22 - version 1.10.9
+* Tweak - Add GPF Delivery Label in the import/export
+* Fix - Add missing POT file for localization support
+
+2015.02.19 - version 1.10.8
+* Tweak - Add variation description support
+* Fix - Incorrect encoding detection
+
+2015.11.18 - version 1.10.7
+* Fix - When variable subscription product is exported, the value of tax:product_type is "Variable Subscription"
+
+2015.11.09 - version 1.10.6
+* Fix - If a SKU/ID doesn't exist, but is included during a variation merge, it will now be imported.
+
 2015.11.04 - version 1.10.5
 * Fix - menu_order will now update correctly if you merge in products with a menu_order of 0.
 * Fix - The variation importer now catches duplicate SKUs/IDs when importing (just like the product importer).
