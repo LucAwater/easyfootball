@@ -1,7 +1,12 @@
 <?php
-function get_breadcrumb(){
+function breadcrumb(){
   global $wp_query;
   $term =	$wp_query->queried_object;
+
+  // Stop if it's not a taxonomy page
+  if( !$term ){
+    return;
+  }
 
   // Region page
   if( $term->taxonomy == 'region' ){
@@ -104,7 +109,7 @@ function get_breadcrumb(){
     <nav id="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
       <div>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a> 
+          <a itemprop="item" href="<?php echo home_url(); ?>"><small itemprop="name">Home</small></a>
           <meta itemprop="position" content="1" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
