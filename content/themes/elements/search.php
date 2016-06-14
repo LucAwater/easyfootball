@@ -145,7 +145,7 @@ page_content_start();
 
     echo
     '<div class="no-results">
-      <p>Sorry, no matches found for <strong>' . $searchQuery . '</strong></p>
+      <p>Sorry, no matches found for <strong>' . get_search_query() . '</strong></p>
       <p>Check the spelling or try different/fewer keywords and try again</p>
     </div>';
 
