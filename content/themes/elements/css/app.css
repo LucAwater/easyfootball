@@ -748,10 +748,12 @@ ul {
   margin-left: -0.9375rem; }
 
 h1, h2, h3, h4, p, p .read-more, .tooltip:after, span,
-time, small, a, button,
+time,
+strong,
+address, small, a, button,
 input[type="submit"], .alert, table th,
 table td, form[role="search"] input[type="search"], label, input,
-textarea, select {
+textarea, select, body.woocommerce-order-received .woocommerce .order_details li {
   font-family: "Gotham A", "Gotham B";
   font-style: normal;
   font-weight: 400;
@@ -789,6 +791,9 @@ article p, article p .read-more, p article .read-more, article .tooltip:after {
   margin-bottom: 1em;
   font-size: 18px;
   line-height: 1.6; }
+
+strong {
+  font-weight: 500; }
 
 small {
   font-size: 12px;
@@ -2286,59 +2291,81 @@ section.image .section-body.is-pos-right {
   text-align: right; }
 
 h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, .is-italic.tooltip:after, span.is-italic,
-time.is-italic, small.is-italic, a.is-italic, button.is-italic, .is-italic.alert, table th.is-italic,
+time.is-italic,
+strong.is-italic,
+address.is-italic, small.is-italic, a.is-italic, button.is-italic, .is-italic.alert, table th.is-italic,
 table td.is-italic, form[role="search"] input.is-italic[type="search"], label.is-italic, input.is-italic,
-textarea.is-italic, select.is-italic {
+textarea.is-italic, select.is-italic, body.woocommerce-order-received .woocommerce .order_details li.is-italic {
   font-style: italic; }
 h1.is-underlined, h2.is-underlined, h3.is-underlined, h4.is-underlined, p.is-underlined, p .is-underlined.read-more, .is-underlined.tooltip:after, span.is-underlined,
-time.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined, .is-underlined.alert, table th.is-underlined,
+time.is-underlined,
+strong.is-underlined,
+address.is-underlined, small.is-underlined, a.is-underlined, button.is-underlined, .is-underlined.alert, table th.is-underlined,
 table td.is-underlined, form[role="search"] input.is-underlined[type="search"], label.is-underlined, input.is-underlined,
-textarea.is-underlined, select.is-underlined {
+textarea.is-underlined, select.is-underlined, body.woocommerce-order-received .woocommerce .order_details li.is-underlined {
   text-decoration: underline; }
 h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, h4.is-capitalized, p.is-capitalized, p .is-capitalized.read-more, .is-capitalized.tooltip:after, span.is-capitalized,
-time.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized, .is-capitalized.alert, table th.is-capitalized,
+time.is-capitalized,
+strong.is-capitalized,
+address.is-capitalized, small.is-capitalized, a.is-capitalized, button.is-capitalized, .is-capitalized.alert, table th.is-capitalized,
 table td.is-capitalized, form[role="search"] input.is-capitalized[type="search"], label.is-capitalized, input.is-capitalized,
-textarea.is-capitalized, select.is-capitalized {
+textarea.is-capitalized, select.is-capitalized, body.woocommerce-order-received .woocommerce .order_details li.is-capitalized {
   text-transform: capitalize; }
 h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, h4.is-uppercase, p.is-uppercase, p .is-uppercase.read-more, .is-uppercase.tooltip:after, span.is-uppercase,
-time.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase, .is-uppercase.alert, table th.is-uppercase,
+time.is-uppercase,
+strong.is-uppercase,
+address.is-uppercase, small.is-uppercase, a.is-uppercase, button.is-uppercase, .is-uppercase.alert, table th.is-uppercase,
 table td.is-uppercase, form[role="search"] input.is-uppercase[type="search"], label.is-uppercase, input.is-uppercase,
-textarea.is-uppercase, select.is-uppercase {
+textarea.is-uppercase, select.is-uppercase, body.woocommerce-order-received .woocommerce .order_details li.is-uppercase {
   text-transform: uppercase; }
 h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, h4.is-lowercase, p.is-lowercase, p .is-lowercase.read-more, .is-lowercase.tooltip:after, span.is-lowercase,
-time.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase, .is-lowercase.alert, table th.is-lowercase,
+time.is-lowercase,
+strong.is-lowercase,
+address.is-lowercase, small.is-lowercase, a.is-lowercase, button.is-lowercase, .is-lowercase.alert, table th.is-lowercase,
 table td.is-lowercase, form[role="search"] input.is-lowercase[type="search"], label.is-lowercase, input.is-lowercase,
-textarea.is-lowercase, select.is-lowercase {
+textarea.is-lowercase, select.is-lowercase, body.woocommerce-order-received .woocommerce .order_details li.is-lowercase {
   text-transform: lowercase; }
 h1.is-bold, h2.is-bold, h3.is-bold, h4.is-bold, p.is-bold, p .is-bold.read-more, .is-bold.tooltip:after, span.is-bold,
-time.is-bold, small.is-bold, a.is-bold, button.is-bold, .is-bold.alert, table th.is-bold,
+time.is-bold,
+strong.is-bold,
+address.is-bold, small.is-bold, a.is-bold, button.is-bold, .is-bold.alert, table th.is-bold,
 table td.is-bold, form[role="search"] input.is-bold[type="search"], label.is-bold, input.is-bold,
-textarea.is-bold, select.is-bold {
+textarea.is-bold, select.is-bold, body.woocommerce-order-received .woocommerce .order_details li.is-bold {
   font-weight: 700; }
 h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, h4.is-aligned-center, p.is-aligned-center, p .is-aligned-center.read-more, .is-aligned-center.tooltip:after, span.is-aligned-center,
-time.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center, .is-aligned-center.alert, table th.is-aligned-center,
+time.is-aligned-center,
+strong.is-aligned-center,
+address.is-aligned-center, small.is-aligned-center, a.is-aligned-center, button.is-aligned-center, .is-aligned-center.alert, table th.is-aligned-center,
 table td.is-aligned-center, form[role="search"] input.is-aligned-center[type="search"], label.is-aligned-center, input.is-aligned-center,
-textarea.is-aligned-center, select.is-aligned-center {
+textarea.is-aligned-center, select.is-aligned-center, body.woocommerce-order-received .woocommerce .order_details li.is-aligned-center {
   text-align: center; }
 h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, h4.is-aligned-left, p.is-aligned-left, p .is-aligned-left.read-more, .is-aligned-left.tooltip:after, span.is-aligned-left,
-time.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left, .is-aligned-left.alert, table th.is-aligned-left,
+time.is-aligned-left,
+strong.is-aligned-left,
+address.is-aligned-left, small.is-aligned-left, a.is-aligned-left, button.is-aligned-left, .is-aligned-left.alert, table th.is-aligned-left,
 table td.is-aligned-left, form[role="search"] input.is-aligned-left[type="search"], label.is-aligned-left, input.is-aligned-left,
-textarea.is-aligned-left, select.is-aligned-left {
+textarea.is-aligned-left, select.is-aligned-left, body.woocommerce-order-received .woocommerce .order_details li.is-aligned-left {
   text-align: left; }
 h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, h4.is-aligned-right, p.is-aligned-right, p .is-aligned-right.read-more, .is-aligned-right.tooltip:after, span.is-aligned-right,
-time.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right, .is-aligned-right.alert, table th.is-aligned-right,
+time.is-aligned-right,
+strong.is-aligned-right,
+address.is-aligned-right, small.is-aligned-right, a.is-aligned-right, button.is-aligned-right, .is-aligned-right.alert, table th.is-aligned-right,
 table td.is-aligned-right, form[role="search"] input.is-aligned-right[type="search"], label.is-aligned-right, input.is-aligned-right,
-textarea.is-aligned-right, select.is-aligned-right {
+textarea.is-aligned-right, select.is-aligned-right, body.woocommerce-order-received .woocommerce .order_details li.is-aligned-right {
   text-align: right; }
 h1.is-black, h2.is-black, h3.is-black, h4.is-black, p.is-black, p .is-black.read-more, .is-black.tooltip:after, span.is-black,
-time.is-black, small.is-black, a.is-black, button.is-black, .is-black.alert, table th.is-black,
+time.is-black,
+strong.is-black,
+address.is-black, small.is-black, a.is-black, button.is-black, .is-black.alert, table th.is-black,
 table td.is-black, form[role="search"] input.is-black[type="search"], label.is-black, input.is-black,
-textarea.is-black, select.is-black {
+textarea.is-black, select.is-black, body.woocommerce-order-received .woocommerce .order_details li.is-black {
   color: black; }
 h1.is-white, h2.is-white, h3.is-white, h4.is-white, p.is-white, p .is-white.read-more, .is-white.tooltip:after, span.is-white,
-time.is-white, small.is-white, a.is-white, button.is-white, .is-white.alert, table th.is-white,
+time.is-white,
+strong.is-white,
+address.is-white, small.is-white, a.is-white, button.is-white, .is-white.alert, table th.is-white,
 table td.is-white, form[role="search"] input.is-white[type="search"], label.is-white, input.is-white,
-textarea.is-white, select.is-white {
+textarea.is-white, select.is-white, body.woocommerce-order-received .woocommerce .order_details li.is-white {
   color: white; }
 
 p.is-small, p .is-small.read-more, .is-small.tooltip:after {
@@ -2557,3 +2584,17 @@ body.woocommerce-checkout #order_review #payment li {
       width: auto;
       height: 100%;
       float: right; }
+
+body.woocommerce-order-received .woocommerce > * {
+  margin-bottom: 20px; }
+body.woocommerce-order-received .woocommerce h2, body.woocommerce-order-received .woocommerce h3 {
+  padding-top: 20px; }
+body.woocommerce-order-received .woocommerce .customer_details {
+  width: auto; }
+  body.woocommerce-order-received .woocommerce .customer_details th {
+    display: block;
+    margin-right: 10px; }
+  body.woocommerce-order-received .woocommerce .customer_details td {
+    padding: 0;
+    border: none;
+    background-color: transparent; }

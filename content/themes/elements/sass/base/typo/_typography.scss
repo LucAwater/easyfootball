@@ -57,8 +57,14 @@ article p{
 }
 
 span,
-time{
+time,
+strong,
+address{
   @extend %base;
+}
+
+strong{
+  font-weight: 500;
 }
 
 small{
