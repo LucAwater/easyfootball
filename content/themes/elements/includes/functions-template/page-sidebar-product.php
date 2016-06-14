@@ -22,6 +22,8 @@ if( $match_location ):
   <aside>
     <div>
       <figure class="product-seating">
+        <a class="zoom"></a>
+        
         <?php if($map): ?>
           <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
         <?php else:  ?>

@@ -2498,6 +2498,30 @@ body.single-product main > .product {
 
 body.single-product aside figure {
   border: thin solid #e0e0e0; }
+  body.single-product aside figure .zoom {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    border: thin solid #D32F2F;
+    border-radius: 3px;
+    background-color: #FF5252; }
+    body.single-product aside figure .zoom:before, body.single-product aside figure .zoom:after {
+      content: "";
+      top: 7px;
+      right: 13px;
+      position: absolute;
+      width: 2px;
+      height: 14px;
+      background-color: white; }
+    body.single-product aside figure .zoom:before {
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
 
 body.woocommerce-checkout form.woocommerce-checkout {
   height: auto;
