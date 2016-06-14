@@ -64,6 +64,23 @@ function redirect_to_checkout() {
   return $checkout_url;
 }
 
+// Change button text on archives
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+
+function woo_archive_custom_cart_button_text() {
+  return __( 'Biljetter', 'woocommerce' );
+}
+
+// Only display minimum price for WooCommerce variable products
+add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
+
+function custom_variation_price( $price, $product ) {
+   $price = '';
+   $price .= "<span class='label'>Från</span>" . woocommerce_price($product->get_price());
+
+   return $price;
+}
+
 // Removing Woocommerce's standard select replacement
 add_action( 'wp_enqueue_scripts', 'mgt_dequeue_stylesandscripts', 100 );
 

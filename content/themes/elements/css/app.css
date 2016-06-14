@@ -1304,6 +1304,8 @@ section.page-header {
       vertical-align: middle; }
       .list-col li [class^="list-item-"]:last-child {
         text-align: right; }
+    .list-col li .price span.label {
+      display: block; }
 
 .list-cloud div {
   margin-bottom: 20px; }
