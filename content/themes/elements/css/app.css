@@ -884,11 +884,23 @@ main > * {
   main > *:last-child {
     padding-bottom: 2.5rem; }
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 1100px) {
   body > header,
-  body > footer {
-    padding: 0 3.75rem; }
+  body > footer > div,
+  .page-header {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; }
 
+  main {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; }
+    main .content-container {
+      max-width: none;
+      padding-right: 0;
+      border-right: none; }
+    main aside {
+      display: none; } }
+@media only screen and (max-width: 500px) {
   main > * {
     padding: 2.5rem 0; }
     main > *:first-child {
@@ -2433,7 +2445,7 @@ body.is-mobile.is-loading > * {
 
 @media only screen and (max-width: 500px) {
   .is-fullwidth {
-    margin-left: -3.75rem; } }
+    margin-left: -1.875rem; } }
 body.home section#intro-home {
   width: 100%;
   padding: 100px;
@@ -2550,6 +2562,9 @@ body.single-product aside figure {
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg); }
 
+@media screen and (max-width: 1100px) {
+  body.single-product main > .product .summary .content-container {
+    padding-left: 0; } }
 body.woocommerce-checkout form.woocommerce-checkout {
   height: auto;
   overflow: hidden; }
