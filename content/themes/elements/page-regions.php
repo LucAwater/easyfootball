@@ -21,24 +21,30 @@ if( have_posts() ):
 
     if( $regions ):
 
-      woocommerce_product_loop_start();
+      page_content_start();
 
-        foreach($regions as $region){
-          ?>
-          <li>
-            <div class="list-item-80">
-              <p><?php echo $region->name; ?></p>
-            </div>
+        woocommerce_product_loop_start();
 
-            <div class="list-item-20">
-              <a class="button" href="<?php echo get_term_link($region); ?>">view leagues</a>
-            </div>
-          </li>
+          foreach($regions as $region){
+            ?>
+            <li>
+              <div class="list-item-80">
+                <p><?php echo $region->name; ?></p>
+              </div>
 
-          <?php
-        }
+              <div class="list-item-20">
+                <a class="button" href="<?php echo get_term_link($region); ?>">view leagues</a>
+              </div>
+            </li>
 
-      woocommerce_product_loop_end();
+            <?php
+          }
+
+        woocommerce_product_loop_end();
+
+      page_content_end();
+
+      page_sidebar();
 
     endif;
 
