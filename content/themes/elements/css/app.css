@@ -948,15 +948,6 @@ body > header {
         margin: auto; }
     body > header .header-content form[role="search"] input[type="search"] {
       border: none; }
-    body > header .header-content nav > ul > li > p, body > header .header-content p nav > ul > li > .read-more, p body > header .header-content nav > ul > li > .read-more, body > header .header-content nav > ul > li > .tooltip:after,
-    body > header .header-content nav > ul > li > a,
-    body > header .header-content nav > ul > li > button,
-    body > header .header-content nav > ul > li > input[type="submit"] {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: antialiased;
-      font-weight: 500;
-      color: white;
-      font-size: 16px; }
     body > header .header-content > a, body > header .header-content > button,
     body > header .header-content > input[type="submit"] {
       margin-left: auto; }
@@ -1074,6 +1065,15 @@ nav {
     nav > ul > li {
       display: inline-block;
       padding: 24px 20px; }
+      nav > ul > li > p, p nav > ul > li > .read-more, nav > ul > li > .tooltip:after,
+      nav > ul > li > a,
+      nav > ul > li > button,
+      nav > ul > li > input[type="submit"] {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: antialiased;
+        font-weight: 500;
+        color: white;
+        font-size: 16px; }
       nav > ul > li p, nav > ul > li p .read-more, p nav > ul > li .read-more, nav > ul > li .tooltip:after,
       nav > ul > li a,
       nav > ul > li button,
@@ -1141,6 +1141,51 @@ nav > ul > li ul {
 nav ul li.current {
   text-decoration: underline; }
 
+@media screen and (max-width: 1100px) {
+  header .header-content nav {
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    width: calc(100% - 70px);
+    height: 100%;
+    margin: 0 !important;
+    padding-top: 70px;
+    background-color: white; }
+    header .header-content nav > ul {
+      padding: 20px;
+      display: block;
+      text-align: right;
+      border-top: thin solid #e0e0e0;
+      border-bottom: thin solid #e0e0e0; }
+      header .header-content nav > ul > li {
+        display: block;
+        padding: 10px 0; }
+        header .header-content nav > ul > li a, header .header-content nav > ul > li button,
+        header .header-content nav > ul > li input[type="submit"] {
+          color: #727272; }
+        header .header-content nav > ul > li ul {
+          display: none; }
+
+  header.nav-active nav {
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); } }
 #breadcrumb {
   height: auto;
   padding: 10px 0;

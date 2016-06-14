@@ -47,23 +47,6 @@ body > header{
       }
     }
 
-    // Nav
-    nav{
-      > ul{
-        > li{
-          > p,
-          > a{
-            @include font-smoothing( antialiased );
-            
-            color: $white;
-            font-size: 16px;
-            // text-transform: uppercase;
-            // letter-spacing: 1.2px;
-          }
-        }
-      }
-    }
-
     // Help
     > a{
       margin-left: auto;
