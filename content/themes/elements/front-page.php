@@ -48,12 +48,14 @@ if( have_posts() ):
               <li>
                 <div class="card-container">
                   <figure class="card-image">
-                    <?php team_logos($event_location, $event_teams); ?>
-                    <span>VS</span>
+                    <a href="<?php echo $event_link; ?>">
+                      <?php team_logos($event_location, $event_teams); ?>
+                      <span>VS</span>
+                    </a>
                   </figure>
 
                   <div class="card-info">
-                    <h4 class="card-title"><?php echo $event_name; ?></h4>
+                    <a href="<?php echo $event_link; ?>"><h4 class="card-title"><?php echo $event_name; ?></h4></a>
                     <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
                   </div>
 
@@ -120,11 +122,13 @@ if( have_posts() ):
               <li>
                 <div class="card-container">
                   <figure class="card-image">
-                    <img src="<?php echo $team_logo_url; ?>" />
+                    <a href="<?php echo $team_link; ?>">
+                      <img src="<?php echo $team_logo_url; ?>" />
+                    </a>
                   </figure>
 
                   <div class="card-info">
-                    <h3><?php echo $team_name; ?></h3>
+                    <a href="<?php echo $team_link; ?>"><h3><?php echo $team_name; ?></h3></a>
                     <p class="card-subtitle"><?php _e('Top matches'); ?></p>
 
                     <?php if( $team_matches): ?>

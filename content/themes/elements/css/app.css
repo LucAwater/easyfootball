@@ -1418,6 +1418,11 @@ section.page-header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65); }
+  .list-card > li .card-container figure > a, .list-card > li .card-container figure > button,
+  .list-card > li .card-container figure > input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    display: block; }
   .list-card > li .card-container figure img {
     max-height: 100%;
     max-width: none;

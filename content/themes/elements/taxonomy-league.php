@@ -45,7 +45,9 @@ page_content_start();
         <li>
           <div class="card-container">
             <figure>
-              <img src="<?php echo $team_logo_url; ?>" />
+              <a href="<?php echo $team_link; ?>">
+                <img src="<?php echo $team_logo_url; ?>" />
+              </a>
             </figure>
 
             <h4><?php echo $team_name; ?></h4>
