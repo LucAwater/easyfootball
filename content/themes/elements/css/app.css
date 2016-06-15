@@ -1286,6 +1286,7 @@ section.page-header {
 
 .list {
   float: left;
+  width: 100%;
   max-width: 800px; }
   .list h2, .list h3, .list h4 {
     margin-bottom: 15px; }
