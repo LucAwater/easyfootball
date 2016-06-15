@@ -35,7 +35,7 @@ page_content_start();
           $name = $result->name;
           $name = str_replace($searchQuery, "<strong>" . $searchQuery . "</strong>", $name);
           $bodytag = str_replace("%body%", "black", "<body text='%body%'>");
-          $url = get_category_link( $result->term_id );
+          $url = get_category_link( $result );
 
           echo '<li><a href="' . $url . '">' . $name . '</a></li>';
         endforeach;
@@ -72,7 +72,7 @@ page_content_start();
           // Check if search query against team slug
           $name = $result->name;
           // $name = preg_replace("/\p{L}*?".preg_quote($searchQuery)."\p{L}*/ui", "<b>$0</b>", $name);
-          $url = get_category_link( $result->term_id );
+          $url = get_category_link( $result );
 
           echo '<li><a href="' . $url . '">' . $name . '</a></li>';
         endforeach;
