@@ -2,7 +2,7 @@
   <ul>
     <!-- Teams -->
     <li>
-      <a href="<?php echo home_url() . '/teams'; ?>">Lag</a>
+      <a href="<?php echo home_url() . '/lag'; ?>">Lag</a>
 
       <?php
       featured_lists_teams();
@@ -43,7 +43,7 @@
 
     <!-- Leagues -->
     <li>
-      <a href="<?php echo home_url() . '/leagues'; ?>">Ligor</a>
+      <a href="<?php echo home_url() . '/ligor'; ?>">Ligor</a>
 
       <?php
       featured_lists_leagues();
@@ -86,7 +86,7 @@
 
     <!-- Regions -->
     <li>
-      <a href="<?php echo home_url() . '/regions'; ?>">Land</a>
+      <a href="<?php echo home_url() . '/landskampaner'; ?>">Land</a>
 
       <?php
       $regions = get_terms( 'region', array('hide_empty' => false,) );
