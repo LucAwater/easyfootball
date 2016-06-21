@@ -106,5 +106,20 @@
       ?>
     </li>
 
+    <li>
+      <a>Mer</a>
+      
+      <ul>
+        <?php
+        $nav_args = array(
+          'theme_location'  => 'menu_secondary',
+          'container'       => '',
+          'items_wrap'      => '%3$s'
+        );
+        wp_nav_menu( $nav_args );
+        ?>
+      </ul>
+    </li>
+
   </ul>
 </nav>
