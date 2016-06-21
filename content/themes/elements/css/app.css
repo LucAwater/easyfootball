@@ -761,7 +761,8 @@ textarea, select, body.woocommerce-order-received .woocommerce .order_details li
   font-weight: normal; }
 
 h1 {
-  font-size: 50px; }
+  font-size: 60px;
+  font-weight: 500; }
 
 article h1 {
   font-size: 2.5em; }
@@ -2422,7 +2423,9 @@ body.home section#intro-home {
   background-blend-mode: overlay;
   background-image: url("/easyfootball/content/themes/elements/img/bg2.jpg"); }
   body.home section#intro-home h1 {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 100; }
   body.home section#intro-home form[role="search"] {
     width: 800px;
     max-width: none;
