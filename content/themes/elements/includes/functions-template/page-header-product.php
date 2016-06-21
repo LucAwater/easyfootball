@@ -10,7 +10,7 @@ global $product, $post;
     <?php
     // Get match data from custom fields of product
     $match_date = get_field('match_date', false, false);
-    $match_date = DateTime::createFromFormat('j/m/Y', $match_date);
+    $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
     $match_time = get_field('match_time');
     $match_location = get_field('match_location');
     $match_location = get_term_by('name', $match_location, 'team');
