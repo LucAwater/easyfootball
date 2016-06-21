@@ -56,7 +56,7 @@
 
         <?php include_once( 'includes/nav.php' ); ?>
 
-        <a class="button button-sec" href="">Kundtjänst</a>
+        <a class="button button-sec" href="<?php echo home_url(); ?>/kundtjanst">Kundtjänst</a>
       </div>
     </div>
 
