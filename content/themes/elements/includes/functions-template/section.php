@@ -3,10 +3,6 @@ function section_start( $class_section ) {
   echo '<section class="' . $class_section . '">';
 }
 
-function section_start_parallax( $id, $class_section ) {
-  echo '<section id="'. $id . '" class="' . $class_section . '">';
-}
-
 function section_end() {
   echo '</section>';
 }

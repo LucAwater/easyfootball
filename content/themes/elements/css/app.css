@@ -1997,9 +1997,18 @@ section.hero {
     position: absolute;
     margin: auto; }
 
+section.text .section-header,
 section.text .section-body {
   max-width: 700px;
   margin: auto; }
+  section.text .section-header h2,
+  section.text .section-header p,
+  section.text .section-header p .read-more,
+  p section.text .section-header .read-more,
+  section.text .section-header .tooltip:after,
+  section.text .section-header a,
+  section.text .section-header button,
+  section.text .section-header input[type="submit"],
   section.text .section-body h2,
   section.text .section-body p,
   section.text .section-body p .read-more,
