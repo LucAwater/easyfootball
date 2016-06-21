@@ -27,7 +27,7 @@ if( have_posts() ):
               $event_link = get_permalink($event->ID);
 
               $event_date = get_post_meta($event->ID, 'match_date', true);
-              $event_date = DateTime::createFromFormat('Y-m-j', $match_date);
+              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
               $event_date = $event_date->format('j F Y');
               $event_time = get_post_meta($event->ID, 'match_time', true);
 
