@@ -53,6 +53,10 @@ body > header .header-content{
   .link-logo{
     width: 160px;
 
+    img:last-child{
+      display: none;
+    }
+    
     img{
       top: 0;
       bottom: 0;
@@ -65,13 +69,6 @@ body > header .header-content{
     h2{
       font-family: 'Lobster', cursive;
       color: $color-accent;
-    }
-  }
-
-  // Search form
-  form[role="search"]{
-    input[type="search"]{
-      border: none;
     }
   }
 

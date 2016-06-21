@@ -33,10 +33,14 @@ input[type="submit"]{
   }
 
   &.button-sec{
+    @include box-shadow( inset 0 0 0 1px $grey-text );
+    @include font-smoothing( auto );
+
     padding: 0 15px;
 
     color: $grey-text;
-    background-color: $grey;
+    font-weight: 100;
+    background-color: transparent;
 
     &:hover,
     &:focus{

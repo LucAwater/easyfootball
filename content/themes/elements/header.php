@@ -38,12 +38,24 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+// Detect page headers
+if( is_tax() || is_product() || is_search() ){
+  $body_class = "has-page-header";
+} else if( is_front_page() ){
+  $body_class = "has-page-header has-page-header-image";
+} else {
+  $body_class = "";
+}
+?>
+
+<body <?php body_class($body_class); ?>>
   <!-- Header -->
   <header>
     <div class="header-content">
       <a class="link-logo" href="<?php echo home_url(); ?>">
         <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-test.svg">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-test2.svg">
         <!-- <h2>EasyFootball</h2> -->
       </a>
 
@@ -51,7 +63,7 @@
         <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
           <input type="search" pattern=".{3,}" title="3 characters minimum" required placeholder="<?php echo esc_attr_x( 'Sök lag, ligor, platser...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search.svg" /></button>
+          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search-black.svg" /></button>
         </form>
       <?php endif; ?>
 

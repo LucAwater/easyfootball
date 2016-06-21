@@ -8,3 +8,7 @@ main{
 
   background-color: $white;
 }
+
+body:not(.has-page-header) main{
+  padding-top: $header-height + 50;
+}

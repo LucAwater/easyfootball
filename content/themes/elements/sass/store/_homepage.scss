@@ -2,16 +2,17 @@ body.home{
   section#intro-home{
     width: 100%;
     padding: 100px;
+    padding-top: $header-height + 100;
 
-    color: white;
+    color: $white;
     background: $grey-dark;
     text-align: center;
 
-    /* REPLACE LATER W/ DYNAMIC CONTENT */
+    // /* REPLACE LATER W/ DYNAMIC CONTENT */
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: overlay;
-    background-image: url('/easyfootball/content/themes/elements/img/bg.jpg');
+    background-image: url('/easyfootball/content/themes/elements/img/bg2.jpg');
 
     h1{
       margin-bottom: 20px;

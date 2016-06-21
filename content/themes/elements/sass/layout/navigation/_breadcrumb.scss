@@ -1,5 +1,11 @@
 #breadcrumb{
+  top: $header-height;
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
   height: auto;
+  padding: 10px $space-sides;
 
   color: $grey-text;
 

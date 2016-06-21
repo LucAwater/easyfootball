@@ -855,12 +855,15 @@ body {
   min-height: 100%;
   background: white; }
 
-body {
-  padding-top: 70px; }
-
 body > header,
 body > footer {
   padding: 0 6.25rem; }
+
+body {
+  padding-top: 70px; }
+
+body.has-page-header {
+  padding-top: 0; }
 
 main {
   max-width: 1100px;
@@ -918,6 +921,9 @@ main {
   overflow: hidden;
   background-color: white; }
 
+body:not(.has-page-header) main {
+  padding-top: 120px; }
+
 body > header {
   top: 0;
   left: 0;
@@ -957,6 +963,8 @@ body > header .header-content > * {
     margin-right: 0; }
 body > header .header-content .link-logo {
   width: 160px; }
+  body > header .header-content .link-logo img:last-child {
+    display: none; }
   body > header .header-content .link-logo img {
     top: 0;
     bottom: 0;
@@ -966,8 +974,6 @@ body > header .header-content .link-logo {
   body > header .header-content .link-logo h2 {
     font-family: 'Lobster', cursive;
     color: #FF5252; }
-body > header .header-content form[role="search"] input[type="search"] {
-  border: none; }
 body > header .header-content nav {
   margin-left: auto; }
 body > header .header-content .button {
@@ -1085,7 +1091,7 @@ nav {
     display: inline; }
     nav > ul > li {
       display: inline-block;
-      padding: 20px; }
+      padding: 24px 20px; }
       nav > ul > li > p, p nav > ul > li > .read-more, nav > ul > li > .tooltip:after,
       nav > ul > li > a,
       nav > ul > li > button,
@@ -1205,7 +1211,12 @@ nav ul li.current {
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); } }
 #breadcrumb {
+  top: 70px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
   height: auto;
+  padding: 10px 6.25rem;
   color: #727272; }
   #breadcrumb div {
     max-width: 1100px;
@@ -1229,16 +1240,16 @@ nav ul li.current {
         display: none; }
 
 section.page-header {
-  color: black !important;
-  background-color: #f4f4f4 !important;
-  border-bottom: thin solid #e0e0e0;
-  background-image: none !important; }
+  color: black;
+  background-color: #f4f4f4;
+  border-bottom: thin solid #e0e0e0; }
   section.page-header .section-body {
     max-width: 1100px;
     height: auto;
     margin: auto;
     overflow: hidden;
-    padding: 80px 0; }
+    padding: 80px 0;
+    padding-top: 150px; }
     section.page-header .section-body figure {
       background-color: transparent; }
     section.page-header .section-body h1, section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
@@ -1767,9 +1778,16 @@ input[type="submit"] {
   button.button-sec,
   .button.button-sec,
   input[type="submit"].button-sec {
+    -webkit-box-shadow: inset 0 0 0 1px #727272;
+    -moz-box-shadow: inset 0 0 0 1px #727272;
+    box-shadow: inset 0 0 0 1px #727272;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    font-weight: 500;
     padding: 0 15px;
     color: #727272;
-    background-color: #e0e0e0; }
+    font-weight: 100;
+    background-color: transparent; }
     button.button-sec:hover, button.button-sec:focus,
     .button.button-sec:hover,
     .button.button-sec:focus,
@@ -2373,17 +2391,36 @@ p.is-small, p .is-small.read-more, .is-small.tooltip:after {
 @media only screen and (max-width: 500px) {
   .is-fullwidth {
     margin-left: -1.875rem; } }
+body.has-page-header-image > header {
+  border: none; }
+  body.has-page-header-image > header .header-content .link-logo img:first-child {
+    display: none; }
+  body.has-page-header-image > header .header-content .link-logo img:last-child {
+    display: block; }
+  body.has-page-header-image > header .header-content > .button {
+    -webkit-box-shadow: inset 0 0 0 1px white;
+    -moz-box-shadow: inset 0 0 0 1px white;
+    box-shadow: inset 0 0 0 1px white;
+    background-color: white; }
+body.has-page-header-image nav > ul > li > a, body.has-page-header-image nav > ul > li > button,
+body.has-page-header-image nav > ul > li > input[type="submit"],
+body.has-page-header-image nav > ul > li > p,
+body.has-page-header-image p nav > ul > li > .read-more,
+p body.has-page-header-image nav > ul > li > .read-more,
+body.has-page-header-image nav > ul > li > .tooltip:after {
+  color: white; }
+
 body.home section#intro-home {
   width: 100%;
   padding: 100px;
+  padding-top: 170px;
   color: white;
   background: #333333;
   text-align: center;
-  /* REPLACE LATER W/ DYNAMIC CONTENT */
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: overlay;
-  background-image: url("/easyfootball/content/themes/elements/img/bg.jpg"); }
+  background-image: url("/easyfootball/content/themes/elements/img/bg2.jpg"); }
   body.home section#intro-home h1 {
     margin-bottom: 20px; }
   body.home section#intro-home form[role="search"] {

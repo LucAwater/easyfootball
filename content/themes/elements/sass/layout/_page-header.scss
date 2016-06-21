@@ -2,10 +2,9 @@ section.page-header{
   // @include font-smoothing( antialiased );
   // @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
 
-  color: $black !important;
-  background-color: $grey-light !important;
+  color: $black;
+  background-color: $grey-light;
   border-bottom: thin solid $grey;
-  background-image: none !important;
 
   .section-body{
     max-width: 1100px;
@@ -13,6 +12,7 @@ section.page-header{
     margin: auto;
     overflow: hidden;
     padding: 80px 0;
+    padding-top: $header-height +  80;
 
     figure{
       background-color: transparent;
