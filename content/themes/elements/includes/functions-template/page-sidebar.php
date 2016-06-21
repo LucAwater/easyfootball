@@ -9,7 +9,7 @@ function page_sidebar() {
   elseif( is_cart() || is_checkout() ):
     // No sidebar
   else:
-    include_once('page-sidebar-default.php');
+    //include_once('page-sidebar-default.php');
   endif;
 }
 ?>
