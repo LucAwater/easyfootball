@@ -41,6 +41,7 @@ nav > ul > li ul{
   left: 0;
   top: 100%;
   position: absolute;
+  z-index: 1;
 
   white-space: nowrap;
   border: thin solid $grey;

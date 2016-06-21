@@ -107,8 +107,8 @@
     </li>
 
     <li>
-      <a>Mer</a>
-      
+      <p>Mer</p>
+
       <ul>
         <?php
         $nav_args = array(

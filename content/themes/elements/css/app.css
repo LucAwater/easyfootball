@@ -855,7 +855,7 @@ body {
   min-height: 100%;
   background: white; }
 
-body > header,
+body > header > *,
 body > footer {
   padding: 0 6.25rem; }
 
@@ -916,41 +916,51 @@ main {
   background-color: white; }
 
 body > header {
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
   z-index: 1100;
   width: 100%;
-  height: 70px;
   background-color: #607D8B; }
-  body > header .header-content {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+  body > header .header-top > div,
+  body > header .header-content > div {
     max-width: 1100px;
     height: 100%;
     margin: auto; }
-    body > header .header-content > * {
-      margin: 0 20px; }
-      body > header .header-content > *:first-child {
-        margin-left: 0; }
-      body > header .header-content > *:last-child {
-        margin-right: 0; }
-    body > header .header-content .link-logo {
-      width: 130px; }
-      body > header .header-content .link-logo img {
-        top: 0;
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-        margin: auto; }
-    body > header .header-content form[role="search"] input[type="search"] {
-      border: none; }
-    body > header .header-content > a, body > header .header-content > button,
-    body > header .header-content > input[type="submit"] {
-      margin-left: auto; }
+
+body > header .header-top {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: right;
+  background-color: white; }
+
+body > header .header-content > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  body > header .header-content > div > * {
+    margin: 0 20px; }
+    body > header .header-content > div > *:first-child {
+      margin-left: 0; }
+    body > header .header-content > div > *:last-child {
+      margin-right: 0; }
+  body > header .header-content > div .link-logo {
+    width: 130px; }
+    body > header .header-content > div .link-logo img {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      margin: auto; }
+  body > header .header-content > div form[role="search"] input[type="search"] {
+    border: none; }
+  body > header .header-content > div nav {
+    margin-left: auto; }
 
 body > footer {
   z-index: 1100;
@@ -1104,6 +1114,7 @@ nav > ul > li ul {
   left: 0;
   top: 100%;
   position: absolute;
+  z-index: 1;
   white-space: nowrap;
   border: thin solid #e0e0e0;
   background-color: white; }
@@ -1189,9 +1200,8 @@ nav ul li.current {
 #breadcrumb {
   height: auto;
   padding: 10px 0;
-  color: black;
-  background-color: white;
-  border-bottom: thin solid #e0e0e0; }
+  color: #455A64;
+  background-color: #607D8B; }
   #breadcrumb div {
     max-width: 1100px;
     height: auto;
@@ -1199,13 +1209,20 @@ nav ul li.current {
     overflow: hidden; }
     #breadcrumb div li {
       display: inline-block; }
-      #breadcrumb div li small {
-        color: black; }
+      #breadcrumb div li a small, #breadcrumb div li button small,
+      #breadcrumb div li input[type="submit"] small {
+        color: #455A64; }
+      #breadcrumb div li a:hover small, #breadcrumb div li button:hover small,
+      #breadcrumb div li input[type="submit"]:hover small {
+        color: white; }
       #breadcrumb div li:after {
         content: "\203A";
         padding: 0 5px; }
       #breadcrumb div li:last-child small {
-        color: #727272; }
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: antialiased;
+        font-weight: 500;
+        color: white; }
       #breadcrumb div li:last-child:after {
         display: none; }
 

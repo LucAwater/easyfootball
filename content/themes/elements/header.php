@@ -40,26 +40,35 @@
 <body <?php body_class(); ?>>
   <!-- Header -->
   <header>
-    <div class="header-content">
-      <a class="link-logo" href="<?php echo home_url(); ?>">
-        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-bluegrey.svg">
-      </a>
-
-      <?php if(! is_front_page() ): ?>
-        <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-          <input type="search" pattern=".{3,}" title="3 characters minimum" required placeholder="<?php echo esc_attr_x( 'Sök lag, ligor, platser...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
-
-          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search.svg" /></button>
-        </form>
-      <?php endif; ?>
-
-      <?php include_once( 'includes/nav.php' ); ?>
-
-      <a class="button button-sec" href="">Kundtjänst</a>
+    <div class="header-top">
+      <div>
+        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
+      </div>
     </div>
+
+    <div class="header-content">
+      <div>
+        <a class="link-logo" href="<?php echo home_url(); ?>">
+          <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-black.svg">
+        </a>
+
+        <?php if(! is_front_page() ): ?>
+          <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+            <input type="search" pattern=".{3,}" title="3 characters minimum" required placeholder="<?php echo esc_attr_x( 'Sök lag, ligor, platser...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
+
+            <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search.svg" /></button>
+          </form>
+        <?php endif; ?>
+
+        <?php include_once( 'includes/nav.php' ); ?>
+
+        <a class="button button-sec" href="">Kundtjänst</a>
+      </div>
+    </div>
+
+    <?php breadcrumb(); ?>
   </header>
 
-  <?php breadcrumb(); ?>
   <?php page_header(); ?>
 
   <!-- Main content -->
