@@ -7,8 +7,11 @@ body > header{
 
   background-color: $color-primary;
 
-  .header-top > div,
+  .header-bottom > div,
   .header-content > div{
+    @include flexbox;
+    @include align-items( center );
+
     max-width: 1100px;
     height: 100%;
     margin: auto;
@@ -16,19 +19,21 @@ body > header{
 }
 
 // Header top
-body > header .header-top{
-  padding-top: 5px;
-  padding-bottom: 5px;
+body > header .header-bottom{
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-  text-align: right;
-  background-color: $white;
+  background-color: $color-primary-dark;
+
+  small{
+    margin-left: auto;
+
+    color: $color-primary-light;
+  }
 }
 
 // Header content
 body > header .header-content > div{
-  @include flexbox;
-  @include align-items( center );
-
   > *{
     margin: 0 20px;
 

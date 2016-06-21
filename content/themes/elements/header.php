@@ -40,12 +40,6 @@
 <body <?php body_class(); ?>>
   <!-- Header -->
   <header>
-    <div class="header-top">
-      <div>
-        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
-      </div>
-    </div>
-
     <div class="header-content">
       <div>
         <a class="link-logo" href="<?php echo home_url(); ?>">
@@ -66,7 +60,13 @@
       </div>
     </div>
 
-    <?php breadcrumb(); ?>
+    <div class="header-bottom">
+      <div>
+        <?php breadcrumb(); ?>
+
+        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
+      </div>
+    </div>
   </header>
 
   <?php page_header(); ?>
