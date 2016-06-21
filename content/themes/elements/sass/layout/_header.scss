@@ -1,14 +1,17 @@
 body > header{
-  @include box-shadow( 0 3px 8px rgba(0,0,0,.35) );
-
+  top: 0;
+  left: 0;
+  position: absolute;
   z-index: $zIndex-header;
 
   width: 100%;
+  height: $header-height;
 
-  background-color: $color-primary;
+  background-color: transparent;
+  border-bottom: thin solid $grey;
 
   .header-bottom > div,
-  .header-content > div{
+  .header-content{
     @include flexbox;
     @include align-items( center );
 
@@ -19,21 +22,21 @@ body > header{
 }
 
 // Header top
-body > header .header-bottom{
+body .header-bottom{
   padding-top: 10px;
   padding-bottom: 10px;
 
-  background-color: $color-primary-dark;
+  background-color: $grey-light;
 
   small{
     margin-left: auto;
 
-    color: $color-primary-light;
+    color: $grey-text;
   }
 }
 
 // Header content
-body > header .header-content > div{
+body > header .header-content{
   > *{
     margin: 0 20px;
 
@@ -48,7 +51,7 @@ body > header .header-content > div{
 
   // Logo
   .link-logo{
-    width: 130px;
+    width: 160px;
 
     img{
       top: 0;
@@ -57,6 +60,11 @@ body > header .header-content > div{
 
       width: 100%;
       margin: auto;
+    }
+
+    h2{
+      font-family: 'Lobster', cursive;
+      color: $color-accent;
     }
   }
 
@@ -70,5 +78,9 @@ body > header .header-content > div{
   // Nav
   nav{
     margin-left: auto;
+  }
+
+  .button{
+    margin-left: 0;
   }
 }

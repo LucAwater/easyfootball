@@ -37,13 +37,13 @@ global $product, $post;
     if( $match_date || $match_time || $match_location ):
       echo '<ul>';
         if( $match_date )
-          echo '<li><p><strong>Date: </strong>' . $match_date->format('l, j F Y') . '</p></li>';
+          echo '<li><p><span>Date: </span><span>' . $match_date->format('l, j F Y') . '</span></p></li>';
 
         if( $match_time )
-          echo '<li><p><strong>Time: </strong>' . $match_time . '</p></li>';
+          echo '<li><p><span>Time: </span><span>' . $match_time . '</span></p></li>';
 
         if( $arena_name && $arena_location_city && $arena_location_country )
-          echo '<li><p><strong>Location: </strong>' . $arena_location . '</p></li>';
+          echo '<li><p><span>Location: </span><span>' . $arena_location . '</span></p></li>';
       echo '</ul>';
     endif;
     ?>

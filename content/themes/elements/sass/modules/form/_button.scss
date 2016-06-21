@@ -33,7 +33,10 @@ input[type="submit"]{
   }
 
   &.button-sec{
-    background-color: $color-primary-dark;
+    padding: 0 15px;
+
+    color: $grey-text;
+    background-color: $grey;
 
     &:hover,
     &:focus{

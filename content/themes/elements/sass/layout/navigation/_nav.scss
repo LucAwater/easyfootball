@@ -6,14 +6,14 @@ nav{
 
     > li{
       display: inline-block;
-      padding: 24px 20px; // 28 = header-height - p line-height
+      padding: 20px;
 
       > p,
       > a{
-        @include font-smoothing( antialiased );
+        //@include font-smoothing( antialiased );
 
-        color: $white;
-        font-size: 16px;
+        color: $grey-text;
+        //font-size: 16px;
       }
 
       p,
@@ -23,7 +23,7 @@ nav{
 
       &:hover,
       &:focus{
-        background-color: $color-primary-dark;
+        background-color: $grey;
 
         ul{
           @include show( .2s );
