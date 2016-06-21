@@ -8,7 +8,7 @@ body.has-page-header-image{
           display: none;
         }
 
-        img:last-child{
+        img:nth-child(2){
           display: block;
         }
       }
@@ -23,5 +23,33 @@ body.has-page-header-image{
   nav > ul > li > a,
   nav > ul > li > p{
     color: $white;
+  }
+}
+
+body.has-page-header-color{
+  > header{
+    border: none;
+
+    .header-content{
+      .link-logo{
+        img:first-child{
+          display: none;
+        }
+
+        img:nth-child(3){
+          display: block;
+        }
+      }
+
+      > .button{
+        @include box-shadow( inset 0 0 0 1px $white );
+        background-color: $white;
+      }
+    }
+
+    nav > ul > li > a,
+    nav > ul > li > p{
+      color: $white;
+    }
   }
 }

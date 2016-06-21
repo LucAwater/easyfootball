@@ -53,10 +53,11 @@ body > header .header-content{
   .link-logo{
     width: 160px;
 
-    img:last-child{
+    img:nth-child(2),
+    img:nth-child(3){
       display: none;
     }
-    
+
     img{
       top: 0;
       bottom: 0;

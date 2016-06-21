@@ -44,6 +44,8 @@ if( is_tax() || is_product() || is_search() ){
   $body_class = "has-page-header";
 } else if( is_front_page() ){
   $body_class = "has-page-header has-page-header-image";
+} else if( is_page('kundtjanst') ){
+  $body_class = "has-page-header has-page-header-color";
 } else {
   $body_class = "";
 }
@@ -56,6 +58,7 @@ if( is_tax() || is_product() || is_search() ){
       <a class="link-logo" href="<?php echo home_url(); ?>">
         <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-test.svg">
         <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-test2.svg">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-test-white.svg">
         <!-- <h2>EasyFootball</h2> -->
       </a>
 

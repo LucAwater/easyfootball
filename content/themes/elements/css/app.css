@@ -964,7 +964,8 @@ body > header .header-content > * {
     margin-right: 0; }
 body > header .header-content .link-logo {
   width: 160px; }
-  body > header .header-content .link-logo img:last-child {
+  body > header .header-content .link-logo img:nth-child(2),
+  body > header .header-content .link-logo img:nth-child(3) {
     display: none; }
   body > header .header-content .link-logo img {
     top: 0;
@@ -1278,6 +1279,10 @@ section.page-header {
         left: 60px; }
       section.page-header .page-header-background img:last-child {
         right: 60px; }
+
+section.page-header-color {
+  text-align: center;
+  background-color: #FF5252; }
 
 .arrow {
   -moz-transform: rotate(45deg);
@@ -2396,7 +2401,7 @@ body.has-page-header-image > header {
   border: none; }
   body.has-page-header-image > header .header-content .link-logo img:first-child {
     display: none; }
-  body.has-page-header-image > header .header-content .link-logo img:last-child {
+  body.has-page-header-image > header .header-content .link-logo img:nth-child(2) {
     display: block; }
   body.has-page-header-image > header .header-content > .button {
     -webkit-box-shadow: inset 0 0 0 1px white;
@@ -2410,6 +2415,25 @@ body.has-page-header-image p nav > ul > li > .read-more,
 p body.has-page-header-image nav > ul > li > .read-more,
 body.has-page-header-image nav > ul > li > .tooltip:after {
   color: white; }
+
+body.has-page-header-color > header {
+  border: none; }
+  body.has-page-header-color > header .header-content .link-logo img:first-child {
+    display: none; }
+  body.has-page-header-color > header .header-content .link-logo img:nth-child(3) {
+    display: block; }
+  body.has-page-header-color > header .header-content > .button {
+    -webkit-box-shadow: inset 0 0 0 1px white;
+    -moz-box-shadow: inset 0 0 0 1px white;
+    box-shadow: inset 0 0 0 1px white;
+    background-color: white; }
+  body.has-page-header-color > header nav > ul > li > a, body.has-page-header-color > header nav > ul > li > button,
+  body.has-page-header-color > header nav > ul > li > input[type="submit"],
+  body.has-page-header-color > header nav > ul > li > p,
+  body.has-page-header-color > header p nav > ul > li > .read-more,
+  p body.has-page-header-color > header nav > ul > li > .read-more,
+  body.has-page-header-color > header nav > ul > li > .tooltip:after {
+    color: white; }
 
 body.home section#intro-home {
   width: 100%;

@@ -10,6 +10,8 @@ function page_header() {
     include_once('page-header-product.php');
   elseif( is_search() ):
     include_once('page-header-search.php');
+  elseif( is_page('kundtjanst') ):
+    include_once('page-header-help.php');
   else:
     //include_once('page-header-default.php');
   endif;

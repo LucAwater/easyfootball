@@ -1,7 +1,7 @@
 <?php
 global $product, $post;
 ?>
-
+<!-- Page header -->
 <section class="page-header page-header-default">
   <div class="section-body">
     <h1 itemprop="name"><?php the_title(); ?></h1>
