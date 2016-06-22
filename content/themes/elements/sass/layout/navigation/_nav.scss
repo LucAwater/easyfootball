@@ -96,13 +96,6 @@ nav > ul > li ul{
   }
 }
 
-// Current item
-nav ul{
-  li.current{
-    text-decoration: underline;
-  }
-}
-
 @media screen and (max-width: 1100px){
   header .header-content nav{
     @include transition( .2s );

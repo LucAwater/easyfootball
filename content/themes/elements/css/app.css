@@ -842,13 +842,6 @@ article input[type="submit"] {
   article input[type="submit"]:focus {
     border-color: black; }
 
-nav .current_page_parent a, nav .current_page_parent button,
-nav .current_page_parent input[type="submit"],
-nav .current-menu-item a,
-nav .current-menu-item button,
-nav .current-menu-item input[type="submit"] {
-  border-bottom: thin solid black; }
-
 html,
 body {
   height: 100% !important;
@@ -1143,9 +1136,6 @@ nav > ul > li ul {
       nav > ul > li ul li:hover input[type="submit"], nav > ul > li ul li:focus a, nav > ul > li ul li:focus button,
       nav > ul > li ul li:focus input[type="submit"] {
         color: black; }
-
-nav ul li.current {
-  text-decoration: underline; }
 
 @media screen and (max-width: 1100px) {
   header .header-content nav {
