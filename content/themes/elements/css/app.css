@@ -2454,6 +2454,25 @@ body.home section#intro-home {
       body.home section#intro-home form[role="search"] button[type="submit"]:hover, body.home section#intro-home form[role="search"] button[type="submit"]:focus {
         background-color: #D32F2F; }
 
+body.home > header {
+  position: absolute;
+  background-color: transparent;
+  border-bottom: none; }
+  body.home > header .header-content div > nav > ul > li > p, body.home > header .header-content p div > nav > ul > li > .read-more, p body.home > header .header-content div > nav > ul > li > .read-more, body.home > header .header-content div > nav > ul > li > .tooltip:after,
+  body.home > header .header-content div > nav > ul > li > a,
+  body.home > header .header-content div > nav > ul > li > button,
+  body.home > header .header-content div > nav > ul > li > input[type="submit"] {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-weight: 500;
+    color: white; }
+  body.home > header .header-content div > .button {
+    background-color: white; }
+  body.home > header .header-bottom {
+    display: none; }
+body.home .page-header {
+  padding-top: 180px !important; }
+
 section.page-header-taxonomy .section-body > div {
   float: left;
   width: 100%;
