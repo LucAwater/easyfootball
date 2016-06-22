@@ -23,7 +23,11 @@ function list_variations() {
             <select name="quantity" class="input-text qty text">
               <?php
               for($i = 1; $i <= 10; $i++){
-                echo '<option value="' . $i . '">' . $i . '</option>';
+                if( $i === 1 ){
+                  echo '<option selected="selected" value="' . $i . '">' . $i . '</option>';
+                } else {
+                  echo '<option value="' . $i . '">' . $i . '</option>';
+                }
               }
               ?>
             </select>
