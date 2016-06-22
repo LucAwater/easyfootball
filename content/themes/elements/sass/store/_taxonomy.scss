@@ -17,7 +17,12 @@ section.page-header-taxonomy{
       float: left;
 
       width: 100%;
+      max-width: 800px;
       padding-top: 10px;
+
+      p{
+        color: $grey-text;
+      }
     }
   }
 }

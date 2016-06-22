@@ -2486,7 +2486,10 @@ section.page-header-taxonomy .section-body figure {
 section.page-header-taxonomy .section-body div {
   float: left;
   width: 100%;
+  max-width: 800px;
   padding-top: 10px; }
+  section.page-header-taxonomy .section-body div p, section.page-header-taxonomy .section-body div p .read-more, p section.page-header-taxonomy .section-body div .read-more, section.page-header-taxonomy .section-body div .tooltip:after {
+    color: #727272; }
 
 body.single-product .page-header {
   -webkit-font-smoothing: antialiased;

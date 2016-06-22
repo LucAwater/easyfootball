@@ -13,6 +13,15 @@ $image = get_field( 'team_logo', $term_acf );
 $image_url = $image['sizes']['medium'];
 $image_width = $image['sizes']['medium-width'];
 $image_height = $image['sizes']['medium-height'];
+
+$description = wpautop($term->description);
+if (strlen($description) > 500) {
+    // truncate string
+    $stringCut = substr($description, 0, 500);
+
+    // make sure it ends in a word so assassinate doesn't become ass...
+    $description = substr($stringCut, 0, strrpos($stringCut, ' ')).'... <a>Read More</a>';
+}
 ?>
 
 <section class="page-header page-header-taxonomy">
@@ -25,7 +34,7 @@ $image_height = $image['sizes']['medium-height'];
 
     <div>
       <h1><?php echo $term->name; ?></h1>
-      <?php echo wpautop($term->description); ?>
+      <?php echo $description; ?>
     </div>
   </div>
 </section>
