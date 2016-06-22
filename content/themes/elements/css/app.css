@@ -992,13 +992,9 @@ body > footer {
       body > footer .footer-content > ul > li img {
         width: 80px; }
   body > footer .footer-bottom {
-    background-image: -o-linear-gradient(40deg, #303f46 30%, #36474f 70%);
-    background-image: -moz-linear-gradient(40deg, #303f46 30%, #36474f 70%);
-    background-image: -webkit-linear-gradient(40deg, #303f46 30%, #36474f 70%);
-    background-image: linear-gradient(40deg, #303f46 30%, #36474f 70%);
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #455A64; }
+    background-color: #3c4858; }
     body > footer .footer-bottom * {
       color: white;
       font-size: 12px; }
@@ -2488,10 +2484,10 @@ body.single-product .page-header {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-weight: 500;
-  background-image: -o-linear-gradient(40deg, #263137 30%, #36474f 70%);
-  background-image: -moz-linear-gradient(40deg, #263137 30%, #36474f 70%);
-  background-image: -webkit-linear-gradient(40deg, #263137 30%, #36474f 70%);
-  background-image: linear-gradient(40deg, #263137 30%, #36474f 70%);
+  background-image: -o-linear-gradient(40deg, #1d232b 30%, #008deb 70%);
+  background-image: -moz-linear-gradient(40deg, #1d232b 30%, #008deb 70%);
+  background-image: -webkit-linear-gradient(40deg, #1d232b 30%, #008deb 70%);
+  background-image: linear-gradient(40deg, #1d232b 30%, #008deb 70%);
   color: white;
   text-align: center;
   background-color: #333333; }

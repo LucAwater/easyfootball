@@ -45,8 +45,6 @@ body > footer{
   }
 
   .footer-bottom{
-    @include linear-gradient( 40deg, darken($color-primary-dark, 10%) 30%, darken($color-primary, 20%) 70% );
-
     padding-top: 20px;
     padding-bottom: 20px;
 
