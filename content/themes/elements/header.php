@@ -50,7 +50,7 @@
           <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
             <input type="search" pattern=".{3,}" title="3 characters minimum" required placeholder="<?php echo esc_attr_x( 'Sök lag, ligor, platser...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-            <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search.svg" /></button>
+            <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search-grey.svg" /></button>
           </form>
         <?php endif; ?>
 

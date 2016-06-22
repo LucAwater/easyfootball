@@ -1,11 +1,10 @@
 body > header{
-  @include box-shadow( 0 3px 8px rgba(0,0,0,.35) );
-
   z-index: $zIndex-header;
 
   width: 100%;
 
-  background-color: $color-primary;
+  background-color: $grey-light;
+  border-bottom: thin solid $grey;
 
   .header-bottom > div,
   .header-content > div{
@@ -23,12 +22,12 @@ body > header .header-bottom{
   padding-top: 10px;
   padding-bottom: 10px;
 
-  background-color: $color-primary-dark;
+  background-color: $grey;
 
   small{
     margin-left: auto;
 
-    color: $color-primary-light;
+    color: $grey-text;
   }
 }
 
@@ -42,7 +41,7 @@ body > header .header-content > div{
     }
 
     &:last-child{
-      margin-right: 0;
+      margin: 0;
     }
   }
 

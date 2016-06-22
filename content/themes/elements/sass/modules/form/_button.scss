@@ -33,11 +33,12 @@ input[type="submit"]{
   }
 
   &.button-sec{
-    background-color: $color-primary-dark;
+    color: $grey-text;
+    background-color: $grey;
 
     &:hover,
     &:focus{
-      background-color: darken($color-primary-dark, 10%);
+      background-color: darken($grey, 10%);
     }
   }
 

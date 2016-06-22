@@ -1,7 +1,7 @@
 #breadcrumb{
   height: auto;
 
-  color: $color-primary-light;
+  color: $grey-text;
 
   div{
     max-width: 1100px;
@@ -14,11 +14,11 @@
 
       a{
         small{
-          color: $color-primary-light;
+          color: $grey-text;
         }
 
         &:hover small{
-          color: $white;
+          color: $black;
         }
       }
 
@@ -29,9 +29,7 @@
 
       &:last-child{
         small{
-          @include font-smoothing( antialiased );
-
-          color: $white;
+          color: $black;
         }
 
         &:after{
