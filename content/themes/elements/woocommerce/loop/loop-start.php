@@ -36,13 +36,7 @@ $term =	$wp_query->queried_object;
 <?php elseif( $term && $term->taxonomy == 'league' ): ?>
   <section class="teams">
     <h3>All teams in <?php echo $term->name; ?></h3>
-    <ul class="list list-col">
-      <li class="list-col-head">
-        <p class="list-item-40">Team</p>
-        <p class="list-item-20">Arena</p>
-        <p class="list-item-20">City</p>
-        <p class="list-item-20"></p>
-      </li>
+    <ul class="list list-card list-card-teams">
 <?php elseif( $term && $term->taxonomy == 'team' ): ?>
   <section class="matches">
     <h3>All matches for <?php echo $term->name; ?></h3>

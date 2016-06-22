@@ -41,21 +41,31 @@
   <!-- Header -->
   <header>
     <div class="header-content">
-      <a class="link-logo" href="<?php echo home_url(); ?>">
-        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-blackwhite.png">
-      </a>
+      <div>
+        <a class="link-logo" href="<?php echo home_url(); ?>">
+          <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-black.svg">
+        </a>
 
-      <?php if(! is_front_page() ): ?>
-        <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-          <input type="search" placeholder="<?php echo esc_attr_x( 'Search league, team, competition...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
+        <?php if(! is_front_page() ): ?>
+          <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+            <input type="search" pattern=".{3,}" title="3 characters minimum" required placeholder="<?php echo esc_attr_x( 'Sök lag, ligor, platser...', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" />
 
-          <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search.svg" /></button>
-        </form>
-      <?php endif; ?>
+            <button type="submit"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-search-grey.svg" /></button>
+          </form>
+        <?php endif; ?>
 
-      <?php include_once( 'includes/nav.php' ); ?>
+        <?php include_once( 'includes/nav.php' ); ?>
 
-      <a class="button button-sec" href="">Help</a>
+        <a class="button button-sec" href="<?php echo home_url(); ?>/kundtjanst">Kundtjänst</a>
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div>
+        <?php breadcrumb(); ?>
+
+        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
+      </div>
     </div>
   </header>
 

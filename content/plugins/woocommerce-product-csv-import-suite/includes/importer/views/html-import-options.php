@@ -86,6 +86,7 @@
 									<option <?php selected( $key, 'post_author' ); ?>>post_author</option>
 									<option <?php selected( $key, 'post_password' ); ?>>post_password</option>
 									<option <?php selected( $key, 'comment_status' ); ?>>comment_status</option>
+									<option <?php selected( $key, 'variation_description' ); ?>>variation_description</option>
 								</optgroup>
 								<optgroup label="<?php _e( 'Product data', 'woocommerce-product-csv-import-suite' ); ?>">
 									<option value="tax:product_type" <?php selected( $key, 'tax:product_type' ); ?>><?php _e( 'Type', 'woocommerce-product-csv-import-suite' ); ?>: product_type</option>
@@ -133,8 +134,14 @@
 									<option value="gpf:age_group" <?php selected( $key, 'gpf:age_group' ); ?>><?php _e('Age Group', 'woocommerce-product-csv-import-suite' ); ?></option>
 									<option value="gpf:color" <?php selected( $key, 'gpf:color' ); ?>><?php _e('Color', 'woocommerce-product-csv-import-suite' ); ?></option>
 									<option value="gpf:size" <?php selected( $key, 'gpf:size' ); ?>><?php _e('Size', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:delivery_label" <?php selected( $key, 'gpf:delivery_label' ); ?>><?php _e('Delivery label', 'woocommerce-product-csv-import-suite' ); ?></option>
 									<option value="gpf:adwords_grouping" <?php selected( $key, 'gpf:adwords_grouping' ); ?>><?php _e('adwords_grouping', 'woocommerce-product-csv-import-suite' ); ?></option>
 									<option value="gpf:adwords_labels" <?php selected( $key, 'gpf:adwords_labels' ); ?>><?php _e('adwords_labels', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:custom_label_0" <?php selected( $key, 'gpf:custom_label_0' ); ?>><?php _e('custom_label_0', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:custom_label_1" <?php selected( $key, 'gpf:custom_label_1' ); ?>><?php _e('custom_label_1', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:custom_label_2" <?php selected( $key, 'gpf:custom_label_2' ); ?>><?php _e('custom_label_2', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:custom_label_3" <?php selected( $key, 'gpf:custom_label_3' ); ?>><?php _e('custom_label_3', 'woocommerce-product-csv-import-suite' ); ?></option>
+									<option value="gpf:custom_label_4" <?php selected( $key, 'gpf:custom_label_4' ); ?>><?php _e('custom_label_4', 'woocommerce-product-csv-import-suite' ); ?></option>
 								</optgroup>
 								<?php endif; ?>
 							</select>

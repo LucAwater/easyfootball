@@ -1,12 +1,15 @@
 body.single-product{
   .page-header{
     @include font-smoothing( antialiased );
+    @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
 
-    text-align: center;
     color: $white;
-    background: $grey-dark;
+    text-align: center;
+    background-color: $grey-dark;
 
     p{
+      @include font-smoothing( antialiased );
+
       font-size: 18px;
     }
 
@@ -49,14 +52,56 @@ body.single-product{
 }
 
 body.single-product aside{
-  figure{
+  // "No seating available"
+  p{
     padding: 20px;
-    
-    background-color: transparent;
+  }
+
+  figure{
     border: thin solid $grey;
 
-    img{
-      padding: 20px;
+    .zoom{
+      top: 10px;
+      right: 10px;
+      position: absolute;
+      z-index: 1;
+
+      width: 30px;
+      height: 30px;
+
+      border: thin solid $color-accent-dark;
+      border-radius: 3px;
+      background-color: $color-accent;
+
+      &:before,
+      &:after{
+        content: "";
+
+        top: 7px;
+        right: 13px;
+        position: absolute;
+
+        width: 2px;
+        height: 14px;
+
+        background-color: $white;
+      }
+
+      &:before{
+        @include transform( rotate(90deg) );
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  body.single-product{
+    main > .product{
+      .summary{
+        .content-container{
+          padding-left: 0;
+        }
+      }
     }
   }
 }

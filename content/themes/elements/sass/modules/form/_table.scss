@@ -2,21 +2,59 @@ table{
   width: 100%;
 
   text-align: left;
+  border: none;
   border-collapse: collapse;
+
+  th,
+  td{
+    @extend %base;
+  }
+
+  dt{
+    display: inline-block;
+  }
+
+  dd{
+    display: inline-block;
+
+    > *{
+      font-weight: 500;
+    }
+  }
 
   thead{
     th{
-      padding: 15px;
+      padding: 20px;
 
       border: thin solid $grey;
+      background-color: $white;
     }
   }
 
   tbody{
     td{
-      padding: 15px;
+      padding: 20px;
 
       border: thin solid $grey;
+      background-color: $grey-light;
+    }
+  }
+
+  tfoot{
+    th,td{
+      padding: 5px 20px;
+    }
+
+    tr:first-child{
+      th,td{
+        padding-top: 20px;
+      }
+    }
+
+    tr:last-child{
+      th,td{
+        padding-bottom: 20px;
+      }
     }
   }
 }

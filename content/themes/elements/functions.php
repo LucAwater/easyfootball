@@ -14,10 +14,9 @@ require_once('includes/admin/product-variable-fields.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
+require_once('includes/functions-template/elements.php');
 require_once('includes/functions-template/section.php');
 require_once('includes/functions-template/section-header.php');
-require_once('includes/functions-template/section-grid.php');
-require_once('includes/functions-template/section-slider.php');
 require_once('includes/functions-template/page-header.php');
 require_once('includes/functions-template/page-content.php');
 require_once('includes/functions-template/page-sidebar.php');
@@ -29,6 +28,8 @@ require_once('includes/functions-woocommerce/cart-update.php');
 require_once('includes/functions-woocommerce/breadcrumb.php');
 require_once('includes/functions-woocommerce/list-variations.php');
 require_once('includes/functions-woocommerce/featured-lists.php');
+require_once('includes/functions-woocommerce/team-logos.php');
+require_once('includes/functions-woocommerce/checkout.php');
 
 /*
  * Import data for regions, leagues and teams.
@@ -50,6 +51,46 @@ if( $import_init ){
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
   add_theme_support( 'woocommerce' );
+}
+
+// Skip cart and go right to checkout
+add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+
+function redirect_to_checkout() {
+  global $woocommerce;
+  $checkout_url = $woocommerce->cart->get_checkout_url();
+
+  return $checkout_url;
+}
+
+// Change button text on archives
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+
+function woo_archive_custom_cart_button_text() {
+  return __( 'Biljetter', 'woocommerce' );
+}
+
+// Only display minimum price for WooCommerce variable products
+add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
+
+function custom_variation_price( $price, $product ) {
+   $price = '';
+   $price .= "<span class='label'>Från</span>" . woocommerce_price($product->get_price());
+
+   return $price;
+}
+
+// Removing Woocommerce's standard select replacement
+add_action( 'wp_enqueue_scripts', 'mgt_dequeue_stylesandscripts', 100 );
+
+function mgt_dequeue_stylesandscripts() {
+  if ( class_exists( 'woocommerce' ) ) {
+    wp_dequeue_style( 'select2' );
+    wp_deregister_style( 'select2' );
+
+    wp_dequeue_script( 'select2');
+    wp_deregister_script('select2');
+  }
 }
 
 // Customize excerpt
@@ -86,11 +127,11 @@ function is_really_woocommerce_page () {
   return false;
 }
 
-// Change the WooCommerce paypal icon
-add_filter('woocommerce_paypal_icon', 'custom_woocommerce_paypal_icon');
+// Change the WooCommerce Payex icon
+add_filter('woocommerce_payex_icon', 'custom_woocommerce_payex_icon');
 
-function custom_woocommerce_paypal_icon( $url ) {
-  $url = get_bloginfo('template_url')."/img/pay-paypal.svg";
+function custom_woocommerce_payex_icon( $url ) {
+  $url = get_bloginfo('template_url')."/img/logo-payex-creditcards.png";
   return $url;
 }
 

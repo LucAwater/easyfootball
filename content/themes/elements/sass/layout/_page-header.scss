@@ -1,6 +1,8 @@
 section.page-header{
-  padding: 80px 0;
+  // @include font-smoothing( antialiased );
+  // @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
 
+  color: $black;
   background-color: $grey-light;
   border-bottom: thin solid $grey;
 
@@ -9,6 +11,11 @@ section.page-header{
     height: auto;
     margin: auto;
     overflow: hidden;
+    padding: 80px 0;
+
+    figure{
+      background-color: transparent;
+    }
 
     h1, h2, h3, h4{
       margin-bottom: 15px;
@@ -34,7 +41,7 @@ section.page-header{
       height: 70%;
       margin: auto;
 
-      opacity: 0.2;
+      opacity: 0.3;
 
       &:first-child{
         left: 60px;

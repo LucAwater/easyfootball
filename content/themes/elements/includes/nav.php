@@ -2,7 +2,7 @@
   <ul>
     <!-- Teams -->
     <li>
-      <a href="<?php echo home_url() . '/teams'; ?>">Lag</a>
+      <a href="<?php echo home_url() . '/lag'; ?>">Lag</a>
 
       <?php
       featured_lists_teams();
@@ -23,7 +23,7 @@
             $team = get_term_by('id', $teams[$x], 'team');
             $team_acf = $team->taxonomy . '_' . $team->term_id;
             $team_name = $team->name;
-            $team_link = get_term_link($team->term_id);
+            $team_link = get_term_link($team, 'team');
 
             // Wrap an extra container around every 5 list items
             if( $x > 0 && $x %5 == 0 ){
@@ -35,7 +35,7 @@
           }
 
           // View all link
-          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/teams">view more teams</a></li>';
+          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/teams">se fler lag</a></li>';
 
         echo '</ul>';
       endif; ?>
@@ -43,7 +43,7 @@
 
     <!-- Leagues -->
     <li>
-      <a href="<?php echo home_url() . '/leagues'; ?>">Ligor</a>
+      <a href="<?php echo home_url() . '/ligor'; ?>">Ligor</a>
 
       <?php
       featured_lists_leagues();
@@ -64,7 +64,7 @@
             $league = get_term_by('id', $leagues[$x], 'league');
             $league_acf = $league->taxonomy . '_' . $league->term_id;
             $league_name = $league->name;
-            $league_link = get_term_link($league->term_id);
+            $league_link = get_term_link($league, 'league');
 
             // Wrap an extra container around every 5 list items
             if( $x > 0 && $x %5 == 0 ){
@@ -76,7 +76,7 @@
           }
 
           // View all link
-          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/leagues">view more leagues</a></li>';
+          echo '<li class="view-more"><a class="button button-small" href="' . home_url() . '/leagues">se fler ligor</a></li>';
 
         echo '</ul>';
       endif; ?>
@@ -86,7 +86,7 @@
 
     <!-- Regions -->
     <li>
-      <a href="<?php echo home_url() . '/regions'; ?>">Land</a>
+      <a href="<?php echo home_url() . '/landskampaner'; ?>">Land</a>
 
       <?php
       $regions = get_terms( 'region', array('hide_empty' => false,) );
@@ -96,7 +96,7 @@
 
           foreach( $regions as $region ){
             $region_name = $region->name;
-            $region_link = get_term_link($region->term_id, 'region');
+            $region_link = get_term_link($region, 'region');
 
             echo '<li><a href="' . $region_link . '">' . $region_name . '</a>';
           }
@@ -104,6 +104,21 @@
         echo '</ul>';
       endif;
       ?>
+    </li>
+
+    <li>
+      <p>Mer</p>
+
+      <ul>
+        <?php
+        $nav_args = array(
+          'theme_location'  => 'menu_secondary',
+          'container'       => '',
+          'items_wrap'      => '%3$s'
+        );
+        wp_nav_menu( $nav_args );
+        ?>
+      </ul>
     </li>
 
   </ul>

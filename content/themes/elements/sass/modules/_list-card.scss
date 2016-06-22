@@ -3,6 +3,8 @@
   @include flex-wrap( wrap );
   @include align-items( flex-start );
 
+  width: calc(100% + 40px);
+  margin-left: -20px;
   max-width: none;
   padding: 0 10px;
 
@@ -29,6 +31,25 @@
 
   background-color: $grey-light;
 
+  &.has-title:after{
+    content: "";
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.65);
+  }
+
+  > a{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   img{
     max-height: 100%;
     max-width: none;
@@ -37,6 +58,10 @@
   }
 
   h2, h3, h4{
+    @include font-smoothing( antialiased );
+
+    z-index: 1;
+
     bottom: 0;
     left: 0;
     position: absolute;
@@ -57,7 +82,8 @@
   }
 
   // Card info title
-  h2, h3, h4{
+  h2, h3, h4,
+  .card-title{
     margin-bottom: 20px;
   }
 
@@ -72,10 +98,13 @@
     }
   }
 
-  // Card info content
-  > *,
+  p:not(.card-subtitle, .card-title){
+    margin-bottom: 10px;
+  }
+
+  > a,
   ul li{
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -91,7 +120,7 @@
 }
 
 
-.list-card:not(.list-card-shields){
+.list-card:not(.list-card-shields, .list-card-matches){
   > li .card-container figure{
     img{
       @include transform( translateX(-50%));
@@ -106,6 +135,103 @@
 .list-card.list-card-shields{
   > li .card-container figure{
     padding: 20px;
+  }
+}
+
+// Team list with shields
+.list-card.list-card-teams{
+  > li{
+    .card-container{
+      border: none;
+      text-align: center;
+
+      figure{
+        margin-bottom: 20px;
+
+        background-color: $white;
+      }
+
+      .button{
+        margin: auto;
+      }
+    }
+  }
+}
+
+// Card list with matches
+.list-card.list-card-matches > li .card-container{
+  figure{
+    position: relative;
+
+    width: 100%;
+    height: 200px;
+
+    background-image: linear-gradient(to left, $grey 50%, $grey-light 50%);
+
+    &:after{
+      transform: translateX(-50%);
+
+      content: "";
+
+      top: 0;
+      left: 50%;
+      position: absolute;
+
+      width: 20%;
+      height: 100%;
+
+      background-image: linear-gradient(to top left, $grey 50%, $grey-light 50%);
+    }
+
+    img{
+      top: 0;
+      bottom: 0;
+      position: absolute;
+
+      width: 25%;
+      height: auto;
+      margin: auto;
+
+      &:first-child{
+        left: 10%;
+      }
+
+      &:nth-child(2){
+        right: 10%;
+      }
+    }
+
+    span{
+      @include border-radius( 100% );
+
+      color: $grey;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 53px;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: 9999;
+
+      width: 60px;
+      height: 60px;
+      margin: auto;
+
+      background: $grey-light;
+      border: 5px solid $grey;
+    }
+  }
+
+  .card-info{
+    .card-title{
+      margin-bottom: 30px;
+
+      color: $black;
+    }
   }
 }
 

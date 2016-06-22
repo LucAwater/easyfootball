@@ -1,0 +1,32 @@
+body.woocommerce-order-received{
+  .woocommerce{
+    > *{
+      margin-bottom: 20px;
+    }
+
+    h2,h3{
+      padding-top: 20px;
+    }
+
+    .order_details{
+      li{
+        @extend %base;
+      }
+    }
+
+    .customer_details{
+      width: auto;
+
+      th{
+        display: block;
+        margin-right: 10px;
+      }
+
+      td{
+        padding: 0;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+}

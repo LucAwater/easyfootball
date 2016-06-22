@@ -1,0 +1,216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PayEx\n"
+"POT-Creation-Date: 2013-01-09 11:52+0100\n"
+"PO-Revision-Date: 2013-01-09 12:09+0100\n"
+"Last-Translator: Niklas <niklas@krokedil.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../class-payex-pm.php:13 ../class-payex-pm.php:91 ../gateway-payex.php:78
+msgid "PayEx"
+msgstr ""
+
+#: ../class-payex-pm.php:82
+msgid "Enable/Disable"
+msgstr "Aktivera/Avaktivera"
+
+#: ../class-payex-pm.php:84
+msgid "Enable PayEx"
+msgstr "Aktivera PayEx"
+
+#: ../class-payex-pm.php:88
+msgid "Title"
+msgstr "Titel"
+
+#: ../class-payex-pm.php:90 ../class-payex-pm.php:96
+msgid "This controls the title which the user sees during checkout."
+msgstr "Detta styr titeln som visas för besökaren i kassan. "
+
+#: ../class-payex-pm.php:94
+msgid "Description"
+msgstr "Beskrivning"
+
+#: ../class-payex-pm.php:100
+msgid "Account Number"
+msgstr ""
+
+#: ../class-payex-pm.php:102
+msgid ""
+"Please enter your PayEx Account Number; this is needed in order to take "
+"payment!"
+msgstr "Ange ditt PayEx Account Number; detta behövs för att kunna ta betalt."
+
+#: ../class-payex-pm.php:106
+msgid "Encrypted Key"
+msgstr ""
+
+#: ../class-payex-pm.php:108
+msgid ""
+"Please enter your PayEx Encrypted Key; this is needed in order to take "
+"payment!"
+msgstr "Ange ditt PayEx Encrypted Key; detta behövs för att kunna ta betalt."
+
+#: ../class-payex-pm.php:112
+msgid "Purchase Operation"
+msgstr ""
+
+#: ../class-payex-pm.php:115
+msgid ""
+"If AUTHORIZATION is submitted, this indicates that the order will be a 2-"
+"phased transaction if the payment method supports it. SALE is a 1-phased "
+"transaction."
+msgstr ""
+"Om AUTHORIZATION anges blir ordern en 2-stegstransaktion (om betalmetoden "
+"tillåter detta). SALE är en 1-stegstransaktion."
+
+#: ../class-payex-pm.php:119
+msgid "Language"
+msgstr "Språk"
+
+#: ../class-payex-pm.php:122
+msgid "Locale of pages displayed by payex during payment."
+msgstr "Det språk som visas av PayEx under betalning."
+
+#: ../class-payex-pm.php:126
+msgid "Test Mode"
+msgstr "Test Mode"
+
+#: ../class-payex-pm.php:128
+msgid "Enable PayEx Test Mode."
+msgstr "Aktivera PayEx Test Mode."
+
+#: ../class-payex-pm.php:132
+msgid "Debug"
+msgstr "Debug"
+
+#: ../class-payex-pm.php:134
+msgid "Enable logging (<code>woocommerce/logs/payex.txt</code>)"
+msgstr "Aktivera logging (<code>woocommerce/logs/payex.txt</code>)"
+
+#: ../class-payex-pm.php:239 ../class-payex-pm.php:240
+#, php-format
+msgid "PayEx error: %s"
+msgstr ""
+
+#: ../class-payex-pm.php:267
+msgid "Thank you for your order."
+msgstr "Tack för din order."
+
+#: ../class-payex-pm.php:426
+#, php-format
+msgid "PayEx payment completed. PayEx Transaction Number: %s"
+msgstr "PayEx betalning slutförd. PayEx Transaktionsnummer: %s"
+
+#: ../class-payex-pm.php:434
+#, php-format
+msgid ""
+"PayEx Payment unsuccessful. PayEx Transaction Number: %s PayEx Transaction "
+"Status: %s."
+msgstr ""
+"PayEx betalning misslyckades. PayEx Transaktionsnummer: %s PayEx "
+"Transaktionsstatus: %s."
+
+#: ../class-payex-pm.php:439
+#, php-format
+msgid ""
+"PayEx Payment cancelled. PayEx Transaction Number: %s PayEx Transaction "
+"Status: %s."
+msgstr ""
+"PayEx betalning avbruten. PayEx Transaktionsnummer: %s PayEx "
+"Transaktionsstatus: %s."
+
+#: ../class-payex-pm.php:444
+#, php-format
+msgid "PayEx Payment refunded. PayEx Transaction Number: %s."
+msgstr "PayEx betalning återbetald. PayEx Transaktionsnummer: %s."
+
+#: ../class-payex-pm.php:450
+#, php-format
+msgid ""
+"PayEx Payment On Hold. PayEx Transaction Number: %s PayEx Transaction "
+"Status: %s."
+msgstr ""
+"PayEx betalning Avvaktande. PayEx Transaktionsnummer: %s PayEx "
+"Transaktionsstatus: %s."
+
+#: ../gateway-payex.php:87
+msgid ""
+"Choose Swedish Krona or Euro as currency in Pricing Options and Sweden or "
+"Finland as Base Country to enable the PayEx Gateway."
+msgstr ""
+"Välj SEK eller Euro som valuta och Sverige eller Finland som basland för att "
+"aktivera PayEx som betalmetod."
+
+#: ../gateway-payex.php:95
+msgid ""
+"PayEx works by sending the user to <a href=\"http://www.payex.com\">PayEx</"
+"a> to enter their payment information. With PayEx your customers can pay by "
+"credit card, via instant bank transactions and by invoice."
+msgstr ""
+"PayEx fungerar genom att skicka vidare besökaren till <a href=\"http://www."
+"payex.com\">PayEx</a> för att ange betalinformationen där. Med PayEx kan "
+"dina kunder betala med kredit/kontokort, direktbetalning via bank, och genom "
+"faktura."
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:147
+msgid "WooThemes Updates"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:167
+msgid "WooThemes Plugin Updater"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:174
+msgid "WooThemes Username"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:178
+msgid "WooThemes Password"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:187
+msgid "Login"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:238
+msgid "Switch WooThemes Account"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:240
+#, php-format
+msgid ""
+"You are currently logged in as %1$s. To switch to a different WooThemes "
+"account, please fill in the login details below."
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:243
+msgid "Update your Plugins"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:250
+msgid "Login Error"
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:252
+msgid "The login details supplied are invalid. Please try again."
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:262
+msgid "Enable WooThemes Plugin Updates."
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:264
+#, php-format
+msgid "Please <a href=\"%1$s\">login</a> to enable automatic plugin updates."
+msgstr ""
+
+#: ../woo-includes/class-woothemes-plugin-updater.php:277
+msgid "Hide This Message"
+msgstr ""

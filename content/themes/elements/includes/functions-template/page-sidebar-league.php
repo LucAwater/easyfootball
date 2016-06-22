@@ -29,24 +29,34 @@ $region_leagues = get_field( 'region_childLeagues', $region_id );
     </div>
 
     <div>
-      <h4 class="aside-subheader">Top Games</h4>
+      <?php
+      // Featured events
+      featured_lists_events();
+      $events = featured_lists_events();
 
-      <ul>
-        <li>
-          <a>Aston Villa - Chelsea</a>
-          <small>21 July 2016 at 16:00</small>
-        </li>
+      if( $events ){
+        ?>
+        <h4 class="aside-subheader">Top Matches</h4>
 
-        <li>
-          <a>Manchester United - Barcelona</a>
-          <small>21 July 2016 at 16:00</small>
-        </li>
+        <ul>
+          <?php
+          for( $x = 0; $x < 4; $x++ ){
+            $event = get_post($events[$x]);
+            $event_name = $event->post_title;
+            $event_link = get_permalink($event->ID);
 
-        <li>
-          <a>Ajax - Real Madrid</a>
-          <small>21 July 2016 at 16:00</small>
-        </li>
-      </ul>
+            $event_date = get_post_meta($event->ID, 'match_date', true);
+            $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
+            $event_date = $event_date->format('j F Y');
+            $event_time = get_post_meta($event->ID, 'match_time', true);
+            ?>
+            <li>
+              <a href="<?php echo $event_link; ?>"><?php echo $event_name; ?></a>
+              <small><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
+            </li>
+          <?php } ?>
+        </ul>
+      <?php } ?>
     </div>
   </aside>
 <?php endif; ?>

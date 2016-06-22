@@ -6,7 +6,15 @@ nav{
 
     > li{
       display: inline-block;
-      padding: 29px 15px; // 28 = header-height - p line-height
+      padding: 24px 20px; // 28 = header-height - p line-height
+
+      > p,
+      > a{
+        @include font-smoothing( antialiased );
+
+        color: $grey-text;
+        font-size: 16px;
+      }
 
       p,
       a{
@@ -15,7 +23,7 @@ nav{
 
       &:hover,
       &:focus{
-        background-color: $color-primary-dark;
+        background-color: $grey;
 
         ul{
           @include show( .2s );
@@ -33,6 +41,7 @@ nav > ul > li ul{
   left: 0;
   top: 100%;
   position: absolute;
+  z-index: 1;
 
   white-space: nowrap;
   border: thin solid $grey;
@@ -91,5 +100,51 @@ nav > ul > li ul{
 nav ul{
   li.current{
     text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  header .header-content nav{
+    @include transition( .2s );
+    @include transform( translateX(100%) );
+
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+
+    width: calc(100% - #{$header-height});
+    height: 100%;
+    margin: 0 !important;
+    padding-top: 70px;
+
+    background-color: $white;
+
+    > ul{
+      padding: 20px;
+      display: block;
+
+      text-align: right;
+      border-top: thin solid $grey;
+      border-bottom: thin solid $grey;
+
+      > li{
+        display: block;
+        padding: 10px 0;
+
+        a{
+          color: $grey-text;
+        }
+
+        ul{
+          display: none;
+        }
+      }
+    }
+  }
+
+  header.nav-active nav{
+    @include transform( translateX(0) );
+    @include box-shadow( 0 0 50px rgba(0,0,0,.5) );
   }
 }

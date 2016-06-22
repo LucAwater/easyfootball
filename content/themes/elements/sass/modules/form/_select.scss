@@ -1,14 +1,15 @@
 select{
+  @extend %base;
   @include appearance( none );
 
   padding: 10px;
+  padding-right: 30px;
 
   cursor: pointer;
-  background-color: $grey;
+  background-color: $grey-light;
   border-radius: 5px;
-  border: thin solid $grey-text;
+  border: thin solid $grey;
 
-  padding-right: 30px;
   background-size: 10px;
   background-repeat: no-repeat;
   background-position: right 10px center;

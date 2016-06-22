@@ -1,12 +1,64 @@
 body > footer{
   z-index: $zIndex-footer;
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 0;
 
-  background: $black;
+  border-top: thin solid $grey;
+  background: $grey-light;
 
-  p, a{
-    color: $white;
+  > *{
+    padding: 40px 0;
+  }
+
+  .footer-content,
+  .footer-bottom > *{
+    max-width: 1100px;
+    margin: auto;
+    display: block;
+  }
+
+  .footer-content{
+    > ul{
+      @include flexbox;
+
+      width: calc(100% + 40px);
+      margin-left: -20px;
+
+      > li{
+        width: 25%;
+        padding: 0 20px;
+        display: inline-block;
+
+        h4{
+          margin-bottom: 10px;
+        }
+
+        small{
+          display: block;
+        }
+
+        img{
+          width: 80px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom{
+    @include linear-gradient( 40deg, darken($color-primary-dark, 10%) 30%, darken($color-primary, 20%) 70% );
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    background-color: $color-primary-dark;
+
+    *{
+      color: $white;
+      font-size: 12px;
+    }
+
+    a{
+      border-bottom: thin solid $white;
+    }
   }
 }

@@ -4,20 +4,24 @@ form[role="search"]{
   height: 40px;
 
   ::-webkit-input-placeholder{
-    @include font-smoothing(antialiased);
-    color: $white;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   :-moz-placeholder{
-    @include font-smoothing(antialiased);
-    color: $white;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   ::-moz-placeholder{
-    @include font-smoothing(antialiased);
-    color: $white;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
   :-ms-input-placeholder {
-    @include font-smoothing(antialiased);
-    color: $white;
+    @include font-smoothing( antialiased );
+
+    color: $grey-text;
   }
 
   input[type="search"]{
@@ -29,7 +33,7 @@ form[role="search"]{
     padding-left: 10px;
     padding-right: 40px;
 
-    color: $white;
+    color: $black;
     border: thin solid $grey;
     border-radius: 3px;
     background-color: $white;

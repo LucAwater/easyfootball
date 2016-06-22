@@ -73,6 +73,12 @@ function import_teams(){
       if( $term ){
         $post_id = 'team_' . $term->term_id;
 
+        // Corresponding country
+        $field_key_country = 'field_5720b15823420';
+        $value_country = get_term_by('name', $team['country'], 'region');
+        $value_country = $value_country->term_id;
+        update_field( $field_key_country, $value_country, $post_id );
+
         // Corresponding league
         $field_key_league = 'field_5711cc650c343';
         $value_league = get_term_by('name', $team['league'], 'league');
@@ -90,7 +96,7 @@ function import_teams(){
         update_field( $field_key_city, $value_city, $post_id );
 
         // Arena country
-        $field_key_country = 'field_5720b15823420';
+        $field_key_country = 'field_570772657fb6b';
         $value_country = $team['arena_country'];
         update_field( $field_key_country, $value_country, $post_id );
       }

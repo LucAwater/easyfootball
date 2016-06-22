@@ -6,8 +6,10 @@ function page_header() {
     include_once('page-header-taxonomy.php');
   elseif( is_product() ):
     include_once('page-header-product.php');
+  elseif( is_search() ):
+    include_once('page-header-search.php');
   else:
-    include_once('page-header-default.php');
+    //include_once('page-header-default.php');
   endif;
 }
 ?>

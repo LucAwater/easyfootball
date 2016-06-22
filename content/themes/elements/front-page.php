@@ -19,33 +19,44 @@ if( have_posts() ):
         </div>
 
         <div class="section-body">
-          <ul class="list list-card">
+          <ul class="list list-card list-card-matches">
             <?php
             for( $x = 0; $x < 6; $x++ ){
-              $event = $events[$x];
+              $event = get_post($events[$x]);
               $event_name = $event->post_title;
               $event_link = get_permalink($event->ID);
 
-              $event_date = get_field('match_date', false, false);
-              $event_date = new DateTime($event_date);
+              $event_date = get_post_meta($event->ID, 'match_date', true);
+              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
               $event_date = $event_date->format('j F Y');
-              $event_time = get_field('match_time');
+              $event_time = get_post_meta($event->ID, 'match_time', true);
+
+              $event_location = get_post_meta($event->ID, 'match_location', true);
+              $event_location = get_term_by('name', $event_location, 'team');
+
+              $event_location_acf = $event_location->taxonomy . '_' . $event_location->term_id;
+              $arena_location_city = get_field('arena_location_city', $event_location_acf);
+              $arena_location_country = get_field('arena_location_country', $event_location_acf);
+              $arena_location = $arena_location_city . ', ' . $arena_location_country;
 
               $_event = wc_get_product( $event->ID );
               $event_price = $_event->get_price();
+
+              $event_teams = wp_get_post_terms($event->ID, 'team');
               ?>
 
               <li>
                 <div class="card-container">
                   <figure class="card-image">
-                    <img src="" />
-                    <img src="" />
-                    <span>VS</span>
+                    <a href="<?php echo $event_link; ?>">
+                      <?php team_logos($event_location, $event_teams); ?>
+                      <span>VS</span>
+                    </a>
                   </figure>
 
                   <div class="card-info">
-                    <a href="<?php echo $event_link; ?>"><?php echo $event_name; ?></a>
-                    <small><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
+                    <a href="<?php echo $event_link; ?>"><h4 class="card-title"><?php echo $event_name; ?></h4></a>
+                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
                   </div>
 
                   <div class="card-actions">
@@ -84,7 +95,7 @@ if( have_posts() ):
               $team = get_term_by('id', $teams[$x], 'team');
               $team_acf = $team->taxonomy . '_' . $team->term_id;
               $team_name = $team->name;
-              $team_link = get_term_link($team->term_id);
+              $team_link = get_term_link($team, 'team');
 
               $team_logo = get_field('team_logo', $team_acf);
               if(! $team_logo ){
@@ -111,12 +122,14 @@ if( have_posts() ):
               <li>
                 <div class="card-container">
                   <figure class="card-image">
-                    <img src="<?php echo $team_logo_url; ?>" />
+                    <a href="<?php echo $team_link; ?>">
+                      <img src="<?php echo $team_logo_url; ?>" />
+                    </a>
                   </figure>
 
                   <div class="card-info">
-                    <h3><?php echo $team_name; ?></h3>
-                    <p><?php _e('Top matches'); ?></p>
+                    <a href="<?php echo $team_link; ?>"><h3><?php echo $team_name; ?></h3></a>
+                    <p class="card-subtitle"><?php _e('Top matches'); ?></p>
 
                     <?php if( $team_matches): ?>
                       <ul>
@@ -126,7 +139,7 @@ if( have_posts() ):
                           $match_name = get_the_title();
                           $match_link = get_the_permalink();
                           $match_date = get_field('match_date', false, false);
-                          $match_date = new DateTime($match_date);
+                          $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
                           $match_date = $match_date->format('j F Y');
                           $match_time = get_field('match_time');
                           ?>
@@ -146,7 +159,7 @@ if( have_posts() ):
 
                   <div class="card-actions">
                     <p><?php echo $team->count . __(' in total'); ?></p>
-                    <a class="button" href="<?php echo $team_link; ?>"><?php _e('view all matches'); ?></a>
+                    <a class="button" href="<?php echo $team_link; ?>"><?php _e('se alla matcher'); ?></a>
                   </div>
                 </div>
               </li>

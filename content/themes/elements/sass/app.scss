@@ -39,7 +39,9 @@
   "modules/_aside",
   "modules/_alerts",
   "modules/_tooltip",
+  "modules/_expand",
 
+  "modules/form/_form",
   "modules/form/_table",
   "modules/form/_button",
   "modules/form/_search",
@@ -51,11 +53,8 @@
   "modules/slider/_slider-controls",
 
   "modules/content/_section",
-  "modules/content/_hero",
   "modules/content/_text",
   "modules/content/_image",
-  "modules/content/_grid",
-  "modules/content/_parallax",
   "modules/content/_featured",
 
   "modules/posts/_posts-thumb",
@@ -65,10 +64,7 @@
 @import
   "states/_global",
   "states/_section",
-  "states/_section-image",
   "states/_typography",
-  "states/_stretch",
-  "states/_resizing",
   "states/_fullwidth";
 
 // STORE
@@ -76,4 +72,6 @@
   "store/_homepage",
   "store/_variations",
   "store/_taxonomy",
-  "store/_single";
+  "store/_single",
+  "store/_checkout",
+  "store/_thankyou";

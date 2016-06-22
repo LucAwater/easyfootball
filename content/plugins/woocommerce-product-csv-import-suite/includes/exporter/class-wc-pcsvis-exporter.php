@@ -35,13 +35,20 @@ class WC_PCSVIS_Exporter {
 		@ini_set( 'zlib.output_compression', 'Off' );
 		@ini_set( 'output_buffering', 'Off' );
 		@ini_set( 'output_handler', '' );
+
+		$filename_suffix = 'woocommerce-product-export';
+		if ( 'product_variation' === $post_type ) {
+			$filename_suffix = 'woocommerce-product-variations-export';
+		}
+		$filename = sprintf( '%s-%s.csv', $filename_suffix, date_i18n( 'Y_m_d_H_i_s', current_time( 'timestamp' ) ) );
+
 		header( 'Content-Type: text/csv; charset=UTF-8' );
-		header( 'Content-Disposition: attachment; filename=woocommerce-product-export.csv' );
+		header( 'Content-Disposition: attachment; filename=' . $filename );
 		header( 'Pragma: no-cache' );
 		header( 'Expires: 0' );
-   		$fp = fopen('php://output', 'w');
+		$fp = fopen('php://output', 'w');
 
-   		// Headers
+		// Headers
 		$all_meta_keys    = self::get_all_metakeys( $post_type );
 		$found_attributes = self::get_all_product_attributes( $post_type );
 
@@ -49,15 +56,15 @@ class WC_PCSVIS_Exporter {
 		$found_product_meta = array();
 
 		// Some of the values may not be usable (e.g. arrays of arrays) but the worse
-        // that can happen is we get an empty column.
+		// that can happen is we get an empty column.
 		foreach ( $all_meta_keys as $meta ) {
-            if ( ! $meta ) continue;
-            if ( ! $include_hidden_meta && ! in_array( $meta, array_keys( $csv_columns ) ) && substr( $meta, 0, 1 ) == '_' )
-            	continue;
-            if ( $include_hidden_meta && ( in_array( $meta, $exclude_hidden_meta_columns ) || in_array( $meta, array_keys( $csv_columns ) ) ) )
+			if ( ! $meta ) continue;
+			if ( ! $include_hidden_meta && ! in_array( $meta, array_keys( $csv_columns ) ) && substr( $meta, 0, 1 ) == '_' )
 				continue;
-            $found_product_meta[] = $meta;
-        }
+			if ( $include_hidden_meta && ( in_array( $meta, $exclude_hidden_meta_columns ) || in_array( $meta, array_keys( $csv_columns ) ) ) )
+				continue;
+			$found_product_meta[] = $meta;
+		}
 
 		$found_product_meta = array_diff( $found_product_meta, array_keys( $csv_columns ) );
 
@@ -121,8 +128,14 @@ class WC_PCSVIS_Exporter {
 			$row[] = 'gpf:age_group';
 			$row[] = 'gpf:color';
 			$row[] = 'gpf:size';
+			$row[] = 'gpf:delivery_label';
 			$row[] = 'gpf:adwords_grouping';
 			$row[] = 'gpf:adwords_labels';
+			$row[] = 'gpf:custom_label_0';
+			$row[] = 'gpf:custom_label_1';
+			$row[] = 'gpf:custom_label_2';
+			$row[] = 'gpf:custom_label_3';
+			$row[] = 'gpf:custom_label_4';
 		}
 
 		$row = array_map( 'WC_PCSVIS_Exporter::wrap_column', $row );
@@ -207,8 +220,8 @@ class WC_PCSVIS_Exporter {
 								}
 							} else {
 								if ( empty( $attribute['name'] ) ) {
-	                   	 			continue;
-	                   	 		}
+									continue;
+								}
 								$key             = $attribute['name'];
 								$attribute_value = $attribute['value'];
 							}
@@ -365,7 +378,7 @@ class WC_PCSVIS_Exporter {
 
 							$row[] = self::format_data( implode( '|', $formatted_terms ) );
 						} else {
-							$terms = wp_get_post_terms( $product->ID, $taxonomy->name, array( "fields" => "names" ) );
+							$terms = wp_get_post_terms( $product->ID, $taxonomy->name, array( 'fields' => 'slugs' ) );
 
 							$row[] = self::format_data( implode( '|', $terms ) );
 						}
@@ -417,6 +430,11 @@ class WC_PCSVIS_Exporter {
 					$row[] = empty( $gpf_data['size'] ) ? '' : $gpf_data['size'];
 					$row[] = empty( $gpf_data['adwords_grouping'] ) ? '' : $gpf_data['adwords_grouping'];
 					$row[] = empty( $gpf_data['adwords_labels'] ) ? '' : $gpf_data['adwords_labels'];
+					$row[] = empty( $gpf_data['custom_label_0'] ) ? '' : $gpf_data['custom_label_0'];
+					$row[] = empty( $gpf_data['custom_label_1'] ) ? '' : $gpf_data['custom_label_1'];
+					$row[] = empty( $gpf_data['custom_label_2'] ) ? '' : $gpf_data['custom_label_2'];
+					$row[] = empty( $gpf_data['custom_label_3'] ) ? '' : $gpf_data['custom_label_3'];
+					$row[] = empty( $gpf_data['custom_label_4'] ) ? '' : $gpf_data['custom_label_4'];
 				}
 
 				// Add to csv
@@ -472,69 +490,69 @@ class WC_PCSVIS_Exporter {
 	}
 
 	/**
-     * Get a list of all the meta keys for a post type. This includes all public, private,
-     * used, no-longer used etc. They will be sorted once fetched.
-     */
-    public static function get_all_metakeys( $post_type = 'product' ) {
-        global $wpdb;
+	 * Get a list of all the meta keys for a post type. This includes all public, private,
+	 * used, no-longer used etc. They will be sorted once fetched.
+	 */
+	public static function get_all_metakeys( $post_type = 'product' ) {
+		global $wpdb;
 
-        $meta = $wpdb->get_col( $wpdb->prepare(
-            "SELECT DISTINCT pm.meta_key
-            FROM {$wpdb->postmeta} AS pm
-            LEFT JOIN {$wpdb->posts} AS p ON p.ID = pm.post_id
-            WHERE p.post_type = %s
-            AND p.post_status IN ( 'publish', 'pending', 'private', 'draft' )",
-            $post_type
-        ) );
+		$meta = $wpdb->get_col( $wpdb->prepare(
+			"SELECT DISTINCT pm.meta_key
+			FROM {$wpdb->postmeta} AS pm
+			LEFT JOIN {$wpdb->posts} AS p ON p.ID = pm.post_id
+			WHERE p.post_type = %s
+			AND p.post_status IN ( 'publish', 'pending', 'private', 'draft' )",
+			$post_type
+		) );
 
-        sort( $meta );
+		sort( $meta );
 
-        return $meta;
-    }
+		return $meta;
+	}
 
-    /**
-     * Get a list of all the product attributes for a post type.
-     * These require a bit more digging into the values.
-     */
-    public static function get_all_product_attributes( $post_type = 'product' ) {
-        global $wpdb;
+	/**
+	 * Get a list of all the product attributes for a post type.
+	 * These require a bit more digging into the values.
+	 */
+	public static function get_all_product_attributes( $post_type = 'product' ) {
+		global $wpdb;
 
-        $results = $wpdb->get_col( $wpdb->prepare(
-            "SELECT DISTINCT pm.meta_value
-            FROM {$wpdb->postmeta} AS pm
-            LEFT JOIN {$wpdb->posts} AS p ON p.ID = pm.post_id
-            WHERE p.post_type = %s
-            AND p.post_status IN ( 'publish', 'pending', 'private', 'draft' )
-            AND pm.meta_key = '_product_attributes'",
-            $post_type
-        ) );
+		$results = $wpdb->get_col( $wpdb->prepare(
+			"SELECT DISTINCT pm.meta_value
+			FROM {$wpdb->postmeta} AS pm
+			LEFT JOIN {$wpdb->posts} AS p ON p.ID = pm.post_id
+			WHERE p.post_type = %s
+			AND p.post_status IN ( 'publish', 'pending', 'private', 'draft' )
+			AND pm.meta_key = '_product_attributes'",
+			$post_type
+		) );
 
-        // Go through each result, and look at the attribute keys within them.
-        $result = array();
+		// Go through each result, and look at the attribute keys within them.
+		$result = array();
 
-        if ( ! empty( $results ) ) {
-            foreach( $results as $_product_attributes ) {
-                $attributes = maybe_unserialize( maybe_unserialize( $_product_attributes ) );
-                if ( ! empty( $attributes ) && is_array( $attributes ) ) {
-                	foreach( $attributes as $key => $attribute ) {
-                   		if ( ! $key ) {
-                   	 		continue;
-                   		}
-                   	 	if ( ! strstr( $key, 'pa_' ) ) {
-                   	 		if ( empty( $attribute['name'] ) ) {
-                   	 			continue;
-                   	 		}
-                   	 		$key = $attribute['name'];
-                   	 	}
+		if ( ! empty( $results ) ) {
+			foreach( $results as $_product_attributes ) {
+				$attributes = maybe_unserialize( maybe_unserialize( $_product_attributes ) );
+				if ( ! empty( $attributes ) && is_array( $attributes ) ) {
+					foreach( $attributes as $key => $attribute ) {
+						if ( ! $key ) {
+							continue;
+						}
+						if ( ! strstr( $key, 'pa_' ) ) {
+							if ( empty( $attribute['name'] ) ) {
+								continue;
+							}
+							$key = $attribute['name'];
+						}
 
-                   	 	$result[ $key ] = $key;
-                   	 }
-                }
-            }
-        }
+						$result[ $key ] = $key;
+					 }
+				}
+			}
+		}
 
-        sort( $result );
+		sort( $result );
 
-        return $result;
-    }
+		return $result;
+	}
 }

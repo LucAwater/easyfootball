@@ -10,7 +10,7 @@ global $product, $post;
     <?php
     // Get match data from custom fields of product
     $match_date = get_field('match_date', false, false);
-    $match_date = new DateTime($match_date);
+    $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
     $match_time = get_field('match_time');
     $match_location = get_field('match_location');
     $match_location = get_term_by('name', $match_location, 'team');
@@ -52,7 +52,6 @@ global $product, $post;
   <?php
   // Get team logos
   $teams = wp_get_post_terms($post->ID, 'team');
-
   if( $teams ):
     echo '<div class="page-header-background">';
       if( $match_location ):
@@ -60,10 +59,16 @@ global $product, $post;
         $team = $match_location;
         $team_acf = $team->taxonomy . '_' . $team->term_id;
         $team_logo = get_field('team_logo', $team_acf);
-        $team_logo_url = $team_logo['sizes']['medium'];
-        $team_logo_width = $team_logo['sizes']['medium-width'];
-        $team_logo_height = $team_logo['sizes']['medium-height'];
 
+        if( isset($team_logo) ){
+          $team_logo_url = $team_logo['sizes']['medium'];
+          $team_logo_width = $team_logo['sizes']['medium-width'];
+          $team_logo_height = $team_logo['sizes']['medium-height'];
+        } else {
+          $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
+          $team_logo_width = "";
+          $team_logo_height = "";
+        }
         echo '<img src="' . $team_logo_url . '" width="' . $team_logo_width . '" height="' . $team_logo_height . '" />';
 
         // Get away team logo
@@ -71,10 +76,16 @@ global $product, $post;
           if( $team->name !== $match_location->name ):
             $team_acf = $team->taxonomy . '_' . $team->term_id;
             $team_logo = get_field('team_logo', $team_acf);
-            $team_logo_url = $team_logo['sizes']['medium'];
-            $team_logo_width = $team_logo['sizes']['medium-width'];
-            $team_logo_height = $team_logo['sizes']['medium-height'];
 
+            if( isset($team_logo) ){
+              $team_logo_url = $team_logo['sizes']['medium'];
+              $team_logo_width = $team_logo['sizes']['medium-width'];
+              $team_logo_height = $team_logo['sizes']['medium-height'];
+            } else {
+              $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
+              $team_logo_width = "";
+              $team_logo_height = "";
+            }
             echo '<img src="' . $team_logo_url . '" width="' . $team_logo_width . '" height="' . $team_logo_height . '" />';
           endif;
         endforeach;

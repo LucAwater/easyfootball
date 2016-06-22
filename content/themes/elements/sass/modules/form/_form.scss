@@ -1,0 +1,58 @@
+form{
+  .form-row{
+    width: 100%;
+    margin-bottom: 20px;
+
+    label{
+      display: block;
+    }
+
+    input{
+      width: 100%;
+    }
+  }
+
+  // Columns
+  .col1-set,
+  .col2-set{
+    h3{
+      margin-bottom: 20px;
+    }
+  }
+
+  .col2-set{
+    .form-row{
+      width: 50%;
+      float: left;
+
+      &.form-row-first{
+        padding-right: 5px;
+      }
+
+      &.form-row-last{
+        padding-left: 5px;
+      }
+    }
+
+    .form-row-wide{
+      width: 100%;
+    }
+  }
+
+  // Alerts
+  .form-row.woocommerce-invalid input{
+    @extend .alert-danger;
+  }
+
+  // Height fix
+  .clear{
+    z-index: -1;
+
+    &:before,
+    &:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
