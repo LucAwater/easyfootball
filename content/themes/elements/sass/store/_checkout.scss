@@ -46,11 +46,13 @@ body.woocommerce-checkout form.woocommerce-checkout{
     float: right;
 
     li{
+      @include flexbox;
+      @include align-items( center );
+
       width: 100%;
       height: 80px;
       padding: 20px;
       margin-bottom: 20px;
-      display: inline-block;
 
       border-radius: 3px;
       border: thin solid $grey;
@@ -63,13 +65,17 @@ body.woocommerce-checkout form.woocommerce-checkout{
       label{
         vertical-align: middle;
         line-height: 40px;
-
-        img{
-          width: auto;
-          height: 100%;
-          float: right;
-        }
+        cursor: pointer;
       }
+
+      img{
+        width: 60px;
+        margin-left: auto;
+      }
+    }
+
+    .place-order{
+      margin-bottom: 0;
     }
   }
 }
