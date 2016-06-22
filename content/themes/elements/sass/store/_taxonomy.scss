@@ -3,16 +3,22 @@ section.page-header-taxonomy{
     div{
       float: left;
 
-      width: 60%;
+      width: 100%;
+      max-width: 800px;
       padding-top: 10px;
       padding-right: 40px;
+
+      p{
+        color: $grey-text;
+      }
     }
 
     figure{
       float: right;
 
       width: 40%;
-      display: inline-block;
+      //display: inline-block;
+      display: none;
 
       img{
         @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
