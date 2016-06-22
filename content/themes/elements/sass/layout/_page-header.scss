@@ -1,7 +1,4 @@
 section.page-header{
-  // @include font-smoothing( antialiased );
-  // @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
-
   color: $black;
   background-color: $grey-light;
   border-bottom: thin solid $grey;
@@ -51,5 +48,28 @@ section.page-header{
         right: 60px;
       }
     }
+  }
+}
+
+section.page-header.page-header-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:before{
+    content: "";
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.6);
+  }
+
+  > *{
+    z-index: 1;
   }
 }

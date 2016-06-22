@@ -3,15 +3,8 @@ body.home{
     width: 100%;
     padding: 100px;
 
-    color: white;
-    background: $grey-dark;
+    color: $white;
     text-align: center;
-
-    /* REPLACE LATER W/ DYNAMIC CONTENT */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: overlay;
-    background-image: url('/easyfootball/content/themes/elements/img/bg.jpg');
 
     h1{
       margin-bottom: 20px;
