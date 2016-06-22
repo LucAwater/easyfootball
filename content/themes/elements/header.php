@@ -43,7 +43,7 @@
     <div class="header-content">
       <div>
         <a class="link-logo" href="<?php echo home_url(); ?>">
-          <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-black.svg">
+          <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-color.svg">
         </a>
 
         <?php if(! is_front_page() ): ?>
