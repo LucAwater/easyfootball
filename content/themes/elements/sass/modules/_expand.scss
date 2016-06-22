@@ -1,0 +1,69 @@
+.expand-container{
+  p{
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  .expand-trigger{
+    width: 100%;
+    height: 30px;
+  }
+
+  &.is-open{
+    p{
+      max-height: none;
+    }
+
+    .expand-trigger{
+      &:before{
+        @include linear-gradient( to bottom, transparent, transparent );
+      }
+
+      a{
+        @include transform( rotate(135deg) );
+
+        top: 8px;
+      }
+    }
+  }
+}
+
+.expand-trigger{
+  margin-top: 10px;
+
+  cursor: pointer;
+
+  &:before{
+    @include linear-gradient( to bottom, transparent, $grey-light );
+
+    content: "";
+
+    top: -20px;
+    position: absolute;
+
+    width: 100%;
+    height: 10px;
+  }
+
+  a{
+    @include transform( rotate(-45deg) );
+
+    left: 0;
+    right: 0;
+    top: -8px;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+
+    width: 15px;
+    height: 15px;
+
+    transform-origin: center;
+    border-left: 2px solid $grey-text;
+    border-bottom: 2px solid $grey-text;
+
+    &:hover{
+      padding-top: 10px;
+    }
+  }
+}

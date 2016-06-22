@@ -13,22 +13,25 @@ $image = get_field( $term_taxonomy . '_imageFeatured', $term_acf );
 $image_url = $image['sizes']['medium'];
 $image_width = $image['sizes']['medium-width'];
 $image_height = $image['sizes']['medium-height'];
-
 $description = wpautop($term->description);
-if( strlen($description) > 500 ){
-  // truncate string
-  $stringCut = substr($description, 0, 500);
-
-  // make sure it ends in a word so assassinate doesn't become ass...
-  $description = substr($stringCut, 0, strrpos($stringCut, ' ')).'... <a>Read More</a>';
-}
 ?>
 
 <section class="page-header page-header-taxonomy">
   <div class="section-body">
     <div>
       <h1><?php echo $term->name; ?></h1>
-      <?php echo $description; ?>
+
+      <?php if( strlen($description) > 500 ): ?>
+        <div class="expand-container">
+          <?php echo $description; ?>
+
+          <div class="expand-trigger">
+            <a></a>
+          </div>
+        </div>
+      <?php else: ?>
+        <?php echo $description; ?>
+      <?php endif; ?>
     </div>
 
     <?php if( $image ): ?>
