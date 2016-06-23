@@ -77,7 +77,7 @@ define( 'WPLANG', '' );
 // Wordpress debugging mode
 // ========================
 
-ini_set( 'display_errors', 0 );
+ini_set( 'display_errors', 10 );
 define( 'WP_DEBUG_DISPLAY', true );
 
 // ===============
