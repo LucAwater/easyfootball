@@ -1670,13 +1670,13 @@ aside {
   opacity: 1;
   visibility: visible; }
 
-.expand-container p, .expand-container p .read-more, p .expand-container .read-more, .expand-container .tooltip:after {
+.expand-container .expand-content {
   max-height: 100px;
   overflow: hidden; }
 .expand-container .expand-trigger {
   width: 100%;
   height: 30px; }
-.expand-container.is-open p, .expand-container.is-open p .read-more, p .expand-container.is-open .read-more, .expand-container.is-open .tooltip:after {
+.expand-container.is-open .expand-content {
   max-height: none; }
 .expand-container.is-open .expand-trigger:before {
   background-image: -o-linear-gradient(to bottom, transparent, transparent);

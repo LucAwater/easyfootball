@@ -23,7 +23,9 @@ $description = wpautop($term->description);
 
       <?php if( strlen($description) > 500 ): ?>
         <div class="expand-container">
-          <?php echo $description; ?>
+          <div class="expand-content">
+            <?php echo $description; ?>
+          </div>
 
           <div class="expand-trigger">
             <a></a>
