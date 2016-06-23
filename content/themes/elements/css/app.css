@@ -867,15 +867,15 @@ main {
       main .content-container > *:last-child {
         margin-bottom: 0; }
   main aside {
-    padding-top: 5rem;
+    padding-top: 2.5rem;
     padding-left: 40px; }
 
 main > * {
-  padding: 2.5rem 0; }
+  padding: 1.25rem 0; }
   main > *:first-child {
-    padding-top: 5rem; }
+    padding-top: 2.5rem; }
   main > *:last-child {
-    padding-bottom: 5rem; }
+    padding-bottom: 2.5rem; }
 
 @media screen and (max-width: 1100px) {
   body > header,
@@ -1215,7 +1215,7 @@ section.page-header {
     height: auto;
     margin: auto;
     overflow: hidden;
-    padding: 80px 0; }
+    padding: 40px 0; }
     section.page-header .section-body figure {
       background-color: transparent; }
     section.page-header .section-body h1, section.page-header .section-body h2, section.page-header .section-body h3, section.page-header .section-body h4 {
@@ -2327,12 +2327,12 @@ section.has-extra-pad-top,
 .section-header.has-extra-pad-top,
 .section-body.has-extra-pad-top,
 .section-footer.has-extra-pad-top {
-  padding-top: 10rem; }
+  padding-top: 5rem; }
 section.has-extra-pad-bottom,
 .section-header.has-extra-pad-bottom,
 .section-body.has-extra-pad-bottom,
 .section-footer.has-extra-pad-bottom {
-  padding-bottom: 10rem; }
+  padding-bottom: 5rem; }
 
 h1.is-italic, h2.is-italic, h3.is-italic, h4.is-italic, p.is-italic, p .is-italic.read-more, .is-italic.tooltip:after, span.is-italic,
 time.is-italic,
