@@ -18,7 +18,7 @@ function enqueue_theme_scripts() {
     wp_enqueue_script( 'link-heading', get_template_directory_uri() . '/js/link-heading.js', 'jquery', false, true );
     wp_enqueue_script( 'expand', get_template_directory_uri() . '/js/expand.js', 'jquery', false, true );
   else:
-    wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', 'jquery', false, true );
+    wp_enqueue_script( 'app-min', get_template_directory_uri() . '/js/app-min.js', 'jquery', false, true );
   endif;
 }
 
