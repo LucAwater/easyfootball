@@ -12,7 +12,7 @@ nav{
       > a{
         @include font-smoothing( antialiased );
 
-        color: $white;
+        color: $grey-text;
         font-size: 16px;
       }
 
@@ -23,7 +23,7 @@ nav{
 
       &:hover,
       &:focus{
-        background-color: $color-primary-dark;
+        background-color: $grey;
 
         ul{
           @include show( .2s );
@@ -41,6 +41,7 @@ nav > ul > li ul{
   left: 0;
   top: 100%;
   position: absolute;
+  z-index: 1;
 
   white-space: nowrap;
   border: thin solid $grey;
@@ -92,13 +93,6 @@ nav > ul > li ul{
         color: $black;
       }
     }
-  }
-}
-
-// Current item
-nav ul{
-  li.current{
-    text-decoration: underline;
   }
 }
 

@@ -27,7 +27,7 @@ if( have_posts() ):
               $event_link = get_permalink($event->ID);
 
               $event_date = get_post_meta($event->ID, 'match_date', true);
-              $event_date = new DateTime($event_date);
+              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
               $event_date = $event_date->format('j F Y');
               $event_time = get_post_meta($event->ID, 'match_time', true);
 
@@ -139,7 +139,7 @@ if( have_posts() ):
                           $match_name = get_the_title();
                           $match_link = get_the_permalink();
                           $match_date = get_field('match_date', false, false);
-                          $match_date = new DateTime($match_date);
+                          $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
                           $match_date = $match_date->format('j F Y');
                           $match_time = get_field('match_time');
                           ?>

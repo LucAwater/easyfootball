@@ -14,10 +14,9 @@ require_once('includes/admin/product-variable-fields.php');
 
 // Inludes: template functions
 require_once('includes/functions-template/posts.php');
+require_once('includes/functions-template/elements.php');
 require_once('includes/functions-template/section.php');
 require_once('includes/functions-template/section-header.php');
-require_once('includes/functions-template/section-grid.php');
-require_once('includes/functions-template/section-slider.php');
 require_once('includes/functions-template/page-header.php');
 require_once('includes/functions-template/page-content.php');
 require_once('includes/functions-template/page-sidebar.php');

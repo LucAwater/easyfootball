@@ -13,13 +13,25 @@ $image = get_field( $term_taxonomy . '_imageFeatured', $term_acf );
 $image_url = $image['sizes']['medium'];
 $image_width = $image['sizes']['medium-width'];
 $image_height = $image['sizes']['medium-height'];
+$description = wpautop($term->description);
 ?>
 
 <section class="page-header page-header-taxonomy">
   <div class="section-body">
     <div>
       <h1><?php echo $term->name; ?></h1>
-      <?php echo wpautop($term->description); ?>
+
+      <?php if( strlen($description) > 500 ): ?>
+        <div class="expand-container">
+          <?php echo $description; ?>
+
+          <div class="expand-trigger">
+            <a></a>
+          </div>
+        </div>
+      <?php else: ?>
+        <?php echo $description; ?>
+      <?php endif; ?>
     </div>
 
     <?php if( $image ): ?>

@@ -3,35 +3,56 @@ body.woocommerce-checkout{
     height: auto;
     overflow: hidden;
 
-    #order_review{
-      border-radius: 3px;
-      border: thin solid $grey;
-      background-color: $grey-light;
-    }
-
     #customer_details,
     #order_review,
-    #order_review_heading{
+    #payment{
       float: left;
 
       width: 50%;
       padding: 20px;
     }
 
+    #payment,
     #customer_details{
+      border-radius: 3px;
+      border: thin solid $grey;
+      background-color: $grey-light;
+    }
+
+    #order_review{
       padding: 20px 40px 20px 0;
+
+      h3{
+        margin-bottom: 20px;
+      }
+
+      .order-total{
+        th,
+        td .amount{
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    #customer_details{
+      margin-bottom: 40px;
     }
   }
 }
 
-body.woocommerce-checkout #order_review{
+body.woocommerce-checkout form.woocommerce-checkout{
   #payment{
+    float: right;
+
     li{
+      @include flexbox;
+      @include align-items( center );
+
       width: 100%;
       height: 80px;
       padding: 20px;
       margin-bottom: 20px;
-      display: inline-block;
 
       border-radius: 3px;
       border: thin solid $grey;
@@ -44,13 +65,17 @@ body.woocommerce-checkout #order_review{
       label{
         vertical-align: middle;
         line-height: 40px;
-
-        img{
-          width: auto;
-          height: 100%;
-          float: right;
-        }
+        cursor: pointer;
       }
+
+      img{
+        width: 60px;
+        margin-left: auto;
+      }
+    }
+
+    .place-order{
+      margin-bottom: 0;
     }
   }
 }

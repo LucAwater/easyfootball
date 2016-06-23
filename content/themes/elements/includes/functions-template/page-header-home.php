@@ -1,5 +1,13 @@
+<?php
+$image = get_field("intro_image");
+$image_url = $image["sizes"]["large"];
+?>
+
 <!-- Intro section for homepage w/ search form -->
-<section class="page-header page-header-home" id="intro-home">
+<section
+  class="page-header page-header-home page-header-image"
+  id="intro-home"
+  style="background-image: url(<?php echo $image_url; ?>)">
   <h1>hitta din fotbollsmatch</h1>
 
   <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">

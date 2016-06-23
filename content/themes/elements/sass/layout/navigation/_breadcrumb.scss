@@ -1,10 +1,7 @@
 #breadcrumb{
   height: auto;
-  padding: 10px 0;
 
-  color: $black;
-  background-color: $white;
-  border-bottom: thin solid $grey;
+  color: $grey-text;
 
   div{
     max-width: 1100px;
@@ -15,8 +12,14 @@
     li{
       display: inline-block;
 
-      small{
-        color: $black;
+      a{
+        small{
+          color: $grey-text;
+        }
+
+        &:hover small{
+          color: $black;
+        }
       }
 
       &:after{
@@ -26,7 +29,7 @@
 
       &:last-child{
         small{
-          color: $grey-text;
+          color: $black;
         }
 
         &:after{
