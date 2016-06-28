@@ -2,6 +2,8 @@
 function page_header() {
   if( is_front_page() ):
     include_once('page-header-home.php');
+  elseif( is_tax('team') ):
+    include_once('page-header-team.php');
   elseif( is_tax() ):
     include_once('page-header-taxonomy.php');
   elseif( is_product() ):

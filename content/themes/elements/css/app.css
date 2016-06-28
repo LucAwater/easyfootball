@@ -1255,6 +1255,24 @@ section.page-header.page-header-image {
     background-color: rgba(0, 0, 0, 0.6); }
   section.page-header.page-header-image > * {
     z-index: 1; }
+  section.page-header.page-header-image h1, section.page-header.page-header-image p, section.page-header.page-header-image p .read-more, p section.page-header.page-header-image .read-more, section.page-header.page-header-image .tooltip:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-weight: 500;
+    color: white; }
+  section.page-header.page-header-image .expand-container.is-open .expand-trigger:before {
+    background-image: -o-linear-gradient(to bottom, transparent, transparent);
+    background-image: -moz-linear-gradient(to bottom, transparent, transparent);
+    background-image: -webkit-linear-gradient(to bottom, transparent, transparent);
+    background-image: linear-gradient(to bottom, transparent, transparent); }
+  section.page-header.page-header-image .expand-container .expand-trigger:before {
+    background-image: -o-linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+    background-image: -moz-linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+    background-image: -webkit-linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)); }
+  section.page-header.page-header-image .expand-container .expand-trigger a, section.page-header.page-header-image .expand-container .expand-trigger button,
+  section.page-header.page-header-image .expand-container .expand-trigger input[type="submit"] {
+    border-color: white; }
 
 .arrow {
   -moz-transform: rotate(45deg);
@@ -2471,22 +2489,23 @@ body.home > header {
 body.home .page-header {
   padding-top: 180px !important; }
 
+section.page-header-taxonomy .section-body figure {
+  float: left;
+  padding-top: 10px;
+  padding-right: 40px;
+  display: inline-block; }
+  section.page-header-taxonomy .section-body figure img {
+    width: 250px; }
 section.page-header-taxonomy .section-body > div {
   float: left;
-  width: 100%;
-  max-width: 800px;
-  padding-top: 10px;
-  padding-right: 40px; }
-  section.page-header-taxonomy .section-body > div p, section.page-header-taxonomy .section-body > div p .read-more, p section.page-header-taxonomy .section-body > div .read-more, section.page-header-taxonomy .section-body > div .tooltip:after {
-    color: #727272; }
-section.page-header-taxonomy .section-body figure {
-  float: right;
-  width: 40%;
-  display: none; }
-  section.page-header-taxonomy .section-body figure img {
-    -webkit-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 50px 40px -40px rgba(0, 0, 0, 0.3); }
+  width: calc(100% - 290px); }
+  section.page-header-taxonomy .section-body > div .expand-container {
+    margin-bottom: -20px; }
+
+section.page-header-team .section-body figure img {
+  width: 150px; }
+section.page-header-team .section-body > div {
+  width: calc(100% - 190px); }
 
 body.single-product .page-header {
   -webkit-font-smoothing: antialiased;

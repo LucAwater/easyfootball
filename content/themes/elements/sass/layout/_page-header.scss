@@ -72,4 +72,30 @@ section.page-header.page-header-image{
   > *{
     z-index: 1;
   }
+
+  h1, p{
+    @include font-smoothing( antialiased );
+
+    color: $white;
+  }
+
+  .expand-container{
+    &.is-open{
+      .expand-trigger{
+        &:before{
+          @include linear-gradient( to bottom, transparent, transparent );
+        }
+      }
+    }
+
+    .expand-trigger{
+      &:before{
+        @include linear-gradient( to bottom, transparent, rgba(0,0,0,.6) );
+      }
+
+      a{
+        border-color: $white;
+      }
+    }
+  }
 }

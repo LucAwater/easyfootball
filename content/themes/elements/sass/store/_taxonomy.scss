@@ -1,28 +1,37 @@
 section.page-header-taxonomy{
   .section-body{
-    > div{
+    figure{
       float: left;
-
-      width: 100%;
-      max-width: 800px;
       padding-top: 10px;
       padding-right: 40px;
+      display: inline-block;
 
-      p{
-        color: $grey-text;
+      img{
+        width: 250px;
       }
     }
 
-    figure{
-      float: right;
+    > div{
+      float: left;
+      width: calc(100% - 290px);
 
-      width: 40%;
-      //display: inline-block;
-      display: none;
-
-      img{
-        @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
+      .expand-container{
+        margin-bottom: -20px;
       }
+    }
+  }
+}
+
+section.page-header-team{
+  .section-body{
+    figure{
+      img{
+        width: 150px;
+      }
+    }
+
+    > div{
+      width: calc(100% - 190px);
     }
   }
 }
