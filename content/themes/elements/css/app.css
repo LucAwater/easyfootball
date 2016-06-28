@@ -1670,6 +1670,7 @@ aside {
   top: -10px;
   left: 50%;
   position: absolute;
+  z-index: 10000;
   padding: 10px;
   display: inline-table;
   color: white;
@@ -1685,6 +1686,11 @@ aside {
   transition: 0.2s;
   opacity: 1;
   visibility: visible; }
+
+.tooltip.tooltip-large:after {
+  width: 220px;
+  display: block;
+  white-space: normal; }
 
 .expand-container .expand-content {
   max-height: 100px;
