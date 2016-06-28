@@ -3,7 +3,7 @@ body > header{
 
   width: 100%;
 
-  background-color: $grey-light;
+  background-color: $white;
   border-bottom: thin solid $grey;
 
   .header-bottom > div,
@@ -21,8 +21,6 @@ body > header{
 body > header .header-bottom{
   padding-top: 10px;
   padding-bottom: 10px;
-
-  background-color: $grey;
 
   small{
     margin-left: auto;
@@ -56,13 +54,6 @@ body > header .header-content > div{
 
       width: 100%;
       margin: auto;
-    }
-  }
-
-  // Search form
-  form[role="search"]{
-    input[type="search"]{
-      border: none;
     }
   }
 
