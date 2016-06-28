@@ -2440,7 +2440,7 @@ p.is-small, p .is-small.read-more, .is-small.tooltip:after {
     margin-left: -1.875rem; } }
 body.home section#intro-home {
   width: 100%;
-  padding: 100px;
+  padding: 60px;
   color: white;
   text-align: center; }
   body.home section#intro-home h1 {
@@ -2487,7 +2487,7 @@ body.home > header {
   body.home > header .header-bottom {
     display: none; }
 body.home .page-header {
-  padding-top: 180px !important; }
+  padding-top: 150px !important; }
 
 section.page-header-taxonomy .section-body figure {
   float: left;
