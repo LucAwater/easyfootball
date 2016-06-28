@@ -22,10 +22,23 @@ body > header .header-bottom{
   padding-top: 10px;
   padding-bottom: 10px;
 
-  small{
+  div:last-child{
     margin-left: auto;
 
     color: $grey-text;
+
+    small{
+      margin-right: 10px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+    i{
+      vertical-align: middle;
+      margin-top: -4px;
+    }
   }
 }
 

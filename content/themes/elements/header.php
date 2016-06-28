@@ -30,6 +30,9 @@
   <!-- Fonts from Typography.com -->
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6711094/6333752/css/fonts.css" />
 
+  <!-- Icon font from Google -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
@@ -68,7 +71,12 @@
       <div>
         <?php breadcrumb(); ?>
 
-        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
+        <div>
+          <i class="material-icons">mail</i>
+          <small><a href="mailto:info@easyfootball.se">info@easyfootball.se</a></small>
+          <i class="material-icons">phone</i>
+          <small>08 519 72 728</small>
+        </div>
       </div>
     </div>
   </header>

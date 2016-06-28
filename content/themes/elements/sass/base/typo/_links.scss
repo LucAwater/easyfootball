@@ -21,11 +21,16 @@ a.has-content{
   text-decoration: none;
 }
 
-h1, h2, h3, h4, small, p{
+h1, h2, h3, h4, p{
   a{
     font-size: 1em;
     color: $black;
   }
+}
+
+small a{
+  font-size: 1em;
+  color: $grey-text;
 }
 
 // Links in articles
