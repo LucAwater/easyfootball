@@ -72,9 +72,9 @@
         <?php breadcrumb(); ?>
 
         <div>
-          <i class="material-icons">mail</i>
+          <i class="material-icons">&#xE0BE;</i>
           <small><a href="mailto:info@easyfootball.se">info@easyfootball.se</a></small>
-          <i class="material-icons">phone</i>
+          <i class="material-icons">&#xE0CD;</i>
           <small>08 519 72 728</small>
         </div>
       </div>
