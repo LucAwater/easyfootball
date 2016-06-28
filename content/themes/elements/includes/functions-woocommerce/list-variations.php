@@ -39,13 +39,13 @@ function list_variations() {
 
             if( $sellingPattern == 1 ){
               $tooltip_type = "warning";
-              $tooltip_message = __("Only sold per single ticket");
+              $tooltip_message = __("Dessa biljetter säljs endast som enskilda biljetter dvs det är ingen garanti att de är tillsammans");
             } elseif( $sellingPattern == 2){
               $tooltip_type = "warning";
-              $tooltip_message = __("Only sold in pairs");
+              $tooltip_message = __("Dessa biljetter säljes endast i par");
             }
 
-            if( isset($tooltip_type) && isset($tooltip_message) && $sellingPattern != 3 ){
+            if( isset($tooltip_type) && isset($tooltip_message) && $sellingPattern < 3 ){
               echo '<span class="tooltip" data-tooltip="' . $tooltip_message . '"><img src="' . get_template_directory_uri() . '/img/icon-' . $tooltip_type .'-black.svg" /></span>';
             }
             ?>
