@@ -6,76 +6,6 @@ if( have_posts() ):
 
     global $product, $woocommerce_loop;
 
-    // Featured events
-    featured_lists_events();
-    $events = featured_lists_events();
-
-    if( $events ){
-      ?>
-
-      <section class="featured featured-events">
-        <div class="section-header">
-          <h2><?php _e('Top Matches'); ?></h2>
-        </div>
-
-        <div class="section-body">
-          <ul class="list list-card list-card-matches">
-            <?php
-            for( $x = 0; $x < 6; $x++ ){
-              $event = get_post($events[$x]);
-              $event_name = $event->post_title;
-              $event_link = get_permalink($event->ID);
-
-              $event_date = get_post_meta($event->ID, 'match_date', true);
-              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
-              $event_date = $event_date->format('j F Y');
-              $event_time = get_post_meta($event->ID, 'match_time', true);
-
-              $event_location = get_post_meta($event->ID, 'match_location', true);
-              $event_location = get_term_by('name', $event_location, 'team');
-
-              $event_location_acf = $event_location->taxonomy . '_' . $event_location->term_id;
-              $arena_location_city = get_field('arena_location_city', $event_location_acf);
-              $arena_location_country = get_field('arena_location_country', $event_location_acf);
-              $arena_location = $arena_location_city . ', ' . $arena_location_country;
-
-              $_event = wc_get_product( $event->ID );
-              $event_price = $_event->get_price();
-
-              $event_teams = wp_get_post_terms($event->ID, 'team');
-              ?>
-
-              <li>
-                <div class="card-container">
-                  <figure class="card-image">
-                    <a href="<?php echo $event_link; ?>">
-                      <?php team_logos($event_location, $event_teams); ?>
-                      <span>VS</span>
-                    </a>
-                  </figure>
-
-                  <div class="card-info">
-                    <a href="<?php echo $event_link; ?>"><h4 class="card-title"><?php echo $event_name; ?></h4></a>
-                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
-                  </div>
-
-                  <div class="card-actions">
-                    <p><?php echo ($event_price) ? _e('Från ') . $event_price : ''; ?></p>
-                    <a href="<?php echo $event_link; ?>" class="button"><?php _e('Köpa biljetter'); ?></a>
-                  </div>
-                </div>
-              </li>
-
-              <?php
-            }
-            ?>
-          </ul>
-        </div>
-      </section>
-
-      <?php
-    }
-
     // Featured teams
     featured_lists_teams();
     $teams = featured_lists_teams();
@@ -173,6 +103,78 @@ if( have_posts() ):
 
       <?php
     }
+    
+    // Featured events
+    featured_lists_events();
+    $events = featured_lists_events();
+
+    if( $events ){
+      ?>
+
+      <section class="featured featured-events">
+        <div class="section-header">
+          <h2><?php _e('Top Matches'); ?></h2>
+        </div>
+
+        <div class="section-body">
+          <ul class="list list-card list-card-matches">
+            <?php
+            for( $x = 0; $x < 6; $x++ ){
+              $event = get_post($events[$x]);
+              $event_name = $event->post_title;
+              $event_link = get_permalink($event->ID);
+
+              $event_date = get_post_meta($event->ID, 'match_date', true);
+              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
+              $event_date = $event_date->format('j F Y');
+              $event_time = get_post_meta($event->ID, 'match_time', true);
+
+              $event_location = get_post_meta($event->ID, 'match_location', true);
+              $event_location = get_term_by('name', $event_location, 'team');
+
+              $event_location_acf = $event_location->taxonomy . '_' . $event_location->term_id;
+              $arena_location_city = get_field('arena_location_city', $event_location_acf);
+              $arena_location_country = get_field('arena_location_country', $event_location_acf);
+              $arena_location = $arena_location_city . ', ' . $arena_location_country;
+
+              $_event = wc_get_product( $event->ID );
+              $event_price = $_event->get_price();
+
+              $event_teams = wp_get_post_terms($event->ID, 'team');
+              ?>
+
+              <li>
+                <div class="card-container">
+                  <figure class="card-image">
+                    <a href="<?php echo $event_link; ?>">
+                      <?php team_logos($event_location, $event_teams); ?>
+                      <span>VS</span>
+                    </a>
+                  </figure>
+
+                  <div class="card-info">
+                    <a href="<?php echo $event_link; ?>"><h4 class="card-title"><?php echo $event_name; ?></h4></a>
+                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
+                  </div>
+
+                  <div class="card-actions">
+                    <p><?php echo ($event_price) ? _e('Från ') . $event_price : ''; ?></p>
+                    <a href="<?php echo $event_link; ?>" class="button"><?php _e('Köpa biljetter'); ?></a>
+                  </div>
+                </div>
+              </li>
+
+              <?php
+            }
+            ?>
+          </ul>
+        </div>
+      </section>
+
+      <?php
+    }
+
+
 
   endwhile;
 endif;
