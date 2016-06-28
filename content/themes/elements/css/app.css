@@ -758,7 +758,8 @@ textarea, select, body.woocommerce-order-received .woocommerce .order_details li
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  font-weight: normal; }
+  font-weight: normal;
+  color: black; }
 
 h1 {
   font-size: 50px; }

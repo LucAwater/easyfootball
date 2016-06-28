@@ -103,7 +103,7 @@ if( have_posts() ):
 
       <?php
     }
-    
+
     // Featured events
     featured_lists_events();
     $events = featured_lists_events();
