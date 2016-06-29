@@ -946,12 +946,6 @@ body > header .header-bottom {
       vertical-align: middle;
       margin-top: -4px; }
 
-body > header .header-content > div > * {
-  margin: 0 20px; }
-  body > header .header-content > div > *:first-child {
-    margin-left: 0; }
-  body > header .header-content > div > *:last-child {
-    margin: 0; }
 body > header .header-content > div .link-logo {
   width: 200px; }
   body > header .header-content > div .link-logo img {
@@ -961,6 +955,7 @@ body > header .header-content > div .link-logo {
     width: 100%;
     margin: auto; }
 body > header .header-content > div nav {
+  margin: 0 20px;
   margin-left: auto; }
 
 body > footer {
@@ -1869,6 +1864,12 @@ input[type="submit"] {
   .button.button-fullwidth,
   input[type="submit"].button-fullwidth {
     width: 100%; }
+  button .material-icons,
+  .button .material-icons,
+  input[type="submit"] .material-icons {
+    margin-top: -4px;
+    margin-left: -6px;
+    vertical-align: middle; }
 
 button[disabled="disabled"] {
   opacity: .2; }

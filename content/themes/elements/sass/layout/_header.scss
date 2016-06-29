@@ -44,18 +44,6 @@ body > header .header-bottom{
 
 // Header content
 body > header .header-content > div{
-  > *{
-    margin: 0 20px;
-
-    &:first-child{
-      margin-left: 0;
-    }
-
-    &:last-child{
-      margin: 0;
-    }
-  }
-
   // Logo
   .link-logo{
     width: 200px;
@@ -72,6 +60,7 @@ body > header .header-content > div{
 
   // Nav
   nav{
+    margin: 0 20px;
     margin-left: auto;
   }
 }

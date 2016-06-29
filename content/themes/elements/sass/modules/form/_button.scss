@@ -51,6 +51,12 @@ input[type="submit"]{
   &.button-fullwidth{
     width: 100%;
   }
+
+  .material-icons{
+    margin-top: -4px;
+    margin-left: -6px;
+    vertical-align: middle;
+  }
 }
 
 button[disabled="disabled"]{
