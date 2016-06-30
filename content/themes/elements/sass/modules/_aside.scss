@@ -2,11 +2,14 @@ aside{
   float: right;
 
   width: 100%;
-  max-width: 300px;
-  padding: 0 20px;
+  max-width: 350px;
 
   > div{
     margin-bottom: 40px;
+    padding: 20px;
+
+    border: thin solid $grey;
+    background-color: $grey-light;
 
     ul{
       padding: 10px 0;
