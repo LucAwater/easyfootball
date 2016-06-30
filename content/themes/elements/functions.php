@@ -93,6 +93,17 @@ function mgt_dequeue_stylesandscripts() {
   }
 }
 
+// Add capability to role
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'shop_manager' );
+
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'edit_theme_options' ); 
+}
+add_action( 'admin_init', 'add_theme_caps');
+
 // Customize excerpt
 function wpdocs_excerpt_more( $more ) {
   return '...';
