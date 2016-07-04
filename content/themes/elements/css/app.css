@@ -957,6 +957,10 @@ body > header .header-content > div .link-logo {
 body > header .header-content > div nav {
   margin: 0 20px;
   margin-left: auto; }
+body > header .header-content > div > .button i {
+  margin-top: 0;
+  margin-right: 6px;
+  font-size: 20px; }
 
 body > footer {
   z-index: 1100;
