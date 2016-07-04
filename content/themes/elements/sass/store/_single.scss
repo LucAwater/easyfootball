@@ -1,14 +1,10 @@
 body.single-product{
   .page-header{
-    @include font-smoothing( antialiased );
-
-    color: $white;
     text-align: center;
-    background-color: $color-primary-dark;
 
-    p{
-      @include font-smoothing( antialiased );
-
+    p,
+    strong{
+      color: $white;
       font-size: 18px;
     }
 
@@ -33,15 +29,22 @@ body.single-product{
       overflow: hidden;
 
       aside{
+        max-width: 35%;
         float: left;
 
-        max-width: 400px;
         padding: 0;
+
+        div{
+          padding: 0;
+
+          border: none;
+          background-color: transparent;
+        }
       }
 
       .content-container{
-        max-width: 700px;
-        padding-left: 20px;
+        max-width: 65%;
+        padding-left: 40px;
         padding-right: 0;
 
         border: none;

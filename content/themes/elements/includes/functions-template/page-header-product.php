@@ -1,8 +1,19 @@
 <?php
 global $product, $post;
+
+// background image
+$rand_int = rand(1, 2);
+$bg_url = get_template_directory_uri() . '/img/bg' . $rand_int . '.jpg';
+
+// section class
+if( $bg_url ){
+  $section_class = "page-header page-header-product page-header-image";
+} else {
+  $section_class = "page-header page-header-product";
+}
 ?>
 
-<section class="page-header page-header-default">
+<section class="<?php echo $section_class; ?>"  style="background-image:url(<?php echo $bg_url; ?>)">
   <div class="section-body">
     <h1 itemprop="name"><?php the_title(); ?></h1>
     <div class="product-description excerpt"><?php echo wpautop( get_the_excerpt() ); ?></div>

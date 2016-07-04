@@ -28,8 +28,6 @@ section.page-header{
     height: 100%;
 
     img{
-      @include filter( grayscale(1) );
-
       top: 0;
       bottom: 0;
       position: absolute;
@@ -37,8 +35,6 @@ section.page-header{
       width: auto;
       height: 70%;
       margin: auto;
-
-      opacity: 0.3;
 
       &:first-child{
         left: 60px;
