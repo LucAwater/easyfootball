@@ -36,7 +36,7 @@
 
         <?php
         $col4_title = get_field('footer_col4_title', 'option');
-        $col4_content = preg_replace('/<p>/', '<small>', get_field('footer_col4_content', 'option'));
+        $col4_content = preg_replace('/<p>(.+?)<\/p>/is', '<small>$1</small>', get_field('footer_col4_content', 'option'));
         if( $col4_title || $col4_content ):
         ?>
           <li>
