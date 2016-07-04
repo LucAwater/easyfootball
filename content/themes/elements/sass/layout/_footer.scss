@@ -10,13 +10,6 @@ body > footer{
     padding: 40px 0;
   }
 
-  .footer-content,
-  .footer-bottom > *{
-    max-width: 1200px;
-    margin: auto;
-    display: block;
-  }
-
   .footer-content{
     > ul{
       @include flexbox;
