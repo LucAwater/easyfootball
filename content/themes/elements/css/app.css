@@ -1025,6 +1025,18 @@ body > footer {
     body > footer .footer-bottom input[type="submit"] {
       border-bottom: thin solid white; }
 
+@media all and (max-width: 800px) {
+  body > footer .footer-content ul {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    body > footer .footer-content ul li {
+      width: 50%;
+      margin-bottom: 40px; } }
+@media all and (max-width: 450px) {
+  body > footer .footer-content ul li {
+    width: 100%; } }
 body.error404 #error404-content {
   max-width: 800px;
   margin: 100px auto;

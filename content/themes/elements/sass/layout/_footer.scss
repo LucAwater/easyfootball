@@ -53,3 +53,30 @@ body > footer{
     }
   }
 }
+
+@media all and (max-width: 800px){
+  body > footer{
+    .footer-content{
+      ul{
+        @include flex-wrap(wrap);
+
+        li{
+          width: 50%;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 450px){
+  body > footer{
+    .footer-content{
+      ul{
+        li{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
