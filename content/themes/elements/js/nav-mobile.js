@@ -15,8 +15,8 @@
   }
 
   function subMenu() {
-    var items = $('#navMobile-menu ul > li');
-    var itemLinks = $('#navMobile-menu ul > li > a');
+    var items = $('#navMobile-menu nav > ul > li');
+    var itemLinks = $('#navMobile-menu nav > ul > li > a');
 
     itemLinks.click( function(e) {
       e.preventDefault();
