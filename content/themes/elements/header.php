@@ -61,7 +61,7 @@
           </form>
         <?php endif; ?>
 
-        <?php include_once( 'includes/nav.php' ); ?>
+        <?php include( 'includes/nav.php' ); ?>
 
         <a class="button button-sec button-service" href="<?php echo home_url(); ?>/kundtjanst"><i class="material-icons">&#xE0CA;</i> Kundtjänst</a>
         <a class="button button-sec button-menu"><i class="material-icons">&#xE5D2;</i> Meny</a>
@@ -73,15 +73,17 @@
         <?php breadcrumb(); ?>
 
         <div>
-          <i class="material-icons">&#xE0BE;</i>
-          <small><a href="mailto:info@easyfootball.se">info@easyfootball.se</a></small>
-          <i class="material-icons">&#xE0CD;</i>
-          <small>08 519 72 728</small>
+          <small><i class="material-icons">&#xE0BE;</i><a href="mailto:info@easyfootball.se"> info@easyfootball.se</a></small>
+          <small><i class="material-icons">&#xE0CD;</i> 08 519 72 728</small>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile nav -->
+  <?php include_once('includes/nav-mobile.php'); ?>
+
+  <!-- Page header -->
   <?php page_header(); ?>
 
   <!-- Main content -->

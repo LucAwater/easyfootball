@@ -1,0 +1,139 @@
+#navMobile{
+  @include transition( .2s );
+  @include transform( translateX(100%) );
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10000;
+
+  width: 80%;
+  max-width: 400px;
+  height: 100%;
+
+  background-color: $white;
+
+  &.is-active{
+    @include transform( translateX(0) );
+    @include box-shadow( 0 0px 50px rgba(0,0,0,.5) );
+  }
+
+  > div{
+    padding: 20px;
+
+    text-align: right;
+  }
+
+  // Close
+  > div:nth-child(1){
+    @include flexbox;
+    @include align-items( center );
+    @include justify-content( flex-end );
+
+    height: $header_height;
+
+    border-bottom: thin solid $grey;
+
+    .material-icons{
+      color: $color-accent;
+    }
+  }
+
+  // Nav
+  #navMobile-menu{
+    padding: 0;
+
+    border-bottom: thin solid $grey;
+
+    > div{
+      padding: 20px;
+
+      form{
+        width: 100%;
+      }
+    }
+
+    nav{
+      margin-bottom: 10px;
+
+      > ul > li{
+        display: block;
+        padding: 10px 0;
+
+        &:after{
+          @include transform( rotate(-90deg) );
+
+          content: '\25b2';
+
+          top: 10px;
+          right: 20px;
+          position: absolute;
+
+          color: $grey-text;
+          font-size: 15px;
+        }
+
+        > a,
+        > p{
+          @include font-smoothing( antialiased );
+
+          padding: 0 50px 0 20px;
+
+          color: $grey-text;
+          font-size: 16px;
+        }
+
+        &.is-active{
+          &:after{
+            @include transform( rotate(-180deg) );
+          }
+
+          ul{
+            @include show(0s);
+
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  // Contact info
+  > div:nth-child(3){
+    text-align: center;
+
+    .button{
+      margin-bottom: 20px;
+    }
+
+    small:first-child{
+      margin-right: 10px;
+    }
+  }
+}
+
+// Subnav
+#navMobile-menu li ul{
+  @include hide(0s);
+
+  position: absolute;
+
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  background-color: $grey-light;
+  border-top: thin solid $grey;
+  border-bottom: thin solid $grey;
+
+  li{
+    padding: 5px 0;
+  }
+
+  a{
+    color: $grey-text;
+  }
+
+  a.button{
+    color: $white;
+  }
+}
