@@ -99,7 +99,8 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
   // Match title
   echo '<div class="list-item-40">';
   	echo '<p>' . get_the_title() . '</p>';
-    echo '<small>' . $arena_location . '</small>';
+    echo '<small class="title-location">' . $arena_location . '</small>';
+    echo '<small class="title-date">' . $match_date->format('j M Y') . ' - ' . $match_time . '</small>';
   echo '</div>';
 
   // Match price range
