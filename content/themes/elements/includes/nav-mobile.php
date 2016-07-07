@@ -1,6 +1,6 @@
 <nav id="navMobile">
   <div>
-    <a>close <i class="material-icons">&#xE5CD;</i></a>
+    <a id="navMobile-close">close <i class="material-icons">&#xE5CD;</i></a>
   </div>
 
   <div id="navMobile-menu">

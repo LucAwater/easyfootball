@@ -64,7 +64,7 @@
         <?php include( 'includes/nav.php' ); ?>
 
         <a class="button button-sec button-service" href="<?php echo home_url(); ?>/kundtjanst"><i class="material-icons">&#xE0CA;</i> Kundtjänst</a>
-        <a class="button button-sec button-menu"><i class="material-icons">&#xE5D2;</i> Meny</a>
+        <a id="navMobile-open" class="button button-sec button-menu"><i class="material-icons">&#xE5D2;</i> Meny</a>
       </div>
     </div>
 
