@@ -95,3 +95,15 @@ body > header .header-content > div{
     }
   }
 }
+
+@media all and (max-width: 800px){
+  body > header .header-content{
+    form{
+      display: none;
+    }
+  }
+
+  body > header .header-bottom{
+    display: none;
+  }
+}

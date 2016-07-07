@@ -137,3 +137,9 @@
     color: $white;
   }
 }
+
+@media all and (min-width: 1280px){
+  #navMobile{
+    display: none;
+  }
+}

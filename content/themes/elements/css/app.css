@@ -983,6 +983,12 @@ body > header .header-content > div .button-menu {
     display: none; }
   body > header .header-content > div .button-menu {
     display: inline-block; } }
+@media all and (max-width: 800px) {
+  body > header .header-content form {
+    display: none; }
+
+  body > header .header-bottom {
+    display: none; } }
 body > footer {
   z-index: 1100;
   padding: 0;
@@ -1141,7 +1147,8 @@ header .header-content nav > ul > li ul {
     header .header-content nav > ul > li ul li.view-more a, header .header-content nav > ul > li ul li.view-more button,
     header .header-content nav > ul > li ul li.view-more input[type="submit"] {
       width: 100%;
-      overflow: visible; }
+      overflow: visible;
+      color: white; }
     header .header-content nav > ul > li ul li.view-more:hover, header .header-content nav > ul > li ul li.view-more:focus {
       background-color: transparent; }
       header .header-content nav > ul > li ul li.view-more:hover a, header .header-content nav > ul > li ul li.view-more:hover button,
@@ -1336,6 +1343,9 @@ header .header-content nav > ul > li ul {
   #navMobile-menu li ul input.button[type="submit"] {
     color: white; }
 
+@media all and (min-width: 1280px) {
+  #navMobile {
+    display: none; } }
 #breadcrumb {
   height: auto;
   color: #727272; }
