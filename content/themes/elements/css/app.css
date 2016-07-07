@@ -855,7 +855,8 @@ html,
 body {
   height: auto !important;
   min-height: 100%;
-  background: white; }
+  overflow-x: hidden;
+  background-color: white; }
 
 body > header > div,
 body > footer > div,
