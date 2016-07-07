@@ -1827,6 +1827,18 @@ aside {
   border-color: #cc2e2e;
   background-color: rgba(204, 46, 46, 0.2); }
 
+@media all and (max-width: 800px) {
+  .alert {
+    padding: 10px;
+    font-size: 12px; }
+    .alert > * {
+      margin-right: 0; }
+    .alert p, .alert p .read-more, p .alert .read-more, .alert .tooltip:after, .alert a, .alert button,
+    .alert input[type="submit"] {
+      font-size: 12px; }
+    .alert .alert-icon {
+      width: 30px;
+      padding-left: 10px; } }
 .tooltip img {
   width: 20px; }
 .tooltip:after {

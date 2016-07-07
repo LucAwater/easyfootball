@@ -43,3 +43,24 @@
   border-color: rgba(204, 46, 46, 1);
   background-color: rgba(204, 46, 46, 0.2);
 }
+
+@media all and (max-width: 800px){
+  .alert{
+    padding: 10px;
+
+    font-size: 12px;
+
+    > *{
+      margin-right: 0;
+    }
+
+    p, a{
+      font-size: 12px;
+    }
+
+    .alert-icon{
+      width: 30px;
+      padding-left: 10px;
+    }
+  }
+}
