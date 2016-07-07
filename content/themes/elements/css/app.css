@@ -984,6 +984,8 @@ body > header .header-content > div .button-menu {
   body > header .header-content > div .button-menu {
     display: inline-block; } }
 @media all and (max-width: 800px) {
+  body > header .header-content .button-menu {
+    padding: 0 15px; }
   body > header .header-content form {
     display: none; }
 
