@@ -36,6 +36,9 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/favicon-152.png">
+
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>
