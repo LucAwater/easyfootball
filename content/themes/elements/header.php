@@ -38,6 +38,8 @@
 
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/favicon-144.png">
 
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
