@@ -46,8 +46,7 @@
       <a href="<?php echo home_url() . '/ligor'; ?>">Ligor</a>
 
       <?php
-      featured_lists_leagues();
-      $leagues = featured_lists_leagues();
+      $leagues = get_terms( 'league', array('hide_empty' => false,) );
 
       if( $leagues ):
         echo '<ul>';
@@ -61,7 +60,7 @@
           }
 
           for( $x = 0; $x < $loop_max; $x++ ){
-            $league = get_term_by('id', $leagues[$x], 'league');
+            $league = $leagues[$x];
             $league_acf = $league->taxonomy . '_' . $league->term_id;
             $league_name = $league->name;
             $league_link = get_term_link($league, 'league');
