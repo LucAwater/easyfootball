@@ -11,7 +11,7 @@ function data_get_teams(){
   $handle = fopen($data_file_link, "r");
 
   // Loop through rows of csv file
-  while (($data = fgetcsv($handle, ";")) !== FALSE) {
+  while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
     // $data = array_map("utf8_encode", $data);
 
