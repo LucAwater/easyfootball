@@ -20,7 +20,6 @@ $region_leagues = get_field( 'region_childLeagues', $region_id );
         foreach($region_leagues as $league):
           if( $term->term_id != $league ){
             $league_term = get_term_by('id', $league, 'league');
-
             echo '<li><a href="' . get_term_link($league) . '">' . $league_term->name . '</a></li>';
           }
         endforeach;

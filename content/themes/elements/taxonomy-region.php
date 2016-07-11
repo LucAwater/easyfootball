@@ -38,9 +38,11 @@ get_template_part( 'taxonomy', 'header' );
         $league_link = get_term_link($league, 'league');
 
         $image = get_field('league_imageFeatured', $league);
-        $image_url = $image['sizes']['medium'];
-        $image_width = $image['sizes']['medium-width'];
-        $image_height = $image['sizes']['medium-height'];
+        if( $image ){
+          $image_url = $image['sizes']['medium'];
+          $image_width = $image['sizes']['medium-width'];
+          $image_height = $image['sizes']['medium-height'];
+        }
         ?>
 
         <li>
@@ -52,11 +54,11 @@ get_template_part( 'taxonomy', 'header' );
                 <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-league.png" />
               <?php endif; ?>
 
-              <h4 href="<?php echo $league_link; ?>"><?php echo $league_name; ?></h4>
+              <h4 href="<?php echo ($league_link) ? $league_link: ""; ?>"><?php echo ($league_name) ? $league_name : "League"; ?></h4>
             </figure>
 
             <div class="card-actions">
-              <a class="button button-small button-fullwidth" href="<?php echo $league_link; ?>">view teams</a>
+              <a class="button button-small button-fullwidth" href="<?php echo ($league_link) ? $league_link : ""; ?>">view teams</a>
             </div>
           </div>
         </li>
