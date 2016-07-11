@@ -41,8 +41,8 @@ $import_init = get_field('importer_init', 'option');
 update_field('field_5720b5880d265', 0, 'option');
 
 if( $import_init ){
-  require_once('includes/functions-woocommerce/data-regions.php');
   require_once('includes/functions-woocommerce/data-teams.php');
+  require_once('includes/functions-woocommerce/data-regions.php');
   require_once('includes/functions-woocommerce/data-leagues.php');
   require_once('includes/functions-woocommerce/import-taxonomies.php');
 }
@@ -100,7 +100,7 @@ function add_theme_caps() {
 
     // This only works, because it accesses the class instance.
     // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'edit_theme_options' ); 
+    $role->add_cap( 'edit_theme_options' );
 }
 add_action( 'admin_init', 'add_theme_caps');
 
