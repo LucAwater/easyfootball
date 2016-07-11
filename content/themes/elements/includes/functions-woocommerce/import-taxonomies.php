@@ -47,8 +47,10 @@ function import_regions_updateFields($region, $region_name){
     // region_childLeagues field: get previous data
     $leagues_prev = get_field('region_childLeagues', $term_acf);
 
-    foreach($leagues_prev as $league_prev){
-      array_push($region_leagues, $league_prev);
+    if($leagues_prev){
+      foreach($leagues_prev as $league_prev){
+        array_push($region_leagues, $league_prev);
+      }
     }
 
     // Remove duplicates
