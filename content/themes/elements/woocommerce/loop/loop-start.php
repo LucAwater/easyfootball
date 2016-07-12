@@ -26,7 +26,7 @@ $term =	$wp_query->queried_object;
   <section class="regions">
     <ul class="list list-col">
       <li class="list-col-head">
-        <p class="list-item-40">Country</p>
+        <p class="list-item-40">Land</p>
         <p class="list-item-20"></p>
       </li>
 <?php elseif( $term && $term->taxonomy == 'region' ): ?>
@@ -39,9 +39,9 @@ $term =	$wp_query->queried_object;
   <section class="matches">
     <ul class="list list-col">
       <li class="list-col-head">
-        <p class="list-item-20">Date</p>
-        <p class="list-item-40">Match</p>
-        <p class="list-item-20">Prices</p>
+        <p class="list-item-20">Datum</p>
+        <p class="list-item-40">Matcher</p>
+        <p class="list-item-20">Priser</p>
         <p class="list-item-20"></p>
       </li>
 <?php else: ?>

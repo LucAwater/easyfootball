@@ -18,7 +18,7 @@
     unset($term);
     ?>
     <section>
-      <h3>All teams</h3>
+      <h3>Alla lag</h3>
 
       <ul class="list list-cloud">
         <?php foreach ( $term_list as $key=>$value ): ?>

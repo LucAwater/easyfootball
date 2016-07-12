@@ -58,7 +58,7 @@ get_template_part( 'taxonomy', 'header' );
             </figure>
 
             <div class="card-actions">
-              <a class="button button-small button-fullwidth" href="<?php echo ($league_link) ? $league_link : ""; ?>">view teams</a>
+              <a class="button button-small button-fullwidth" href="<?php echo ($league_link) ? $league_link : ""; ?>">Visa lag</a>
             </div>
           </div>
         </li>
