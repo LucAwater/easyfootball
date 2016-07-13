@@ -69,7 +69,7 @@ section.page-header.page-header-image{
     z-index: 1;
   }
 
-  h1, p{
+  h1, h2, h3, p{
     @include font-smoothing( antialiased );
 
     color: $white;
