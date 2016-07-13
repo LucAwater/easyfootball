@@ -66,8 +66,11 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-  $match_date = get_field('match_date', false, false);
-  $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
+  $match_date_raw = get_field('match_date', false, false);
+  $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
+  $match_date = dateFormat($match_date_raw)[0];
+  $match_date_day = dateFormat($match_date_raw)[1];
+
   $match_time = get_field('match_time');
   $match_location = get_field('match_location');
   $match_location = get_term_by('name', $match_location, 'team');
@@ -92,15 +95,15 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
   // Match date
   echo '<div class="list-item-20">';
-    echo '<p>' . $match_date->format('j M Y') . '</p>';
-    echo '<small>' . $match_date->format('D') . ' ' . $match_time . '</small>';
+    echo '<p>' . $match_date . '</p>';
+    echo '<small>' . $match_date_day . ' ' . $match_time . '</small>';
   echo '</div>';
 
   // Match title
   echo '<div class="list-item-40">';
   	echo '<p>' . get_the_title() . '</p>';
     echo '<small class="title-location">' . $arena_location . '</small>';
-    echo '<small class="title-date">' . $match_date->format('j M Y') . ' - ' . $match_time . '</small>';
+    echo '<small class="title-date">' . $match_date . ' - ' . $match_time . '</small>';
   echo '</div>';
 
   // Match price range

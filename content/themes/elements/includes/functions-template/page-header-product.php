@@ -20,8 +20,10 @@ if( $bg_url ){
 
     <?php
     // Get match data from custom fields of product
-    $match_date = get_field('match_date', false, false);
-    $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
+    $match_date_raw = get_field('match_date', false, false);
+    $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
+    $match_date = dateFormat($match_date_raw, 'sv', '%A, %e %B %G')[0];
+
     $match_time = get_field('match_time');
     $match_location = get_field('match_location');
     $match_location = get_term_by('name', $match_location, 'team');
@@ -48,7 +50,7 @@ if( $bg_url ){
     if( $match_date || $match_time || $match_location ):
       echo '<ul>';
         if( $match_date )
-          echo '<li><p><strong>Date: </strong>' . $match_date->format('l, j F Y') . '</p></li>';
+          echo '<li><p><strong>Date: </strong>' . $match_date . '</p></li>';
 
         if( $match_time )
           echo '<li><p><strong>Time: </strong>' . $match_time . '</p></li>';

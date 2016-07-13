@@ -68,15 +68,16 @@ if( have_posts() ):
                           setup_postdata( $post );
                           $match_name = get_the_title();
                           $match_link = get_the_permalink();
-                          $match_date = get_field('match_date', false, false);
-                          $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
-                          $match_date = $match_date->format('j F Y');
+                          $match_date_raw = get_field('match_date', false, false);
+                          $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
+
+                          $match_date = dateFormat($match_date_raw, 'sv', '%e %B %G')[0];
                           $match_time = get_field('match_time');
                           ?>
 
                           <li>
                             <a href="<?php echo $match_link; ?>"><?php echo $match_name; ?></a>
-                            <small><?php echo ($match_date) ? $match_date : ''; ?><?php echo ($match_time) ? ' at ' . $match_time : ''; ?></small>
+                            <small><?php echo ($match_date) ? $match_date : ''; ?><?php echo ($match_time) ? ', ' . $match_time : ''; ?></small>
                           </li>
 
                           <?php
@@ -124,9 +125,9 @@ if( have_posts() ):
               $event_name = $event->post_title;
               $event_link = get_permalink($event->ID);
 
-              $event_date = get_post_meta($event->ID, 'match_date', true);
-              $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
-              $event_date = $event_date->format('j F Y');
+              $event_date_raw = get_post_meta($event->ID, 'match_date', true);
+              $event_date_raw = DateTime::createFromFormat('Y-m-j', $event_date_raw);
+              $event_date = dateFormat($event_date_raw, 'sv', '%e %B %G')[0];
               $event_time = get_post_meta($event->ID, 'match_time', true);
 
               $event_location = get_post_meta($event->ID, 'match_location', true);
@@ -154,7 +155,7 @@ if( have_posts() ):
 
                   <div class="card-info">
                     <a href="<?php echo $event_link; ?>"><h4 class="card-title"><?php echo $event_name; ?></h4></a>
-                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
+                    <small class="card-subtitle"><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ', ' . $event_time : ''; ?><?php echo ($arena_location) ? ' – ' . $arena_location : ''; ?></small>
                   </div>
 
                   <div class="card-actions">

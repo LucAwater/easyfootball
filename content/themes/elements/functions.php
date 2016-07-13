@@ -5,6 +5,7 @@
 
 // Includes
 require_once('includes/scripts.php');
+require_once('includes/date-format.php');
 require_once('includes/admin/importer.php');
 require_once('includes/admin/tax-region.php');
 require_once('includes/admin/tax-league.php');
