@@ -2034,7 +2034,7 @@ input[type="submit"] {
   font-weight: 500;
   overflow: hidden;
   height: 40px;
-  padding: 0 30px;
+  padding: 0 15px;
   display: inline-block;
   color: white;
   text-align: center;
@@ -2075,7 +2075,7 @@ input[type="submit"] {
   .button .material-icons,
   input[type="submit"] .material-icons {
     margin-top: -4px;
-    margin-left: -6px;
+    margin-left: -3px;
     vertical-align: middle; }
 
 button[disabled="disabled"] {
