@@ -19,13 +19,13 @@ function list_variations() {
           <p class="list-item-40 attributes"><?php echo $name; ?></p>
 
           <?php if(! $var['is_in_stock']): ?>
-            <small class="list-item-40 price">No tickets left. You can request these tickets by clicking the contact button to the right.</small>
+            <small class="list-item-40 price"><?php _e('På förfrågan'); ?></small>
 
             <div class="list-item-20 add-to-cart">
               <?php
-              $email_subject = "Ticket request for " . get_the_title() . ", section: " . $name;
+              $email_subject = "Biljettförfrågan för " . get_the_title() . ", " . $name . " section";
               ?>
-              <a href="mailto:info@easyfootball.se?subject=<?php echo $email_subject; ?>" class="button">Contact</a>
+              <a href="mailto:info@easyfootball.se?subject=<?php echo $email_subject; ?>" class="button"><?php _e('Kontakta mig'); ?></a>
             </div>
           <?php else: ?>
             <p class="list-item-20 price"><?php echo $price; ?></p>
