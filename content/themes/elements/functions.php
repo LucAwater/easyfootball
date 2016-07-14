@@ -64,6 +64,9 @@ function redirect_to_checkout() {
   return $checkout_url;
 }
 
+// Remove "has been added to your cart" message
+add_filter( 'wc_add_to_cart_message', '__return_empty_string' );
+
 // Change button text on archives
 add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
 
