@@ -2887,6 +2887,19 @@ body.woocommerce-checkout form.woocommerce-checkout #payment {
   body.woocommerce-checkout form.woocommerce-checkout #payment .place-order {
     margin-bottom: 0; }
 
+@media screen and (max-width: 1100px) {
+  body.woocommerce-checkout form.woocommerce-checkout {
+    height: auto;
+    overflow: hidden; }
+    body.woocommerce-checkout form.woocommerce-checkout #customer_details,
+    body.woocommerce-checkout form.woocommerce-checkout #order_review,
+    body.woocommerce-checkout form.woocommerce-checkout #payment {
+      float: left;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 40px; }
+    body.woocommerce-checkout form.woocommerce-checkout #order_review {
+      padding: 20px 0 0; } }
 body.woocommerce-order-received .woocommerce > * {
   margin-bottom: 20px; }
 body.woocommerce-order-received .woocommerce h2, body.woocommerce-order-received .woocommerce h3 {
