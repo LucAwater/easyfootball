@@ -1787,6 +1787,27 @@ section.page-header.page-header-image {
 @media screen and (max-width: 600px) {
   .list-card > li {
     width: 100%; } }
+section.matches .list-col .product div:nth-child(2) .title-date {
+  display: none; }
+
+@media all and (max-width: 800px) {
+  section.matches .list-col .list-col-head p:nth-child(1), section.matches .list-col .list-col-head p .read-more:nth-child(1), p section.matches .list-col .list-col-head .read-more:nth-child(1), section.matches .list-col .list-col-head .tooltip:nth-child(1):after,
+  section.matches .list-col .list-col-head p:nth-child(3),
+  section.matches .list-col .list-col-head p .read-more:nth-child(3),
+  p section.matches .list-col .list-col-head .read-more:nth-child(3),
+  section.matches .list-col .list-col-head .tooltip:nth-child(3):after,
+  section.matches .list-col .list-col-head p:nth-child(4),
+  section.matches .list-col .list-col-head p .read-more:nth-child(4),
+  p section.matches .list-col .list-col-head .read-more:nth-child(4),
+  section.matches .list-col .list-col-head .tooltip:nth-child(4):after {
+    display: none; }
+  section.matches .list-col .product div:nth-child(1),
+  section.matches .list-col .product div:nth-child(3) {
+    display: none; }
+  section.matches .list-col .product div:nth-child(2) .title-location {
+    display: none; }
+  section.matches .list-col .product div:nth-child(2) .title-date {
+    display: block; } }
 aside {
   float: right;
   width: 100%;
@@ -2747,27 +2768,6 @@ section.page-header-team .section-body > div {
     display: none; }
   section.page-header-taxonomy .section-body > div {
     width: 100%; } }
-body.tax-team .list-col .product div:nth-child(2) .title-date {
-  display: none; }
-
-@media all and (max-width: 800px) {
-  body.tax-team .list-col .list-col-head p:nth-child(1), body.tax-team .list-col .list-col-head p .read-more:nth-child(1), p body.tax-team .list-col .list-col-head .read-more:nth-child(1), body.tax-team .list-col .list-col-head .tooltip:nth-child(1):after,
-  body.tax-team .list-col .list-col-head p:nth-child(3),
-  body.tax-team .list-col .list-col-head p .read-more:nth-child(3),
-  p body.tax-team .list-col .list-col-head .read-more:nth-child(3),
-  body.tax-team .list-col .list-col-head .tooltip:nth-child(3):after,
-  body.tax-team .list-col .list-col-head p:nth-child(4),
-  body.tax-team .list-col .list-col-head p .read-more:nth-child(4),
-  p body.tax-team .list-col .list-col-head .read-more:nth-child(4),
-  body.tax-team .list-col .list-col-head .tooltip:nth-child(4):after {
-    display: none; }
-  body.tax-team .list-col .product div:nth-child(1),
-  body.tax-team .list-col .product div:nth-child(3) {
-    display: none; }
-  body.tax-team .list-col .product div:nth-child(2) .title-location {
-    display: none; }
-  body.tax-team .list-col .product div:nth-child(2) .title-date {
-    display: block; } }
 body.single-product .page-header {
   text-align: center; }
   body.single-product .page-header p, body.single-product .page-header p .read-more, p body.single-product .page-header .read-more, body.single-product .page-header .tooltip:after,

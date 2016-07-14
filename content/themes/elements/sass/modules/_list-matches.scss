@@ -1,0 +1,42 @@
+section.matches{
+  .list-col{
+    .product{
+      div:nth-child(2){
+        .title-date{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px){
+  section.matches{
+    .list-col{
+      .list-col-head{
+        p:nth-child(1),
+        p:nth-child(3),
+        p:nth-child(4){
+          display: none;
+        }
+      }
+
+      .product{
+        div:nth-child(1),
+        div:nth-child(3){
+          display: none;
+        }
+
+        div:nth-child(2){
+          .title-location{
+            display: none;
+          }
+
+          .title-date{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
