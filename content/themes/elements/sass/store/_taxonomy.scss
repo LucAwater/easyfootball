@@ -35,3 +35,17 @@ section.page-header-team{
     }
   }
 }
+
+@media screen and (max-width: 1100px){
+  section.page-header-taxonomy{
+    .section-body{
+      figure{
+        display: none;
+      }
+
+      > div{
+        width: 100%;
+      }
+    }
+  }
+}
