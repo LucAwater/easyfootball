@@ -54,9 +54,16 @@ global $product;
     <?php page_content_start(); ?>
 
       <?php
-      $type = "info";
-      $message = "This can be some kind of info message about the tickets";
-      alert($type, $message);
+      /*
+       * Info message for product
+       *
+       * Specific for each product
+       */
+      $infoMessage = get_field('product_notice');
+      if( $infoMessage ){
+        $type = "info";
+        alert($type, $infoMessage);
+      }
       ?>
 
       <?php
