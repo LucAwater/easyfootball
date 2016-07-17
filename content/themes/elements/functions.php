@@ -78,10 +78,28 @@ function woo_archive_custom_cart_button_text() {
 add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
 
 function custom_variation_price( $price, $product ) {
-   $price = '';
-   $price .= "<span class='label'>Från</span>" . woocommerce_price($product->get_price());
+  $reflectionObject = new ReflectionObject($product);
+  $property = $reflectionObject->getProperty('prices_array');
+  $property->setAccessible(true);
+  $prices = $property->getValue($product);
+  $prices = next($prices)['price'];
+
+  if($prices){
+    $price = '';
+    $price = min(array_filter($prices));
+    $price = "<span class='label'>Från</span>" . woocommerce_price($price);
+  }
 
    return $price;
+}
+
+// Hides the 'Free!' price notice
+add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
+add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
+add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+
+function hide_free_price_notice( $price ) {
+  return '<small>På förfrågan</small>';
 }
 
 // Removing Woocommerce's standard select replacement
