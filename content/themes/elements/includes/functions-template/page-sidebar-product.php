@@ -27,7 +27,7 @@ if( $match_location ):
 
           <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
         <?php else:  ?>
-          <p><?php _e('Inga sittplatser karta tillgänglig'); ?></p>
+          <p><?php _e('Ingen arenaskiss tillgänglig'); ?></p>
         <?php endif; ?>
       </figure>
     </div>
@@ -36,7 +36,7 @@ if( $match_location ):
   <aside>
     <div>
       <figure class="product-seating">
-        <p><?php _e('Inga sittplatser karta tillgänglig'); ?></p>
+        <p><?php _e('Ingen arenaskiss tillgänglig'); ?></p>
       </figure>
     </div>
   </aside>
