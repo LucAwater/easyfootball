@@ -21,9 +21,10 @@ if( $bg_url ){
     <?php
     // Get match data from custom fields of product
     $match_date_raw = get_field('match_date', false, false);
-    if($match_date_raw)
+    if($match_date_raw){
       $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
       $match_date = dateFormat($match_date_raw, 'sv', '%A, %e %B %G')[0];
+    }
 
     $match_time = get_field('match_time');
     $match_location = get_field('match_location');

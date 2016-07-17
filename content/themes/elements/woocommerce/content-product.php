@@ -67,10 +67,11 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
   $match_date_raw = get_field('match_date', false, false);
-  if($match_date_raw)
+  if($match_date_raw){
     $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
     $match_date = dateFormat($match_date_raw)[0];
     $match_date_day = dateFormat($match_date_raw)[1];
+  }
 
   $match_time = get_field('match_time');
   $match_location = get_field('match_location');
