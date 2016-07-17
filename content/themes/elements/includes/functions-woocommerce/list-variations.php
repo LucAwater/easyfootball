@@ -4,6 +4,12 @@ function list_variations() {
   $parentId = $product->id;
   $variations = $product->get_available_variations();
 
+  // Sort by stock value
+  usort($variations, function($a, $b) {
+    return $b['is_in_stock'] - $a['is_in_stock'];
+  });
+
+
   if(! $variations ){
     echo '<li class="no-tickets"><p>No tickets available</p></li>';
   } else {
