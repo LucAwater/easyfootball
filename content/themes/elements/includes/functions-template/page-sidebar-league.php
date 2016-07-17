@@ -13,7 +13,7 @@ $region_leagues = get_field( 'region_childLeagues', $region_id );
 <?php if( $region_leagues ): ?>
   <aside>
     <div>
-      <h4 class="aside-subheader">Other leagues in <?php echo $region->name; ?></h4>
+      <h4 class="aside-subheader">Andra ligor i <?php echo $region->name; ?></h4>
 
       <ul>
         <?php
@@ -35,7 +35,7 @@ $region_leagues = get_field( 'region_childLeagues', $region_id );
 
       if( $events ){
         ?>
-        <h4 class="aside-subheader">Top Matches</h4>
+        <h4 class="aside-subheader">Toppmatcher</h4>
 
         <ul>
           <?php

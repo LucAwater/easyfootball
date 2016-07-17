@@ -7,7 +7,7 @@
 
     if( $events ){
       ?>
-      <h4 class="aside-subheader">Top Matches</h4>
+      <h4 class="aside-subheader">Toppmatcher</h4>
 
       <ul>
         <?php
@@ -38,7 +38,7 @@
 
     if( $teams ){
       ?>
-      <h4 class="aside-subheader">Top Teams</h4>
+      <h4 class="aside-subheader">Topplag</h4>
 
       <ul>
         <?php
