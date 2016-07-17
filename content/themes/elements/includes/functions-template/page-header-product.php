@@ -50,13 +50,13 @@ if( $bg_url ){
     if( $match_date || $match_time || $match_location ):
       echo '<ul>';
         if( $match_date )
-          echo '<li><p><strong>Date: </strong>' . $match_date . '</p></li>';
+          echo '<li><p><strong>Datum: </strong>' . $match_date . '</p></li>';
 
         if( $match_time )
-          echo '<li><p><strong>Time: </strong>' . $match_time . '</p></li>';
+          echo '<li><p><strong>Tid: </strong>' . $match_time . '</p></li>';
 
         if( $arena_name && $arena_location_city && $arena_location_country )
-          echo '<li><p><strong>Location: </strong>' . $arena_location . '</p></li>';
+          echo '<li><p><strong>Plats: </strong>' . $arena_location . '</p></li>';
       echo '</ul>';
     endif;
     ?>
