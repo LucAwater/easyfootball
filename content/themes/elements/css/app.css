@@ -2773,11 +2773,6 @@ section.page-header-taxonomy .section-body > div {
   section.page-header-taxonomy .section-body > div .expand-container {
     margin-bottom: -20px; }
 
-section.page-header-team .section-body figure img {
-  width: 150px; }
-section.page-header-team .section-body > div {
-  width: calc(100% - 190px); }
-
 @media screen and (max-width: 1100px) {
   section.page-header-taxonomy .section-body figure {
     display: none; }
