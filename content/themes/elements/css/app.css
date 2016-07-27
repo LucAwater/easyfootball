@@ -1695,7 +1695,8 @@ section.page-header.page-header-image {
     display: block; }
   .list-card > li .card-container .card-info h2, .list-card > li .card-container .card-info h3, .list-card > li .card-container .card-info h4,
   .list-card > li .card-container .card-info .card-title {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    color: black; }
   .list-card > li .card-container .card-info .card-subtitle {
     margin-top: -20px;
     color: #727272; }

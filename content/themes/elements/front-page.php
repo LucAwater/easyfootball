@@ -134,6 +134,7 @@ if( have_posts() ):
               $event_location = get_term_by('name', $event_location, 'team');
 
               $event_location_acf = $event_location->taxonomy . '_' . $event_location->term_id;
+              $event_location_logo = get_field('team_logo', $event_location_acf);
               $arena_location_city = get_field('arena_location_city', $event_location_acf);
               $arena_location_country = get_field('arena_location_country', $event_location_acf);
               $arena_location = $arena_location_city . ', ' . $arena_location_country;
@@ -141,15 +142,19 @@ if( have_posts() ):
               $_event = wc_get_product( $event->ID );
               $event_price = $_event->get_price();
 
-              $event_teams = wp_get_post_terms($event->ID, 'team');
+              $team_logo = get_field('team_logo', $event_location_acf);
+              if(! $team_logo ){
+                $team_logo_url = get_template_directory_uri() . '/img/placeholder-team.svg';
+              } else {
+                $team_logo_url = $team_logo['sizes']['medium'];
+              }
               ?>
 
               <li>
                 <div class="card-container">
                   <figure class="card-image">
                     <a href="<?php echo $event_link; ?>">
-                      <?php team_logos($event_location, $event_teams); ?>
-                      <span>VS</span>
+                      <img src="<?php echo $team_logo_url; ?>" />
                     </a>
                   </figure>
 
