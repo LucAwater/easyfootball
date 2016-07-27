@@ -4,12 +4,16 @@ function list_variations() {
   $parentId = $product->id;
   $variations = $product->get_available_variations();
 
-  // Sort by stock value
-  usort($variations, function($a, $b) {
-    return $b['is_in_stock'] - $a['is_in_stock'];
-  });
+  // Obtain a list of columns
+  foreach ($variations as $key => $row) {
+    $var_stock[$key]  = $row['is_in_stock'];
+    $var_price[$key] = $row['display_price'];
+  }
 
+  // Sort the data with stock descending, price ascending
+  array_multisort($var_stock, SORT_DESC, $var_price, SORT_ASC, $variations);
 
+  // List variations
   if(! $variations ){
     echo '<li class="no-tickets"><p>No tickets available</p></li>';
   } else {
