@@ -27,7 +27,10 @@
 // Card figure
 .list-card > li .card-container figure{
   width: 100%;
-  height: 200px;
+  height: 0;
+  min-height: 200px;
+  padding-bottom: 56.25%;
+  overflow: hidden;
 
   background-color: $grey-light;
 
@@ -48,13 +51,22 @@
     width: 100%;
     height: 100%;
     display: block;
+    position: absolute;
   }
 
   img{
-    max-height: 100%;
+    @include transform( translate(-50%, -50%) );
+
+    top: 50%;
+    left: 50%;
+    position: absolute;
+
+    height: auto;
+    max-height: none;
     max-width: none;
+    min-height: 100%;
+    min-width: 100%;
     width: auto;
-    margin: auto;
   }
 
   h2, h3, h4{

@@ -1643,7 +1643,10 @@ section.page-header.page-header-image {
 
 .list-card > li .card-container figure {
   width: 100%;
-  height: 200px;
+  height: 0;
+  min-height: 200px;
+  padding-bottom: 56.25%;
+  overflow: hidden;
   background-color: #f4f4f4; }
   .list-card > li .card-container figure.has-title:after {
     content: "";
@@ -1657,12 +1660,23 @@ section.page-header.page-header-image {
   .list-card > li .card-container figure > input[type="submit"] {
     width: 100%;
     height: 100%;
-    display: block; }
+    display: block;
+    position: absolute; }
   .list-card > li .card-container figure img {
-    max-height: 100%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    height: auto;
+    max-height: none;
     max-width: none;
-    width: auto;
-    margin: auto; }
+    min-height: 100%;
+    min-width: 100%;
+    width: auto; }
   .list-card > li .card-container figure h2, .list-card > li .card-container figure h3, .list-card > li .card-container figure h4 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;

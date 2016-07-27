@@ -19,7 +19,7 @@ if( have_posts() ):
         </section>
 
         <div class="section-body">
-          <ul class="list list-card list-card-shields">
+          <ul class="list list-card">
             <?php
             for( $x = 0; $x < 6; $x++ ){
               $team = get_term_by('id', $teams[$x], 'team');
@@ -118,7 +118,7 @@ if( have_posts() ):
         </div>
 
         <div class="section-body">
-          <ul class="list list-card list-card-matches">
+          <ul class="list list-card">
             <?php
             for( $x = 0; $x < 6; $x++ ){
               $event = get_post($events[$x]);
