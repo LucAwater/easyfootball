@@ -1,8 +1,10 @@
 <?php
 /**
- * Email Addresses
+ * Additional Customer Details
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/emails/email-addresses.php.
+ * This is extra customer data which can be filtered by plugins. It outputs below the order item table.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/emails/email-customer-details.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,7 +15,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates/Emails
- * @version     2.4.0
+ * @version     2.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,3 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
+<h2><?php _e( 'Kunduppgifter', 'woocommerce' ); ?></h2>
+<ul>
+    <?php foreach ( $fields as $field ) : ?>
+        <li><strong><?php echo wp_kses_post( $field['label'] ); ?>:</strong> <span class="text"><?php echo wp_kses_post( $field['value'] ); ?></span></li>
+    <?php endforeach; ?>
+</ul>
