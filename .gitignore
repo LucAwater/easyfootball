@@ -45,7 +45,7 @@ local-config.php
 *.sass-cache*
 /content/themes/elements/sass/.sass-cache
 /content/themes/elements/sass/.sass-cache/*
-content/languages/*
+
 *.codekit
 *.codekit
 *.map
