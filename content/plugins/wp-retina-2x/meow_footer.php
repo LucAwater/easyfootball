@@ -18,9 +18,9 @@
 				</script>
 			<?php
 		}
-		function by_jordy_meow() {
+		function by_jordy_meow( $hide_ads = false ) {
 			echo '<div><span style="font-size: 13px; position: relative; top: -6px;">Developed by <a style="text-decoration: none;" target="_blank" href="http://apps.meow.fr">Jordy Meow</a></span>';
-			if ( !defined( 'WP_HIDE_DONATION_BUTTONS' ) )
+			if ( !defined( 'WP_HIDE_DONATION_BUTTONS' ) && !$hide_ads )
 				echo ' <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" title="Jordy Meow" href="http://profiles.wordpress.org/TigrouMeow/"></a>';
 			echo '</div>';
 		}
@@ -31,7 +31,8 @@
 			if ( defined( 'WP_HIDE_DONATION_BUTTONS' ) && WP_HIDE_DONATION_BUTTONS == true )
 				return;
 			if ( $showWPE ) {
-				echo '<a style="float: right;" target="_blank" href="http://shareasale.com/r.cfm?b=786112&amp;u=767054&amp;m=41388&amp;urllink=&amp;afftrack="><img src="http://static.shareasale.com/image/41388/ShareASale-4Ss-728x90.jpg" height="60" border="0" /></a>';
+				echo '<a style="float: right;" target="_blank" href="http://www.shareasale.com/u.cfm?D=339321&U=767054&M=41388%20">
+				<img src="' . trailingslashit( WP_PLUGIN_URL ) . trailingslashit( 'media-file-renamer/img') . 'wpengine.png" height="60" border="0" /></a>';
 			}
 		}
 	}
