@@ -24,6 +24,11 @@ body.woocommerce-checkout{
 
       h3{
         margin-bottom: 20px;
+        float: left;
+      }
+
+      > .button{
+        float: right;
       }
 
       .order-total{

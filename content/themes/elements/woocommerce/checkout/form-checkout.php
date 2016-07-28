@@ -39,6 +39,13 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	<div id="order_review" class="woocommerce-checkout-review-order">
 		<h3 id="order_review_heading"><?php _e( 'Din beställning', 'woocommerce' ); ?></h3>
 
+    <?php
+    // Edit order button
+    global $woocommerce;
+    $cart_url = $woocommerce->cart->get_cart_url();
+    ?>
+    <a class="button button-small" href="<?php echo $cart_url; ?>"><?php _e('Hantera din varukorg'); ?></a>
+
 		<?php woocommerce_order_review(); ?>
 	</div>
 
