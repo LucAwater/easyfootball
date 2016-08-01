@@ -2852,7 +2852,7 @@ body.woocommerce-cart .woocommerce {
   margin: auto; }
   body.woocommerce-cart .woocommerce .cart-collaterals {
     margin-top: 40px;
-    padding-top: 20px;
+    padding: 20px;
     border-top: thin solid #e0e0e0;
     text-align: right; }
     body.woocommerce-cart .woocommerce .cart-collaterals h3, body.woocommerce-cart .woocommerce .cart-collaterals h3 span {
