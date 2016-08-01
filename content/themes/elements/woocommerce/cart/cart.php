@@ -146,7 +146,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="cart-collaterals">
 
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+  <div class="cart_totals <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
+    <table cellspacing="0" class="shop_table shop_table_responsive">
+    	<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
+
+      <h3 data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>" class="is-bold"><?php _e("Totalt", "woocommerce"); ?>: <?php wc_cart_totals_order_total_html(); ?></h3>
+
+      <?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
+
+      <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+    </table>
+  </div>
 
 </div>
 
