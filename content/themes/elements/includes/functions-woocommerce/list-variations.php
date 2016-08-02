@@ -35,7 +35,7 @@ function list_variations() {
               <?php
               $email_subject = "Biljettförfrågan för " . get_the_title() . ", " . $name . " section";
               ?>
-              <a href="mailto:info@easyfootball.se?subject=<?php echo $email_subject; ?>" class="button"><?php _e('Kontakta mig'); ?></a>
+              <a href="mailto:info@easyfootball.se?subject=<?php echo $email_subject; ?>" class="button button-sec"><?php _e('Kontakta mig'); ?></a>
             </div>
           <?php else: ?>
             <p class="list-item-20 price"><?php echo $price; ?></p>
