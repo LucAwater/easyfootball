@@ -44,7 +44,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
     global $woocommerce;
     $cart_url = $woocommerce->cart->get_cart_url();
     ?>
-    <a class="button button-small" href="<?php echo $cart_url; ?>"><?php _e('Hantera din varukorg'); ?></a>
+    <a class="button button-small button-sec" href="<?php echo $cart_url; ?>"><?php _e('Hantera din varukorg'); ?></a>
 
 		<?php woocommerce_order_review(); ?>
 	</div>
