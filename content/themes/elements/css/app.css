@@ -2844,6 +2844,10 @@ body.single-product aside figure {
       -ms-transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg); }
+  body.single-product aside figure .zoom-out {
+    top: 50px; }
+    body.single-product aside figure .zoom-out:after {
+      display: none; }
 
 @media screen and (max-width: 1100px) {
   body.single-product main > .product .summary .content-container {

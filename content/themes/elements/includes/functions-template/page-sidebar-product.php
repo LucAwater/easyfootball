@@ -23,9 +23,10 @@ if( $match_location ):
     <div>
       <figure class="product-seating">
         <?php if($map): ?>
-          <a class="zoom"></a>
+          <a class="zoom zoom-in"></a>
+          <a class="zoom zoom-out"></a>
 
-          <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
+          <div id="mapSeating"><img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" /></div>
         <?php else:  ?>
           <p><?php _e('Ingen arenaskiss tillgänglig'); ?></p>
         <?php endif; ?>

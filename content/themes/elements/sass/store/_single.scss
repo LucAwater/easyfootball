@@ -93,6 +93,14 @@ body.single-product aside{
         @include transform( rotate(90deg) );
       }
     }
+
+    .zoom-out{
+      top: 50px;
+
+      &:after{
+        display: none;
+      }
+    }
   }
 }
 
