@@ -15,9 +15,9 @@ if( $match_location ):
   $category_term = $category_tax . '_' . $category_id;
 
   $map = get_field('seating_map', $category_term);
-  $map_url = $map['sizes']['medium'];
-  $map_width = $map['sizes']['medium-width'];
-  $map_height = $map['sizes']['medium-height'];
+  $map_url = $map['sizes']['large'];
+  $map_width = $map['sizes']['large-width'];
+  $map_height = $map['sizes']['large-height'];
   ?>
   <aside>
     <div>
