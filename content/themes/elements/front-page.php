@@ -37,6 +37,9 @@ if( have_posts() ):
               $team_matches = get_posts(array(
                 'post_type' => 'product',
                 'numberposts' => 3,
+                'meta_key'    => 'match_date',
+                'orderby'     => 'meta_value',
+                'order'       => 'asc',
                 'tax_query' => array(
                   array(
                     'taxonomy' => 'team',
