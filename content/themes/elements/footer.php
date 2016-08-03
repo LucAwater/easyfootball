@@ -5,10 +5,25 @@
   <footer>
     <div class="footer-content">
       <ul>
-        <li>
-          <h4>Betalningsmetoder</h4>
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo-payex.png" />
-        </li>
+        <?php
+        $col1_title = get_field('footer_col1_title', 'option');
+        $col1_images = get_field('footer_col1_images', 'option');
+        if( $col1_title || $col1_images ):
+        ?>
+          <li>
+            <h4><?php echo $col1_title; ?></h4>
+
+            <?php
+            foreach($col1_images as $image){
+              $image_url = $image['sizes']['medium'];
+              $image_width = $image['sizes']['medium-width'];
+              $image_height = $image['sizes']['medium-height'];
+
+              echo '<img src="' . $image_url . '" width="' . $image_width . '" height="' . $image_height . '" />';
+            }
+            ?>
+          </li>
+        <?php endif; ?>
 
         <?php
         $col2_title = get_field('footer_col2_title', 'option');
