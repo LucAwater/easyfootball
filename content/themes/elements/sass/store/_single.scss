@@ -108,9 +108,29 @@ body.single-product aside{
   body.single-product{
     main > .product{
       .summary{
+        aside{
+          display: block;
+          width: 100%;
+          max-width: 400px;
+        }
+
         .content-container{
           max-width: none;
           padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-only}{
+  body.single-product{
+    main > .product{
+      .summary{
+        aside{
+          > div{
+            margin-bottom: 20px;
+          }
         }
       }
     }

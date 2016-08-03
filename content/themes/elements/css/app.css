@@ -2850,9 +2850,16 @@ body.single-product aside figure {
       display: none; }
 
 @media screen and (max-width: 1100px) {
+  body.single-product main > .product .summary aside {
+    display: block;
+    width: 100%;
+    max-width: 400px; }
   body.single-product main > .product .summary .content-container {
     max-width: none;
     padding-left: 0; } }
+@media only screen and (max-width: 500px) {
+  body.single-product main > .product .summary aside > div {
+    margin-bottom: 20px; } }
 body.woocommerce-cart .woocommerce {
   max-width: 800px;
   margin: auto; }
