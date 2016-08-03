@@ -1,3 +1,8 @@
+/*
+ * Panzoom plugin
+ * https://github.com/timmywil/jquery.panzoom/blob/master/README.md#loading-panzoom
+ */
+
 (function($) {
 
   var el = $('#mapSeating');
