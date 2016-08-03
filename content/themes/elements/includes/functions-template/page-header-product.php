@@ -62,5 +62,7 @@ if( $bg_url ){
       echo '</ul>';
     endif;
     ?>
+
+    <a class="button button-sec button-small" href="#productTickets"><i class="material-icons">&#xE313;</i> <?php _e('Visa biljetter', 'woocommerce'); ?></a>
   </div>
 </section>

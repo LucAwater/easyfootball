@@ -18,6 +18,17 @@ body.single-product{
         margin-right: 0;
       }
     }
+
+    // 'Visa biljetter'
+    .section-body > .button{
+      display: none;
+
+      margin-top: 20px;
+
+      .material-icons{
+        margin-top: 0;
+      }
+    }
   }
 
   main > .product{
@@ -143,6 +154,10 @@ body.single-product aside{
             display: block;
           }
         }
+      }
+
+      .section-body > .button{
+        display: inline-block;
       }
     }
   }

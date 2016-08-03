@@ -2800,6 +2800,11 @@ body.single-product .page-header {
     margin-right: 15px; }
   body.single-product .page-header ul li:last-child {
     margin-right: 0; }
+  body.single-product .page-header .section-body > .button {
+    display: none;
+    margin-top: 20px; }
+    body.single-product .page-header .section-body > .button .material-icons {
+      margin-top: 0; }
 body.single-product main > .product {
   height: auto;
   overflow: hidden; }
@@ -2870,7 +2875,9 @@ body.single-product aside figure {
     body.single-product .page-header ul li:last-child {
       margin-bottom: 0; }
     body.single-product .page-header ul li strong {
-      display: block; } }
+      display: block; }
+  body.single-product .page-header .section-body > .button {
+    display: inline-block; } }
 @media only screen and (max-width: 500px) {
   body.single-product main > .product .summary aside > div {
     margin-bottom: 20px; } }

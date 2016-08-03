@@ -35,7 +35,7 @@ global $product;
   	 	return;
   	 }
   ?>
-  
+
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook.
@@ -72,7 +72,7 @@ global $product;
        * Each variation has its own form
        */
       ?>
-      <div class="variations">
+      <div id="productTickets" class="variations">
         <ul class="list-col">
           <li class="list-col-head">
             <p class="list-item-40 attributes">Sektion</p>
