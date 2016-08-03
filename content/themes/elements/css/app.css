@@ -1639,9 +1639,9 @@ section.page-header.page-header-image {
     padding: 0 10px;
     margin-bottom: 40px; }
     .list-card > li .card-container {
-      -moz-border-radius: 3px;
-      -webkit-border-radius: 3px;
-      border-radius: 3px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
       overflow: hidden;
       border: thin solid #e0e0e0;
       background-color: white; }
