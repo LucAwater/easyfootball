@@ -108,6 +108,10 @@ section.page-header.page-header-image{
   section.page-header{
     text-align: left !important;
 
+    .section-body{
+      padding: 20px 0;
+    }
+
     h1{
       font-size: 11vw;
     }

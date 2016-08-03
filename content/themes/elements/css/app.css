@@ -1459,6 +1459,8 @@ section.page-header.page-header-image {
 @media screen and (max-width: 700px) {
   section.page-header {
     text-align: left !important; }
+    section.page-header .section-body {
+      padding: 20px 0; }
     section.page-header h1 {
       font-size: 11vw; } }
 .arrow {
@@ -2859,6 +2861,16 @@ body.single-product aside figure {
   body.single-product main > .product .summary .content-container {
     max-width: none;
     padding-left: 0; } }
+@media screen and (max-width: 700px) {
+  body.single-product .page-header h1 {
+    font-size: 30px; }
+  body.single-product .page-header ul li {
+    width: 100%;
+    margin-bottom: 1em; }
+    body.single-product .page-header ul li:last-child {
+      margin-bottom: 0; }
+    body.single-product .page-header ul li strong {
+      display: block; } }
 @media only screen and (max-width: 500px) {
   body.single-product main > .product .summary aside > div {
     margin-bottom: 20px; } }

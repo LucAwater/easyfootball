@@ -123,6 +123,31 @@ body.single-product aside{
   }
 }
 
+@media screen and (max-width: 700px){
+  body.single-product{
+    .page-header{
+      h1{
+        font-size: 30px;
+      }
+
+      ul{
+        li{
+          width: 100%;
+          margin-bottom: 1em;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          strong{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media #{$small-only}{
   body.single-product{
     main > .product{
