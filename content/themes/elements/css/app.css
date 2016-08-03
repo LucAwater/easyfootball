@@ -1456,7 +1456,9 @@ section.page-header.page-header-image {
     display: none; } }
 @media screen and (max-width: 700px) {
   section.page-header {
-    text-align: left !important; } }
+    text-align: left !important; }
+    section.page-header h1 {
+      font-size: 11vw; } }
 .arrow {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);

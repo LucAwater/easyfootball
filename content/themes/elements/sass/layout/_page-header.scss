@@ -107,5 +107,9 @@ section.page-header.page-header-image{
 @media screen and (max-width: 700px){
   section.page-header{
     text-align: left !important;
+
+    h1{
+      font-size: 11vw;
+    }
   }
 }
