@@ -17,3 +17,11 @@ section{
     margin-bottom: 40px;
   }
 }
+
+@media #{$small-only}{
+  section{
+    h2, h3, h4{
+      margin-bottom: 20px;
+    }
+  }
+}

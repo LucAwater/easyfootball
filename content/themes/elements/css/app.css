@@ -2365,6 +2365,9 @@ section {
   section h2, section h3, section body.woocommerce-cart .woocommerce .cart-collaterals h3 span, body.woocommerce-cart .woocommerce .cart-collaterals h3 section span, section h4 {
     margin-bottom: 40px; }
 
+@media only screen and (max-width: 500px) {
+  section h2, section h3, section body.woocommerce-cart .woocommerce .cart-collaterals h3 span, body.woocommerce-cart .woocommerce .cart-collaterals h3 section span, section h4 {
+    margin-bottom: 20px; } }
 section.text .section-header,
 section.text .section-body {
   max-width: 700px;
