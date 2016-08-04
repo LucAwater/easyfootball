@@ -32,7 +32,7 @@
 
   <div class="aside-teams">
     <?php
-    // Featured events
+    // Featured teams
     featured_lists_teams();
     $teams = featured_lists_teams();
 
@@ -56,7 +56,7 @@
           }
           ?>
           <li>
-            <img src="<?php echo $team_logo_url; ?>" />
+            <figure><img src="<?php echo $team_logo_url; ?>" /></figure>
             <a href="<?php echo $team_link; ?>"><?php echo $team_name; ?></a>
           </li>
         <?php } ?>

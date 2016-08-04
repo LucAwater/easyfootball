@@ -17,6 +17,10 @@ aside{
       li{
         padding: 5px 0;
 
+        &:last-child{
+          padding-bottom: 0;
+        }
+
         small{
           display: block;
           padding: 5px 0;
@@ -28,15 +32,25 @@ aside{
       li{
         padding: 10px 0;
 
-        img,
+        figure,
         a{
           display: inline-block;
         }
 
-        img{
-          width: 50px;
+        figure{
+          @include border-radius( 100% );
+
+          width: 40px;
+          height: 40px;
           margin-right: 15px;
           vertical-align: middle;
+          overflow: hidden;
+
+          img{
+            height: 100%;
+            width: auto;
+            max-width: none;
+          }
         }
       }
     }
