@@ -101,7 +101,7 @@ body > header .header-content > div{
     .button-menu{
       padding: 0 15px;
     }
-    
+
     form{
       display: none;
     }
@@ -109,5 +109,17 @@ body > header .header-content > div{
 
   body > header .header-bottom{
     display: none;
+  }
+}
+
+@media all and (max-width: 350px){
+  body > header .header-content > div{
+    > .button{
+      width: 50px;
+
+      i{
+        margin: 0;
+      }
+    }
   }
 }

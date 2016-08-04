@@ -1022,6 +1022,11 @@ body > header .header-content > div .button-menu {
 
   body > header .header-bottom {
     display: none; } }
+@media all and (max-width: 350px) {
+  body > header .header-content > div > .button {
+    width: 50px; }
+    body > header .header-content > div > .button i {
+      margin: 0; } }
 body > footer {
   z-index: 1100;
   padding: 0;
