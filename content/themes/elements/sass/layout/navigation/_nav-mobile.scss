@@ -11,7 +11,7 @@
   max-width: 400px;
   height: 100%;
 
-  background-color: $white;
+  background-color: $grey-light;
 
   &.is-active{
     @include transform( translateX(0) );
@@ -35,7 +35,9 @@
     border-bottom: thin solid $grey;
 
     .material-icons{
-      color: $color-accent;
+      margin-top: -2px;
+      margin-left: 0;
+      margin-right: -3px;
     }
   }
 
@@ -43,6 +45,7 @@
   #navMobile-menu{
     padding: 0;
 
+    background-color: $white;
     border-bottom: thin solid $grey;
 
     > div{
@@ -102,16 +105,15 @@
   > div:nth-child(3){
     text-align: center;
 
+    background-color: $grey-light;
+
     .button{
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     small{
       display: block;
-    }
-    
-    small:first-child{
-      margin-right: 10px;
+      margin-bottom: 5px;
     }
   }
 }

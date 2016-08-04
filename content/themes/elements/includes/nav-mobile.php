@@ -1,6 +1,6 @@
 <nav id="navMobile">
   <div>
-    <a id="navMobile-close"><?php _e('Stäng'); ?> <i class="material-icons">&#xE5CD;</i></a>
+    <a id="navMobile-close" class="button button-sec"><?php _e('Stäng'); ?> <i class="material-icons">&#xE5CD;</i></a>
   </div>
 
   <div id="navMobile-menu">
