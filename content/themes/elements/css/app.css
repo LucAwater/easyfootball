@@ -1770,6 +1770,7 @@ section.page-header.page-header-image {
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  top: 0;
   left: 50%;
   position: absolute; }
 
