@@ -1781,6 +1781,7 @@ section.page-header.page-header-image {
   text-align: center; }
   .list-card.list-card-teams > li .card-container figure {
     margin-bottom: 20px;
+    border-radius: 5px;
     background-color: white; }
   .list-card.list-card-teams > li .card-container .button {
     margin: auto; }
