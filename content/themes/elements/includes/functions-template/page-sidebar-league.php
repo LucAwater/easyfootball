@@ -51,9 +51,9 @@ $region_leagues = array_diff($region_leagues, array($term->term_id));
           $event_name = $event->post_title;
           $event_link = get_permalink($event->ID);
 
-          $event_date = get_post_meta($event->ID, 'match_date', true);
-          $event_date = DateTime::createFromFormat('Y-m-j', $event_date);
-          $event_date = $event_date->format('j F Y');
+          $event_date = get_post_meta($event->ID, 'match_date', false, false);
+          $event_date_raw = DateTime::createFromFormat('Y-m-j', $event_date[0]);
+          $event_date = dateFormat($event_date_raw, "sv", "%e %B %G")[0];
           $event_time = get_post_meta($event->ID, 'match_time', true);
           ?>
           <li>

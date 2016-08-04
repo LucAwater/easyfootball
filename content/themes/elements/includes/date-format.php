@@ -1,4 +1,7 @@
 <?php
+/*
+ * Get different formats from table on: http://php.net/manual/en/function.strftime.php
+ */
 function dateFormat($date_raw, $lang = 'sv', $format = '%e %b %G') {
   switch ($lang) {
     case 'sv':
