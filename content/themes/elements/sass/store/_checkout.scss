@@ -81,6 +81,14 @@ body.woocommerce-checkout form.woocommerce-checkout{
 
     .place-order{
       margin-bottom: 0;
+
+      small a{
+        color: $color-accent;
+      }
+
+      input[type="submit"]{
+        margin-top: 20px;
+      }
     }
   }
 }

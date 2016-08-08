@@ -3006,6 +3006,11 @@ body.woocommerce-checkout form.woocommerce-checkout #payment {
       margin-left: auto; }
   body.woocommerce-checkout form.woocommerce-checkout #payment .place-order {
     margin-bottom: 0; }
+    body.woocommerce-checkout form.woocommerce-checkout #payment .place-order small a, body.woocommerce-checkout form.woocommerce-checkout #payment .place-order small button,
+    body.woocommerce-checkout form.woocommerce-checkout #payment .place-order small input[type="submit"] {
+      color: #FF5252; }
+    body.woocommerce-checkout form.woocommerce-checkout #payment .place-order input[type="submit"] {
+      margin-top: 20px; }
 
 @media screen and (max-width: 1100px) {
   body.woocommerce-checkout form.woocommerce-checkout {
