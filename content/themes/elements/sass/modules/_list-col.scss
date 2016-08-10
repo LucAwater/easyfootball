@@ -1,7 +1,9 @@
 .list-col{
+  width: 100%;
+
   border: thin solid $grey;
 
-  li.list-col-head{
+  .list-col-head{
     height: 40px;
 
     background-color: $white;
@@ -46,6 +48,48 @@
     .price{
       span.label{
         display: block;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px){
+  .list-col{
+    .list-col-head{
+      p{
+        font-size: 10px;
+      }
+    }
+
+    li{
+      height: auto;
+      padding: 10px;
+
+      font-size: 12px;
+
+      *{
+        font-size: 12px;
+      }
+
+      form{
+        height: auto;
+      }
+
+      [class^="list-item-"]{
+        vertical-align: top;
+      }
+
+      select{
+        height: 30px;
+        padding: 5px;
+        padding-right: 25px;
+      }
+
+      .button{
+        height: 30px;
+        padding: 0 10px;
+
+        line-height: 30px;
       }
     }
   }

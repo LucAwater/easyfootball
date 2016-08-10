@@ -11,7 +11,7 @@ function data_get_teams(){
   $handle = fopen($data_file_link, "r");
 
   // Loop through rows of csv file
-  while (($data = fgetcsv($handle, ";")) !== FALSE) {
+  while (($data = fgetcsv($handle, ",")) !== FALSE) {
 
     // $data = array_map("utf8_encode", $data);
 
@@ -29,9 +29,9 @@ function data_get_teams(){
         $content_data = array_combine($headers, $content_data);
       }
 
-      // Check if region is already in array
+      // Check if region is already in array, if not:
       if(! in_array($content_data['country'], $regions) ){
-        // Push league to leagues array
+        // Push region to regions array
         array_push($regions, $content_data['country']);
       }
 

@@ -51,7 +51,7 @@ page_content_start();
             </figure>
 
             <h4><?php echo $team_name; ?></h4>
-            <a href="<?php echo $team_link; ?>" class="button button-small">View matches</a>
+            <a href="<?php echo $team_link; ?>" class="button button-small">Visa matcher</a>
           </div>
         </li>
 

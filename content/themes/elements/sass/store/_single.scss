@@ -1,15 +1,10 @@
 body.single-product{
   .page-header{
-    @include font-smoothing( antialiased );
-    @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
-
-    color: $white;
     text-align: center;
-    background-color: $grey-dark;
 
-    p{
-      @include font-smoothing( antialiased );
-
+    p,
+    strong{
+      color: $white;
       font-size: 18px;
     }
 
@@ -23,6 +18,17 @@ body.single-product{
         margin-right: 0;
       }
     }
+
+    // 'Visa biljetter'
+    .section-body > .button{
+      display: none;
+
+      margin-top: 20px;
+
+      .material-icons{
+        margin-top: 0;
+      }
+    }
   }
 
   main > .product{
@@ -34,15 +40,22 @@ body.single-product{
       overflow: hidden;
 
       aside{
+        max-width: 35%;
         float: left;
 
-        max-width: 400px;
         padding: 0;
+
+        div{
+          padding: 0;
+
+          border: none;
+          background-color: transparent;
+        }
       }
 
       .content-container{
-        max-width: 700px;
-        padding-left: 20px;
+        max-width: 65%;
+        padding-left: 40px;
         padding-right: 0;
 
         border: none;
@@ -91,6 +104,14 @@ body.single-product aside{
         @include transform( rotate(90deg) );
       }
     }
+
+    .zoom-out{
+      top: 50px;
+
+      &:after{
+        display: none;
+      }
+    }
   }
 }
 
@@ -98,8 +119,58 @@ body.single-product aside{
   body.single-product{
     main > .product{
       .summary{
+        aside{
+          display: block;
+          width: 100%;
+          max-width: 400px;
+        }
+
         .content-container{
+          max-width: none;
           padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px){
+  body.single-product{
+    .page-header{
+      h1{
+        font-size: 30px;
+      }
+
+      ul{
+        li{
+          width: 100%;
+          margin-bottom: 1em;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          strong{
+            display: block;
+          }
+        }
+      }
+
+      .section-body > .button{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media #{$small-only}{
+  body.single-product{
+    main > .product{
+      .summary{
+        aside{
+          > div{
+            margin-bottom: 20px;
+          }
         }
       }
     }

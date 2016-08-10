@@ -23,7 +23,7 @@ if( have_posts() ):
 
       page_content_start();
 
-        echo '<h3>All leagues</h3>';
+        echo '<h3>Alla ligor</h3>';
 
         echo '<ul class="list list-cloud">';
 

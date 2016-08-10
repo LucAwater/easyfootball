@@ -15,7 +15,7 @@ input[type="submit"]{
   overflow: hidden;
 
   height: 40px;
-  padding: 0 30px;
+  padding: 0 15px;
   display: inline-block;
 
   color: $white;
@@ -50,6 +50,12 @@ input[type="submit"]{
 
   &.button-fullwidth{
     width: 100%;
+  }
+
+  .material-icons{
+    margin-top: -4px;
+    margin-left: -3px;
+    vertical-align: middle;
   }
 }
 

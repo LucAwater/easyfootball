@@ -15,19 +15,20 @@ if( $match_location ):
   $category_term = $category_tax . '_' . $category_id;
 
   $map = get_field('seating_map', $category_term);
-  $map_url = $map['sizes']['medium'];
-  $map_width = $map['sizes']['medium-width'];
-  $map_height = $map['sizes']['medium-height'];
+  $map_url = $map['sizes']['large'];
+  $map_width = $map['sizes']['large-width'];
+  $map_height = $map['sizes']['large-height'];
   ?>
   <aside>
     <div>
       <figure class="product-seating">
         <?php if($map): ?>
-          <a class="zoom"></a>
-          
-          <img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" />
+          <a class="zoom zoom-in"></a>
+          <a class="zoom zoom-out"></a>
+
+          <div id="mapSeating"><img src="<?php echo $map_url; ?>" width="<?php echo $map_width; ?>" height="<?php echo $map_height; ?>" /></div>
         <?php else:  ?>
-          <p><?php _e('No seating map available'); ?></p>
+          <p><?php _e('Ingen arenaskiss tillgänglig'); ?></p>
         <?php endif; ?>
       </figure>
     </div>
@@ -36,7 +37,7 @@ if( $match_location ):
   <aside>
     <div>
       <figure class="product-seating">
-        <p><?php _e('No seating map available'); ?></p>
+        <p><?php _e('Ingen arenaskiss tillgänglig'); ?></p>
       </figure>
     </div>
   </aside>

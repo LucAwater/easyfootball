@@ -1,17 +1,14 @@
 section.page-header{
-  // @include font-smoothing( antialiased );
-  // @include linear-gradient( 40deg, darken($color-primary-dark, 15%) 30%, darken($color-primary, 20%) 70% );
-
   color: $black;
   background-color: $grey-light;
   border-bottom: thin solid $grey;
 
   .section-body{
-    max-width: 1100px;
+    max-width: 1200px;
     height: auto;
     margin: auto;
     overflow: hidden;
-    padding: 80px 0;
+    padding: 40px 0;
 
     figure{
       background-color: transparent;
@@ -31,8 +28,6 @@ section.page-header{
     height: 100%;
 
     img{
-      @include filter( grayscale(1) );
-
       top: 0;
       bottom: 0;
       position: absolute;
@@ -41,8 +36,6 @@ section.page-header{
       height: 70%;
       margin: auto;
 
-      opacity: 0.3;
-
       &:first-child{
         left: 60px;
       }
@@ -50,6 +43,77 @@ section.page-header{
       &:last-child{
         right: 60px;
       }
+    }
+  }
+}
+
+section.page-header.page-header-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:before{
+    content: "";
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.6);
+  }
+
+  > *{
+    z-index: 1;
+  }
+
+  h1, h2, h3, p{
+    @include font-smoothing( antialiased );
+
+    color: $white;
+  }
+
+  .expand-container{
+    &.is-open{
+      .expand-trigger{
+        &:before{
+          @include linear-gradient( to bottom, transparent, transparent );
+        }
+      }
+    }
+
+    .expand-trigger{
+      &:before{
+        @include linear-gradient( to bottom, transparent, rgba(0,0,0,.6) );
+      }
+
+      a{
+        border-color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  section.page-header{
+    .page-header-background{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px){
+  section.page-header{
+    text-align: left !important;
+
+    .section-body{
+      padding: 20px 0;
+    }
+
+    h1{
+      font-size: 11vw;
     }
   }
 }

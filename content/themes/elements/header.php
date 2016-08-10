@@ -10,7 +10,7 @@
 <!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-  <title>Easy Football & Events</title>
+  <?php site_title(); ?>
 
   <link rel="canonical" href="<?php echo home_url(); ?>">
 
@@ -33,6 +33,11 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/favicon-144.png">
+
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>
@@ -43,7 +48,11 @@
     <div class="header-content">
       <div>
         <a class="link-logo" href="<?php echo home_url(); ?>">
-          <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-black.svg">
+          <?php if( is_front_page() ): ?>
+            <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-white.svg">
+          <?php else: ?>
+            <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-color.svg">
+          <?php endif; ?>
         </a>
 
         <?php if(! is_front_page() ): ?>
@@ -54,9 +63,10 @@
           </form>
         <?php endif; ?>
 
-        <?php include_once( 'includes/nav.php' ); ?>
+        <?php include( 'includes/nav.php' ); ?>
 
-        <a class="button button-sec" href="<?php echo home_url(); ?>/kundtjanst">Kundtjänst</a>
+        <a class="button button-sec button-service" href="<?php echo home_url(); ?>/kundtjanst"><i class="material-icons">&#xE0CA;</i> Kundtjänst</a>
+        <a id="navMobile-open" class="button button-sec button-menu"><i class="material-icons">&#xE5D2;</i> Meny</a>
       </div>
     </div>
 
@@ -64,11 +74,18 @@
       <div>
         <?php breadcrumb(); ?>
 
-        <small>Kundtjänst: info@easyfootball.se eller 08 519 72 728</small>
+        <div>
+          <small><i class="material-icons">&#xE0BE;</i><a href="mailto:info@easyfootball.se"> info@easyfootball.se</a></small>
+          <small><i class="material-icons">&#xE0CD;</i> 08 519 72 728</small>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile nav -->
+  <?php include_once('includes/nav-mobile.php'); ?>
+
+  <!-- Page header -->
   <?php page_header(); ?>
 
   <!-- Main content -->

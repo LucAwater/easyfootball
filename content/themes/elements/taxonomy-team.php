@@ -20,9 +20,6 @@ get_template_part( 'taxonomy', 'header' );
 <?php page_content_start(); ?>
 
   <?php
-  $match_date = get_field('match_date', false, false);
-  $match_date = DateTime::createFromFormat('Y-m-j', $match_date);
-
   // Get posts and order by custom field 'match_date'
   $matches = get_posts(array(
     'post_type'   => 'product',

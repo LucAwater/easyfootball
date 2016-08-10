@@ -102,6 +102,8 @@ page_content_start();
     $matches_args = array(
       'post_type'   => 'product',
       'posts_per_page' => 10,
+      'meta_key'    => 'match_date',
+      'orderby'     => 'meta_value',
       'order'       => 'asc',
       'meta_query'  => array(
         array(

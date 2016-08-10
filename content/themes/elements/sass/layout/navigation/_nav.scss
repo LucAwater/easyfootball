@@ -1,4 +1,4 @@
-nav{
+header .header-content nav{
   height: 100%;
 
   > ul{
@@ -34,7 +34,7 @@ nav{
 }
 
 // Subnav
-nav > ul > li ul{
+header .header-content nav > ul > li ul{
   @include hide( .2s );
   @include box-shadow( 0 3px 5px rgba(0,0,0,.2) );
 
@@ -65,6 +65,8 @@ nav > ul > li ul{
       a{
         width: 100%;
         overflow: visible;
+
+        color: $white;
       }
 
       &:hover,
@@ -93,13 +95,6 @@ nav > ul > li ul{
         color: $black;
       }
     }
-  }
-}
-
-// Current item
-nav ul{
-  li.current{
-    text-decoration: underline;
   }
 }
 

@@ -1,5 +1,5 @@
 .expand-container{
-  p{
+  .expand-content{
     max-height: 100px;
     overflow: hidden;
   }
@@ -10,7 +10,7 @@
   }
 
   &.is-open{
-    p{
+    .expand-content{
       max-height: none;
     }
 

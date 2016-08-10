@@ -33,7 +33,7 @@ if( have_posts() ):
               </div>
 
               <div class="list-item-20">
-                <a class="button" href="<?php echo get_term_link($region); ?>">view leagues</a>
+                <a class="button" href="<?php echo get_term_link($region); ?>">Visa ligor</a>
               </div>
             </li>
 

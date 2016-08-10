@@ -10,13 +10,6 @@ body > footer{
     padding: 40px 0;
   }
 
-  .footer-content,
-  .footer-bottom > *{
-    max-width: 1100px;
-    margin: auto;
-    display: block;
-  }
-
   .footer-content{
     > ul{
       @include flexbox;
@@ -45,8 +38,6 @@ body > footer{
   }
 
   .footer-bottom{
-    @include linear-gradient( 40deg, darken($color-primary-dark, 10%) 30%, darken($color-primary, 20%) 70% );
-
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -59,6 +50,33 @@ body > footer{
 
     a{
       border-bottom: thin solid $white;
+    }
+  }
+}
+
+@media all and (max-width: 800px){
+  body > footer{
+    .footer-content{
+      ul{
+        @include flex-wrap(wrap);
+
+        li{
+          width: 50%;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 450px){
+  body > footer{
+    .footer-content{
+      ul{
+        li{
+          width: 100%;
+        }
+      }
     }
   }
 }

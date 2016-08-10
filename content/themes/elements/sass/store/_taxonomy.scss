@@ -1,27 +1,36 @@
 section.page-header-taxonomy{
   .section-body{
-    > div{
+    figure{
       float: left;
-
-      width: 100%;
-      max-width: 800px;
-      padding-top: 10px;
+      padding-top: 75px;
       padding-right: 40px;
+      display: inline-block;
 
-      p{
-        color: $grey-text;
+      img{
+        width: 250px;
       }
     }
 
-    figure{
-      float: right;
+    > div{
+      float: left;
+      width: calc(100% - 290px);
 
-      width: 40%;
-      //display: inline-block;
-      display: none;
+      .expand-container{
+        margin-bottom: -20px;
+      }
+    }
+  }
+}
 
-      img{
-        @include box-shadow( 0px 50px 40px -40px rgba(0,0,0,.3) );
+@media screen and (max-width: 1100px){
+  section.page-header-taxonomy{
+    .section-body{
+      figure{
+        display: none;
+      }
+
+      > div{
+        width: 100%;
       }
     }
   }

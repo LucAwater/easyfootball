@@ -10,11 +10,12 @@ add_action( 'admin_init', 'wr2x_admin_init' );
 
 function wr2x_settings_page() {
   global $wr2x_settings_api;
+  $hide_ads = wr2x_getoption( 'hide_ads', 'wr2x_advanced', false );
 	echo '<div class="wrap">';
-  jordy_meow_donation(true);
+  $hide_ads ? "" : jordy_meow_donation( true );
 	$method = wr2x_getoption( "method", "wr2x_advanced", 'Picturefill' );
 	echo "<h1>Retina";
-  by_jordy_meow();
+  by_jordy_meow( $hide_ads );
   echo "</h1>";
 	if ( $method == 'retina.js' ) {
 		echo "<p><span>" . __( "Current method:", 'wp-retina-2x' ) . " <u>" . __( "Client side", 'wp-retina-2x' ) . "</u>.</span>";
@@ -82,24 +83,24 @@ function wr2x_admin_init() {
 	}
 
 	$sections = array(
-        array(
-            'id' => 'wr2x_basics',
-            'title' => __( 'Basics', 'wp-retina-2x' )
-        ),
-		    array(
-            'id' => 'wr2x_advanced',
-            'title' => __( 'Advanced', 'wp-retina-2x' )
-        ),
-        array(
-            'id' => 'wr2x_pro',
-            'title' => __( 'Pro', 'wp-retina-2x' )
-        )
-    );
+      array(
+          'id' => 'wr2x_basics',
+          'title' => __( 'Basics', 'wp-retina-2x' )
+      ),
+	    array(
+          'id' => 'wr2x_advanced',
+          'title' => __( 'Advanced', 'wp-retina-2x' )
+      ),
+      array(
+          'id' => 'wr2x_pro',
+          'title' => __( 'Pro', 'wp-retina-2x' )
+      )
+  );
 
-    // Default Auto-Generate
-    $auto_generate = wr2x_getoption( 'auto_generate', 'wr2x_basics', null );
-    if ( $auto_generate === null )
-        wr2x_setoption( 'auto_generate', 'wr2x_basics', 'on' );
+  // Default Auto-Generate
+  $auto_generate = wr2x_getoption( 'auto_generate', 'wr2x_basics', null );
+  if ( $auto_generate === null )
+      wr2x_setoption( 'auto_generate', 'wr2x_basics', 'on' );
 
 	$wpsizes = wr2x_get_image_sizes();
 	$sizes = array();
@@ -242,6 +243,13 @@ function wr2x_admin_init() {
                 'default' => false
             ),
             array(
+                'name' => 'hide_ads',
+                'label' => __( 'Hide Ads & Info', 'wp-retina-2x' ),
+                'desc' => __( 'Hide the ads, the Flattr button and the information about the Pro.', 'wp-retina-2x' ),
+                'type' => 'checkbox',
+                'default' => false
+            ),
+            array(
                 'name' => 'mobile',
                 'label' => '',
                 'desc' => __( '<h2>Mobiles</h2>', 'wp-retina-2x' ),
@@ -253,7 +261,7 @@ function wr2x_admin_init() {
                 'desc' => __( 'Doesn\'t deliver Retina images to mobiles.<br /><small>Only works with the IMG Rewrite method and cache will prevent it from working, unless the caching system supports it.</small>', 'wp-retina-2x' ),
                 'type' => 'checkbox',
                 'default' => false
-            ),
+            )
 		    ),
         'wr2x_pro' => array(
             array(
@@ -287,7 +295,7 @@ function wr2x_update_option( $option ) {
 function wr2x_generate_rewrite_rules( $wp_rewrite, $flush = false ) {
 	global $wp_rewrite;
 	$method = wr2x_getoption( "method", "wr2x_advanced", "retina.js" );
-	if ($method == "Retina-Images") {
+	if ( $method == "Retina-Images" ) {
 
 		// MODIFICATION: docwhat
 		// get_home_url() -> trailingslashit(site_url())

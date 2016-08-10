@@ -7,25 +7,29 @@ function data_get_regions(){
   // Make 'leagues' array multidimensional
   $regions = array();
 
+  // Fill regions array
   foreach($regions_data as $region){
     array_push($regions, array('region' => $region));
   }
 
-  // Add teams to corresponding leagues
-  $a = 0;
-  foreach($regions as $region){
+  // Loop over regions array
+  for($x = 0; $x < count($regions); $x++){
+    $region = $regions[$x];
     $region_name = $region['region'];
     $region_leagues = array();
 
-    foreach($leagues as $league){
-      // If league name matches, push team to 'leagues' array
-      if($league['country'] == $region_name && !in_array($league['league'], $region_leagues) ){
+    // Loop over leagues
+    for($y = 0; $y < count($leagues); $y++){
+      $league = $leagues[$y];
+
+      // If league country field matches current regions, add to object
+      if($league['country'] === $region_name && !in_array($league['league'], $region_leagues) ){
         array_push($region_leagues, $league['league']);
       }
     }
-    $regions[$a]['leagues'] = $region_leagues;
 
-    $a++;
+    // Add all leagues to 'leagues' key in array
+    $regions[$x]['leagues'] = $region_leagues;
   }
 
   return $regions;

@@ -5,39 +5,61 @@
   <footer>
     <div class="footer-content">
       <ul>
-        <li>
-          <h4>Betalningsmetoder</h4>
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo-payex.png" />
-        </li>
+        <?php
+        $col1_title = get_field('footer_col1_title', 'option');
+        $col1_images = get_field('footer_col1_images', 'option');
+        if( $col1_title || $col1_images ):
+        ?>
+          <li>
+            <h4><?php echo $col1_title; ?></h4>
 
-        <li>
-          <h4>Site content</h4>
+            <?php
+            foreach($col1_images as $image){
+              $image_url = $image['sizes']['medium'];
+              $image_width = $image['sizes']['medium-width'];
+              $image_height = $image['sizes']['medium-height'];
 
-          <ul>
-            <li><a href="<?php echo home_url(); ?>/landskampaner">Landskampaner</a></li>
-            <li><a href="<?php echo home_url(); ?>/ligor">Ligor</a></li>
-            <li><a href="<?php echo home_url(); ?>/lag">Lag</a></li>
-          </ul>
-        </li>
+              echo '<img src="' . $image_url . '" width="' . $image_width . '" height="' . $image_height . '" />';
+            }
+            ?>
+          </li>
+        <?php endif; ?>
 
-        <li>
-          <h4>Läs mer</h4>
-          <ul>
-            <li><a href="<?php echo home_url(); ?>/regions">FAQ</a></li>
-            <li><a href="<?php echo home_url(); ?>/leagues">Dina personuppgifter</a></li>
-            <li><a href="<?php echo home_url(); ?>/teams">Användarvillkor</a></li>
-          </ul>
-        </li>
+        <?php
+        $col2_title = get_field('footer_col2_title', 'option');
+        $col2_content = get_field('footer_col2_content', 'option');
+        if( $col2_title || $col2_content ):
+        ?>
+          <li>
+            <h4><?php echo $col2_title; ?></h4>
 
-        <li>
-          <h4>Företagsinformation</h4>
-          <small>Corella Tickets AB</small>
-          <small>Regeringsgatan 82</small>
-          <small>111 39 Stockholm</small>
-          <small>Mail: info@easyfootball.se</small>
-          <small>Telefon: 08 519 72 728</small>
-          <small>Org nr: 556907-1698</small>
-        </li>
+            <?php echo $col2_content; ?>
+          </li>
+        <?php endif; ?>
+
+        <?php
+        $col3_title = get_field('footer_col3_title', 'option');
+        $col3_content = get_field('footer_col3_content', 'option');
+        if( $col3_title || $col3_content ):
+        ?>
+          <li>
+            <h4><?php echo $col3_title; ?></h4>
+
+            <?php echo $col3_content; ?>
+          </li>
+        <?php endif; ?>
+
+        <?php
+        $col4_title = get_field('footer_col4_title', 'option');
+        $col4_content = preg_replace('/<p>(.+?)<\/p>/is', '<small>$1</small>', get_field('footer_col4_content', 'option'));
+        if( $col4_title || $col4_content ):
+        ?>
+          <li>
+            <h4><?php echo $col4_title; ?></h4>
+
+            <?php echo $col4_content; ?>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
 

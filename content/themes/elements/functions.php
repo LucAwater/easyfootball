@@ -5,6 +5,8 @@
 
 // Includes
 require_once('includes/scripts.php');
+require_once('includes/date-format.php');
+require_once('includes/site-title.php');
 require_once('includes/admin/importer.php');
 require_once('includes/admin/tax-region.php');
 require_once('includes/admin/tax-league.php');
@@ -41,8 +43,8 @@ $import_init = get_field('importer_init', 'option');
 update_field('field_5720b5880d265', 0, 'option');
 
 if( $import_init ){
-  require_once('includes/functions-woocommerce/data-regions.php');
   require_once('includes/functions-woocommerce/data-teams.php');
+  require_once('includes/functions-woocommerce/data-regions.php');
   require_once('includes/functions-woocommerce/data-leagues.php');
   require_once('includes/functions-woocommerce/import-taxonomies.php');
 }
@@ -63,6 +65,9 @@ function redirect_to_checkout() {
   return $checkout_url;
 }
 
+// Remove "has been added to your cart" message
+add_filter( 'wc_add_to_cart_message', '__return_empty_string' );
+
 // Change button text on archives
 add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
 
@@ -74,10 +79,28 @@ function woo_archive_custom_cart_button_text() {
 add_filter('woocommerce_variable_price_html', 'custom_variation_price', 10, 2);
 
 function custom_variation_price( $price, $product ) {
-   $price = '';
-   $price .= "<span class='label'>Från</span>" . woocommerce_price($product->get_price());
+  $reflectionObject = new ReflectionObject($product);
+  $property = $reflectionObject->getProperty('prices_array');
+  $property->setAccessible(true);
+  $prices = $property->getValue($product);
+  $prices = next($prices)['price'];
+
+  if($prices){
+    $price = '';
+    $price = min(array_filter($prices));
+    $price = "<span class='label'>Från</span>" . woocommerce_price($price);
+  }
 
    return $price;
+}
+
+// Hides the 'Free!' price notice
+add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
+add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
+add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+
+function hide_free_price_notice( $price ) {
+  return '<small>På förfrågan</small>';
 }
 
 // Removing Woocommerce's standard select replacement
@@ -92,6 +115,18 @@ function mgt_dequeue_stylesandscripts() {
     wp_deregister_script('select2');
   }
 }
+
+// Add capability to role
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'shop_manager' );
+
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'edit_theme_options' );
+    $role->add_cap( 'manage_options' );
+}
+add_action( 'admin_init', 'add_theme_caps');
 
 // Customize excerpt
 function wpdocs_excerpt_more( $more ) {

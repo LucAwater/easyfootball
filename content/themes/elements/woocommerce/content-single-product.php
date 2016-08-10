@@ -21,21 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 
-<?php
-	/**
-	 * woocommerce_before_single_product hook.
-	 *
-	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
-
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
-?>
-
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php
+  	/**
+  	 * woocommerce_before_single_product hook.
+  	 *
+  	 * @hooked wc_print_notices - 10
+  	 */
+  	 do_action( 'woocommerce_before_single_product' );
+
+  	 if ( post_password_required() ) {
+  	 	echo get_the_password_form();
+  	 	return;
+  	 }
+  ?>
 
 	<?php
 		/**
@@ -54,9 +53,16 @@ global $product;
     <?php page_content_start(); ?>
 
       <?php
-      $type = "info";
-      $message = "This can be some kind of info message about the tickets";
-      alert($type, $message);
+      /*
+       * Info message for product
+       *
+       * Specific for each product
+       */
+      $infoMessage = get_field('product_notice');
+      if( $infoMessage ){
+        $type = "info";
+        alert($type, $infoMessage);
+      }
       ?>
 
       <?php
@@ -66,12 +72,12 @@ global $product;
        * Each variation has its own form
        */
       ?>
-      <div class="variations">
+      <div id="productTickets" class="variations">
         <ul class="list-col">
           <li class="list-col-head">
-            <p class="list-item-40 attributes">Seating</p>
-            <p class="list-item-20 price">Price</p>
-            <p class="list-item-20 quantity">Quantity</p>
+            <p class="list-item-40 attributes">Sektion</p>
+            <p class="list-item-20 price">Pris</p>
+            <p class="list-item-20 quantity">Antal</p>
             <p class="list-item-20 add-to-cart"></p>
           </li>
 

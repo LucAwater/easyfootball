@@ -1,25 +1,18 @@
 body.home{
   section#intro-home{
     width: 100%;
-    padding: 100px;
+    padding: 60px;
 
-    color: white;
-    background: $grey-dark;
+    color: $white;
     text-align: center;
 
-    /* REPLACE LATER W/ DYNAMIC CONTENT */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: overlay;
-    background-image: url('/easyfootball/content/themes/elements/img/bg.jpg');
-
     h1{
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     form[role="search"]{
-      width: 800px;
-      max-width: none;
+      width: 100%;
+      max-width: 800px;
       height: 60px;
       margin: auto;
 
@@ -55,6 +48,46 @@ body.home{
           background-color: $color-accent-dark;
         }
       }
+    }
+  }
+}
+
+
+body.home{
+  > header{
+    position: absolute;
+    background-color: transparent;
+    border-bottom: none;
+
+    .header-content{
+      div > nav > ul > li{
+        > p,
+        > a{
+          @include font-smoothing( antialiased );
+
+          color: $white;
+        }
+      }
+
+      div > .button{
+        background-color: $white;
+      }
+    }
+
+    .header-bottom{
+      display: none;
+    }
+  }
+
+  .page-header{
+    padding-top: 150px !important;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  body.home{
+    section#intro-home{
+      padding: 60px 20px;
     }
   }
 }
