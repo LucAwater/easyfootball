@@ -2955,6 +2955,29 @@ body.woocommerce-cart .woocommerce {
 body.woocommerce-cart table tr:last-child td.actions {
   text-align: right; }
 
+@media only screen and (max-width: 500px) {
+  body.woocommerce-cart .woocommerce table thead {
+    display: none; }
+  body.woocommerce-cart .woocommerce tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border: thin solid #e0e0e0; }
+    body.woocommerce-cart .woocommerce tbody tr td {
+      width: 100%;
+      display: block;
+      padding: 10px;
+      border: none;
+      border-bottom: thin solid #e0e0e0; }
+    body.woocommerce-cart .woocommerce tbody tr td.product-price,
+    body.woocommerce-cart .woocommerce tbody tr td.product-quantity,
+    body.woocommerce-cart .woocommerce tbody tr td.product-subtotal {
+      text-align: right; }
+      body.woocommerce-cart .woocommerce tbody tr td.product-price:before,
+      body.woocommerce-cart .woocommerce tbody tr td.product-quantity:before,
+      body.woocommerce-cart .woocommerce tbody tr td.product-subtotal:before {
+        content: attr(data-title);
+        float: left;
+        font-weight: bold; } }
 body.woocommerce-checkout form.woocommerce-checkout {
   height: auto;
   overflow: hidden; }
