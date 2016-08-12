@@ -2091,6 +2091,12 @@ form .clear {
     display: table;
     clear: both; }
 
+@media only screen and (max-width: 500px) {
+  form .col2-set .form-row {
+    width: 100%; }
+    form .col2-set .form-row.form-row-first, form .col2-set .form-row.form-row-last {
+      padding-left: 0;
+      padding-right: 0; } }
 table {
   width: 100%;
   text-align: left;
@@ -2949,6 +2955,29 @@ body.woocommerce-cart .woocommerce {
 body.woocommerce-cart table tr:last-child td.actions {
   text-align: right; }
 
+@media only screen and (max-width: 500px) {
+  body.woocommerce-cart .woocommerce table thead {
+    display: none; }
+  body.woocommerce-cart .woocommerce tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border: thin solid #e0e0e0; }
+    body.woocommerce-cart .woocommerce tbody tr td {
+      width: 100%;
+      display: block;
+      padding: 10px;
+      border: none;
+      border-bottom: thin solid #e0e0e0; }
+    body.woocommerce-cart .woocommerce tbody tr td.product-price,
+    body.woocommerce-cart .woocommerce tbody tr td.product-quantity,
+    body.woocommerce-cart .woocommerce tbody tr td.product-subtotal {
+      text-align: right; }
+      body.woocommerce-cart .woocommerce tbody tr td.product-price:before,
+      body.woocommerce-cart .woocommerce tbody tr td.product-quantity:before,
+      body.woocommerce-cart .woocommerce tbody tr td.product-subtotal:before {
+        content: attr(data-title);
+        float: left;
+        font-weight: bold; } }
 body.woocommerce-checkout form.woocommerce-checkout {
   height: auto;
   overflow: hidden; }
@@ -3025,6 +3054,18 @@ body.woocommerce-checkout form.woocommerce-checkout #payment {
       margin-bottom: 40px; }
     body.woocommerce-checkout form.woocommerce-checkout #order_review {
       padding: 20px 0 0; } }
+@media only screen and (max-width: 500px) {
+  body.woocommerce-checkout form.woocommerce-checkout #order_review > .button {
+    float: left;
+    margin-bottom: 20px; }
+  body.woocommerce-checkout form.woocommerce-checkout #payment li img {
+    display: none; }
+  body.woocommerce-checkout form.woocommerce-checkout #payment .place-order input[type="submit"] {
+    height: auto;
+    padding: 10px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    text-align: left; } }
 body.woocommerce-order-received .woocommerce > * {
   margin-bottom: 20px; }
 body.woocommerce-order-received .woocommerce h2, body.woocommerce-order-received .woocommerce h3, body.woocommerce-order-received body.woocommerce-cart .woocommerce .cart-collaterals h3 span, body.woocommerce-cart body.woocommerce-order-received .woocommerce .cart-collaterals h3 span {

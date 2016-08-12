@@ -56,3 +56,19 @@ form{
     }
   }
 }
+
+@media #{$small-only}{
+  form{
+    .col2-set{
+      .form-row{
+        width: 100%;
+
+        &.form-row-first,
+        &.form-row-last{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
