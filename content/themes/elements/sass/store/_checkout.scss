@@ -125,6 +125,21 @@ body.woocommerce-checkout form.woocommerce-checkout{
           margin-bottom: 20px;
         }
       }
+
+      #payment{
+        li img{
+          display: none;
+        }
+
+        .place-order input[type="submit"]{
+          height: auto;
+          padding: 10px;
+
+          white-space: pre-wrap;
+          line-height: 1.5;
+          text-align: left;
+        }
+      }
     }
   }
 }
