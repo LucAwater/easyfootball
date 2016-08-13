@@ -1050,8 +1050,6 @@ body > footer {
         margin-bottom: 10px; }
       body > footer .footer-content > ul > li small {
         display: block; }
-      body > footer .footer-content > ul > li img {
-        width: 80px; }
   body > footer .footer-bottom {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -2832,7 +2830,7 @@ body.home .page-header {
     padding: 60px 20px; } }
 section.page-header-taxonomy .section-body figure {
   float: left;
-  padding-top: 75px;
+  padding-top: 10px;
   padding-right: 40px;
   display: inline-block; }
   section.page-header-taxonomy .section-body figure img {
