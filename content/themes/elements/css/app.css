@@ -2832,7 +2832,7 @@ body.home .page-header {
     padding: 60px 20px; } }
 section.page-header-taxonomy .section-body figure {
   float: left;
-  padding-top: 75px;
+  padding-top: 10px;
   padding-right: 40px;
   display: inline-block; }
   section.page-header-taxonomy .section-body figure img {
