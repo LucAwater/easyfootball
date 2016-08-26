@@ -3,6 +3,22 @@
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
 
+add_action( 'after_setup_theme', 'rss_template_matches' );
+
+/**
+* Register custom RSS template.
+*/
+function rss_template_matches() {
+  add_feed( 'matches', 'rss_matches' );
+}
+
+/**
+* Custom RSS template callback.
+*/
+function rss_matches() {
+  get_template_part( 'feeds/feed', 'default' );
+}
+
 // Includes
 require_once('includes/scripts.php');
 require_once('includes/date-format.php');
