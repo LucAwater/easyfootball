@@ -59,8 +59,6 @@ do_action( 'rss_tag_pre', 'rss2' );
 
     <!-- Start product loop -->
     <?php
-    global $product;
-
     // Get posts and order by custom field 'match_date'
     $matches = get_posts(array(
       'post_type'   => 'product',
@@ -74,10 +72,14 @@ do_action( 'rss_tag_pre', 'rss2' );
       foreach( $matches as $post ):
         setup_postdata( $post );
 
-        $product = new WC_Product( $post->ID );
+        $product = new WC_Product_Variable( $post->ID );
 
         // Get match minimum price
         $price = $product->price;
+
+        $prices = $product->get_variation_prices( true );
+        $prices = $prices['regular_price'];
+        $price = min(array_filter($prices));
 
         if( $price == 0 ){
           $price = "På förfrågan";
