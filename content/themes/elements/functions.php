@@ -10,13 +10,19 @@ add_action( 'after_setup_theme', 'rss_template_matches' );
 */
 function rss_template_matches() {
   add_feed( 'matches', 'rss_matches' );
+  add_feed( 'matches-premierLeague', 'rss_matches_premierLeague' );
 }
 
 /**
 * Custom RSS template callback.
 */
 function rss_matches() {
-  get_template_part( 'feeds/feed', 'default' );
+  get_template_part( 'feeds/feed', 'matches' );
+
+}
+
+function rss_matches_premierLeague() {
+  get_template_part( 'feeds/feed', 'matches-premierLeague' );
 }
 
 // Includes
