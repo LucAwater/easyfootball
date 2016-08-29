@@ -79,6 +79,10 @@ do_action( 'rss_tag_pre', 'rss2' );
         // Get match minimum price
         $price = $product->price;
 
+        if( $price == 0 ){
+          $price = "På förfrågan";
+        }
+
         // Get match date
         $match_date_raw = get_field('match_date', false, false);
 
@@ -103,6 +107,7 @@ do_action( 'rss_tag_pre', 'rss2' );
           </item>
           <?php
         endif;
+
         wp_reset_postdata();
       endforeach;
     endif;
