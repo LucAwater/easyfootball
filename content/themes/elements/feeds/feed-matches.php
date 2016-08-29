@@ -79,7 +79,13 @@ do_action( 'rss_tag_pre', 'rss2' );
 
         $prices = $product->get_variation_prices( true );
         $prices = $prices['regular_price'];
-        $price = min(array_filter($prices));
+        $prices = array_filter($prices);
+
+        if( count($prices) > 1 ){
+          $price = min($prices);
+        } else {
+          $price = current($prices);
+        }
 
         if( $price == 0 ){
           $price = "På förfrågan";
