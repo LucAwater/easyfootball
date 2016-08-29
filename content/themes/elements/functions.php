@@ -16,7 +16,7 @@ function rss_template_matches() {
 * Custom RSS template callback.
 */
 function rss_matches() {
-  get_template_part( 'feeds/feed', 'default' );
+  get_template_part( 'feeds/feed', 'matches' );
 }
 
 // Includes
