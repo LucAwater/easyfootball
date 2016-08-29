@@ -67,7 +67,15 @@ do_action( 'rss_tag_pre', 'rss2' );
       'numberposts' => -1,
       'meta_key'    => 'match_date',
       'orderby'     => 'meta_value',
-      'order'       => 'asc'
+      'order'       => 'asc',
+      'tax_query'   => array(
+        array(
+          'taxonomy'          => 'league',
+          'field'             => 'slug',
+          'terms'             => 'premier-league',
+          'include_children'  => false
+        )
+      )
     ));
 
     if( $matches ):
