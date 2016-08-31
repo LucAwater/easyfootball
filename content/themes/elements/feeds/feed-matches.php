@@ -77,9 +77,21 @@ do_action( 'rss_tag_pre', 'rss2' );
         // Get match minimum price
         $price = $product->price;
 
+        // Put all variations without stock in an array
+        $variations = $product->get_available_variations();
+        $blacklistItems = array();
+        foreach( $variations as $var ){
+          if(! $var['is_in_stock'] ){
+            array_push($blacklistItems, $var['variation_id']);
+          }
+        }
+
         $prices = $product->get_variation_prices( true );
         $prices = $prices['regular_price'];
         $prices = array_filter($prices);
+        foreach( $blacklistItems as $item ){
+          unset($prices[$item]);
+        }
 
         if( count($prices) > 1 ){
           $price = min($prices);
