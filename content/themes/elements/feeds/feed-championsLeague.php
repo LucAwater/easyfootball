@@ -4,7 +4,6 @@
  *
  * @package WordPress
  */
-
 header('Content-Type: ' . feed_content_type('rss2') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;
 $frequency  = 1;        // Default '1'. The frequency of RSS updates within the update period.
@@ -18,7 +17,6 @@ $postimages = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() )
 $postimage = ( $postimages ) ? $postimages[0] : get_stylesheet_directory_uri() . '/images/default.jpg';
 
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
-
 /**
  * Fires between the xml and rss tags in a feed.
  *
@@ -29,7 +27,6 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
  */
 do_action( 'rss_tag_pre', 'rss2' );
 ?>
-
 <rss version="2.0"
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
   xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -63,14 +60,11 @@ do_action( 'rss_tag_pre', 'rss2' );
     $matches = get_posts(array(
       'post_type'   => 'product',
       'numberposts' => -1,
-      'meta_key'    => 'match_date',
-      'orderby'     => 'meta_value',
-      'order'       => 'asc',
       'tax_query'   => array(
         array(
           'taxonomy'          => 'league',
           'field'             => 'slug',
-          'terms'             => 'championship',
+          'terms'             => 'championsLeague',
           'include_children'  => false
         )
       )
