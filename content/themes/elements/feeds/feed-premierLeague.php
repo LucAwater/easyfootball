@@ -59,8 +59,6 @@ do_action( 'rss_tag_pre', 'rss2' );
 
     <!-- Start product loop -->
     <?php
-    global $product;
-
     // Get posts and order by custom field 'match_date'
     $matches = get_posts(array(
       'post_type'   => 'product',
@@ -82,35 +80,59 @@ do_action( 'rss_tag_pre', 'rss2' );
       foreach( $matches as $post ):
         setup_postdata( $post );
 
-        $product = new WC_Product( $post->ID );
-
-        // Get match minimum price
-        $price = $product->price;
+        // Get teams from post title
+        $teams = explode(" - ", $post->post_title);
+        $team_home = $teams[0];
+        $team_away = $teams[1];
 
         // Get match date
-        $match_date_raw = get_field('match_date', false, false);
+        $match_date = get_field('match_date', false, false);
 
-        // Get home and away team
-        $teams = wp_get_post_terms($post->ID, 'team');
-        $team_home = get_field('match_location', false, false);
+        /*
+         * Get price
+         */
+        $product = new WC_Product_Variable( $post->ID );
 
-        foreach( $teams as $team ){
-          if( $team->name != $team_home ){
-            $team_away = $team->name;
-          }
+        // Get product variations
+        $variations = $product->get_available_variations();
+
+        // Get ids of variations that have stock
+        $whitelistItems = array_keys(array_column($variations, 'is_in_stock'), 1);
+        $whitelistItems = array_column(array_intersect_key($variations, $whitelistItems), 'variation_id');
+
+        // Get prices of all variations
+        $prices = $product->get_variation_prices( true );
+
+        // Get regular prices in one array
+        $prices = array_filter($prices['regular_price']);
+
+        // Filter out the ones that do not have stock
+        $prices = array_intersect_key($prices, array_flip($whitelistItems));
+
+        // Get lowest value from array
+        if( count($prices) > 1 ){
+          $price = min($prices);
+        } else {
+          $price = current($prices);
         }
 
-        if( $team_home && $team_away && $match_date_raw && $price ):
-          ?>
-          <item>
-            <home><?php echo $team_home; ?></home>
-            <away><?php echo $team_away; ?></away>
-            <date><?php print($match_date_raw); ?></date>
-            <price><?php echo $price; ?></price>
-            <link><?php the_permalink_rss(); ?></link>
-          </item>
-          <?php
-        endif;
+        if( $price == 0 ){
+          $price = "På förfrågan";
+        }
+
+        /*
+         * Build item
+         */
+        ?>
+        <item>
+          <home><?php echo $team_home; ?></home>
+          <away><?php echo $team_away; ?></away>
+          <date><?php echo $match_date; ?></date>
+          <price><?php echo $price; ?></price>
+          <link><?php the_permalink_rss(); ?></link>
+        </item>
+        <?php
+
         wp_reset_postdata();
       endforeach;
     endif;

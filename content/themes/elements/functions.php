@@ -3,29 +3,9 @@
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
 
-add_action( 'after_setup_theme', 'rss_template_matches' );
-
-/**
-* Register custom RSS template.
-*/
-function rss_template_matches() {
-  add_feed( 'matches', 'rss_matches' );
-  add_feed( 'matches-premierLeague', 'rss_matches_premierLeague' );
-}
-
-/**
-* Custom RSS template callback.
-*/
-function rss_matches() {
-  get_template_part( 'feeds/feed', 'matches' );
-
-}
-
-function rss_matches_premierLeague() {
-  get_template_part( 'feeds/feed', 'matches-premierLeague' );
-}
-
 // Includes
+require_once('feeds/feeds.php');
+
 require_once('includes/scripts.php');
 require_once('includes/date-format.php');
 require_once('includes/site-title.php');
