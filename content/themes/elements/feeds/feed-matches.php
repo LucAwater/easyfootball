@@ -69,49 +69,17 @@ do_action( 'rss_tag_pre', 'rss2' );
     ));
 
     if( $matches ):
-      foreach( $matches as $post ):
-        setup_postdata( $post );
+      foreach($matches as $post):
+        setup_postdata($post);
 
         // Get teams from post title
         $teams = explode(" - ", $post->post_title);
         $team_home = $teams[0];
         $team_away = $teams[1];
-
         // Get match date
         $match_date = get_field('match_date', false, false);
-
-        /*
-         * Get price
-         */
-        $product = new WC_Product_Variable( $post->ID );
-
-        // Get product variations
-        $variations = $product->get_available_variations();
-
-        // Get ids of variations that have stock
-        $whitelistItems = array_keys(array_column($variations, 'is_in_stock'), 1);
-        $whitelistItems = array_column(array_intersect_key($variations, $whitelistItems), 'variation_id');
-
-        // Get prices of all variations
-        $prices = $product->get_variation_prices( true );
-
-        // Get regular prices in one array
-        $prices = array_filter($prices['regular_price']);
-
-        // Filter out the ones that do not have stock
-        $prices = array_intersect_key($prices, array_flip($whitelistItems));
-
-        // Get lowest value from array
-        if( count($prices) > 1 ){
-          $price = min($prices);
-        } else {
-          $price = current($prices);
-        }
-
-        if( $price == 0 ){
-          $price = "På förfrågan";
-        }
-
+        // Get match date
+        $price = get_field('min_price', false, false);
         /*
          * Build item
          */
@@ -124,7 +92,6 @@ do_action( 'rss_tag_pre', 'rss2' );
           <link><?php the_permalink_rss(); ?></link>
         </item>
         <?php
-
         wp_reset_postdata();
       endforeach;
     endif;
