@@ -15,5 +15,13 @@ if( function_exists('acf_add_options_page') ) {
     'redirect'		=> false
   ));
 
+  acf_add_options_page(array(
+    'page_title' 	=> 'Min Price',
+    'menu_title'	=> 'Min Price',
+    'menu_slug' 	=> 'minPrice',
+    'parent_slug' => 'edit.php?post_type=product',
+    'redirect'		=> false
+  ));
+
 }
 ?>
