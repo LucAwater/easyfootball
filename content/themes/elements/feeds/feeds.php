@@ -1,6 +1,7 @@
 <?php
 $minPrice_init = get_field('minPrice_init', 'option');
 update_field('field_57c95871e57af', 0, 'option');
+update_field('minPrice_init', 0, 'option');
 
 if($minPrice_init){
   function products_add_min_price(){
