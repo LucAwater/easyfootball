@@ -113,7 +113,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
   // Match price
   echo '<div class="list-item-20">';
     if($match_price == "På förfrågan"){
-      echo '<span class="price"><span class="amount">' . $match_price . '</span></span>';
+      echo '<span class="price"><small>' . $match_price . '</small></span>';
     } else if($match_price) {
       echo '<span class="price"><span class="label">Från </span><span class="amount">' . $match_price . ' kr</span></span>';
     } else {
