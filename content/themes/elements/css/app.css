@@ -2950,6 +2950,14 @@ body.woocommerce-cart .woocommerce {
       margin-bottom: 20px; }
       body.woocommerce-cart .woocommerce .cart-collaterals h3 span {
         font-weight: 700; }
+body.woocommerce-cart table tr.cart_item td.product-remove a, body.woocommerce-cart table tr.cart_item td.product-remove button,
+body.woocommerce-cart table tr.cart_item td.product-remove input[type="submit"] {
+  width: 100%;
+  display: block;
+  text-align: center; }
+  body.woocommerce-cart table tr.cart_item td.product-remove a i, body.woocommerce-cart table tr.cart_item td.product-remove button i,
+  body.woocommerce-cart table tr.cart_item td.product-remove input[type="submit"] i {
+    font-size: 28px; }
 body.woocommerce-cart table tr:last-child td.actions {
   text-align: right; }
 
