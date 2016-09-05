@@ -66,6 +66,8 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
+  $match_price = get_field('min_price', false, false);
+
   $match_date_raw = get_field('match_date', false, false);
   if($match_date_raw){
     $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
@@ -108,15 +110,15 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
     echo '<small class="title-date">' . $match_date . ' - ' . $match_time . '</small>';
   echo '</div>';
 
-  // Match price range
+  // Match price
   echo '<div class="list-item-20">';
-  	/**
-  	 * woocommerce_after_shop_loop_item_title hook.
-  	 *
-  	 * @hooked woocommerce_template_loop_rating - 5
-  	 * @hooked woocommerce_template_loop_price - 10
-  	 */
-  	do_action( 'woocommerce_after_shop_loop_item_title' );
+    if($match_price == "På förfrågan"){
+      echo '<span class="price"><span class="amount">' . $match_price . '</span></span>';
+    } else if($match_price) {
+      echo '<span class="price"><span class="label">Från </span><span class="amount">' . $match_price . ' kr</span></span>';
+    } else {
+      do_action( 'woocommerce_after_shop_loop_item_title' );
+    }
   echo '</div>';
 
   // 'View tickets' button
