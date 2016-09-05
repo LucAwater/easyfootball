@@ -67,6 +67,13 @@ function redirect_to_checkout() {
   return $checkout_url;
 }
 
+// Redirect empty cart link to homepage
+add_filter( 'woocommerce_return_to_shop_redirect', 'return_to_shop_link' );
+
+function return_to_shop_link() {
+     return home_url();
+}
+
 // Remove "has been added to your cart" message
 add_filter( 'wc_add_to_cart_message', '__return_empty_string' );
 
