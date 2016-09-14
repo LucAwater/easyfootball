@@ -65,7 +65,7 @@ page_content_start();
   if( $results_teams ):
 
     echo '<div class="results results-teams">';
-      echo '<h2>Teams</h2>';
+      _e('<h2>Teams</h2>', 'elements');
       echo '<ul>';
 
         foreach( $results_teams as $result ):
@@ -119,12 +119,12 @@ page_content_start();
       ?>
 
       <section class="matches">
-        <h3>Upcoming matches in <?php echo $searchQuery; ?></h3>
+        <h3><?php echo sprintf( __( 'Upcoming matches in %s', 'elements' ), $searchQuery ); ?></h3>
         <ul class="list list-col">
           <li class="list-col-head">
-            <p class="list-item-20">Date</p>
-            <p class="list-item-40">Match</p>
-            <p class="list-item-20">Prices</p>
+            <p class="list-item-20"><?php _e('Date', 'elements'); ?></p>
+            <p class="list-item-40"><?php _e('Match', 'elements'); ?></p>
+            <p class="list-item-20"><?php _e('Price', 'elements'); ?></p>
             <p class="list-item-20"></p>
           </li>
 
@@ -145,11 +145,10 @@ page_content_start();
   // No results
   if( !$results_leagues && !$results_teams && !$results_locations ):
 
-    echo
-    '<div class="no-results">
-      <p>Sorry, no matches found for <strong>' . get_search_query() . '</strong></p>
-      <p>Check the spelling or try different/fewer keywords and try again</p>
-    </div>';
+    echo '<div class="no-results">';
+      echo sprintf( __( '<p>Sorry, no matches found for <strong>%s</strong></p>', 'elements' ), $searchQuery );
+      _e('<p>Check the spelling or try different/fewer keywords and try again</p>');
+    echo '</div>';
 
   endif;
 page_content_end();
