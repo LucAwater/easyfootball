@@ -23,6 +23,21 @@ body.woocommerce-cart{
   }
 
   table{
+    tr.cart_item{
+      td.product-remove{
+        a{
+          width: 100%;
+          display: block;
+
+          text-align: center;
+
+          i{
+            font-size: 28px;
+          }
+        }
+      }
+    }
+
     tr:last-child{
       td.actions{
         text-align: right;
