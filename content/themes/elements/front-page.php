@@ -74,7 +74,8 @@ if( have_posts() ):
 
                           $match_time = get_field('match_time');
                           $match_date_raw = get_field('match_date', false, false);
-                          if($match_date_raw){
+                          $date_regex = '/[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+                          if($match_date_raw && preg_match($date_regex, $match_date_raw)){
                             $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
                             $match_date = dateFormat($match_date_raw, 'sv', '%e %B %G')[0];
                           }
@@ -132,7 +133,8 @@ if( have_posts() ):
 
               $event_time = get_post_meta($event->ID, 'match_time', true);
               $event_date_raw = get_post_meta($event->ID, 'match_date', true);
-              if($event_date_raw){
+              $date_regex = '/[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+              if($event_date_raw && preg_match($date_regex, $event_date_raw)){
                 $event_date_raw = DateTime::createFromFormat('Y-m-j', $event_date_raw);
                 $event_date = dateFormat($event_date_raw)[0];
               }

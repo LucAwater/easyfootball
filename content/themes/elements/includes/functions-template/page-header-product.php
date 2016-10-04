@@ -21,9 +21,11 @@ if( $bg_url ){
     <?php
     // Get match data from custom fields of product
     $match_date_raw = get_field('match_date', false, false);
-    if($match_date_raw){
+    $date_regex = '/[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+    if($match_date_raw && preg_match($date_regex, $match_date_raw)){
       $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
-      $match_date = dateFormat($match_date_raw, 'sv', '%A, %e %B %G')[0];
+      $match_date = dateFormat($match_date_raw)[0];
+      $match_date_day = dateFormat($match_date_raw)[1];
     }
 
     $match_time = get_field('match_time');
@@ -49,9 +51,9 @@ if( $bg_url ){
     }
 
     // Build match data list
-    if( $match_date || $match_time || $match_location ):
+    if( isset($match_date) || $match_time || $match_location ):
       echo '<ul>';
-        if( $match_date )
+        if( isset($match_date) )
           echo '<li><p><strong>Datum: </strong>' . $match_date . '</p></li>';
 
         if( $match_time )

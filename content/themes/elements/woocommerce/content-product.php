@@ -69,7 +69,8 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
   $match_price = get_field('min_price', false, false);
 
   $match_date_raw = get_field('match_date', false, false);
-  if($match_date_raw){
+  $date_regex = '/[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+  if($match_date_raw && preg_match($date_regex, $match_date_raw)){
     $match_date_raw = DateTime::createFromFormat('Y-m-j', $match_date_raw);
     $match_date = dateFormat($match_date_raw)[0];
     $match_date_day = dateFormat($match_date_raw)[1];
