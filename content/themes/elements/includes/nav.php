@@ -92,10 +92,20 @@
 
       if( $regions ):
         echo '<ul>';
+          echo '<div>';
 
-          foreach( $regions as $region ){
+          // Loop over regions
+          $loop_max = count($regions);
+
+          for( $x = 0; $x < $loop_max; $x++ ){
+            $region = $regions[$x];
             $region_name = $region->name;
             $region_link = get_term_link($region, 'region');
+
+            // Wrap an extra container around every 5 list items
+            if( $x > 0 && $x %5 == 0 ){
+              echo '</div><div>';
+            }
 
             echo '<li><a href="' . $region_link . '">' . $region_name . '</a>';
           }

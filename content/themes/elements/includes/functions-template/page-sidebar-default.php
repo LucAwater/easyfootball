@@ -16,14 +16,17 @@
           $event_name = $event->post_title;
           $event_link = get_permalink($event->ID);
 
-          $event_date = get_post_meta($event->ID, 'match_date', false, false);
-          $event_date_raw = DateTime::createFromFormat('Y-m-j', $event_date[0]);
-          $event_date = dateFormat($event_date_raw, "sv", "%e %B %G")[0];
           $event_time = get_post_meta($event->ID, 'match_time', true);
+          $event_date_raw = get_post_meta($event->ID, 'match_date', true);
+          $date_regex = '/[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+          if($event_date_raw && preg_match($date_regex, $event_date_raw)){
+            $event_date_raw = DateTime::createFromFormat('Y-m-j', $event_date_raw);
+            $event_date = dateFormat($event_date_raw)[0];
+          }
           ?>
           <li>
             <a href="<?php echo $event_link; ?>"><?php echo $event_name; ?></a>
-            <small><?php echo ($event_date) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
+            <small><?php echo (isset($event_date)) ? $event_date : ''; ?><?php echo ($event_time) ? ' at ' . $event_time : ''; ?></small>
           </li>
         <?php } ?>
       </ul>
